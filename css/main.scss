@@ -1,5 +1,6 @@
 body {
 	background-color:#333;
+	background:url(http://beautyboxknebworth.co.uk/img/bg.jpg) repeat center top;
 }
 
 .container {
@@ -38,5 +39,9 @@ body {
 	background-image: -webkit-linear-gradient(top, #222222, #111111);
 	background-image: -o-linear-gradient(top, #222222, #111111);
 	background-image: linear-gradient(to bottom, #222222, #111111);
+}
+
+footer .well {
+	margin:0 20px 20px;
 }
 
