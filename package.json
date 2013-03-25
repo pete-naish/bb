@@ -1,0 +1,32 @@
+{
+  "name": "bb",
+  "version": "0.0.1",
+  "description": "Beauty Box Website Rebuild",
+  "main": "bb",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pete-naish/bb.git"
+  },
+  "keywords": [
+    "bb",
+    "beauty",
+    "box",
+    "knebworth"
+  ],
+  "author": "Pete Naish",
+  "license": "BSD",
+  "gitHead": "75cf8249f48189c57ff6322a3b57da1d29623790",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.1.3",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-contrib-sass": "~0.2.2",
+    "grunt-contrib-livereload": "~0.1.2",
+    "grunt-regarde": "~0.1.1",
+    "grunt-contrib-connect": "~0.2.0"
+  }
+}
