@@ -22,7 +22,8 @@
 //273.3333 3 column
 //195 4 column
 
-$base-font-size: 45px;
+$base-font-size: 16px;
+$base-line-height: 24px;
 $body-font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 $heading-font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
 $serif-heading-font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
@@ -33,9 +34,9 @@ $pink: #E3ABDD;
 $nav-link: #BFCDCD;
 $lighter-text: #666;
 $treatments-flourish: #5A4D59;
-$about-background-color:#CFD7D1;
+$about-background-color: #CFD7D1;
 $about-flourish: #9AACA0;
-$about-border:#9BADA1;
+$about-border: #9BADA1;
 
 
 body {

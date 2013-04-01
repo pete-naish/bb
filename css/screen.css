@@ -79,25 +79,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url('../type/Bodoni-Ornaments-webfont.eot') format('embedded-opentype'), url('../type/Bodoni-Ornaments-webfont.eot?#iefix') format('embedded-opentype'), url('../type/Bodoni-Ornaments-webfont.woff') format('woff'), url('../type/Bodoni-Ornaments-webfont.ttf') format('truetype'), url('../type/Bodoni-Ornaments-webfont.svg#BodoniOrnaments') format('svg');
 }
 
-/* line 41, screen.scss */
+/* line 42, screen.scss */
 body {
   background: url(../img/bg.png) repeat #ecd6e9;
-  font-size: 45px;
+  font-size: 16px;
   color: #333333;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
-/* line 48, screen.scss */
+/* line 49, screen.scss */
 h1 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 52, screen.scss */
+/* line 53, screen.scss */
 h2 {
   font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 }
 
-/* line 56, screen.scss */
+/* line 57, screen.scss */
 h3 {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
