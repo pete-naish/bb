@@ -1,9 +1,15 @@
+/* @import must be at top of file, otherwise CSS will not work */
+// @import url("//hello.myfonts.net/count/266f98");
+
 @import "compass/reset";
+
 @import "compass/css3";
 
 @include font-face("Bebas Neue", font-files("BebasNeue-webfont.eot", "BebasNeue-webfont.eot?#iefix", "BebasNeue-webfont.woff", "BebasNeue-webfont.ttf", "BebasNeue-webfont.svg#BebasNeueRegular"));
+
 @include font-face("Crimson Roman", font-files("Crimson-Roman-webfont.eot", "Crimson-Roman-webfont.eot?#iefix", "Crimson-Roman-webfont.woff", "Crimson-Roman-webfont.ttf", "Crimson-Roman-webfont.svg#CrimsonRoman"));
-@include font-face("Bodoni-Ornaments", font-files("Bodoni-Ornaments-webfont.eot", "Bodoni-Ornaments-webfont.eot?#iefix", "Bodoni-Ornaments-webfont.woff", "Bodoni-Ornaments-webfont.ttf", "Bodoni-Ornaments-webfont.svg#BodoniOrnaments"));
+
+@include font-face("Bodoni Ornaments", font-files("Bodoni-Ornaments-webfont.eot", "Bodoni-Ornaments-webfont.eot?#iefix", "Bodoni-Ornaments-webfont.woff", "Bodoni-Ornaments-webfont.ttf", "Bodoni-Ornaments-webfont.svg#BodoniOrnaments"));
 
 
 @function em($px, $base: $base-font-size) {
@@ -16,16 +22,37 @@
 //273.3333 3 column
 //195 4 column
 
-$base-font-size: 16px;
-$body-font-color: #333;
+$base-font-size: 45px;
 $body-font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+$heading-font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
+$serif-heading-font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+$ornament-font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
+
+$body-font-color: #333;
 $pink: #E3ABDD;
 $nav-link: #BFCDCD;
 $lighter-text: #666;
+$treatments-flourish: #5A4D59;
+$about-background-color:#CFD7D1;
+$about-flourish: #9AACA0;
+$about-border:#9BADA1;
+
 
 body {
 	background: url(../img/bg.png) repeat #ECD6E9;
 	font-size: $base-font-size;
 	color: $body-font-color;
 	font-family: $body-font-family;
+}
+
+h1 {
+	font-family: $heading-font-family;
+}
+
+h2 {
+	font-family: $ornament-font-family;
+}
+
+h3 {
+	font-family: $serif-heading-font-family;
 }

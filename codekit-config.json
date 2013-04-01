@@ -2,17 +2,38 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8283",
   "files" : {
-    "\/css\/screen.scss" : {
+    "\/img\/facials.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/screen.scss",
-      "outputStyle" : 1,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/screen.css",
-      "fileType" : 4,
-      "debugStyle" : 1
+      "inputAbbreviatedPath" : "\/img\/facials.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/facials.jpg",
+      "initialSize" : 6496,
+      "fileType" : 4096
+    },
+    "\/img\/massage.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/massage.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/massage.jpg",
+      "initialSize" : 7021,
+      "fileType" : 4096
+    },
+    "\/img\/slide1.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/slide1.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/slide1.jpg",
+      "initialSize" : 60875,
+      "fileType" : 4096
     },
     "\/js\/main.js" : {
       "ignoreWasSetByUser" : 0,
@@ -25,6 +46,46 @@
       "outputAbbreviatedPath" : "\/js\/main.min.js",
       "fileType" : 64
     },
+    "\/img\/bg.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/bg.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/bg.png",
+      "initialSize" : 186,
+      "fileType" : 8192
+    },
+    "\/css\/ie.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/ie.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/css\/print.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/print.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/img\/eyebrows.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/eyebrows.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/eyebrows.jpg",
+      "initialSize" : 6364,
+      "fileType" : 4096
+    },
     "\/config.rb" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -33,6 +94,38 @@
       "inputAbbreviatedPath" : "\/config.rb",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 32768
+    },
+    "\/index.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/index.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/css\/screen.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/screen.scss",
+      "outputStyle" : 1,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/screen.css",
+      "fileType" : 4,
+      "debugStyle" : 1
+    },
+    "\/img\/nails.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/nails.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/nails.jpg",
+      "initialSize" : 6920,
+      "fileType" : 4096
     },
     "\/css\/print.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -46,26 +139,6 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/img\/bg.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/bg.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/bg.png",
-      "initialSize" : 186,
-      "fileType" : 8192
-    },
-    "\/index.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/index.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/css\/ie.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -78,14 +151,27 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/css\/ie.css" : {
+    "\/img\/logo.png" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/ie.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/img\/logo.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/logo.png",
+      "initialSize" : 7873,
+      "fileType" : 8192
+    },
+    "\/img\/treatments-bg.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/treatments-bg.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/treatments-bg.png",
+      "initialSize" : 64880,
+      "fileType" : 8192
     },
     "\/css\/screen.css" : {
       "ignoreWasSetByUser" : 0,
@@ -93,15 +179,6 @@
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/css\/screen.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/css\/print.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/print.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     }

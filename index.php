@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="css/print.css" media="screen">
 	</head>
 	<body>
-
+	<h1>Testing Bebas</h1>
+	<h2>{</h2>
+	<h3>Testing Serif</h3>
+	<h4>Testing Calibri</h4>
 	</body>
 </html>
