@@ -1,9 +1,7 @@
 /* @import must be at top of file, otherwise CSS will not work */
 // @import url("//hello.myfonts.net/count/266f98");
 
-@import "compass/reset";
-
-@import "compass/css3";
+@import "compass/reset", "compass/css3";
 
 @include font-face("Bebas Neue", font-files("BebasNeue-webfont.eot", "BebasNeue-webfont.eot?#iefix", "BebasNeue-webfont.woff", "BebasNeue-webfont.ttf", "BebasNeue-webfont.svg#BebasNeueRegular"));
 

@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<title>Beauty Box Knebworth</title>
-		<meta name="description" content="">
+		<meta name="description" content="Beauty Box Knebworth">
 		<meta name="keywords" content="">
 		<link rel="stylesheet" href="css/screen.css" media="screen">
 		<!--[if lt IE 9]>
