@@ -79,25 +79,207 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url('../type/Bodoni-Ornaments-webfont.eot') format('embedded-opentype'), url('../type/Bodoni-Ornaments-webfont.eot?#iefix') format('embedded-opentype'), url('../type/Bodoni-Ornaments-webfont.woff') format('woff'), url('../type/Bodoni-Ornaments-webfont.ttf') format('truetype'), url('../type/Bodoni-Ornaments-webfont.svg#BodoniOrnaments') format('svg');
 }
 
-/* line 42, screen.scss */
+/* ==========================================================================
+   HTML5 Boilerplate styles
+   ========================================================================== */
+/* line 44, screen.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 49, screen.scss */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 54, screen.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 63, screen.scss */
+img {
+  vertical-align: middle;
+}
+
+/* line 67, screen.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 73, screen.scss */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/* line 82, screen.scss */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px;
+}
+
+/* line 89, screen.scss */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/* line 96, screen.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* line 101, screen.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 113, screen.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* line 122, screen.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 127, screen.scss */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+/* line 132, screen.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 136, screen.scss */
+.cf {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+   Main Styles
+   ========================================================================== */
+/* line 144, screen.scss */
 body {
   background: url(../img/bg.png) repeat #ecd6e9;
   font-size: 16px;
   color: #333333;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* line 49, screen.scss */
-h1 {
+/* line 156, screen.scss */
+h2 {
+  font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+/* line 161, screen.scss */
+h3 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 53, screen.scss */
-h2 {
+/* line 166, screen.scss */
+h4 {
+  font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 171, screen.scss */
+i {
   font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 }
 
-/* line 57, screen.scss */
-h3 {
-  font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+/* line 175, screen.scss */
+header {
+  background-color: #343433;
+  overflow: hidden;
 }
+/* line 178, screen.scss */
+header .logo {
+  padding: 40px 62px 30px 6.056%;
+  display: block;
+  float: left;
+}
+/* line 182, screen.scss */
+header .logo img {
+  max-width: 100%;
+}
+/* line 186, screen.scss */
+header nav {
+  float: right;
+  padding: 35px 6.056% 30px 0;
+}
+/* line 189, screen.scss */
+header nav li {
+  float: left;
+}
+/* line 191, screen.scss */
+header nav li a {
+  color: #bfcdcd;
+  text-decoration: none;
+  font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.25em;
+  letter-spacing: 3px;
+  border-bottom: 1px solid #343433;
+  -webkit-transition: border-color 0.25s ease-in-out;
+  -moz-transition: border-color 0.25s ease-in-out;
+  -ms-transition: border-color 0.25s ease-in-out;
+  -o-transition: border-color 0.25s ease-in-out;
+  transition: border-color 0.25s ease-in-out;
+}
+/* line 199, screen.scss */
+header nav li a:hover {
+  border-color: #bfcdcd;
+}
+/* line 203, screen.scss */
+header nav li i {
+  color: #e3abdd;
+  padding: 0 15px;
+  vertical-align: top;
+}
+
+/* line 212, screen.scss */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/* Add min widths too for shared styles */

@@ -1,20 +1,39 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 		<title>Beauty Box Knebworth</title>
 		<meta name="description" content="Beauty Box Knebworth">
 		<meta name="keywords" content="">
-		<link rel="stylesheet" href="css/screen.css" media="screen">
-		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-			<link rel="stylesheet" href="css/ie.css">
-		<![endif]-->
-		<link rel="stylesheet" href="css/print.css" media="screen">
+
+		<?php include('inc/head.php') ?>
+
 	</head>
 	<body>
-	<h1>Testing Bebas</h1>
-	<h2>{</h2>
-	<h3>Testing Serif</h3>
-	<h4>Testing Calibri</h4>
+
+		<header>
+			<div class="container">
+				<h1 class="visuallyhidden">Beauty Box Knebworth</h1>
+				<a href="index.php" class="logo" title="Beauty Box Knebworth home page">
+					<img src="img/logo.png" alt="Beauty Box Knebworth logo">
+				</a>
+				<nav>
+					<ul>
+						<li><a href="#">Treatments</a><i>{</i></li>
+						<li><a href="#">About us</a><i>{</i></li>
+						<li><a href="#">Contact us</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+
+		<script src="js/main.js"></script>
+
 	</body>
 </html>

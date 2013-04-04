@@ -28,30 +28,208 @@ $serif-heading-font-family: "Crimson Roman", Baskerville, "Baskerville Old Face"
 $ornament-font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 
 $body-font-color: #333;
+$header-background-color: #343433;
 $pink: #E3ABDD;
-$nav-link: #BFCDCD;
-$lighter-text: #666;
-$treatments-flourish: #5A4D59;
+$nav-link-color: #BFCDCD;
+$lighter-text-color: #666;
+$treatments-flourish-color: #5A4D59;
 $about-background-color: #CFD7D1;
-$about-flourish: #9AACA0;
+$about-flourish-color: #9AACA0;
 $about-border: #9BADA1;
 
+/* ==========================================================================
+   HTML5 Boilerplate styles
+   ========================================================================== */
+
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+img {
+	vertical-align: middle;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+textarea {
+	resize: vertical;
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	*text-indent: -9999px;
+}
+
+.ir:before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 150%;
+}
+
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.cf:before,
+.cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+.cf {
+	*zoom: 1;
+}
+
+/* ==========================================================================
+   Main Styles
+   ========================================================================== */
 
 body {
 	background: url(../img/bg.png) repeat #ECD6E9;
 	font-size: $base-font-size;
 	color: $body-font-color;
 	font-family: $body-font-family;
+	-webkit-font-smoothing: antialiased;
 }
 
 h1 {
-	font-family: $heading-font-family;
+	// font-family: $heading-font-family;
 }
 
 h2 {
-	font-family: $ornament-font-family;
+	// Slide titles
+	font-family: $serif-heading-font-family;
 }
 
 h3 {
-	font-family: $serif-heading-font-family;
+	// Section headings
+	font-family: $heading-font-family;
+}
+
+h4 {
+	// Section sub-headings
+	font-family: $heading-font-family;	
+}
+
+i {
+	font-family: $ornament-font-family;
+}
+
+header {
+	background-color: $header-background-color;
+	overflow: hidden;
+	.logo {
+		padding: 40px 62px 30px 6.056%;
+		display: block;
+		float:left;
+		img {
+			max-width: 100%;
+		}
+	}
+	nav {
+		float: right;
+		padding:35px 6.056% 30px 0;
+		li {
+			float: left;
+			a {
+				color: $nav-link-color;
+				text-decoration: none;	
+				font-family: $heading-font-family;
+				font-size: em(20px);
+				letter-spacing: 3px;
+				border-bottom: 1px solid $header-background-color;
+				@include single-transition(border-color, 0.25s, ease-in-out);
+				&:hover {
+					border-color: $nav-link-color;
+				}
+			}
+			i {
+				color: $pink;
+				padding: 0 15px;
+				vertical-align: top;
+			}
+		}
+	}
+}
+
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Add min widths too for shared styles */
+
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media only screen and (min-width:769px) and (max-width: 1023px) {
+
 }
