@@ -151,15 +151,6 @@
       "initialSize" : 7873,
       "fileType" : 8192
     },
-    "\/css\/print.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/print.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/img\/eyebrows.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -182,6 +173,15 @@
       "outputAbbreviatedPath" : "\/js\/main.min.js",
       "fileType" : 64
     },
+    "\/css\/print.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/print.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/img\/bg.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -202,17 +202,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/img\/nails.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/nails.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/nails.jpg",
-      "initialSize" : 6920,
-      "fileType" : 4096
-    },
     "\/img\/treatments-bg.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -223,6 +212,17 @@
       "outputAbbreviatedPath" : "\/img\/treatments-bg.png",
       "initialSize" : 64880,
       "fileType" : 8192
+    },
+    "\/img\/nails.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/nails.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/nails.jpg",
+      "initialSize" : 6920,
+      "fileType" : 4096
     }
   },
   "manualImportLinks" : [
