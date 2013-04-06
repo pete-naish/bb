@@ -19,6 +19,8 @@
 				<a href="index.php" class="logo" title="Beauty Box Knebworth home page">
 					<img src="img/logo.png" alt="Beauty Box Knebworth logo">
 				</a>
+				<h5>For appointments call</h5>
+				<a href="tel:+441438812804" class="tel">01438 812 804</a>
 				<nav>
 					<ul>
 						<li><a href="#">Treatments</a><i>{</i></li>

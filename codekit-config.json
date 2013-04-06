@@ -22,6 +22,17 @@
       "outputAbbreviatedPath" : "\/js\/main.min.min.js",
       "fileType" : 64
     },
+    "\/js\/plugins.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/plugins.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/plugins.min.js",
+      "fileType" : 64
+    },
     "\/css\/screen.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -33,35 +44,13 @@
     },
     "\/js\/html5-3.6-respond-1.1.0.min.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/js\/html5-3.6-respond-1.1.0.min.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/html5-3.6-respond-1.1.0.min.min.js",
-      "fileType" : 64
-    },
-    "\/img\/facials.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/facials.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/facials.jpg",
-      "initialSize" : 6496,
-      "fileType" : 4096
-    },
-    "\/js\/jquery-1.9.1.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/jquery-1.9.1.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/jquery-1.9.1.min.min.js",
       "fileType" : 64
     },
     "\/css\/screen.scss" : {
@@ -75,6 +64,39 @@
       "outputAbbreviatedPath" : "\/css\/screen.css",
       "fileType" : 4,
       "debugStyle" : 1
+    },
+    "\/js\/jquery-1.9.1.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/jquery-1.9.1.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/jquery-1.9.1.min.min.js",
+      "fileType" : 64
+    },
+    "\/js\/plugins.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/plugins.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/plugins.min.min.js",
+      "fileType" : 64
+    },
+    "\/img\/facials.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/facials.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/facials.jpg",
+      "initialSize" : 6496,
+      "fileType" : 4096
     },
     "\/inc\/head.php" : {
       "ignoreWasSetByUser" : 0,
@@ -140,28 +162,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 32768
     },
-    "\/img\/logo.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/logo.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/logo.png",
-      "initialSize" : 7873,
-      "fileType" : 8192
-    },
-    "\/img\/eyebrows.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/eyebrows.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/eyebrows.jpg",
-      "initialSize" : 6364,
-      "fileType" : 4096
-    },
     "\/js\/main.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -181,6 +181,28 @@
       "inputAbbreviatedPath" : "\/css\/print.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
+    },
+    "\/img\/eyebrows.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/eyebrows.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/eyebrows.jpg",
+      "initialSize" : 6364,
+      "fileType" : 4096
+    },
+    "\/img\/logo.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/logo.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/logo.png",
+      "initialSize" : 7873,
+      "fileType" : 8192
     },
     "\/img\/bg.png" : {
       "ignoreWasSetByUser" : 0,
@@ -226,7 +248,13 @@
     }
   },
   "manualImportLinks" : [
-
+    {
+      "type" : 1,
+      "position" : 0,
+      "linkedFileAbbreviatedPath" : "\/js\/html5-3.6-respond-1.1.0.min.js",
+      "baseFileAbbreviatedPath" : "\/js\/plugins.js",
+      "followForSyntaxChecking" : 1
+    }
   ],
   "projectSettings" : {
     "hamlNoEscapeInAttributes" : 0,

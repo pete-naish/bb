@@ -1,5 +1,5 @@
 /* @import must be at top of file, otherwise CSS will not work */
-/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,50 +16,50 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-body {
+/* line 22, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
   line-height: 1;
 }
 
-/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -99,7 +99,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0;
 }
@@ -219,60 +219,92 @@ h4 {
 }
 
 /* line 171, screen.scss */
+h5 {
+  font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 175, screen.scss */
 i {
   font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 }
 
-/* line 175, screen.scss */
+/* line 179, screen.scss */
 header {
   background-color: #343433;
   overflow: hidden;
 }
-/* line 178, screen.scss */
+/* line 182, screen.scss */
 header .logo {
   padding: 40px 62px 30px 6.056%;
   display: block;
   float: left;
 }
-/* line 182, screen.scss */
+/* line 186, screen.scss */
 header .logo img {
   max-width: 100%;
 }
-/* line 186, screen.scss */
+/* line 190, screen.scss */
+header h5 {
+  color: #e3abdd;
+  font-size: 0.875em;
+  float: right;
+  margin-right: 6.056%;
+  padding-top: 15px;
+}
+/* line 197, screen.scss */
+header .tel {
+  font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  color: #e3abdd;
+  font-size: 1.625em;
+  float: right;
+  clear: right;
+  margin-right: 6.056%;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-color 0.25s ease-in-out;
+  -moz-transition: border-color 0.25s ease-in-out;
+  -o-transition: border-color 0.25s ease-in-out;
+  transition: border-color 0.25s ease-in-out;
+}
+/* line 207, screen.scss */
+header .tel:hover {
+  border-bottom: 1px solid #e3abdd;
+}
+/* line 211, screen.scss */
 header nav {
   float: right;
-  padding: 35px 6.056% 30px 0;
+  padding: 35px 6.056% 30px 6.056%;
 }
-/* line 189, screen.scss */
+/* line 214, screen.scss */
 header nav li {
   float: left;
 }
-/* line 191, screen.scss */
+/* line 216, screen.scss */
 header nav li a {
   color: #bfcdcd;
   text-decoration: none;
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.25em;
   letter-spacing: 3px;
+  margin-right: -3px;
   border-bottom: 1px solid #343433;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
-  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 199, screen.scss */
+/* line 225, screen.scss */
 header nav li a:hover {
   border-color: #bfcdcd;
 }
-/* line 203, screen.scss */
+/* line 229, screen.scss */
 header nav li i {
   color: #e3abdd;
   padding: 0 15px;
   vertical-align: top;
 }
 
-/* line 212, screen.scss */
+/* line 238, screen.scss */
 .container {
   max-width: 1024px;
   margin: 0 auto;
