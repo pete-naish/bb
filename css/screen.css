@@ -1,5 +1,5 @@
 /* @import must be at top of file, otherwise CSS will not work */
-/* line 17, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,50 +16,50 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: inherit;
   font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
+/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
   line-height: 1;
 }
 
-/* line 24, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -99,7 +99,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
 }
@@ -206,44 +206,62 @@ body {
 /* line 156, screen.scss */
 h2 {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-size: 4.063em;
+  line-height: 1;
+  margin-bottom: 10px;
 }
 
-/* line 161, screen.scss */
+/* line 164, screen.scss */
 h3 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.875em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin: 0 6.056% 30px;
 }
 
-/* line 166, screen.scss */
+/* line 174, screen.scss */
 h4 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 0.125em;
+  margin-bottom: 5px;
 }
 
-/* line 171, screen.scss */
+/* line 182, screen.scss */
 h5 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 175, screen.scss */
+/* line 186, screen.scss */
 i {
   font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 }
 
-/* line 179, screen.scss */
+/* line 190, screen.scss */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+/* line 197, screen.scss */
 header {
   background-color: #343433;
   overflow: hidden;
 }
-/* line 182, screen.scss */
+/* line 200, screen.scss */
 header .logo {
   padding: 40px 62px 30px 6.056%;
   display: block;
   float: left;
 }
-/* line 186, screen.scss */
+/* line 204, screen.scss */
 header .logo img {
   max-width: 100%;
 }
-/* line 190, screen.scss */
+/* line 208, screen.scss */
 header h5 {
   color: #e3abdd;
   font-size: 0.875em;
@@ -251,7 +269,7 @@ header h5 {
   margin-right: 6.056%;
   padding-top: 15px;
 }
-/* line 197, screen.scss */
+/* line 215, screen.scss */
 header .tel {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   color: #e3abdd;
@@ -263,53 +281,123 @@ header .tel {
   border-bottom: 1px solid transparent;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
+  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 207, screen.scss */
+/* line 225, screen.scss */
 header .tel:hover {
   border-bottom: 1px solid #e3abdd;
 }
-/* line 211, screen.scss */
+/* line 229, screen.scss */
 header nav {
   float: right;
-  padding: 35px 6.056% 30px 6.056%;
+  padding: 30px 6.056% 30px 6.056%;
 }
-/* line 214, screen.scss */
+/* line 232, screen.scss */
 header nav li {
   float: left;
 }
-/* line 216, screen.scss */
+/* line 234, screen.scss */
 header nav li a {
   color: #bfcdcd;
   text-decoration: none;
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.25em;
-  letter-spacing: 3px;
-  margin-right: -3px;
+  letter-spacing: 0.15em;
+  margin-right: -0.188em;
   border-bottom: 1px solid #343433;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
+  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 225, screen.scss */
+/* line 243, screen.scss */
 header nav li a:hover {
   border-color: #bfcdcd;
 }
-/* line 229, screen.scss */
+/* line 247, screen.scss */
 header nav li i {
   color: #e3abdd;
   padding: 0 15px;
   vertical-align: top;
 }
 
-/* line 238, screen.scss */
-.container {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* line 257, screen.scss */
+.hero .heroSlide {
+  position: relative;
   overflow: hidden;
+  float: left;
+}
+/* line 262, screen.scss */
+.hero img {
+  max-width: 100%;
+}
+/* line 265, screen.scss */
+.hero .caption {
+  position: absolute;
+  bottom: 0;
+  padding: 0 8.302% 25px 8.302%;
+}
+/* line 269, screen.scss */
+.hero .caption p {
+  margin-bottom: 10px;
+  line-height: 1.2;
+  margin-right: 32%;
+}
+
+/* line 277, screen.scss */
+.treatments {
+  background: url(../img/treatments-bg.png) repeat top left;
+  overflow: hidden;
+  padding: 0 6.056% 32px;
+}
+/* line 281, screen.scss */
+.treatments i {
+  text-align: center;
+  display: block;
+  color: #5a4d59;
+  font-size: 3em;
+  margin: 32px 0 20px 0;
+}
+/* line 288, screen.scss */
+.treatments .treatment {
+  text-align: center;
+  float: left;
+  width: 195px;
+  margin-bottom: 32px;
+  margin-right: 40px;
+}
+/* line 294, screen.scss */
+.treatments .treatment img {
+  background-color: #fff;
+  border: 1px solid #e3abdd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+/* line 300, screen.scss */
+.treatments .treatment p {
+  margin-bottom: 10px;
+  line-height: 1.2;
+  padding: 0 5px;
+}
+/* line 305, screen.scss */
+.treatments .treatment .cta {
+  color: #333333;
+  text-decoration: none;
+  font-weight: bold;
+  padding-top: 10px;
+  border-top: 1px solid #e3abdd;
+  display: block;
+}
+/* line 312, screen.scss */
+.treatments .treatment .cta:hover {
+  text-decoration: underline;
+}
+/* line 316, screen.scss */
+.treatments .treatment:last-child {
+  margin-right: 0;
 }
 
 /* ==========================================================================

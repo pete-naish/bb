@@ -29,7 +29,7 @@
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/js\/plugins.js",
       "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
+      "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/js\/plugins.min.js",
       "fileType" : 64
     },
@@ -162,16 +162,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 32768
     },
-    "\/js\/main.js" : {
+    "\/img\/logo.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/main.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/main.min.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/img\/logo.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/logo.png",
+      "initialSize" : 7873,
+      "fileType" : 8192
     },
     "\/css\/print.css" : {
       "ignoreWasSetByUser" : 0,
@@ -193,16 +193,16 @@
       "initialSize" : 6364,
       "fileType" : 4096
     },
-    "\/img\/logo.png" : {
+    "\/js\/main.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/logo.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/logo.png",
-      "initialSize" : 7873,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/js\/main.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/main.min.js",
+      "fileType" : 64
     },
     "\/img\/bg.png" : {
       "ignoreWasSetByUser" : 0,
@@ -224,6 +224,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
+    "\/img\/nails.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/nails.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/nails.jpg",
+      "initialSize" : 6920,
+      "fileType" : 4096
+    },
     "\/img\/treatments-bg.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -235,16 +246,16 @@
       "initialSize" : 64880,
       "fileType" : 8192
     },
-    "\/img\/nails.jpg" : {
+    "\/js\/jquery.carouFredSel-6.2.0.min.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/nails.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/nails.jpg",
-      "initialSize" : 6920,
-      "fileType" : 4096
+      "inputAbbreviatedPath" : "\/js\/jquery.carouFredSel-6.2.0.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/jquery.carouFredSel-6.2.0.min.min.js",
+      "fileType" : 64
     }
   },
   "manualImportLinks" : [
@@ -252,6 +263,13 @@
       "type" : 1,
       "position" : 0,
       "linkedFileAbbreviatedPath" : "\/js\/html5-3.6-respond-1.1.0.min.js",
+      "baseFileAbbreviatedPath" : "\/js\/plugins.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 1,
+      "position" : 1,
+      "linkedFileAbbreviatedPath" : "\/js\/jquery.carouFredSel-6.2.0.min.js",
       "baseFileAbbreviatedPath" : "\/js\/plugins.js",
       "followForSyntaxChecking" : 1
     }

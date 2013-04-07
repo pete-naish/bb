@@ -156,16 +156,27 @@ h1 {
 h2 {
 	// Slide titles
 	font-family: $serif-heading-font-family;
+	font-size: em(65px);
+	line-height: 1;
+	margin-bottom: 10px;
 }
 
 h3 {
 	// Section headings
 	font-family: $heading-font-family;
+	font-size: em(30px);
+	letter-spacing: em(3px, 30px);
+	text-align: center;
+	margin: 0 6.056% 30px;
+
 }
 
 h4 {
 	// Section sub-headings
 	font-family: $heading-font-family;
+	font-size: em(24px);
+	letter-spacing: em(3px, 24px);
+	margin-bottom: 5px;
 }
 
 h5 {
@@ -174,6 +185,13 @@ h5 {
 
 i {
 	font-family: $ornament-font-family;
+}
+
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0 20px;
+	overflow: hidden;
 }
 
 header {
@@ -190,27 +208,27 @@ header {
 	h5 {
 		color: $pink;
 		font-size: em(14px);
-		float:right;
-		margin-right:6.056%;
-		padding-top:15px;
+		float: right;
+		margin-right: 6.056%;
+		padding-top: 15px;
 	}
 	.tel {
 		font-family: $serif-heading-font-family;
 		color: $pink;
 		font-size: em(26px);
-		float:right;
-		clear:right;
-		margin-right:6.056%;
-		text-decoration:none;
-		border-bottom:1px solid transparent;
+		float: right;
+		clear: right;
+		margin-right: 6.056%;
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
 		@include single-transition(border-color, 0.25s, ease-in-out);
 		&:hover {
-			border-bottom:1px solid $pink;
+			border-bottom: 1px solid $pink;
 		}
 	}
 	nav {
 		float: right;
-		padding:35px 6.056% 30px 6.056%;
+		padding: 30px 6.056% 30px 6.056%;
 		li {
 			float: left;
 			a {
@@ -218,8 +236,8 @@ header {
 				text-decoration: none;	
 				font-family: $heading-font-family;
 				font-size: em(20px);
-				letter-spacing: 3px;
-				margin-right:-3px;
+				letter-spacing: em(3px, 20px);
+				margin-right: em(-3px);
 				border-bottom: 1px solid $header-background-color;
 				@include single-transition(border-color, 0.25s, ease-in-out);
 				&:hover {
@@ -235,12 +253,72 @@ header {
 	}
 }
 
-.container {
-	max-width: 1024px;
-	margin: 0 auto;
-	padding: 0 20px;
-	overflow: hidden;
+.hero {
+	.heroSlide {
+		position: relative;
+		overflow: hidden;
+		float: left;
+	}
+	img {
+		max-width: 100%;
+	}
+	.caption {
+		position: absolute;
+		bottom: 0;
+		padding: 0 8.302% 25px 8.302%;
+		p {
+			margin-bottom: 10px;
+			line-height: 1.2;
+			margin-right: 32%;
+		}
+	}
 }
+
+.treatments {
+	background: url(../img/treatments-bg.png) repeat top left;
+	overflow: hidden;
+	padding: 0 6.056% 32px;
+	i {
+		text-align: center;
+		display: block;
+		color: $treatments-flourish-color;
+		font-size: em(48px);
+		margin: 32px 0 20px 0;
+	}
+	.treatment {
+		text-align: center;
+		float: left;
+		width: 195px;
+		margin-bottom: 32px;
+		margin-right: 40px;
+		img {
+			background-color: #fff;
+			border: 1px solid $pink;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+		p {
+			margin-bottom:10px;
+			line-height:1.2;
+			padding: 0 5px;
+		}
+		.cta {
+			color: $body-font-color;
+			text-decoration: none;
+			font-weight: bold;
+			padding-top: 10px;
+			border-top: 1px solid $pink;
+			display:block;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
 
 /* ==========================================================================
    Media Queries

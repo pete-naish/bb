@@ -30,11 +30,71 @@
 				</nav>
 			</div>
 		</header>
-
+		<section>
+			<div class="container">
+				<div class="hero">
+					<div class="heroSlide">
+						<img src="img/slide1.jpg" alt="This is the first slide">
+						<div class="caption">
+							<h2>Pamper yourself</h2>
+							<p>The Beauty Box is a small and stunning beauty boutique in the centre of Hertfordshire, specialising in the latest treatments and products at an affordable price.</p>
+						</div>
+					</div>
+					<div class="heroSlide">
+						<img src="img/slide1.jpg" alt="This is the first slide">
+						<div class="caption">
+							<h2>Slide 2</h2>
+							<p>The Beauty Box is a small and stunning beauty boutique in the centre of Hertfordshire, specialising in the latest treatments and products at an affordable price.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="treatments">
+					<i>{</i>
+					<h3>Treatments</h3>
+					<div class="treatment">
+						<a href="#">
+							<img src="img/nails.jpg" alt="">
+						</a>
+						<h4>Hands &amp; feet</h4>
+						<p>Let us look after your hands and feet, so they're perfect for every occasion</p>
+						<a href="#" class="cta">Treatments &amp; prices</a>
+					</div>
+					<div class="treatment">
+						<a href="#">
+							<img src="img/nails.jpg" alt="">
+						</a>
+						<h4>Hands &amp; feet</h4>
+						<p>Let us look after your hands and feet, so they're perfect for every occasion</p>
+						<a href="#" class="cta">Treatments &amp; prices</a>
+					</div>
+					<div class="treatment">
+						<a href="#">
+							<img src="img/nails.jpg" alt="">
+						</a>
+						<h4>Hands &amp; feet</h4>
+						<p>Let us look after your hands and feet, so they're perfect for every occasion</p>
+						<a href="#" class="cta">Treatments &amp; prices</a>
+					</div>
+					<div class="treatment">
+						<a href="#">
+							<img src="img/nails.jpg" alt="">
+						</a>
+						<h4>Hands &amp; feet</h4>
+						<p>Let us look after your hands and feet, so they're perfect for every occasion</p>
+						<a href="#" class="cta">Treatments &amp; prices</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
 
+		<script src="js/plugins.min.js"></script>
 		<script src="js/main.js"></script>
 
 	</body>
