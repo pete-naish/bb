@@ -14,11 +14,11 @@
     @return ($px / $base) * 1em;
 }
 
-//max-width:1024px; // Main image width and full body width
 //62 px either side, 40px between colums
 //900px content width
 //273.3333 3 column
 //195 4 column
+
 
 $base-font-size: 16px;
 $base-line-height: 24px;
@@ -177,6 +177,7 @@ h4 {
 	font-size: em(24px);
 	letter-spacing: em(3px, 24px);
 	margin-bottom: 5px;
+	text-align: center;
 }
 
 h5 {
@@ -185,6 +186,15 @@ h5 {
 
 i {
 	font-family: $ornament-font-family;
+	&:after {
+		content: "{";
+		line-height: 1;
+		vertical-align: top;
+	}
+}
+
+p {
+	line-height: 1.2;
 }
 
 .container {
@@ -198,9 +208,12 @@ header {
 	background-color: $header-background-color;
 	overflow: hidden;
 	.logo {
-		padding: 40px 62px 30px 6.056%;
+		margin: 40px 62px 30px 6.056%;
 		display: block;
 		float: left;
+		width: 290px;
+		height: 62px;
+		background: url(../img/logo.svg) no-repeat center;
 		img {
 			max-width: 100%;
 		}
@@ -247,10 +260,13 @@ header {
 			i {
 				color: $pink;
 				padding: 0 15px;
-				vertical-align: top;
 			}
 		}
 	}
+}
+
+.container .caroufredsel_wrapper {
+	padding: 0;
 }
 
 .hero {
@@ -268,25 +284,29 @@ header {
 		padding: 0 8.302% 25px 8.302%;
 		p {
 			margin-bottom: 10px;
-			line-height: 1.2;
 			margin-right: 32%;
 		}
 	}
 }
 
-.treatments {
-	background: url(../img/treatments-bg.png) repeat top left;
+section i {
+	text-align: center;
+	display: block;
+	font-size: em(48px);
+	margin: 32px 0 20px 0;
+}
+
+.container > div {
 	overflow: hidden;
 	padding: 0 6.056% 32px;
+}
+
+.treatments {
+	background: url(../img/treatments-bg.png) repeat top left;
 	i {
-		text-align: center;
-		display: block;
 		color: $treatments-flourish-color;
-		font-size: em(48px);
-		margin: 32px 0 20px 0;
 	}
-	.treatment {
-		text-align: center;
+	.treatmentIntro {
 		float: left;
 		width: 195px;
 		margin-bottom: 32px;
@@ -298,9 +318,9 @@ header {
 			margin-bottom: 10px;
 		}
 		p {
-			margin-bottom:10px;
-			line-height:1.2;
+			margin-bottom: 10px;
 			padding: 0 5px;
+			text-align: center;
 		}
 		.cta {
 			color: $body-font-color;
@@ -308,7 +328,8 @@ header {
 			font-weight: bold;
 			padding-top: 10px;
 			border-top: 1px solid $pink;
-			display:block;
+			display: block;
+			text-align: center;
 			&:hover {
 				text-decoration: underline;
 			}
@@ -317,6 +338,47 @@ header {
 			margin-right: 0;
 		}
 	}
+}
+
+.about {
+	background: $about-background-color;
+	i {
+		color: $about-flourish-color;
+		&.small {
+			font-size: em(32px);
+			margin: 0 0 25px 0;
+		}
+	}
+	h4 {
+		color: $lighter-text-color;
+	}
+	.row {
+		overflow: hidden;
+	}
+	.colThird {
+		width: 273.333px;
+		padding: 0 19px;
+		margin-bottom: 20px;
+		border-left: 1px solid $about-border;
+		float: left;
+		&:first-child {
+			border: 0;
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+	.hours {
+		width: 100%;
+		.dash {
+			width: 30px;
+		}
+		td {
+			padding-bottom: 3px;
+		}
+	}
+	
 }
 
 

@@ -226,19 +226,31 @@ h4 {
   font-size: 1.5em;
   letter-spacing: 0.125em;
   margin-bottom: 5px;
+  text-align: center;
 }
 
-/* line 182, screen.scss */
+/* line 183, screen.scss */
 h5 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 186, screen.scss */
+/* line 187, screen.scss */
 i {
   font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 }
+/* line 189, screen.scss */
+i:after {
+  content: "{";
+  line-height: 1;
+  vertical-align: top;
+}
 
-/* line 190, screen.scss */
+/* line 196, screen.scss */
+p {
+  line-height: 1.2;
+}
+
+/* line 200, screen.scss */
 .container {
   max-width: 1024px;
   margin: 0 auto;
@@ -246,22 +258,25 @@ i {
   overflow: hidden;
 }
 
-/* line 197, screen.scss */
+/* line 207, screen.scss */
 header {
   background-color: #343433;
   overflow: hidden;
 }
-/* line 200, screen.scss */
+/* line 210, screen.scss */
 header .logo {
-  padding: 40px 62px 30px 6.056%;
+  margin: 40px 62px 30px 6.056%;
   display: block;
   float: left;
+  width: 290px;
+  height: 62px;
+  background: url(../img/logo.svg) no-repeat center;
 }
-/* line 204, screen.scss */
+/* line 217, screen.scss */
 header .logo img {
   max-width: 100%;
 }
-/* line 208, screen.scss */
+/* line 221, screen.scss */
 header h5 {
   color: #e3abdd;
   font-size: 0.875em;
@@ -269,7 +284,7 @@ header h5 {
   margin-right: 6.056%;
   padding-top: 15px;
 }
-/* line 215, screen.scss */
+/* line 228, screen.scss */
 header .tel {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   color: #e3abdd;
@@ -285,20 +300,20 @@ header .tel {
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 225, screen.scss */
+/* line 238, screen.scss */
 header .tel:hover {
   border-bottom: 1px solid #e3abdd;
 }
-/* line 229, screen.scss */
+/* line 242, screen.scss */
 header nav {
   float: right;
   padding: 30px 6.056% 30px 6.056%;
 }
-/* line 232, screen.scss */
+/* line 245, screen.scss */
 header nav li {
   float: left;
 }
-/* line 234, screen.scss */
+/* line 247, screen.scss */
 header nav li a {
   color: #bfcdcd;
   text-decoration: none;
@@ -313,91 +328,153 @@ header nav li a {
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 243, screen.scss */
+/* line 256, screen.scss */
 header nav li a:hover {
   border-color: #bfcdcd;
 }
-/* line 247, screen.scss */
+/* line 260, screen.scss */
 header nav li i {
   color: #e3abdd;
   padding: 0 15px;
-  vertical-align: top;
 }
 
-/* line 257, screen.scss */
+/* line 268, screen.scss */
+.container .caroufredsel_wrapper {
+  padding: 0;
+}
+
+/* line 273, screen.scss */
 .hero .heroSlide {
   position: relative;
   overflow: hidden;
   float: left;
 }
-/* line 262, screen.scss */
+/* line 278, screen.scss */
 .hero img {
   max-width: 100%;
 }
-/* line 265, screen.scss */
+/* line 281, screen.scss */
 .hero .caption {
   position: absolute;
   bottom: 0;
   padding: 0 8.302% 25px 8.302%;
 }
-/* line 269, screen.scss */
+/* line 285, screen.scss */
 .hero .caption p {
   margin-bottom: 10px;
-  line-height: 1.2;
   margin-right: 32%;
 }
 
-/* line 277, screen.scss */
-.treatments {
-  background: url(../img/treatments-bg.png) repeat top left;
-  overflow: hidden;
-  padding: 0 6.056% 32px;
-}
-/* line 281, screen.scss */
-.treatments i {
+/* line 292, screen.scss */
+section i {
   text-align: center;
   display: block;
-  color: #5a4d59;
   font-size: 3em;
   margin: 32px 0 20px 0;
 }
-/* line 288, screen.scss */
-.treatments .treatment {
-  text-align: center;
+
+/* line 299, screen.scss */
+.container > div {
+  overflow: hidden;
+  padding: 0 6.056% 32px;
+}
+
+/* line 304, screen.scss */
+.treatments {
+  background: url(../img/treatments-bg.png) repeat top left;
+}
+/* line 306, screen.scss */
+.treatments i {
+  color: #5a4d59;
+}
+/* line 309, screen.scss */
+.treatments .treatmentIntro {
   float: left;
   width: 195px;
   margin-bottom: 32px;
   margin-right: 40px;
 }
-/* line 294, screen.scss */
-.treatments .treatment img {
+/* line 314, screen.scss */
+.treatments .treatmentIntro img {
   background-color: #fff;
   border: 1px solid #e3abdd;
   padding: 10px;
   margin-bottom: 10px;
 }
-/* line 300, screen.scss */
-.treatments .treatment p {
+/* line 320, screen.scss */
+.treatments .treatmentIntro p {
   margin-bottom: 10px;
-  line-height: 1.2;
   padding: 0 5px;
+  text-align: center;
 }
-/* line 305, screen.scss */
-.treatments .treatment .cta {
+/* line 325, screen.scss */
+.treatments .treatmentIntro .cta {
   color: #333333;
   text-decoration: none;
   font-weight: bold;
   padding-top: 10px;
   border-top: 1px solid #e3abdd;
   display: block;
+  text-align: center;
 }
-/* line 312, screen.scss */
-.treatments .treatment .cta:hover {
+/* line 333, screen.scss */
+.treatments .treatmentIntro .cta:hover {
   text-decoration: underline;
 }
-/* line 316, screen.scss */
-.treatments .treatment:last-child {
+/* line 337, screen.scss */
+.treatments .treatmentIntro:last-child {
   margin-right: 0;
+}
+
+/* line 343, screen.scss */
+.about {
+  background: #cfd7d1;
+}
+/* line 345, screen.scss */
+.about i {
+  color: #9aaca0;
+}
+/* line 347, screen.scss */
+.about i.small {
+  font-size: 2em;
+  margin: 0 0 25px 0;
+}
+/* line 352, screen.scss */
+.about h4 {
+  color: #666666;
+}
+/* line 355, screen.scss */
+.about .row {
+  overflow: hidden;
+}
+/* line 358, screen.scss */
+.about .colThird {
+  width: 273.333px;
+  padding: 0 19px;
+  margin-bottom: 20px;
+  border-left: 1px solid #9bada1;
+  float: left;
+}
+/* line 364, screen.scss */
+.about .colThird:first-child {
+  border: 0;
+  padding-left: 0;
+}
+/* line 368, screen.scss */
+.about .colThird:last-child {
+  padding-right: 0;
+}
+/* line 372, screen.scss */
+.about .hours {
+  width: 100%;
+}
+/* line 374, screen.scss */
+.about .hours .dash {
+  width: 30px;
+}
+/* line 377, screen.scss */
+.about .hours td {
+  padding-bottom: 3px;
 }
 
 /* ==========================================================================
