@@ -16,11 +16,7 @@
 		<header>
 			<div class="container">
 				<h1 class="visuallyhidden">Beauty Box Knebworth</h1>
-				<a href="index.php" class="logo" title="Beauty Box Knebworth home page">
-					<!--[if lte IE 8]>
-						<img src="img/logo.png" alt="Beauty Box Knebworth logo">
-					<![endif]-->
-				</a>
+				<a href="index.php" class="logo" title="Beauty Box Knebworth home page"></a>
 				
 				<h5>For appointments call</h5>
 				<a href="tel:+441438812804" class="tel">01438 812 804</a>

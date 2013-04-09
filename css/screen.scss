@@ -213,7 +213,8 @@ header {
 		float: left;
 		width: 290px;
 		height: 62px;
-		background: url(../img/logo.svg) no-repeat center;
+		background: url(../img/logo.png) no-repeat center
+		background: none, url(../img/logo.svg) no-repeat center;
 		img {
 			max-width: 100%;
 		}
