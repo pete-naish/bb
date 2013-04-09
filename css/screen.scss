@@ -309,14 +309,15 @@ section i {
 	}
 	.treatmentIntro {
 		float: left;
-		width: 195px;
+		width: 21.6668%;
 		margin-bottom: 32px;
-		margin-right: 40px;
+		margin-right: 4.446%;
 		img {
 			background-color: #fff;
 			border: 1px solid $pink;
 			padding: 10px;
 			margin-bottom: 10px;
+			max-width: 100%;
 		}
 		p {
 			margin-bottom: 10px;
@@ -391,11 +392,15 @@ section i {
 
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-
+	.container {
+		padding: 0;
+	}
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-
+	.container {
+		padding: 0;
+	}
 }
 
 @media only screen and (min-width:769px) and (max-width: 1023px) {
