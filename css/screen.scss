@@ -15,7 +15,7 @@
 }
 
 // Percentages
-@function %($px, $base: $base-width){
+@function percent($px, $base: $base-width) {
 	@return (($px / $base) * 100) * 1%; 
 }
 
@@ -43,6 +43,10 @@ $treatments-flourish-color: #5A4D59;
 $about-background-color: #CFD7D1;
 $about-flourish-color: #9AACA0;
 $about-border: #9BADA1;
+$contact-background-color: #343432;
+$contact-flourish-color: #9EAEA4;
+$contact-text-color: #D0D6D4;
+
 
 /* ==========================================================================
    HTML5 Boilerplate styles
@@ -174,7 +178,7 @@ h3 {
 	font-size: em(30px);
 	letter-spacing: em(3px, 30px);
 	text-align: center;
-	margin: 0 6.056% 30px;
+	margin: 0 percent(62px) 30px;
 
 }
 
@@ -215,7 +219,7 @@ header {
 	background-color: $header-background-color;
 	overflow: hidden;
 	.logo {
-		margin: 40px 62px 30px 6.056%;
+		margin: 40px percent(62px, 1024px) 30px percent(62px, 1024px);
 		display: block;
 		float: left;
 		width: 290px;
@@ -223,54 +227,60 @@ header {
 		background: url(../img/logo.png) no-repeat center;
 		background: none, url(../img/logo.svg) no-repeat center;
 		img {
-			max-width: 100%;
+			width: 290px;
 		}
 	}
-	h5 {
-		color: $pink;
-		font-size: em(14px);
-		float: right;
-		margin-right: 6.056%;
+	span {
+		margin: 0 percent(62px, 1024px);
 		padding-top: 15px;
-	}
-	.tel {
-		font-family: $serif-heading-font-family;
-		color: $pink;
-		font-size: em(26px);
 		float: right;
-		clear: right;
-		margin-right: 6.056%;
-		text-decoration: none;
-		border-bottom: 1px solid transparent;
-		@include single-transition(border-color, 0.25s, ease-in-out);
-		&:hover {
-			border-bottom: 1px solid $pink;
+		text-align: right;
+		h5 {
+			color: $pink;
+			font-size: em(14px);
+			float: right;
 		}
-	}
-	nav {
-		float: right;
-		padding: 30px 6.056% 30px 6.056%;
-		li {
-			float: left;
-			a {
-				color: $nav-link-color;
-				text-decoration: none;	
-				font-family: $heading-font-family;
-				font-size: em(20px);
-				letter-spacing: em(3px, 20px);
-				margin-right: em(-3px);
-				border-bottom: 1px solid $header-background-color;
-				@include single-transition(border-color, 0.25s, ease-in-out);
-				&:hover {
-					border-color: $nav-link-color;
+		.tel {
+			font-family: $serif-heading-font-family;
+			color: $pink;
+			font-size: em(26px);
+			float: right;
+			clear: right;
+			text-decoration: none;
+			border-bottom: 1px solid transparent;
+			@include single-transition(border-color, 0.25s, ease-in-out);
+			&:hover {
+				border-bottom: 1px solid $pink;
+			}
+		}
+		nav {
+			float: right;
+			clear: right;
+			padding: 30px 0 15px;
+			li {
+				float: left;
+				margin-bottom: 15px;
+				a {
+					color: $nav-link-color;
+					text-decoration: none;	
+					font-family: $heading-font-family;
+					font-size: em(20px);
+					letter-spacing: em(3px, 20px);
+					margin-right: em(-3px);
+					border-bottom: 1px solid $header-background-color;
+					@include single-transition(border-color, 0.25s, ease-in-out);
+					&:hover {
+						border-color: $nav-link-color;
+					}
+				}
+				i {
+					color: $pink;
+					padding: 0 15px;
 				}
 			}
-			i {
-				color: $pink;
-				padding: 0 15px;
-			}
 		}
 	}
+	
 }
 
 .container .caroufredsel_wrapper {
@@ -289,10 +299,10 @@ header {
 	.caption {
 		position: absolute;
 		bottom: 0;
-		padding: 0 8.302% 25px 8.302%;
+		padding: 0 percent(85px, 1024px) 25px percent(85px, 1024px);
 		p {
 			margin-bottom: 10px;
-			margin-right: 32%;
+			margin-right: percent(272px, 854px);
 		}
 	}
 }
@@ -301,12 +311,12 @@ section i {
 	text-align: center;
 	display: block;
 	font-size: em(48px);
-	margin: 32px 0 20px 0;
+	margin: 32px 0 20px;
 }
 
 .container > div {
 	overflow: hidden;
-	padding: 0 6.056% 32px;
+	padding: 0 percent(62px, 1024px) 32px;
 }
 
 .treatments {
@@ -316,34 +326,38 @@ section i {
 	}
 	.treatmentIntro {
 		float: left;
-		width: 21.666%;
+		width: percent(195px);
 		margin-bottom: 32px;
-		margin-right: 4.446%;
+		margin-right: percent(40px);
+		a {
+			display: block;
+			text-decoration: none;
+			color: $body-font-color;
+			&:hover .cta {
+				text-decoration: underline;
+			}
+		}
 		img {
 			background-color: #fff;
 			border: 1px solid $pink;
-			padding: 5.13%;
+			padding: percent(10px, 195px);
 			margin-bottom: 10px;
-			max-width: 100%;
+			width: percent(170px, 195px);
 		}
 		p {
 			margin-bottom: 10px;
-			padding: 0 2.565%;
+			padding: 0 percent(5px, 195px);
 			text-align: center;
 		}
 		.cta {
-			color: $body-font-color;
 			text-decoration: none;
 			font-weight: bold;
 			padding-top: 10px;
 			border-top: 1px solid $pink;
 			display: block;
 			text-align: center;
-			&:hover {
-				text-decoration: underline;
-			}
 		}
-		&:last-child {
+		&:nth-of-type(4n){
 			margin-right: 0;
 		}
 	}
@@ -360,23 +374,31 @@ section i {
 	}
 	h4 {
 		color: $lighter-text-color;
+		margin-bottom: 8px;
+		padding: 0 percent(5px, 274px);
 	}
 	.row {
 		overflow: hidden;
 	}
 	.colThird {
-		width: 273.333px;
-		padding: 0 19px;
+		width: percent(300px);
 		margin-bottom: 20px;
-		border-left: 1px solid $about-border;
 		float: left;
-		&:first-child {
+		&:first-child p {
 			border: 0;
 			padding-left: 0;
 		}
 		&:last-child {
 			padding-right: 0;
 		}
+		p {
+			border-left: 1px solid $about-border;
+			padding: 0 percent(18px, 300px);
+		}
+	}
+	.tableWrapper{
+		border-left: 1px solid $about-border;
+		padding: 0 percent(18px, 300px);
 	}
 	.hours {
 		width: 100%;
@@ -387,9 +409,15 @@ section i {
 			padding-bottom: 3px;
 		}
 	}
-	
 }
 
+.contact {
+	background: $contact-background-color;
+	color: $contact-text-color;
+	i {
+		color: $contact-flourish-color;
+	}
+}
 
 /* ==========================================================================
    Media Queries
@@ -399,17 +427,73 @@ section i {
 
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-	.container {
-		padding: 0;
+	.treatments {
+		.treatmentIntro {
+			width: 48%;
+			margin-right: 4%;
+			&:nth-of-type(2n){
+				margin-right: 0;
+			}
+		}
 	}
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-	.container {
-		padding: 0;
+	.treatments {
+		.treatmentIntro {
+			width: 32%;
+			margin-right: 2%;
+			&:nth-of-type(3n){
+				margin-right: 0;
+			}
+			&:nth-of-type(4n){
+				clear: left;
+			}
+		}
 	}
 }
 
 @media only screen and (min-width:769px) and (max-width: 1023px) {
 
+}
+
+@media only screen and (min-width: 320px) and (max-width:  768px) {
+	.container {
+		padding: 0;
+	}
+
+	.hero .caption {
+		h2 {
+			font-size: em(35px);
+		}
+		p {
+			margin-right: 0;
+		}
+	}
+
+	// .treatments {
+	// 	.treatmentIntro {
+	// 		width: 48%;
+	// 		margin-right: 4%;
+	// 		&:nth-of-type(2n){
+	// 			margin-right: 0;
+	// 		}
+	// 	}
+	// }
+
+	.about {
+		.colThird {
+			width: 100%;
+			padding: 0;
+			margin-bottom: 40px;
+			&:last-child {
+				margin-bottom:20px;
+			}
+		}
+		.tableWrapper,
+		.colThird p {
+			border: 0;
+			padding: 0;
+		}
+	}
 }

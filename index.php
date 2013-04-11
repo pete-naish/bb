@@ -17,16 +17,17 @@
 			<div class="container">
 				<h1 class="visuallyhidden">Beauty Box Knebworth</h1>
 				<a href="index.php" class="logo" title="Beauty Box Knebworth home page"></a>
-				
-				<h5>For appointments call</h5>
-				<a href="tel:+441438812804" class="tel">01438 812 804</a>
-				<nav>
-					<ul>
-						<li><a href="#">Treatments</a><i></i></li>
-						<li><a href="#">About us</a><i></i></li>
-						<li><a href="#">Contact us</a></li>
-					</ul>
-				</nav>
+				<span>
+					<h5>For appointments call</h5>
+					<a href="tel:+441438812804" class="tel">01438 812 804</a>
+					<nav>
+						<ul>
+							<li><a href="#">Treatments</a><i></i></li>
+							<li><a href="#">About us</a><i></i></li>
+							<li><a href="#">Contact us</a></li>
+						</ul>
+					</nav>
+				</span>
 			</div>
 		</header>
 		<section>
@@ -57,34 +58,34 @@
 					<div class="treatmentIntro">
 						<a href="#">
 							<img src="img/nails.jpg" alt="">
+							<h4>Hands &amp; feet</h4>
+							<p>Let us look after your hands and feet, so they're perfect for every occasion</p>
+							<span class="cta">Treatments &amp; prices</span>
 						</a>
-						<h4>Hands &amp; feet</h4>
-						<p>Let us look after your hands and feet, so they're perfect for every occasion</p>
-						<a href="#" class="cta">Treatments &amp; prices</a>
 					</div>
 					<div class="treatmentIntro">
 						<a href="#">
-							<img src="img/nails.jpg" alt="">
+							<img src="img/eyebrows.jpg" alt="">
+							<h4>Eyes</h4>
+							<p>The perfect way to balance your energy and achieve harmony</p>
+							<span class="cta">Treatments &amp; prices</span>
 						</a>
-						<h4>Hands &amp; feet</h4>
-						<p>Let us look after your hands and feet, so they're perfect for every occasion</p>
-						<a href="#" class="cta">Treatments &amp; prices</a>
 					</div>
 					<div class="treatmentIntro">
 						<a href="#">
-							<img src="img/nails.jpg" alt="">
+							<img src="img/facials.jpg" alt="">
+							<h4>Facials</h4>
+							<p>Refine, hydrate and revitalise with our relaxing facials</p>
+							<span class="cta">Treatments &amp; prices</span>
 						</a>
-						<h4>Hands &amp; feet</h4>
-						<p>Let us look after your hands and feet, so they're perfect for every occasion</p>
-						<a href="#" class="cta">Treatments &amp; prices</a>
 					</div>
 					<div class="treatmentIntro">
 						<a href="#">
-							<img src="img/nails.jpg" alt="">
+							<img src="img/massage.jpg" alt="">
+							<h4>Body</h4>
+							<p>Massages designed to relax you or ease those aches and pains</p>
+							<span class="cta">Treatments &amp; prices</span>
 						</a>
-						<h4>Hands &amp; feet</h4>
-						<p>Let us look after your hands and feet, so they're perfect for every occasion</p>
-						<a href="#" class="cta">Treatments &amp; prices</a>
 					</div>
 				</div>
 			</div>
@@ -101,50 +102,52 @@
 						</div>
 						<div class="colThird">
 							<h4>Opening hours</h4>
-							<table class="hours" border="0">
+							<div class="tableWrapper">
+								<table class="hours" border="0">
+									<tr>
+										<th>Monday</th>
+										<td>Closed</td>
+										<td class="dash">&ndash;</td>
+										<td>Closed</td>
+								</tr>
 								<tr>
-									<th>Monday</th>
+									<th>Tuesday</th>
+									<td>10:00</td>
+									<td class="dash">&ndash;</td>
+									<td>20:00</td>
+								</tr>
+								<tr>
+									<th>Wednesday</th>
+									<td>10:00</td>
+									<td class="dash">&ndash;</td>
+									<td>20:00</td>
+								</tr>
+								<tr>
+									<th>Thursday</th>
+									<td>10:00</td>
+									<td class="dash">&ndash;</td>
+									<td>20:00</td>
+								</tr>
+								<tr>
+									<th>Friday</th>
+									<td>10:00</td>
+									<td class="dash">&ndash;</td>
+									<td>18:00</td>
+								</tr>
+								<tr>
+									<th>Saturday</th>
+									<td>10:00</td>
+									<td class="dash">&ndash;</td>
+									<td>16:00</td>
+								</tr>
+								<tr>
+									<th>Sunday</th>
 									<td>Closed</td>
 									<td class="dash">&ndash;</td>
 									<td>Closed</td>
-							</tr>
-							<tr>
-								<th>Tuesday</th>
-								<td>10:00</td>
-								<td class="dash">&ndash;</td>
-								<td>20:00</td>
-							</tr>
-							<tr>
-								<th>Wednesday</th>
-								<td>10:00</td>
-								<td class="dash">&ndash;</td>
-								<td>20:00</td>
-							</tr>
-							<tr>
-								<th>Thursday</th>
-								<td>10:00</td>
-								<td class="dash">&ndash;</td>
-								<td>20:00</td>
-							</tr>
-							<tr>
-								<th>Friday</th>
-								<td>10:00</td>
-								<td class="dash">&ndash;</td>
-								<td>18:00</td>
-							</tr>
-							<tr>
-								<th>Saturday</th>
-								<td>10:00</td>
-								<td class="dash">&ndash;</td>
-								<td>16:00</td>
-							</tr>
-							<tr>
-								<th>Sunday</th>
-								<td>Closed</td>
-								<td class="dash">&ndash;</td>
-								<td>Closed</td>
-							</tr>
-							</table>
+								</tr>
+								</table>
+							</div>
 						</div>
 						<div class="colThird">
 							<h4>Cancellation policy</h4>
@@ -166,6 +169,14 @@
 							<p>Most of our treatments are suitable for men. Please bring suitable shorts or swimwear for body treatments.</p>
 						</div>
 					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="contact">
+					<i></i>
+					<h3>Contact us</h3>
 				</div>
 			</div>
 		</section>
