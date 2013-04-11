@@ -9,10 +9,16 @@
 
 @include font-face("Bodoni Ornaments", font-files("Bodoni-Ornaments-webfont.eot", "Bodoni-Ornaments-webfont.eot?#iefix", "Bodoni-Ornaments-webfont.woff", "Bodoni-Ornaments-webfont.ttf", "Bodoni-Ornaments-webfont.svg#BodoniOrnaments"));
 
-
+// Ems
 @function em($px, $base: $base-font-size) {
     @return ($px / $base) * 1em;
 }
+
+// Percentages
+@function %($px, $base: $base-width){
+	@return (($px / $base) * 100) * 1%; 
+}
+
 
 //62 px either side, 40px between colums
 //900px content width
@@ -22,6 +28,7 @@
 
 $base-font-size: 16px;
 $base-line-height: 24px;
+$base-width: 900px;
 $body-font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 $heading-font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
 $serif-heading-font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
