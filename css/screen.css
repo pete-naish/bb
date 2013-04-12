@@ -201,7 +201,7 @@ body {
   color: #333333;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: none;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* line 167, screen.scss */
