@@ -1,6 +1,6 @@
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/screen.css" media="screen">		
 		<link rel="stylesheet" href="css/print.css" media="print">
 
