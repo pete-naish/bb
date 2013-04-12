@@ -248,10 +248,10 @@ header {
 			float: right;
 			clear: right;
 			text-decoration: none;
-			border-bottom: 1px solid transparent;
+			border-bottom: 2px solid transparent;
 			@include single-transition(border-color, 0.25s, ease-in-out);
 			&:hover {
-				border-bottom: 1px solid $pink;
+				border-color: $pink;
 			}
 		}
 		nav {
@@ -268,7 +268,7 @@ header {
 					font-size: em(20px);
 					letter-spacing: em(3px, 20px);
 					margin-right: em(-3px);
-					border-bottom: 1px solid $header-background-color;
+					border-bottom: 2px solid $header-background-color;
 					@include single-transition(border-color, 0.25s, ease-in-out);
 					&:hover {
 						border-color: $nav-link-color;

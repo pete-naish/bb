@@ -299,7 +299,7 @@ header span .tel {
   float: right;
   clear: right;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
   -ms-transition: border-color 0.25s ease-in-out;
@@ -308,7 +308,7 @@ header span .tel {
 }
 /* line 252, screen.scss */
 header span .tel:hover {
-  border-bottom: 1px solid #e3abdd;
+  border-color: #e3abdd;
 }
 /* line 256, screen.scss */
 header span nav {
@@ -329,7 +329,7 @@ header span nav li a {
   font-size: 1.25em;
   letter-spacing: 0.15em;
   margin-right: -0.188em;
-  border-bottom: 1px solid #343433;
+  border-bottom: 2px solid #343433;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
   -ms-transition: border-color 0.25s ease-in-out;
