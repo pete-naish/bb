@@ -19,13 +19,6 @@
 	@return (($px / $base) * 100) * 1%; 
 }
 
-
-//62 px either side, 40px between colums
-//900px content width
-//273.3333 3 column
-//195 4 column
-
-
 $base-font-size: 16px;
 $base-line-height: 24px;
 $base-width: 900px;
@@ -34,7 +27,7 @@ $heading-font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
 $serif-heading-font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 $ornament-font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 
-$body-font-color: #333;
+$body-text-color: #333;
 $header-background-color: #343433;
 $pink: #E3ABDD;
 $nav-link-color: #BFCDCD;
@@ -155,7 +148,7 @@ textarea {
 body {
 	background: url(../img/bg.png) repeat #ECD6E9;
 	font-size: $base-font-size;
-	color: $body-font-color;
+	color: $body-text-color;
 	font-family: $body-font-family;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
@@ -249,6 +242,7 @@ header {
 			clear: right;
 			text-decoration: none;
 			border-bottom: 2px solid transparent;
+			margin-bottom: 30px;
 			@include single-transition(border-color, 0.25s, ease-in-out);
 			&:hover {
 				border-color: $pink;
@@ -257,7 +251,7 @@ header {
 		nav {
 			float: right;
 			clear: right;
-			padding: 30px 0 15px;
+			margin-bottom: 10px;
 			li {
 				float: left;
 				margin-bottom: 15px;
@@ -333,7 +327,7 @@ section i {
 		a {
 			display: block;
 			text-decoration: none;
-			color: $body-font-color;
+			color: $body-text-color;
 			&:hover .cta {
 				text-decoration: underline;
 			}
@@ -396,6 +390,17 @@ section i {
 			border-left: 1px solid $about-border;
 			padding: 0 percent(18px, 300px);
 		}
+		&.double {
+			.border {
+				border-left: 1px solid $about-border;
+			}
+			p {
+				border: 0;
+				& + h4 {
+					margin-top: 20px;
+				}
+			}
+		}
 	}
 	.tableWrapper{
 		border-left: 1px solid $about-border;
@@ -408,6 +413,13 @@ section i {
 		}
 		td {
 			padding-bottom: 3px;
+		}
+	}
+	a.tel {
+		color: $body-text-color;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 }
@@ -424,9 +436,6 @@ section i {
    Media Queries
    ========================================================================== */
 
-/* Add min widths too for shared styles */
-
-
 @media only screen and (min-width: 320px) and (max-width: 480px) {
 	.treatments {
 		.treatmentIntro {
@@ -437,6 +446,34 @@ section i {
 			}
 		}
 	}
+	.mobileHide {
+		display: none;
+	}
+	header {
+		.logo {
+			width: 87.89%;
+			margin-top: 20px;
+			margin-bottom: 15px;
+		}	
+		span {
+			text-align: center;
+			line-height: 1.2;
+			width: 87.89%;
+			padding-top: 0;
+			margin-bottom: 20px;
+			h5 {
+				float: none;
+				font-size: em(22px);
+				margin-right: 10px;
+				font-family: $serif-heading-font-family;
+			}
+			.tel {
+				font-size: em(22px);
+				float: none;
+				clear: none;
+			}
+		}
+	} 
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -472,23 +509,16 @@ section i {
 		}
 	}
 
-	// .treatments {
-	// 	.treatmentIntro {
-	// 		width: 48%;
-	// 		margin-right: 4%;
-	// 		&:nth-of-type(2n){
-	// 			margin-right: 0;
-	// 		}
-	// 	}
-	// }
-
 	.about {
 		.colThird {
 			width: 100%;
 			padding: 0;
 			margin-bottom: 40px;
 			&:last-child {
-				margin-bottom:20px;
+				margin-bottom: 20px;
+			}
+			&.double .border {
+				border: 0;
 			}
 		}
 		.tableWrapper,

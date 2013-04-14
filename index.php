@@ -20,7 +20,7 @@
 				<span>
 					<h5>For appointments call</h5>
 					<a href="tel:+441438812804" class="tel">01438 812 804</a>
-					<nav>
+					<nav class="mobileHide">
 						<ul>
 							<li><a href="#">Treatments</a><i></i></li>
 							<li><a href="#">About us</a><i></i></li>
@@ -97,8 +97,13 @@
 					<h3>About us</h3>
 					<div class="row">
 						<div class="colThird">
-							<h4>Reservations</h4>
-							<p>Upon booking we require all contact details and you must make us aware of any allergies or illnessive you may have.</p>
+							<h4>Address</h4>
+							<p> Beauty Box<br/>
+								10 Station Road<br/>
+								Knebworh<br/>
+								Hertfordshire<br/>
+								SG3 6AP<br/>
+								<a href="tel:+441438812804" class="tel">01438 812 804</a></p>
 						</div>
 						<div class="colThird">
 							<h4>Opening hours</h4>
@@ -149,9 +154,14 @@
 								</table>
 							</div>
 						</div>
-						<div class="colThird">
-							<h4>Cancellation policy</h4>
-							<p>If you need to cancel your appointment, please provide us with at least 24 hours notice in order to avoid being charged a minimum fee of 50%. Missed appointments will be charged at the full treatment cost.</p>
+						<div class="colThird double">
+
+							<h4>Reservations</h4>
+							<div class="border">
+								<p>Upon booking we require all contact details and you must make us aware of any allergies or illnessive you may have.</p>
+								<h4>Cancellation policy</h4>
+								<p>If you need to cancel your appointment, please provide us with at least 24 hours notice in order to avoid being charged a minimum fee of 50%. Missed appointments will be charged at the full treatment cost.</p>
+							</div>
 						</div>
 					</div>
 					<i class="small"></i>

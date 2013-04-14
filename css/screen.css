@@ -82,19 +82,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* ==========================================================================
    HTML5 Boilerplate styles
    ========================================================================== */
-/* line 55, screen.scss */
+/* line 48, screen.scss */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/* line 60, screen.scss */
+/* line 53, screen.scss */
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/* line 65, screen.scss */
+/* line 58, screen.scss */
 hr {
   display: block;
   height: 1px;
@@ -104,19 +104,19 @@ hr {
   padding: 0;
 }
 
-/* line 74, screen.scss */
+/* line 67, screen.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 78, screen.scss */
+/* line 71, screen.scss */
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/* line 84, screen.scss */
+/* line 77, screen.scss */
 textarea {
   resize: vertical;
 }
@@ -124,7 +124,7 @@ textarea {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/* line 93, screen.scss */
+/* line 86, screen.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -132,7 +132,7 @@ textarea {
   *text-indent: -9999px;
 }
 
-/* line 100, screen.scss */
+/* line 93, screen.scss */
 .ir:before {
   content: "";
   display: block;
@@ -140,13 +140,13 @@ textarea {
   height: 150%;
 }
 
-/* line 107, screen.scss */
+/* line 100, screen.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* line 112, screen.scss */
+/* line 105, screen.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -158,7 +158,7 @@ textarea {
   width: 1px;
 }
 
-/* line 124, screen.scss */
+/* line 117, screen.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -169,24 +169,24 @@ textarea {
   width: auto;
 }
 
-/* line 133, screen.scss */
+/* line 126, screen.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 138, screen.scss */
+/* line 131, screen.scss */
 .cf:before,
 .cf:after {
   content: " ";
   display: table;
 }
 
-/* line 143, screen.scss */
+/* line 136, screen.scss */
 .cf:after {
   clear: both;
 }
 
-/* line 147, screen.scss */
+/* line 140, screen.scss */
 .cf {
   *zoom: 1;
 }
@@ -194,7 +194,7 @@ textarea {
 /* ==========================================================================
    Main Styles
    ========================================================================== */
-/* line 155, screen.scss */
+/* line 148, screen.scss */
 body {
   background: url(../img/bg.png) repeat #ecd6e9;
   font-size: 16px;
@@ -204,7 +204,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-/* line 167, screen.scss */
+/* line 161, screen.scss */
 h2 {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-size: 4.063em;
@@ -212,7 +212,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* line 175, screen.scss */
+/* line 169, screen.scss */
 h3 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.875em;
@@ -221,7 +221,7 @@ h3 {
   margin: 0 6.889% 30px;
 }
 
-/* line 185, screen.scss */
+/* line 179, screen.scss */
 h4 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5em;
@@ -230,28 +230,28 @@ h4 {
   text-align: center;
 }
 
-/* line 194, screen.scss */
+/* line 188, screen.scss */
 h5 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 198, screen.scss */
+/* line 192, screen.scss */
 i {
   font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 }
-/* line 200, screen.scss */
+/* line 194, screen.scss */
 i:after {
   content: "{";
   line-height: 1;
   vertical-align: top;
 }
 
-/* line 207, screen.scss */
+/* line 201, screen.scss */
 p {
   line-height: 1.2;
 }
 
-/* line 211, screen.scss */
+/* line 205, screen.scss */
 .container {
   max-width: 1024px;
   margin: 0 auto;
@@ -259,12 +259,12 @@ p {
   overflow: hidden;
 }
 
-/* line 218, screen.scss */
+/* line 212, screen.scss */
 header {
   background-color: #343433;
   overflow: hidden;
 }
-/* line 221, screen.scss */
+/* line 215, screen.scss */
 header .logo {
   margin: 40px 6.055% 30px 6.055%;
   display: block;
@@ -274,24 +274,24 @@ header .logo {
   background: url(../img/logo.png) no-repeat center;
   background: none, url(../img/logo.svg) no-repeat center;
 }
-/* line 229, screen.scss */
+/* line 223, screen.scss */
 header .logo img {
   width: 290px;
 }
-/* line 233, screen.scss */
+/* line 227, screen.scss */
 header span {
   margin: 0 6.055%;
   padding-top: 15px;
   float: right;
   text-align: right;
 }
-/* line 238, screen.scss */
+/* line 232, screen.scss */
 header span h5 {
   color: #e3abdd;
   font-size: 0.875em;
   float: right;
 }
-/* line 243, screen.scss */
+/* line 237, screen.scss */
 header span .tel {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   color: #e3abdd;
@@ -300,28 +300,29 @@ header span .tel {
   clear: right;
   text-decoration: none;
   border-bottom: 2px solid transparent;
+  margin-bottom: 30px;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
   -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 252, screen.scss */
+/* line 247, screen.scss */
 header span .tel:hover {
   border-color: #e3abdd;
 }
-/* line 256, screen.scss */
+/* line 251, screen.scss */
 header span nav {
   float: right;
   clear: right;
-  padding: 30px 0 15px;
+  margin-bottom: 10px;
 }
-/* line 260, screen.scss */
+/* line 255, screen.scss */
 header span nav li {
   float: left;
   margin-bottom: 15px;
 }
-/* line 263, screen.scss */
+/* line 258, screen.scss */
 header span nav li a {
   color: #bfcdcd;
   text-decoration: none;
@@ -336,44 +337,44 @@ header span nav li a {
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 272, screen.scss */
+/* line 267, screen.scss */
 header span nav li a:hover {
   border-color: #bfcdcd;
 }
-/* line 276, screen.scss */
+/* line 271, screen.scss */
 header span nav li i {
   color: #e3abdd;
   padding: 0 15px;
 }
 
-/* line 286, screen.scss */
+/* line 281, screen.scss */
 .container .caroufredsel_wrapper {
   padding: 0;
 }
 
-/* line 291, screen.scss */
+/* line 286, screen.scss */
 .hero .heroSlide {
   position: relative;
   overflow: hidden;
   float: left;
 }
-/* line 296, screen.scss */
+/* line 291, screen.scss */
 .hero img {
   max-width: 100%;
 }
-/* line 299, screen.scss */
+/* line 294, screen.scss */
 .hero .caption {
   position: absolute;
   bottom: 0;
   padding: 0 8.301% 25px 8.301%;
 }
-/* line 303, screen.scss */
+/* line 298, screen.scss */
 .hero .caption p {
   margin-bottom: 10px;
   margin-right: 31.85%;
 }
 
-/* line 310, screen.scss */
+/* line 305, screen.scss */
 section i {
   text-align: center;
   display: block;
@@ -381,38 +382,38 @@ section i {
   margin: 32px 0 20px;
 }
 
-/* line 317, screen.scss */
+/* line 312, screen.scss */
 .container > div {
   overflow: hidden;
   padding: 0 6.055% 32px;
 }
 
-/* line 322, screen.scss */
+/* line 317, screen.scss */
 .treatments {
   background: url(../img/treatments-bg.png) repeat top left;
 }
-/* line 324, screen.scss */
+/* line 319, screen.scss */
 .treatments i {
   color: #5a4d59;
 }
-/* line 327, screen.scss */
+/* line 322, screen.scss */
 .treatments .treatmentIntro {
   float: left;
   width: 21.667%;
   margin-bottom: 32px;
   margin-right: 4.444%;
 }
-/* line 332, screen.scss */
+/* line 327, screen.scss */
 .treatments .treatmentIntro a {
   display: block;
   text-decoration: none;
   color: #333333;
 }
-/* line 336, screen.scss */
+/* line 331, screen.scss */
 .treatments .treatmentIntro a:hover .cta {
   text-decoration: underline;
 }
-/* line 340, screen.scss */
+/* line 335, screen.scss */
 .treatments .treatmentIntro img {
   background-color: #fff;
   border: 1px solid #e3abdd;
@@ -420,13 +421,13 @@ section i {
   margin-bottom: 10px;
   width: 87.179%;
 }
-/* line 347, screen.scss */
+/* line 342, screen.scss */
 .treatments .treatmentIntro p {
   margin-bottom: 10px;
   padding: 0 2.564%;
   text-align: center;
 }
-/* line 352, screen.scss */
+/* line 347, screen.scss */
 .treatments .treatmentIntro .cta {
   text-decoration: none;
   font-weight: bold;
@@ -435,78 +436,99 @@ section i {
   display: block;
   text-align: center;
 }
-/* line 360, screen.scss */
+/* line 355, screen.scss */
 .treatments .treatmentIntro:nth-of-type(4n) {
   margin-right: 0;
 }
 
-/* line 366, screen.scss */
+/* line 361, screen.scss */
 .about {
   background: #cfd7d1;
 }
-/* line 368, screen.scss */
+/* line 363, screen.scss */
 .about i {
   color: #9aaca0;
 }
-/* line 370, screen.scss */
+/* line 365, screen.scss */
 .about i.small {
   font-size: 2em;
   margin: 0 0 25px 0;
 }
-/* line 375, screen.scss */
+/* line 370, screen.scss */
 .about h4 {
   color: #666666;
   margin-bottom: 8px;
   padding: 0 1.825%;
 }
-/* line 380, screen.scss */
+/* line 375, screen.scss */
 .about .row {
   overflow: hidden;
 }
-/* line 383, screen.scss */
+/* line 378, screen.scss */
 .about .colThird {
   width: 33.333%;
   margin-bottom: 20px;
   float: left;
 }
-/* line 387, screen.scss */
+/* line 382, screen.scss */
 .about .colThird:first-child p {
   border: 0;
   padding-left: 0;
 }
-/* line 391, screen.scss */
+/* line 386, screen.scss */
 .about .colThird:last-child {
   padding-right: 0;
 }
-/* line 394, screen.scss */
+/* line 389, screen.scss */
 .about .colThird p {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
 }
+/* line 394, screen.scss */
+.about .colThird.double .border {
+  border-left: 1px solid #9bada1;
+}
+/* line 397, screen.scss */
+.about .colThird.double p {
+  border: 0;
+}
 /* line 399, screen.scss */
+.about .colThird.double p + h4 {
+  margin-top: 20px;
+}
+/* line 405, screen.scss */
 .about .tableWrapper {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
 }
-/* line 403, screen.scss */
+/* line 409, screen.scss */
 .about .hours {
   width: 100%;
 }
-/* line 405, screen.scss */
+/* line 411, screen.scss */
 .about .hours .dash {
   width: 30px;
 }
-/* line 408, screen.scss */
+/* line 414, screen.scss */
 .about .hours td {
   padding-bottom: 3px;
 }
+/* line 418, screen.scss */
+.about a.tel {
+  color: #333333;
+  text-decoration: none;
+}
+/* line 421, screen.scss */
+.about a.tel:hover {
+  text-decoration: underline;
+}
 
-/* line 414, screen.scss */
+/* line 427, screen.scss */
 .contact {
   background: #343432;
   color: #d0d6d4;
 }
-/* line 417, screen.scss */
+/* line 430, screen.scss */
 .contact i {
   color: #9eaea4;
 }
@@ -514,59 +536,95 @@ section i {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-/* Add min widths too for shared styles */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 431, screen.scss */
+  /* line 441, screen.scss */
   .treatments .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 434, screen.scss */
+  /* line 444, screen.scss */
   .treatments .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
+
+  /* line 449, screen.scss */
+  .mobileHide {
+    display: none;
+  }
+
+  /* line 453, screen.scss */
+  header .logo {
+    width: 87.89%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  /* line 458, screen.scss */
+  header span {
+    text-align: center;
+    line-height: 1.2;
+    width: 87.89%;
+    padding-top: 0;
+    margin-bottom: 20px;
+  }
+  /* line 464, screen.scss */
+  header span h5 {
+    float: none;
+    font-size: 1.375em;
+    margin-right: 10px;
+    font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  }
+  /* line 470, screen.scss */
+  header span .tel {
+    font-size: 1.375em;
+    float: none;
+    clear: none;
+  }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 443, screen.scss */
+  /* line 481, screen.scss */
   .treatments .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 446, screen.scss */
+  /* line 484, screen.scss */
   .treatments .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 449, screen.scss */
+  /* line 487, screen.scss */
   .treatments .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 }
 @media only screen and (min-width: 320px) and (max-width:  768px) {
-  /* line 461, screen.scss */
+  /* line 499, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 466, screen.scss */
+  /* line 504, screen.scss */
   .hero .caption h2 {
     font-size: 2.188em;
   }
-  /* line 469, screen.scss */
+  /* line 507, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 485, screen.scss */
+  /* line 513, screen.scss */
   .about .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 489, screen.scss */
+  /* line 517, screen.scss */
   .about .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 494, screen.scss */
+  /* line 520, screen.scss */
+  .about .colThird.double .border {
+    border: 0;
+  }
+  /* line 525, screen.scss */
   .about .tableWrapper,
   .about .colThird p {
     border: 0;
