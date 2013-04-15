@@ -604,36 +604,40 @@ a.tel:hover {
   }
 }
 @media only screen and (min-width: 320px) and (max-width:  768px) {
-  /* line 501, screen.scss */
+  /* line 497, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 506, screen.scss */
+  /* line 502, screen.scss */
   .hero .caption h2 {
     font-size: 2.188em;
   }
-  /* line 509, screen.scss */
+  /* line 505, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 513, screen.scss */
+  /* line 509, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 517, screen.scss */
+  /* line 513, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 520, screen.scss */
+  /* line 516, screen.scss */
   .colThird.double .border {
     border: 0;
   }
+  /* line 519, screen.scss */
+  .colThird.double p + h4 {
+    margin-top: 40px;
+  }
 
-  /* line 525, screen.scss */
+  /* line 524, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;

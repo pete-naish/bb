@@ -493,10 +493,6 @@ a.tel {
 	}
 }
 
-@media only screen and (min-width:769px) and (max-width: 1023px) {
-
-}
-
 @media only screen and (min-width: 320px) and (max-width:  768px) {
 	.container {
 		padding: 0;
@@ -519,6 +515,9 @@ a.tel {
 		}
 		&.double .border {
 			border: 0;
+		}
+		&.double p + h4  {
+			margin-top: 40px;
 		}
 	}
 	.tableWrapper,

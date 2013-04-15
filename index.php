@@ -30,7 +30,7 @@
 				</span>
 			</div>
 		</header>
-		<section>
+		<section class="mobileHide">
 			<div class="container">
 				<div class="hero">
 					<div class="heroSlide">
