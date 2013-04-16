@@ -20,14 +20,14 @@
 				<span>
 					<h5>For appointments call</h5>
 					<a href="tel:+441438812804" class="tel">01438 812 804</a>
-					<nav class="mobileHide">
-						<ul>
-							<li><a href="#">Treatments</a><i></i></li>
-							<li><a href="#">About us</a><i></i></li>
-							<li><a href="#">Contact us</a></li>
-						</ul>
-					</nav>
 				</span>
+				<nav class="mobileHide">
+					<ul>
+						<li><a href="#">Treatments</a><i></i></li>
+						<li><a href="#">About us</a><i></i></li>
+						<li><a href="#">Contact us</a></li>
+					</ul>
+				</nav>
 			</div>
 		</header>
 		<section class="mobileHide">
@@ -110,43 +110,43 @@
 							<div class="tableWrapper">
 								<table class="hours" border="0">
 									<tr>
-										<th>Monday</th>
+										<td>Monday</td>
 										<td>Closed</td>
 										<td class="dash">&ndash;</td>
 										<td>Closed</td>
 								</tr>
 								<tr>
-									<th>Tuesday</th>
+									<td>Tuesday</td>
 									<td>10:00</td>
 									<td class="dash">&ndash;</td>
 									<td>20:00</td>
 								</tr>
 								<tr>
-									<th>Wednesday</th>
+									<td>Wednesday</td>
 									<td>10:00</td>
 									<td class="dash">&ndash;</td>
 									<td>20:00</td>
 								</tr>
 								<tr>
-									<th>Thursday</th>
+									<td>Thursday</td>
 									<td>10:00</td>
 									<td class="dash">&ndash;</td>
 									<td>20:00</td>
 								</tr>
 								<tr>
-									<th>Friday</th>
+									<td>Friday</td>
 									<td>10:00</td>
 									<td class="dash">&ndash;</td>
 									<td>18:00</td>
 								</tr>
 								<tr>
-									<th>Saturday</th>
+									<td>Saturday</td>
 									<td>10:00</td>
 									<td class="dash">&ndash;</td>
 									<td>16:00</td>
 								</tr>
 								<tr>
-									<th>Sunday</th>
+									<td>Sunday</td>
 									<td>Closed</td>
 									<td class="dash">&ndash;</td>
 									<td>Closed</td>

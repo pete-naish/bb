@@ -1,5 +1,5 @@
 /* @import must be at top of file, otherwise CSS will not work */
-// @import url("//hello.myfonts.net/count/266f98");
+@import url("//hello.myfonts.net/count/266f98");
 
 @import "compass/reset", "compass/css3";
 
@@ -200,6 +200,13 @@ i {
 
 p {
 	line-height: 1.2;
+	a {
+		color: $body-text-color;
+		@include single-transition(color, 0.25s, ease-in-out);
+		&:hover {
+			color: $body-text-color + 70;
+		}
+	}
 }
 
 .container {
@@ -235,6 +242,7 @@ header {
 			@include single-transition(border-color, 0.25s, ease-in-out);
 			&:hover {
 				border-color: $pink;
+				text-decoration: none;
 			}
 		}
 	}
@@ -256,7 +264,7 @@ header {
 nav {
 	float: right;
 	clear: right;
-	margin-bottom: 10px;
+	margin: 0 percent(62px, 1024px) 10px;
 	li {
 		float: left;
 		margin-bottom: 15px;
@@ -280,7 +288,8 @@ nav {
 	}
 }
 
-.container .caroufredsel_wrapper {
+.container .caroufredsel_wrapper,
+.container > .hero {
 	padding: 0;
 }
 
@@ -416,7 +425,7 @@ section i {
 .hours {
 	width: 100%;
 	.dash {
-		width: 30px;
+		width: 10%;
 	}
 	td {
 		padding-bottom: 3px;
@@ -444,7 +453,7 @@ a.tel {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 590px) {
 	.treatmentIntro {
 		width: 48%;
 		margin-right: 4%;
@@ -464,7 +473,6 @@ a.tel {
 		h5 {
 			float: none;
 			font-size: em(22px);
-			margin-right: 10px;
 			font-family: $serif-heading-font-family;
 		}
 		.tel {
@@ -478,6 +486,9 @@ a.tel {
 		margin-top: 20px;
 		margin-bottom: 15px;
 	}
+	.hours {
+		width: 70%;
+	}
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -490,6 +501,9 @@ a.tel {
 		&:nth-of-type(4n){
 			clear: left;
 		}
+	}
+	.hours {
+		width: 50%;
 	}
 }
 
@@ -524,5 +538,23 @@ a.tel {
 	.colThird p {
 		border: 0;
 		padding: 0;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width:  930px) {
+	.logo {
+		margin-top: 20px;
+	}
+	nav {
+		text-align: center;
+		width: 100%;
+		margin: 0 0 25px 0;
+		float: none;
+		clear: both;
+		li {
+			float: none;
+			display: inline;
+			margin-bottom: 0;
+		}
 	}
 }
