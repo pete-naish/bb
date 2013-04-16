@@ -11,7 +11,7 @@
 		<?php include('inc/head.php') ?>
 
 	</head>
-	<body>
+	<body onload="initialize()">
 
 		<header>
 			<div class="container">
@@ -50,7 +50,7 @@
 				</div>
 			</div>
 		</section>
-		<section>
+		<section id="treatments">
 			<div class="container">
 				<div class="treatments">
 					<i></i>
@@ -90,7 +90,7 @@
 				</div>
 			</div>
 		</section>
-		<section>
+		<section id="about">
 			<div class="container">
 				<div class="about">
 					<i></i>
@@ -98,12 +98,20 @@
 					<div class="row">
 						<div class="colThird">
 							<h4>Address</h4>
-							<p> Beauty Box<br/>
+							<p>Beauty Box<br/>
 								10 Station Road<br/>
 								Knebworh<br/>
 								Hertfordshire<br/>
 								SG3 6AP<br/>
 								<a href="tel:+441438812804" class="tel">01438 812 804</a></p>
+						</div>
+						<div class="colThird double">
+							<h4>Reservations</h4>
+							<div class="border">
+								<p>Upon booking we require all contact details and you must make us aware of any allergies or illnessive you may have.</p>
+								<h4>Cancellation policy</h4>
+								<p>If you need to cancel your appointment, please provide us with at least 24 hours notice in order to avoid being charged a minimum fee of 50%. Missed appointments will be charged at the full treatment cost.</p>
+							</div>
 						</div>
 						<div class="colThird">
 							<h4>Opening hours</h4>
@@ -154,15 +162,6 @@
 								</table>
 							</div>
 						</div>
-						<div class="colThird double">
-
-							<h4>Reservations</h4>
-							<div class="border">
-								<p>Upon booking we require all contact details and you must make us aware of any allergies or illnessive you may have.</p>
-								<h4>Cancellation policy</h4>
-								<p>If you need to cancel your appointment, please provide us with at least 24 hours notice in order to avoid being charged a minimum fee of 50%. Missed appointments will be charged at the full treatment cost.</p>
-							</div>
-						</div>
 					</div>
 					<i class="small"></i>
 					<div class="row">
@@ -182,11 +181,23 @@
 				</div>
 			</div>
 		</section>
-		<section>
+		<section id="contact">
 			<div class="container">
 				<div class="contact">
 					<i></i>
 					<h3>Contact us</h3>
+					
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="footer-top">
+					<i class="small"></i>
+					<h5>Available brands</h5>
+				</div>
+				<div class="footer-bottom">
+					<h5>Beauty Box, 10 Station Road, Knebworth, Hertfordshire, SG3 6AP</h5>
 				</div>
 			</div>
 		</section>

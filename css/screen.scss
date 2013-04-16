@@ -32,13 +32,19 @@ $header-background-color: #343433;
 $pink: #E3ABDD;
 $nav-link-color: #BFCDCD;
 $lighter-text-color: #666;
+
 $treatments-flourish-color: #5A4D59;
+
 $about-background-color: #CFD7D1;
 $about-flourish-color: #9AACA0;
 $about-border: #9BADA1;
+
 $contact-background-color: #343432;
 $contact-flourish-color: #9EAEA4;
 $contact-text-color: #D0D6D4;
+
+$footer-top-background-color: #010101;
+$footer-top-text-color: #9eafa5;
 
 
 /* ==========================================================================
@@ -318,6 +324,9 @@ section i {
 	display: block;
 	font-size: em(48px);
 	margin: 32px 0 20px;
+	&.small {
+		font-size: em(32px);
+	}
 }
 
 .container > div {
@@ -375,7 +384,6 @@ section i {
 	i {
 		color: $about-flourish-color;
 		&.small {
-			font-size: em(32px);
 			margin: 0 0 25px 0;
 		}
 	}
@@ -449,11 +457,37 @@ a.tel {
 	}
 }
 
+.footer-top {
+	background-color: $footer-top-background-color;
+	color: $footer-top-text-color;
+	i {
+		margin: 18px 0 10px;
+	}
+	h5 {
+		border-bottom: 1px dashed $footer-top-text-color;
+		margin-bottom: 20px;
+		letter-spacing: 0.14em;
+		text-align: center;
+		padding-bottom: 10px;
+	}
+}
+
+.footer-bottom {
+	background-color: $contact-background-color;
+	color: $contact-flourish-color;
+	h5 {
+		text-align: center;
+		letter-spacing: 0.16em;
+		padding: 36px 0 8px;
+		line-height: 1.4;
+	}
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 320px) and (max-width: 590px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
 	.treatmentIntro {
 		width: 48%;
 		margin-right: 4%;
@@ -461,6 +495,10 @@ a.tel {
 			margin-right: 0;
 		}
 	}
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 590px) {
 	.mobileHide {
 		display: none;
 	}
@@ -511,7 +549,6 @@ a.tel {
 	.container {
 		padding: 0;
 	}
-
 	.hero .caption {
 		h2 {
 			font-size: em(35px);
