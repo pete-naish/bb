@@ -11,7 +11,7 @@
 		<?php include('inc/head.php') ?>
 
 	</head>
-	<body onload="initialize()">
+	<body>
 
 		<header>
 			<div class="container">
@@ -117,11 +117,11 @@
 							<h4>Opening hours</h4>
 							<div class="tableWrapper">
 								<table class="hours" border="0">
-									<tr>
-										<td>Monday</td>
-										<td>Closed</td>
-										<td class="dash">&ndash;</td>
-										<td>Closed</td>
+								<tr>
+									<td>Monday</td>
+									<td>Closed</td>
+									<td class="dash">&ndash;</td>
+									<td>Closed</td>
 								</tr>
 								<tr>
 									<td>Tuesday</td>
@@ -203,10 +203,16 @@
 		</section>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+		<script>
+			if (window.innerWidth > 590) {
 
-		<script src="js/plugins.min.js"></script>
-		<script src="js/main.js"></script>
+				window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>');
+
+				document.write('<script src="js/plugins.min.js"><\/script>');
+
+				document.write('<script src="js/main.js"><\/script>');
+			}
+		</script>
 
 	</body>
 </html>
