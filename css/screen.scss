@@ -28,7 +28,7 @@ $serif-heading-font-family: "Crimson Roman", Baskerville, "Baskerville Old Face"
 $ornament-font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 
 $body-text-color: #333;
-$header-background-color: #343433;
+$header-background-color: #343434;
 $pink: #E3ABDD;
 $nav-link-color: #BFCDCD;
 $lighter-text-color: #666;
@@ -39,13 +39,12 @@ $about-background-color: #CFD7D1;
 $about-flourish-color: #9AACA0;
 $about-border: #9BADA1;
 
-$contact-background-color: #343432;
+$contact-background-color: #343434;
 $contact-flourish-color: #9EAEA4;
 $contact-text-color: #D0D6D4;
 
-$footer-top-background-color: #010101;
-$footer-top-text-color: #9eafa5;
-
+$footer-top-background-color: #000;
+$footer-text-color: #9AACA0;
 
 /* ==========================================================================
    HTML5 Boilerplate styles
@@ -83,7 +82,6 @@ fieldset {
 textarea {
 	resize: vertical;
 }
-
 
 /* ==========================================================================
    Helper classes
@@ -221,7 +219,6 @@ p {
 	padding: 0 20px;
 	overflow: hidden;
 }
-
 
 header {
 	background-color: $header-background-color;
@@ -448,7 +445,6 @@ a.tel {
 	}
 }
 
-
 .contact {
 	background: $contact-background-color;
 	color: $contact-text-color;
@@ -459,12 +455,12 @@ a.tel {
 
 .footer-top {
 	background-color: $footer-top-background-color;
-	color: $footer-top-text-color;
+	color: $footer-text-color;
 	i {
 		margin: 18px 0 10px;
 	}
 	h5 {
-		border-bottom: 1px dashed $footer-top-text-color;
+		border-bottom: 1px dashed $footer-text-color;
 		margin-bottom: 20px;
 		letter-spacing: 0.14em;
 		text-align: center;
@@ -474,7 +470,7 @@ a.tel {
 
 .footer-bottom {
 	background-color: $contact-background-color;
-	color: $contact-flourish-color;
+	color: $footer-text-color;
 	h5 {
 		text-align: center;
 		letter-spacing: 0.16em;
@@ -496,7 +492,6 @@ a.tel {
 		}
 	}
 }
-
 
 @media only screen and (min-width: 320px) and (max-width: 590px) {
 	.mobileHide {

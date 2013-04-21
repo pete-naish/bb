@@ -1,4 +1,3 @@
-/*@import url("//hello.myfonts.net/count/266f98");*/
 /* @import must be at top of file, otherwise CSS will not work */
 /* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
@@ -83,19 +82,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* ==========================================================================
    HTML5 Boilerplate styles
    ========================================================================== */
-/* line 54, screen.scss */
+/* line 53, screen.scss */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/* line 59, screen.scss */
+/* line 58, screen.scss */
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/* line 64, screen.scss */
+/* line 63, screen.scss */
 hr {
   display: block;
   height: 1px;
@@ -105,19 +104,19 @@ hr {
   padding: 0;
 }
 
-/* line 73, screen.scss */
+/* line 72, screen.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 77, screen.scss */
+/* line 76, screen.scss */
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/* line 83, screen.scss */
+/* line 82, screen.scss */
 textarea {
   resize: vertical;
 }
@@ -125,7 +124,7 @@ textarea {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/* line 92, screen.scss */
+/* line 90, screen.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -133,7 +132,7 @@ textarea {
   *text-indent: -9999px;
 }
 
-/* line 99, screen.scss */
+/* line 97, screen.scss */
 .ir:before {
   content: "";
   display: block;
@@ -141,13 +140,13 @@ textarea {
   height: 150%;
 }
 
-/* line 106, screen.scss */
+/* line 104, screen.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* line 111, screen.scss */
+/* line 109, screen.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -159,7 +158,7 @@ textarea {
   width: 1px;
 }
 
-/* line 123, screen.scss */
+/* line 121, screen.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -170,24 +169,24 @@ textarea {
   width: auto;
 }
 
-/* line 132, screen.scss */
+/* line 130, screen.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 137, screen.scss */
+/* line 135, screen.scss */
 .cf:before,
 .cf:after {
   content: " ";
   display: table;
 }
 
-/* line 142, screen.scss */
+/* line 140, screen.scss */
 .cf:after {
   clear: both;
 }
 
-/* line 146, screen.scss */
+/* line 144, screen.scss */
 .cf {
   *zoom: 1;
 }
@@ -195,7 +194,7 @@ textarea {
 /* ==========================================================================
    Main Styles
    ========================================================================== */
-/* line 154, screen.scss */
+/* line 152, screen.scss */
 body {
   background: url(../img/bg.png) repeat #ecd6e9;
   font-size: 16px;
@@ -205,7 +204,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-/* line 167, screen.scss */
+/* line 165, screen.scss */
 h2 {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-size: 4.063em;
@@ -213,7 +212,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* line 175, screen.scss */
+/* line 173, screen.scss */
 h3 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.875em;
@@ -222,7 +221,7 @@ h3 {
   margin: 0 6.889% 30px;
 }
 
-/* line 185, screen.scss */
+/* line 183, screen.scss */
 h4 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5em;
@@ -231,27 +230,27 @@ h4 {
   text-align: center;
 }
 
-/* line 194, screen.scss */
+/* line 192, screen.scss */
 h5 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 198, screen.scss */
+/* line 196, screen.scss */
 i {
   font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 }
-/* line 200, screen.scss */
+/* line 198, screen.scss */
 i:after {
   content: "{";
   line-height: 1;
   vertical-align: top;
 }
 
-/* line 207, screen.scss */
+/* line 205, screen.scss */
 p {
   line-height: 1.2;
 }
-/* line 209, screen.scss */
+/* line 207, screen.scss */
 p a {
   color: #333333;
   -webkit-transition: color 0.25s ease-in-out;
@@ -260,12 +259,12 @@ p a {
   -o-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
-/* line 212, screen.scss */
+/* line 210, screen.scss */
 p a:hover {
   color: #797979;
 }
 
-/* line 218, screen.scss */
+/* line 216, screen.scss */
 .container {
   max-width: 1024px;
   margin: 0 auto;
@@ -273,25 +272,25 @@ p a:hover {
   overflow: hidden;
 }
 
-/* line 226, screen.scss */
+/* line 223, screen.scss */
 header {
-  background-color: #343433;
+  background-color: #343434;
   overflow: hidden;
 }
-/* line 229, screen.scss */
+/* line 226, screen.scss */
 header span {
   margin: 0 6.055%;
   padding-top: 15px;
   float: right;
   text-align: right;
 }
-/* line 234, screen.scss */
+/* line 231, screen.scss */
 header span h5 {
   color: #e3abdd;
   font-size: 0.875em;
   float: right;
 }
-/* line 239, screen.scss */
+/* line 236, screen.scss */
 header span .tel {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   color: #e3abdd;
@@ -307,13 +306,13 @@ header span .tel {
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 249, screen.scss */
+/* line 246, screen.scss */
 header span .tel:hover {
   border-color: #e3abdd;
   text-decoration: none;
 }
 
-/* line 257, screen.scss */
+/* line 254, screen.scss */
 .logo {
   margin: 40px 6.055% 30px 6.055%;
   display: block;
@@ -323,23 +322,23 @@ header span .tel:hover {
   background: url(../img/logo.png) no-repeat center;
   background: none, url(../img/logo.svg) no-repeat center;
 }
-/* line 265, screen.scss */
+/* line 262, screen.scss */
 .logo img {
   width: 290px;
 }
 
-/* line 270, screen.scss */
+/* line 267, screen.scss */
 nav {
   float: right;
   clear: right;
   margin: 0 6.055% 10px;
 }
-/* line 274, screen.scss */
+/* line 271, screen.scss */
 nav li {
   float: left;
   margin-bottom: 15px;
 }
-/* line 277, screen.scss */
+/* line 274, screen.scss */
 nav li a {
   color: #bfcdcd;
   text-decoration: none;
@@ -347,96 +346,96 @@ nav li a {
   font-size: 1.25em;
   letter-spacing: 0.15em;
   margin-right: -0.188em;
-  border-bottom: 2px solid #343433;
+  border-bottom: 2px solid #343434;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
   -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 286, screen.scss */
+/* line 283, screen.scss */
 nav li a:hover {
   border-color: #bfcdcd;
 }
-/* line 290, screen.scss */
+/* line 287, screen.scss */
 nav li i {
   color: #e3abdd;
   padding: 0 15px;
 }
 
-/* line 298, screen.scss */
+/* line 295, screen.scss */
 .container .caroufredsel_wrapper,
 .container > .hero {
   padding: 0;
 }
 
-/* line 303, screen.scss */
+/* line 300, screen.scss */
 .hero .heroSlide {
   position: relative;
   overflow: hidden;
   float: left;
 }
-/* line 308, screen.scss */
+/* line 305, screen.scss */
 .hero img {
   max-width: 100%;
 }
-/* line 311, screen.scss */
+/* line 308, screen.scss */
 .hero .caption {
   position: absolute;
   bottom: 0;
   padding: 0 8.301% 25px 8.301%;
 }
-/* line 315, screen.scss */
+/* line 312, screen.scss */
 .hero .caption p {
   margin-bottom: 10px;
   margin-right: 31.85%;
 }
 
-/* line 322, screen.scss */
+/* line 319, screen.scss */
 section i {
   text-align: center;
   display: block;
   font-size: 3em;
   margin: 32px 0 20px;
 }
-/* line 327, screen.scss */
+/* line 324, screen.scss */
 section i.small {
   font-size: 2em;
 }
 
-/* line 332, screen.scss */
+/* line 329, screen.scss */
 .container > div {
   overflow: hidden;
   padding: 0 6.055% 32px;
 }
 
-/* line 337, screen.scss */
+/* line 334, screen.scss */
 .treatments {
   background: url(../img/treatments-bg.png) repeat top left;
 }
-/* line 339, screen.scss */
+/* line 336, screen.scss */
 .treatments i {
   color: #5a4d59;
 }
 
-/* line 344, screen.scss */
+/* line 341, screen.scss */
 .treatmentIntro {
   float: left;
   width: 21.667%;
   margin-bottom: 32px;
   margin-right: 4.444%;
 }
-/* line 349, screen.scss */
+/* line 346, screen.scss */
 .treatmentIntro a {
   display: block;
   text-decoration: none;
   color: #333333;
 }
-/* line 353, screen.scss */
+/* line 350, screen.scss */
 .treatmentIntro a:hover .cta {
   text-decoration: underline;
 }
-/* line 357, screen.scss */
+/* line 354, screen.scss */
 .treatmentIntro img {
   background-color: #fff;
   border: 1px solid #e3abdd;
@@ -444,13 +443,13 @@ section i.small {
   margin-bottom: 10px;
   width: 87.179%;
 }
-/* line 364, screen.scss */
+/* line 361, screen.scss */
 .treatmentIntro p {
   margin-bottom: 10px;
   padding: 0 2.564%;
   text-align: center;
 }
-/* line 369, screen.scss */
+/* line 366, screen.scss */
 .treatmentIntro .cta {
   text-decoration: none;
   font-weight: bold;
@@ -459,130 +458,130 @@ section i.small {
   display: block;
   text-align: center;
 }
-/* line 377, screen.scss */
+/* line 374, screen.scss */
 .treatmentIntro:nth-of-type(4n) {
   margin-right: 0;
 }
 
-/* line 382, screen.scss */
+/* line 379, screen.scss */
 .about {
   background: #cfd7d1;
 }
-/* line 384, screen.scss */
+/* line 381, screen.scss */
 .about i {
   color: #9aaca0;
 }
-/* line 386, screen.scss */
+/* line 383, screen.scss */
 .about i.small {
   margin: 0 0 25px 0;
 }
-/* line 390, screen.scss */
+/* line 387, screen.scss */
 .about h4 {
   color: #666666;
   margin-bottom: 8px;
   padding: 0 1.825%;
 }
-/* line 395, screen.scss */
+/* line 392, screen.scss */
 .about .row {
   overflow: hidden;
 }
 
-/* line 400, screen.scss */
+/* line 397, screen.scss */
 .colThird {
   width: 33.333%;
   margin-bottom: 20px;
   float: left;
 }
-/* line 404, screen.scss */
+/* line 401, screen.scss */
 .colThird:first-child p {
   border: 0;
   padding-left: 0;
 }
-/* line 408, screen.scss */
+/* line 405, screen.scss */
 .colThird:last-child {
   padding-right: 0;
 }
-/* line 411, screen.scss */
+/* line 408, screen.scss */
 .colThird p {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
 }
-/* line 416, screen.scss */
+/* line 413, screen.scss */
 .colThird.double .border {
   border-left: 1px solid #9bada1;
 }
-/* line 419, screen.scss */
+/* line 416, screen.scss */
 .colThird.double p {
   border: 0;
 }
-/* line 421, screen.scss */
+/* line 418, screen.scss */
 .colThird.double p + h4 {
   margin-top: 20px;
 }
 
-/* line 428, screen.scss */
+/* line 425, screen.scss */
 .tableWrapper {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
 }
 
-/* line 433, screen.scss */
+/* line 430, screen.scss */
 .hours {
   width: 100%;
 }
-/* line 435, screen.scss */
+/* line 432, screen.scss */
 .hours .dash {
   width: 10%;
 }
-/* line 438, screen.scss */
+/* line 435, screen.scss */
 .hours td {
   padding-bottom: 3px;
 }
 
-/* line 443, screen.scss */
+/* line 440, screen.scss */
 a.tel {
   color: #333333;
   text-decoration: none;
 }
-/* line 446, screen.scss */
+/* line 443, screen.scss */
 a.tel:hover {
   text-decoration: underline;
 }
 
-/* line 452, screen.scss */
+/* line 448, screen.scss */
 .contact {
-  background: #343432;
+  background: #343434;
   color: #d0d6d4;
 }
-/* line 455, screen.scss */
+/* line 451, screen.scss */
 .contact i {
   color: #9eaea4;
 }
 
-/* line 460, screen.scss */
+/* line 456, screen.scss */
 .footer-top {
-  background-color: #010101;
-  color: #9eafa5;
+  background-color: black;
+  color: #9aaca0;
 }
-/* line 463, screen.scss */
+/* line 459, screen.scss */
 .footer-top i {
   margin: 18px 0 10px;
 }
-/* line 466, screen.scss */
+/* line 462, screen.scss */
 .footer-top h5 {
-  border-bottom: 1px dashed #9eafa5;
+  border-bottom: 1px dashed #9aaca0;
   margin-bottom: 20px;
   letter-spacing: 0.14em;
   text-align: center;
   padding-bottom: 10px;
 }
 
-/* line 475, screen.scss */
+/* line 471, screen.scss */
 .footer-bottom {
-  background-color: #343432;
-  color: #9eaea4;
+  background-color: #343434;
+  color: #9aaca0;
 }
-/* line 478, screen.scss */
+/* line 474, screen.scss */
 .footer-bottom h5 {
   text-align: center;
   letter-spacing: 0.16em;
@@ -594,23 +593,23 @@ a.tel:hover {
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 491, screen.scss */
+  /* line 487, screen.scss */
   .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 494, screen.scss */
+  /* line 490, screen.scss */
   .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 590px) {
-  /* line 502, screen.scss */
+  /* line 497, screen.scss */
   .mobileHide {
     display: none;
   }
 
-  /* line 505, screen.scss */
+  /* line 500, screen.scss */
   header span {
     text-align: center;
     line-height: 1.2;
@@ -618,86 +617,86 @@ a.tel:hover {
     padding-top: 0;
     margin-bottom: 20px;
   }
-  /* line 511, screen.scss */
+  /* line 506, screen.scss */
   header span h5 {
     float: none;
     font-size: 1.375em;
     font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   }
-  /* line 516, screen.scss */
+  /* line 511, screen.scss */
   header span .tel {
     font-size: 1.375em;
     float: none;
     clear: none;
   }
 
-  /* line 522, screen.scss */
+  /* line 517, screen.scss */
   .logo {
     width: 87.89%;
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
-  /* line 527, screen.scss */
+  /* line 522, screen.scss */
   .hours {
     width: 70%;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 533, screen.scss */
+  /* line 528, screen.scss */
   .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 536, screen.scss */
+  /* line 531, screen.scss */
   .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 539, screen.scss */
+  /* line 534, screen.scss */
   .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 
-  /* line 543, screen.scss */
+  /* line 538, screen.scss */
   .hours {
     width: 50%;
   }
 }
 @media only screen and (min-width: 320px) and (max-width:  768px) {
-  /* line 549, screen.scss */
+  /* line 544, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 553, screen.scss */
+  /* line 548, screen.scss */
   .hero .caption h2 {
     font-size: 2.188em;
   }
-  /* line 556, screen.scss */
+  /* line 551, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 560, screen.scss */
+  /* line 555, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 564, screen.scss */
+  /* line 559, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 567, screen.scss */
+  /* line 562, screen.scss */
   .colThird.double .border {
     border: 0;
   }
-  /* line 570, screen.scss */
+  /* line 565, screen.scss */
   .colThird.double p + h4 {
     margin-top: 40px;
   }
 
-  /* line 575, screen.scss */
+  /* line 570, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;
@@ -705,12 +704,12 @@ a.tel:hover {
   }
 }
 @media only screen and (min-width: 481px) and (max-width:  930px) {
-  /* line 582, screen.scss */
+  /* line 577, screen.scss */
   .logo {
     margin-top: 20px;
   }
 
-  /* line 585, screen.scss */
+  /* line 580, screen.scss */
   nav {
     text-align: center;
     width: 100%;
@@ -718,7 +717,7 @@ a.tel:hover {
     float: none;
     clear: both;
   }
-  /* line 591, screen.scss */
+  /* line 586, screen.scss */
   nav li {
     float: none;
     display: inline;
