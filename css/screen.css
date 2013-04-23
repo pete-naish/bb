@@ -589,27 +589,37 @@ a.tel:hover {
   line-height: 1.4;
 }
 
+/* line 483, screen.scss */
+.brand-links li {
+  float: left;
+  margin-left: 8.222%;
+}
+/* line 486, screen.scss */
+.brand-links li:first-child {
+  margin-left: 0;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 487, screen.scss */
+  /* line 497, screen.scss */
   .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 490, screen.scss */
+  /* line 500, screen.scss */
   .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 590px) {
-  /* line 497, screen.scss */
+  /* line 507, screen.scss */
   .mobileHide {
     display: none;
   }
 
-  /* line 500, screen.scss */
+  /* line 510, screen.scss */
   header span {
     text-align: center;
     line-height: 1.2;
@@ -617,86 +627,86 @@ a.tel:hover {
     padding-top: 0;
     margin-bottom: 20px;
   }
-  /* line 506, screen.scss */
+  /* line 516, screen.scss */
   header span h5 {
     float: none;
     font-size: 1.375em;
     font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   }
-  /* line 511, screen.scss */
+  /* line 521, screen.scss */
   header span .tel {
     font-size: 1.375em;
     float: none;
     clear: none;
   }
 
-  /* line 517, screen.scss */
+  /* line 527, screen.scss */
   .logo {
     width: 87.89%;
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
-  /* line 522, screen.scss */
+  /* line 532, screen.scss */
   .hours {
     width: 70%;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 528, screen.scss */
+  /* line 538, screen.scss */
   .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 531, screen.scss */
+  /* line 541, screen.scss */
   .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 534, screen.scss */
+  /* line 544, screen.scss */
   .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 
-  /* line 538, screen.scss */
+  /* line 548, screen.scss */
   .hours {
     width: 50%;
   }
 }
 @media only screen and (min-width: 320px) and (max-width:  768px) {
-  /* line 544, screen.scss */
+  /* line 554, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 548, screen.scss */
+  /* line 558, screen.scss */
   .hero .caption h2 {
     font-size: 2.188em;
   }
-  /* line 551, screen.scss */
+  /* line 561, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 555, screen.scss */
+  /* line 565, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 559, screen.scss */
+  /* line 569, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 562, screen.scss */
+  /* line 572, screen.scss */
   .colThird.double .border {
     border: 0;
   }
-  /* line 565, screen.scss */
+  /* line 575, screen.scss */
   .colThird.double p + h4 {
     margin-top: 40px;
   }
 
-  /* line 570, screen.scss */
+  /* line 580, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;
@@ -704,12 +714,12 @@ a.tel:hover {
   }
 }
 @media only screen and (min-width: 481px) and (max-width:  930px) {
-  /* line 577, screen.scss */
+  /* line 587, screen.scss */
   .logo {
     margin-top: 20px;
   }
 
-  /* line 580, screen.scss */
+  /* line 590, screen.scss */
   nav {
     text-align: center;
     width: 100%;
@@ -717,7 +727,7 @@ a.tel:hover {
     float: none;
     clear: both;
   }
-  /* line 586, screen.scss */
+  /* line 596, screen.scss */
   nav li {
     float: none;
     display: inline;

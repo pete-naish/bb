@@ -195,6 +195,13 @@
 				<div class="footer-top">
 					<i class="small"></i>
 					<h5>Available brands</h5>
+					<ul class="brand-links">
+						<li><a href="#"><img src="img/logo-gelish.png" alt=""></a></li>
+						<li><a href="#"><img src="img/logo-caci.png" alt=""></a></li>
+						<li><a href="#"><img src="img/logo-hd-brows.png" alt=""></a></li>
+						<li><a href="#"><img src="img/logo-minx.png" alt=""></a></li>
+						<li><a href="#"><img src="img/logo-sienna-x.png" alt=""></a></li>
+					</ul>
 				</div>
 				<div class="footer-bottom">
 					<h5>Beauty Box, 10 Station Road, Knebworth, Hertfordshire, SG3 6AP</h5>
