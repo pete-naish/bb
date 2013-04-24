@@ -9,6 +9,8 @@
 
 @include font-face("Bodoni Ornaments", font-files("Bodoni-Ornaments-webfont.eot", "Bodoni-Ornaments-webfont.eot?#iefix", "Bodoni-Ornaments-webfont.woff", "Bodoni-Ornaments-webfont.ttf", "Bodoni-Ornaments-webfont.svg#BodoniOrnaments"));
 
+@include font-face("social", font-files("social.eot", "social.eot?#iefix", "social.woff", "social.ttf", "social.svg#social"));
+
 // Ems
 @function em($px, $base: $base-font-size) {
     @return ($px / $base) * 1em;
@@ -42,6 +44,8 @@ $about-border: #9BADA1;
 $contact-background-color: #343434;
 $contact-flourish-color: #9EAEA4;
 $contact-text-color: #D0D6D4;
+
+$contact-floaty-link-color: #CCD7D1;
 
 $footer-top-background-color: #000;
 $footer-text-color: #9AACA0;
@@ -163,7 +167,6 @@ h1 {
 }
 
 h2 {
-	// Slide titles
 	font-family: $serif-heading-font-family;
 	font-size: em(65px);
 	line-height: 1;
@@ -171,7 +174,6 @@ h2 {
 }
 
 h3 {
-	// Section headings
 	font-family: $heading-font-family;
 	font-size: em(30px);
 	letter-spacing: em(3px, 30px);
@@ -181,7 +183,6 @@ h3 {
 }
 
 h4 {
-	// Section sub-headings
 	font-family: $heading-font-family;
 	font-size: em(24px);
 	letter-spacing: em(3px, 24px);
@@ -206,7 +207,6 @@ p {
 	line-height: 1.2;
 	a {
 		color: $body-text-color;
-		@include single-transition(color, 0.25s, ease-in-out);
 		&:hover {
 			color: $body-text-color + 70;
 		}
@@ -398,16 +398,16 @@ section i {
 	width: percent(300px);
 	margin-bottom: 20px;
 	float: left;
-	&:first-child p {
-		border: 0;
-		padding-left: 0;
-	}
-	&:last-child {
-		padding-right: 0;
-	}
 	p {
+		padding-right: percent(18px, 300px);
+	}
+	& + .colThird p {
 		border-left: 1px solid $about-border;
 		padding: 0 percent(18px, 300px);
+	}
+	&:last-child p,
+	&:last-child .tableWrapper {
+		padding-right: 0;
 	}
 	&.double {
 		.border {
@@ -453,6 +453,57 @@ a.tel {
 	}
 }
 
+.floatyLinks {
+	text-align: center;
+	width: 100%;
+	li {
+		display: inline;
+		& + li {
+			margin-left: percent(45px);
+		}
+	}
+	a {
+		color: $contact-floaty-link-color;
+		text-decoration: none;
+		font-family: $heading-font-family;
+		letter-spacing: 0.14em;
+		&:hover,
+		&:hover i,
+		&.active,
+		&.active i {
+			color: $pink;
+		}
+	}
+	i {
+		font-family: 'social';
+		margin: 0;
+		text-align: left;
+		display: inline;
+		font-size: em(42px);
+	}
+	.icon-email {
+		font-family: arial, helvetica, sans-serif;
+	}
+	.icon-call:after {
+		content: "\e003";
+	}
+	.icon-email:after {
+		content: "@";
+	}
+	.icon-find:after {
+		content: "\e002";
+	}
+	.icon-like:after {
+		content: "\e000";
+	}
+	.icon-follow:after {
+		content: "\e001";
+	}
+
+	
+	
+}
+
 .footer-top {
 	background-color: $footer-top-background-color;
 	color: $footer-text-color;
@@ -482,9 +533,8 @@ a.tel {
 .brand-links {
 	li {
 		float: left;
-		margin-left: percent(74px);
-		&:first-child {
-			margin-left: 0;
+		& + li {
+			margin-left: percent(74px);
 		}
 	}
 }
@@ -505,7 +555,7 @@ a.tel {
 
 @media only screen and (min-width: 320px) and (max-width: 590px) {
 	.mobileHide {
-		display: none;
+		display: none !important;
 	}
 	header span {
 		text-align: center;
@@ -569,8 +619,10 @@ a.tel {
 		&:last-child {
 			margin-bottom: 20px;
 		}
+		& + .colThird p,
 		&.double .border {
 			border: 0;
+			padding: 0;
 		}
 		&.double p + h4  {
 			margin-top: 40px;

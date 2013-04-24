@@ -186,7 +186,13 @@
 				<div class="contact">
 					<i></i>
 					<h3>Contact us</h3>
-					
+					<ul class="floatyLinks cf">
+						<li><a href="#"><i class="icon-call"></i>Call us</a></li>
+						<li><a href="#"><i class="icon-email"></i><span>Email us</span></a></li>
+						<li><a href="#"><i class="icon-find"></i><span>Find us</span></a></li>
+						<li class="mobileHide"><a href="#"><i class="icon-follow"></i><span>Follow us</span></a></li>
+						<li class="mobileHide"><a href="#"><i class="icon-like"></i><span>Like us</span></a></li>
+					</ul>
 				</div>
 			</div>
 		</section>

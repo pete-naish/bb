@@ -79,22 +79,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url('../type/Bodoni-Ornaments-webfont.eot') format('embedded-opentype'), url('../type/Bodoni-Ornaments-webfont.eot?#iefix') format('embedded-opentype'), url('../type/Bodoni-Ornaments-webfont.woff') format('woff'), url('../type/Bodoni-Ornaments-webfont.ttf') format('truetype'), url('../type/Bodoni-Ornaments-webfont.svg#BodoniOrnaments') format('svg');
 }
 
+@font-face {
+  font-family: "social";
+  src: url('../type/social.eot') format('embedded-opentype'), url('../type/social.eot?#iefix') format('embedded-opentype'), url('../type/social.woff') format('woff'), url('../type/social.ttf') format('truetype'), url('../type/social.svg#social') format('svg');
+}
+
 /* ==========================================================================
    HTML5 Boilerplate styles
    ========================================================================== */
-/* line 53, screen.scss */
+/* line 57, screen.scss */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/* line 58, screen.scss */
+/* line 62, screen.scss */
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/* line 63, screen.scss */
+/* line 67, screen.scss */
 hr {
   display: block;
   height: 1px;
@@ -104,19 +109,19 @@ hr {
   padding: 0;
 }
 
-/* line 72, screen.scss */
+/* line 76, screen.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 76, screen.scss */
+/* line 80, screen.scss */
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/* line 82, screen.scss */
+/* line 86, screen.scss */
 textarea {
   resize: vertical;
 }
@@ -124,7 +129,7 @@ textarea {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/* line 90, screen.scss */
+/* line 94, screen.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -132,7 +137,7 @@ textarea {
   *text-indent: -9999px;
 }
 
-/* line 97, screen.scss */
+/* line 101, screen.scss */
 .ir:before {
   content: "";
   display: block;
@@ -140,13 +145,13 @@ textarea {
   height: 150%;
 }
 
-/* line 104, screen.scss */
+/* line 108, screen.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* line 109, screen.scss */
+/* line 113, screen.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -158,7 +163,7 @@ textarea {
   width: 1px;
 }
 
-/* line 121, screen.scss */
+/* line 125, screen.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -169,24 +174,24 @@ textarea {
   width: auto;
 }
 
-/* line 130, screen.scss */
+/* line 134, screen.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 135, screen.scss */
+/* line 139, screen.scss */
 .cf:before,
 .cf:after {
   content: " ";
   display: table;
 }
 
-/* line 140, screen.scss */
+/* line 144, screen.scss */
 .cf:after {
   clear: both;
 }
 
-/* line 144, screen.scss */
+/* line 148, screen.scss */
 .cf {
   *zoom: 1;
 }
@@ -194,7 +199,7 @@ textarea {
 /* ==========================================================================
    Main Styles
    ========================================================================== */
-/* line 152, screen.scss */
+/* line 156, screen.scss */
 body {
   background: url(../img/bg.png) repeat #ecd6e9;
   font-size: 16px;
@@ -204,7 +209,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-/* line 165, screen.scss */
+/* line 169, screen.scss */
 h2 {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-size: 4.063em;
@@ -212,7 +217,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* line 173, screen.scss */
+/* line 176, screen.scss */
 h3 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.875em;
@@ -221,7 +226,7 @@ h3 {
   margin: 0 6.889% 30px;
 }
 
-/* line 183, screen.scss */
+/* line 185, screen.scss */
 h4 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5em;
@@ -230,34 +235,29 @@ h4 {
   text-align: center;
 }
 
-/* line 192, screen.scss */
+/* line 193, screen.scss */
 h5 {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 196, screen.scss */
+/* line 197, screen.scss */
 i {
   font-family: "Bodoni Ornaments", Helvetica, Arial, sans-serif;
 }
-/* line 198, screen.scss */
+/* line 199, screen.scss */
 i:after {
   content: "{";
   line-height: 1;
   vertical-align: top;
 }
 
-/* line 205, screen.scss */
+/* line 206, screen.scss */
 p {
   line-height: 1.2;
 }
-/* line 207, screen.scss */
+/* line 208, screen.scss */
 p a {
   color: #333333;
-  -webkit-transition: color 0.25s ease-in-out;
-  -moz-transition: color 0.25s ease-in-out;
-  -ms-transition: color 0.25s ease-in-out;
-  -o-transition: color 0.25s ease-in-out;
-  transition: color 0.25s ease-in-out;
 }
 /* line 210, screen.scss */
 p a:hover {
@@ -493,18 +493,17 @@ section i.small {
   float: left;
 }
 /* line 401, screen.scss */
-.colThird:first-child p {
-  border: 0;
-  padding-left: 0;
-}
-/* line 405, screen.scss */
-.colThird:last-child {
-  padding-right: 0;
-}
-/* line 408, screen.scss */
 .colThird p {
+  padding-right: 6%;
+}
+/* line 404, screen.scss */
+.colThird + .colThird p {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
+}
+/* line 409, screen.scss */
+.colThird:last-child p, .colThird:last-child .tableWrapper {
+  padding-right: 0;
 }
 /* line 413, screen.scss */
 .colThird.double .border {
@@ -559,15 +558,72 @@ a.tel:hover {
 }
 
 /* line 456, screen.scss */
+.floatyLinks {
+  text-align: center;
+  width: 100%;
+}
+/* line 459, screen.scss */
+.floatyLinks li {
+  display: inline;
+}
+/* line 461, screen.scss */
+.floatyLinks li + li {
+  margin-left: 5%;
+}
+/* line 465, screen.scss */
+.floatyLinks a {
+  color: #ccd7d1;
+  text-decoration: none;
+  font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.14em;
+}
+/* line 473, screen.scss */
+.floatyLinks a:hover, .floatyLinks a:hover i, .floatyLinks a.active, .floatyLinks a.active i {
+  color: #e3abdd;
+}
+/* line 477, screen.scss */
+.floatyLinks i {
+  font-family: 'social';
+  margin: 0;
+  text-align: left;
+  display: inline;
+  font-size: 2.625em;
+}
+/* line 484, screen.scss */
+.floatyLinks .icon-email {
+  font-family: arial, helvetica, sans-serif;
+}
+/* line 487, screen.scss */
+.floatyLinks .icon-call:after {
+  content: "\e003";
+}
+/* line 490, screen.scss */
+.floatyLinks .icon-email:after {
+  content: "@";
+}
+/* line 493, screen.scss */
+.floatyLinks .icon-find:after {
+  content: "\e002";
+}
+/* line 496, screen.scss */
+.floatyLinks .icon-like:after {
+  content: "\e000";
+}
+/* line 499, screen.scss */
+.floatyLinks .icon-follow:after {
+  content: "\e001";
+}
+
+/* line 507, screen.scss */
 .footer-top {
   background-color: black;
   color: #9aaca0;
 }
-/* line 459, screen.scss */
+/* line 510, screen.scss */
 .footer-top i {
   margin: 18px 0 10px;
 }
-/* line 462, screen.scss */
+/* line 513, screen.scss */
 .footer-top h5 {
   border-bottom: 1px dashed #9aaca0;
   margin-bottom: 20px;
@@ -576,12 +632,12 @@ a.tel:hover {
   padding-bottom: 10px;
 }
 
-/* line 471, screen.scss */
+/* line 522, screen.scss */
 .footer-bottom {
   background-color: #343434;
   color: #9aaca0;
 }
-/* line 474, screen.scss */
+/* line 525, screen.scss */
 .footer-bottom h5 {
   text-align: center;
   letter-spacing: 0.16em;
@@ -589,37 +645,36 @@ a.tel:hover {
   line-height: 1.4;
 }
 
-/* line 483, screen.scss */
+/* line 534, screen.scss */
 .brand-links li {
   float: left;
-  margin-left: 8.222%;
 }
-/* line 486, screen.scss */
-.brand-links li:first-child {
-  margin-left: 0;
+/* line 536, screen.scss */
+.brand-links li + li {
+  margin-left: 8.222%;
 }
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 497, screen.scss */
+  /* line 547, screen.scss */
   .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 500, screen.scss */
+  /* line 550, screen.scss */
   .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 590px) {
-  /* line 507, screen.scss */
+  /* line 557, screen.scss */
   .mobileHide {
-    display: none;
+    display: none !important;
   }
 
-  /* line 510, screen.scss */
+  /* line 560, screen.scss */
   header span {
     text-align: center;
     line-height: 1.2;
@@ -627,86 +682,87 @@ a.tel:hover {
     padding-top: 0;
     margin-bottom: 20px;
   }
-  /* line 516, screen.scss */
+  /* line 566, screen.scss */
   header span h5 {
     float: none;
     font-size: 1.375em;
     font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   }
-  /* line 521, screen.scss */
+  /* line 571, screen.scss */
   header span .tel {
     font-size: 1.375em;
     float: none;
     clear: none;
   }
 
-  /* line 527, screen.scss */
+  /* line 577, screen.scss */
   .logo {
     width: 87.89%;
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
-  /* line 532, screen.scss */
+  /* line 582, screen.scss */
   .hours {
     width: 70%;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 538, screen.scss */
+  /* line 588, screen.scss */
   .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 541, screen.scss */
+  /* line 591, screen.scss */
   .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 544, screen.scss */
+  /* line 594, screen.scss */
   .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 
-  /* line 548, screen.scss */
+  /* line 598, screen.scss */
   .hours {
     width: 50%;
   }
 }
 @media only screen and (min-width: 320px) and (max-width:  768px) {
-  /* line 554, screen.scss */
+  /* line 604, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 558, screen.scss */
+  /* line 608, screen.scss */
   .hero .caption h2 {
     font-size: 2.188em;
   }
-  /* line 561, screen.scss */
+  /* line 611, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 565, screen.scss */
+  /* line 615, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 569, screen.scss */
+  /* line 619, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 572, screen.scss */
-  .colThird.double .border {
+  /* line 623, screen.scss */
+  .colThird + .colThird p, .colThird.double .border {
     border: 0;
+    padding: 0;
   }
-  /* line 575, screen.scss */
+  /* line 627, screen.scss */
   .colThird.double p + h4 {
     margin-top: 40px;
   }
 
-  /* line 580, screen.scss */
+  /* line 632, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;
@@ -714,12 +770,12 @@ a.tel:hover {
   }
 }
 @media only screen and (min-width: 481px) and (max-width:  930px) {
-  /* line 587, screen.scss */
+  /* line 639, screen.scss */
   .logo {
     margin-top: 20px;
   }
 
-  /* line 590, screen.scss */
+  /* line 642, screen.scss */
   nav {
     text-align: center;
     width: 100%;
@@ -727,7 +783,7 @@ a.tel:hover {
     float: none;
     clear: both;
   }
-  /* line 596, screen.scss */
+  /* line 648, screen.scss */
   nav li {
     float: none;
     display: inline;
