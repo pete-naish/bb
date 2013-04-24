@@ -1,5 +1,5 @@
 /* @import must be at top of file, otherwise CSS will not work */
-/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,50 +16,50 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-body {
+/* line 22, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
   line-height: 1;
 }
 
-/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -104,7 +104,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0;
 }
@@ -212,7 +212,7 @@ body {
 /* line 169, screen.scss */
 h2 {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-  font-size: 4.063em;
+  font-size: 4.0625em;
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -223,7 +223,7 @@ h3 {
   font-size: 1.875em;
   letter-spacing: 0.1em;
   text-align: center;
-  margin: 0 6.889% 30px;
+  margin: 0 6.88889% 30px;
 }
 
 /* line 185, screen.scss */
@@ -279,7 +279,7 @@ header {
 }
 /* line 226, screen.scss */
 header span {
-  margin: 0 6.055%;
+  margin: 0 6.05469%;
   padding-top: 15px;
   float: right;
   text-align: right;
@@ -302,7 +302,6 @@ header span .tel {
   margin-bottom: 30px;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
-  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
@@ -314,7 +313,7 @@ header span .tel:hover {
 
 /* line 254, screen.scss */
 .logo {
-  margin: 40px 6.055% 30px 6.055%;
+  margin: 40px 6.05469% 30px 6.05469%;
   display: block;
   float: left;
   width: 290px;
@@ -331,7 +330,7 @@ header span .tel:hover {
 nav {
   float: right;
   clear: right;
-  margin: 0 6.055% 10px;
+  margin: 0 6.05469% 10px;
 }
 /* line 271, screen.scss */
 nav li {
@@ -345,11 +344,10 @@ nav li a {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.25em;
   letter-spacing: 0.15em;
-  margin-right: -0.188em;
+  margin-right: -0.1875em;
   border-bottom: 2px solid #343434;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
-  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
@@ -363,93 +361,94 @@ nav li i {
   padding: 0 15px;
 }
 
-/* line 295, screen.scss */
+/* line 296, screen.scss */
 .container .caroufredsel_wrapper,
-.container > .hero {
+.container > .hero,
+.container .map {
   padding: 0;
 }
 
-/* line 300, screen.scss */
+/* line 301, screen.scss */
 .hero .heroSlide {
   position: relative;
   overflow: hidden;
   float: left;
 }
-/* line 305, screen.scss */
+/* line 306, screen.scss */
 .hero img {
   max-width: 100%;
 }
-/* line 308, screen.scss */
+/* line 309, screen.scss */
 .hero .caption {
   position: absolute;
   bottom: 0;
-  padding: 0 8.301% 25px 8.301%;
+  padding: 0 8.30078% 25px 8.30078%;
 }
-/* line 312, screen.scss */
+/* line 313, screen.scss */
 .hero .caption p {
   margin-bottom: 10px;
-  margin-right: 31.85%;
+  margin-right: 31.85012%;
 }
 
-/* line 319, screen.scss */
+/* line 320, screen.scss */
 section i {
   text-align: center;
   display: block;
   font-size: 3em;
   margin: 32px 0 20px;
 }
-/* line 324, screen.scss */
+/* line 325, screen.scss */
 section i.small {
   font-size: 2em;
 }
 
-/* line 329, screen.scss */
+/* line 330, screen.scss */
 .container > div {
   overflow: hidden;
-  padding: 0 6.055% 32px;
+  padding: 0 6.05469% 32px;
 }
 
-/* line 334, screen.scss */
+/* line 335, screen.scss */
 .treatments {
   background: url(../img/treatments-bg.png) repeat top left;
 }
-/* line 336, screen.scss */
+/* line 337, screen.scss */
 .treatments i {
   color: #5a4d59;
 }
 
-/* line 341, screen.scss */
+/* line 342, screen.scss */
 .treatmentIntro {
   float: left;
-  width: 21.667%;
+  width: 21.66667%;
   margin-bottom: 32px;
-  margin-right: 4.444%;
+  margin-right: 4.44444%;
 }
-/* line 346, screen.scss */
+/* line 347, screen.scss */
 .treatmentIntro a {
   display: block;
   text-decoration: none;
   color: #333333;
 }
-/* line 350, screen.scss */
+/* line 351, screen.scss */
 .treatmentIntro a:hover .cta {
   text-decoration: underline;
 }
-/* line 354, screen.scss */
+/* line 355, screen.scss */
 .treatmentIntro img {
   background-color: #fff;
   border: 1px solid #e3abdd;
-  padding: 5.128%;
+  padding: 5.12821%;
   margin-bottom: 10px;
-  width: 87.179%;
+  width: 87.17949%;
 }
-/* line 361, screen.scss */
+/* line 362, screen.scss */
 .treatmentIntro p {
   margin-bottom: 10px;
-  padding: 0 2.564%;
+  padding: 0 2.5641%;
   text-align: center;
 }
-/* line 366, screen.scss */
+/* line 367, screen.scss */
 .treatmentIntro .cta {
   text-decoration: none;
   font-weight: bold;
@@ -458,130 +457,130 @@ section i.small {
   display: block;
   text-align: center;
 }
-/* line 374, screen.scss */
+/* line 375, screen.scss */
 .treatmentIntro:nth-of-type(4n) {
   margin-right: 0;
 }
 
-/* line 379, screen.scss */
+/* line 380, screen.scss */
 .about {
   background: #cfd7d1;
 }
-/* line 381, screen.scss */
+/* line 382, screen.scss */
 .about i {
   color: #9aaca0;
 }
-/* line 383, screen.scss */
+/* line 384, screen.scss */
 .about i.small {
   margin: 0 0 25px 0;
 }
-/* line 387, screen.scss */
+/* line 388, screen.scss */
 .about h4 {
   color: #666666;
   margin-bottom: 8px;
-  padding: 0 1.825%;
+  padding: 0 1.82482%;
 }
-/* line 392, screen.scss */
+/* line 393, screen.scss */
 .about .row {
   overflow: hidden;
 }
 
-/* line 397, screen.scss */
+/* line 398, screen.scss */
 .colThird {
-  width: 33.333%;
+  width: 33.33333%;
   margin-bottom: 20px;
   float: left;
 }
-/* line 401, screen.scss */
+/* line 402, screen.scss */
 .colThird p {
   padding-right: 6%;
 }
-/* line 404, screen.scss */
+/* line 405, screen.scss */
 .colThird + .colThird p {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
 }
-/* line 409, screen.scss */
+/* line 410, screen.scss */
 .colThird:last-child p, .colThird:last-child .tableWrapper {
   padding-right: 0;
 }
-/* line 413, screen.scss */
+/* line 414, screen.scss */
 .colThird.double .border {
   border-left: 1px solid #9bada1;
 }
-/* line 416, screen.scss */
+/* line 417, screen.scss */
 .colThird.double p {
   border: 0;
 }
-/* line 418, screen.scss */
+/* line 419, screen.scss */
 .colThird.double p + h4 {
   margin-top: 20px;
 }
 
-/* line 425, screen.scss */
+/* line 426, screen.scss */
 .tableWrapper {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
 }
 
-/* line 430, screen.scss */
+/* line 431, screen.scss */
 .hours {
   width: 100%;
 }
-/* line 432, screen.scss */
+/* line 433, screen.scss */
 .hours .dash {
   width: 10%;
 }
-/* line 435, screen.scss */
+/* line 436, screen.scss */
 .hours td {
   padding-bottom: 3px;
 }
 
-/* line 440, screen.scss */
+/* line 441, screen.scss */
 a.tel {
   color: #333333;
   text-decoration: none;
 }
-/* line 443, screen.scss */
+/* line 444, screen.scss */
 a.tel:hover {
   text-decoration: underline;
 }
 
-/* line 448, screen.scss */
+/* line 449, screen.scss */
 .contact {
   background: #343434;
   color: #d0d6d4;
 }
-/* line 451, screen.scss */
+/* line 452, screen.scss */
 .contact i {
   color: #9eaea4;
 }
 
-/* line 456, screen.scss */
+/* line 457, screen.scss */
 .floatyLinks {
   text-align: center;
   width: 100%;
 }
-/* line 459, screen.scss */
+/* line 460, screen.scss */
 .floatyLinks li {
   display: inline;
 }
-/* line 461, screen.scss */
+/* line 462, screen.scss */
 .floatyLinks li + li {
   margin-left: 5%;
 }
-/* line 465, screen.scss */
+/* line 466, screen.scss */
 .floatyLinks a {
   color: #ccd7d1;
   text-decoration: none;
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.14em;
 }
-/* line 473, screen.scss */
+/* line 474, screen.scss */
 .floatyLinks a:hover, .floatyLinks a:hover i, .floatyLinks a.active, .floatyLinks a.active i {
   color: #e3abdd;
 }
-/* line 477, screen.scss */
+/* line 478, screen.scss */
 .floatyLinks i {
   font-family: 'social';
   margin: 0;
@@ -589,41 +588,46 @@ a.tel:hover {
   display: inline;
   font-size: 2.625em;
 }
-/* line 484, screen.scss */
+/* line 485, screen.scss */
 .floatyLinks .icon-email {
   font-family: arial, helvetica, sans-serif;
 }
-/* line 487, screen.scss */
+/* line 488, screen.scss */
 .floatyLinks .icon-call:after {
   content: "\e003";
 }
-/* line 490, screen.scss */
+/* line 491, screen.scss */
 .floatyLinks .icon-email:after {
   content: "@";
 }
-/* line 493, screen.scss */
+/* line 494, screen.scss */
 .floatyLinks .icon-find:after {
   content: "\e002";
 }
-/* line 496, screen.scss */
+/* line 497, screen.scss */
 .floatyLinks .icon-like:after {
   content: "\e000";
 }
-/* line 499, screen.scss */
+/* line 500, screen.scss */
 .floatyLinks .icon-follow:after {
   content: "\e001";
 }
 
-/* line 507, screen.scss */
+/* line 505, screen.scss */
+.map iframe {
+  display: block;
+}
+
+/* line 509, screen.scss */
 .footer-top {
   background-color: black;
   color: #9aaca0;
 }
-/* line 510, screen.scss */
+/* line 512, screen.scss */
 .footer-top i {
   margin: 18px 0 10px;
 }
-/* line 513, screen.scss */
+/* line 515, screen.scss */
 .footer-top h5 {
   border-bottom: 1px dashed #9aaca0;
   margin-bottom: 20px;
@@ -632,12 +636,12 @@ a.tel:hover {
   padding-bottom: 10px;
 }
 
-/* line 522, screen.scss */
+/* line 524, screen.scss */
 .footer-bottom {
   background-color: #343434;
   color: #9aaca0;
 }
-/* line 525, screen.scss */
+/* line 527, screen.scss */
 .footer-bottom h5 {
   text-align: center;
   letter-spacing: 0.16em;
@@ -645,36 +649,36 @@ a.tel:hover {
   line-height: 1.4;
 }
 
-/* line 534, screen.scss */
+/* line 536, screen.scss */
 .brand-links li {
   float: left;
 }
-/* line 536, screen.scss */
+/* line 538, screen.scss */
 .brand-links li + li {
-  margin-left: 8.222%;
+  margin-left: 8.22222%;
 }
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 547, screen.scss */
+  /* line 549, screen.scss */
   .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 550, screen.scss */
+  /* line 552, screen.scss */
   .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 590px) {
-  /* line 557, screen.scss */
+  /* line 559, screen.scss */
   .mobileHide {
     display: none !important;
   }
 
-  /* line 560, screen.scss */
+  /* line 562, screen.scss */
   header span {
     text-align: center;
     line-height: 1.2;
@@ -682,100 +686,100 @@ a.tel:hover {
     padding-top: 0;
     margin-bottom: 20px;
   }
-  /* line 566, screen.scss */
+  /* line 568, screen.scss */
   header span h5 {
     float: none;
     font-size: 1.375em;
     font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   }
-  /* line 571, screen.scss */
+  /* line 573, screen.scss */
   header span .tel {
     font-size: 1.375em;
     float: none;
     clear: none;
   }
 
-  /* line 577, screen.scss */
+  /* line 579, screen.scss */
   .logo {
     width: 87.89%;
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
-  /* line 582, screen.scss */
+  /* line 584, screen.scss */
   .hours {
     width: 70%;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 588, screen.scss */
+  /* line 590, screen.scss */
   .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 591, screen.scss */
+  /* line 593, screen.scss */
   .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 594, screen.scss */
+  /* line 596, screen.scss */
   .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 
-  /* line 598, screen.scss */
+  /* line 600, screen.scss */
   .hours {
     width: 50%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width:  768px) {
-  /* line 604, screen.scss */
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  /* line 606, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 608, screen.scss */
+  /* line 610, screen.scss */
   .hero .caption h2 {
-    font-size: 2.188em;
+    font-size: 2.1875em;
   }
-  /* line 611, screen.scss */
+  /* line 613, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 615, screen.scss */
+  /* line 617, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 619, screen.scss */
+  /* line 621, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 623, screen.scss */
+  /* line 625, screen.scss */
   .colThird + .colThird p, .colThird.double .border {
     border: 0;
     padding: 0;
   }
-  /* line 627, screen.scss */
+  /* line 629, screen.scss */
   .colThird.double p + h4 {
     margin-top: 40px;
   }
 
-  /* line 632, screen.scss */
+  /* line 634, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;
     padding: 0;
   }
 }
-@media only screen and (min-width: 481px) and (max-width:  930px) {
-  /* line 639, screen.scss */
+@media only screen and (min-width: 481px) and (max-width: 930px) {
+  /* line 641, screen.scss */
   .logo {
     margin-top: 20px;
   }
 
-  /* line 642, screen.scss */
+  /* line 644, screen.scss */
   nav {
     text-align: center;
     width: 100%;
@@ -783,7 +787,7 @@ a.tel:hover {
     float: none;
     clear: both;
   }
-  /* line 648, screen.scss */
+  /* line 650, screen.scss */
   nav li {
     float: none;
     display: inline;

@@ -194,6 +194,9 @@
 						<li class="mobileHide"><a href="#"><i class="icon-like"></i><span>Like us</span></a></li>
 					</ul>
 				</div>
+				<div class="map">
+					<iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&amp;hl=en&amp;q=beauty+box+knebworth&amp;ie=UTF8&amp;hq=beauty+box+knebworth&amp;hnear=&amp;radius=15000&amp;t=m&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
+				</div>
 			</div>
 		</section>
 		<section>

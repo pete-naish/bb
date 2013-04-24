@@ -292,7 +292,8 @@ nav {
 }
 
 .container .caroufredsel_wrapper,
-.container > .hero {
+.container > .hero,
+.container .map {
 	padding: 0;
 }
 
@@ -499,9 +500,10 @@ a.tel {
 	.icon-follow:after {
 		content: "\e001";
 	}
+}
 
-	
-	
+.map iframe {
+	display: block;
 }
 
 .footer-top {
