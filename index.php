@@ -87,6 +87,53 @@
 							<span class="cta">Treatments &amp; prices</span>
 						</a>
 					</div>
+					<div class="treatmentDetails cf">
+						<i></i>
+						<h3>Hands &amp; feet</h3>
+						<h4>Treatments &amp; prices</h4>
+						<div class="colHalf">
+							<div class="treatment">
+								<h4>CND Shellac Power Polish</h4>
+								<p>The power polish that goes on like a polish over natural nails, lasts like a gel that won't chip or smudge, and comes off in minutes.</p>
+								<ul class="prices">
+									<li>
+										<span>Shellac Mini Manicure (45min)</span>
+										<span>&pound;27.00</span>
+									</li>
+									<li>
+										<span>Shellac Mini Pedicure (45min)</span>
+										<span>&pound;29.00</span>
+									</li>
+									<li>
+										<span>Shellac Rockstar Nails (1hr)</span>
+										<span>&pound;32.00</span>
+									</li>
+									<li>
+										<span>French Finish add</span>
+										<span>&pound;3.00</span>
+									</li>
+								</ul>
+								<p class="notes">Shellac removal Free or &pound;10 without new set being re-applied</p>
+							</div>
+						</div>
+						<div class="colHalf">
+							<div class="border">
+								<div class="treatment">
+									<h4>NSI Acrylic Nail Extensions</h4>
+									<p class="notes">Nail art and Diamantes available, with price on request.</p>
+								</div>
+								<div class="treatment">
+									<h4>Gelish</h4>
+									<p>Gelish can provide up to 3 weeks worth of wear. There's no drying time, no smudges, and it soaks off in 20 minutes - with no damage to the natural nail!</p>
+									<p class="notes">Gelish removal Free or &pound;10 without new set being re-applied.</p>
+								</div>
+								<div class="treatment">
+									<h4>Minx nails</h4>
+									<p>Extending fashion to the fingers and toes, Minx Nails is the hottest way to decorate your nails.</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -117,48 +164,48 @@
 							<h4>Opening hours</h4>
 							<div class="tableWrapper">
 								<table class="hours" border="0">
-								<tr>
-									<td>Monday</td>
-									<td>Closed</td>
-									<td class="dash">&ndash;</td>
-									<td>Closed</td>
-								</tr>
-								<tr>
-									<td>Tuesday</td>
-									<td>10:00</td>
-									<td class="dash">&ndash;</td>
-									<td>20:00</td>
-								</tr>
-								<tr>
-									<td>Wednesday</td>
-									<td>10:00</td>
-									<td class="dash">&ndash;</td>
-									<td>20:00</td>
-								</tr>
-								<tr>
-									<td>Thursday</td>
-									<td>10:00</td>
-									<td class="dash">&ndash;</td>
-									<td>20:00</td>
-								</tr>
-								<tr>
-									<td>Friday</td>
-									<td>10:00</td>
-									<td class="dash">&ndash;</td>
-									<td>18:00</td>
-								</tr>
-								<tr>
-									<td>Saturday</td>
-									<td>10:00</td>
-									<td class="dash">&ndash;</td>
-									<td>16:00</td>
-								</tr>
-								<tr>
-									<td>Sunday</td>
-									<td>Closed</td>
-									<td class="dash">&ndash;</td>
-									<td>Closed</td>
-								</tr>
+									<tr>
+										<td>Monday</td>
+										<td>Closed</td>
+										<td class="dash">&ndash;</td>
+										<td>Closed</td>
+									</tr>
+									<tr>
+										<td>Tuesday</td>
+										<td>10:00</td>
+										<td class="dash">&ndash;</td>
+										<td>20:00</td>
+									</tr>
+									<tr>
+										<td>Wednesday</td>
+										<td>10:00</td>
+										<td class="dash">&ndash;</td>
+										<td>20:00</td>
+									</tr>
+									<tr>
+										<td>Thursday</td>
+										<td>10:00</td>
+										<td class="dash">&ndash;</td>
+										<td>20:00</td>
+									</tr>
+									<tr>
+										<td>Friday</td>
+										<td>10:00</td>
+										<td class="dash">&ndash;</td>
+										<td>18:00</td>
+									</tr>
+									<tr>
+										<td>Saturday</td>
+										<td>10:00</td>
+										<td class="dash">&ndash;</td>
+										<td>16:00</td>
+									</tr>
+									<tr>
+										<td>Sunday</td>
+										<td>Closed</td>
+										<td class="dash">&ndash;</td>
+										<td>Closed</td>
+									</tr>
 								</table>
 							</div>
 						</div>

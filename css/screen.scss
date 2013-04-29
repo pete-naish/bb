@@ -223,6 +223,9 @@ p {
 header {
 	background-color: $header-background-color;
 	overflow: hidden;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
 	span {
 		margin: 0 percent(62px, 1024px);
 		padding-top: 15px;
@@ -249,6 +252,10 @@ header {
 			}
 		}
 	}
+}
+
+header + section {
+	padding-top: 132px;
 }
 
 .logo {
@@ -375,6 +382,74 @@ section i {
 	&:nth-of-type(4n){
 		margin-right: 0;
 	}
+}
+
+.treatmentDetails {
+	clear: both;
+	i {
+		margin-top: 8px;
+	}
+	h3 {
+		margin-bottom: 2px;
+	}
+	h3 + h4 {
+		margin-bottom: 30px;
+	}
+}
+
+.treatment {
+	// float: left;
+	margin-bottom: 26px;
+	h4 {
+		text-align: left;
+	}
+	p {
+		margin-bottom: 14px;
+	}
+}
+
+.prices {
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 14px;
+	li {
+		margin-bottom: 3px;
+		line-height: 1.2;
+	}
+	li:after {
+		float: left;
+		width: 0;
+		white-space: nowrap;
+		content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+	}
+	span:first-child {
+		padding-right: percent(5px);
+		background: url(../img/treatments-bg.png);
+	}
+	span + span {
+		float: right;
+		padding-left: percent(5px);
+		background: url(../img/treatments-bg.png);	
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.colHalf {
+	float: left;
+	width: percent(430px);
+	& + .colHalf {
+		margin-left: percent(20px);
+		.border {
+			border-left: 1px solid #9BADA1;
+			padding-left: percent(20px, 430px);
+		}
+	}
+}
+
+
+p.notes {
+	font-style: italic;
 }
 
 .about {
@@ -559,6 +634,10 @@ a.tel {
 	.mobileHide {
 		display: none !important;
 	}
+	header {
+		position: static;
+		width: auto;
+	}
 	header span {
 		text-align: center;
 		line-height: 1.2;
@@ -630,6 +709,22 @@ a.tel {
 			margin-top: 40px;
 		}
 	}
+	.colHalf {
+		width: 100%;
+		& + .colHalf {
+			margin-left: 0;
+			.border {
+				padding-left: 0;
+				border: 0;
+			}
+		}
+		&:last-child .treatment:last-child {
+			margin-bottom: 20px;
+		}
+	}
+	.treatment {
+		margin-bottom: 40px;
+	}
 	.tableWrapper,
 	.colThird p {
 		border: 0;
@@ -652,5 +747,8 @@ a.tel {
 			display: inline;
 			margin-bottom: 0;
 		}
+	}
+	header + section {
+		padding-top: 157px;
 	}
 }

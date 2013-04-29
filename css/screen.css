@@ -1,5 +1,5 @@
 /* @import must be at top of file, otherwise CSS will not work */
-/* line 17, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,50 +16,50 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: inherit;
   font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
+/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
   line-height: 1;
 }
 
-/* line 24, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -104,7 +104,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
 }
@@ -212,7 +212,7 @@ body {
 /* line 169, screen.scss */
 h2 {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-  font-size: 4.0625em;
+  font-size: 4.063em;
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -223,7 +223,7 @@ h3 {
   font-size: 1.875em;
   letter-spacing: 0.1em;
   text-align: center;
-  margin: 0 6.88889% 30px;
+  margin: 0 6.889% 30px;
 }
 
 /* line 185, screen.scss */
@@ -276,21 +276,24 @@ p a:hover {
 header {
   background-color: #343434;
   overflow: hidden;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
 }
-/* line 226, screen.scss */
+/* line 229, screen.scss */
 header span {
-  margin: 0 6.05469%;
+  margin: 0 6.055%;
   padding-top: 15px;
   float: right;
   text-align: right;
 }
-/* line 231, screen.scss */
+/* line 234, screen.scss */
 header span h5 {
   color: #e3abdd;
   font-size: 0.875em;
   float: right;
 }
-/* line 236, screen.scss */
+/* line 239, screen.scss */
 header span .tel {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   color: #e3abdd;
@@ -302,18 +305,24 @@ header span .tel {
   margin-bottom: 30px;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
+  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 246, screen.scss */
+/* line 249, screen.scss */
 header span .tel:hover {
   border-color: #e3abdd;
   text-decoration: none;
 }
 
-/* line 254, screen.scss */
+/* line 257, screen.scss */
+header + section {
+  padding-top: 132px;
+}
+
+/* line 261, screen.scss */
 .logo {
-  margin: 40px 6.05469% 30px 6.05469%;
+  margin: 40px 6.055% 30px 6.055%;
   display: block;
   float: left;
   width: 290px;
@@ -321,134 +330,135 @@ header span .tel:hover {
   background: url(../img/logo.png) no-repeat center;
   background: none, url(../img/logo.svg) no-repeat center;
 }
-/* line 262, screen.scss */
+/* line 269, screen.scss */
 .logo img {
   width: 290px;
 }
 
-/* line 267, screen.scss */
+/* line 274, screen.scss */
 nav {
   float: right;
   clear: right;
-  margin: 0 6.05469% 10px;
+  margin: 0 6.055% 10px;
 }
-/* line 271, screen.scss */
+/* line 278, screen.scss */
 nav li {
   float: left;
   margin-bottom: 15px;
 }
-/* line 274, screen.scss */
+/* line 281, screen.scss */
 nav li a {
   color: #bfcdcd;
   text-decoration: none;
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.25em;
   letter-spacing: 0.15em;
-  margin-right: -0.1875em;
+  margin-right: -0.188em;
   border-bottom: 2px solid #343434;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
+  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 283, screen.scss */
+/* line 290, screen.scss */
 nav li a:hover {
   border-color: #bfcdcd;
 }
-/* line 287, screen.scss */
+/* line 294, screen.scss */
 nav li i {
   color: #e3abdd;
   padding: 0 15px;
 }
 
-/* line 296, screen.scss */
+/* line 303, screen.scss */
 .container .caroufredsel_wrapper,
 .container > .hero,
 .container .map {
   padding: 0;
 }
 
-/* line 301, screen.scss */
+/* line 308, screen.scss */
 .hero .heroSlide {
   position: relative;
   overflow: hidden;
   float: left;
 }
-/* line 306, screen.scss */
+/* line 313, screen.scss */
 .hero img {
   max-width: 100%;
 }
-/* line 309, screen.scss */
+/* line 316, screen.scss */
 .hero .caption {
   position: absolute;
   bottom: 0;
-  padding: 0 8.30078% 25px 8.30078%;
+  padding: 0 8.301% 25px 8.301%;
 }
-/* line 313, screen.scss */
+/* line 320, screen.scss */
 .hero .caption p {
   margin-bottom: 10px;
-  margin-right: 31.85012%;
+  margin-right: 31.85%;
 }
 
-/* line 320, screen.scss */
+/* line 327, screen.scss */
 section i {
   text-align: center;
   display: block;
   font-size: 3em;
   margin: 32px 0 20px;
 }
-/* line 325, screen.scss */
+/* line 332, screen.scss */
 section i.small {
   font-size: 2em;
 }
 
-/* line 330, screen.scss */
+/* line 337, screen.scss */
 .container > div {
   overflow: hidden;
-  padding: 0 6.05469% 32px;
+  padding: 0 6.055% 32px;
 }
 
-/* line 335, screen.scss */
+/* line 342, screen.scss */
 .treatments {
   background: url(../img/treatments-bg.png) repeat top left;
 }
-/* line 337, screen.scss */
+/* line 344, screen.scss */
 .treatments i {
   color: #5a4d59;
 }
 
-/* line 342, screen.scss */
+/* line 349, screen.scss */
 .treatmentIntro {
   float: left;
-  width: 21.66667%;
+  width: 21.667%;
   margin-bottom: 32px;
-  margin-right: 4.44444%;
+  margin-right: 4.444%;
 }
-/* line 347, screen.scss */
+/* line 354, screen.scss */
 .treatmentIntro a {
   display: block;
   text-decoration: none;
   color: #333333;
 }
-/* line 351, screen.scss */
+/* line 358, screen.scss */
 .treatmentIntro a:hover .cta {
   text-decoration: underline;
 }
-/* line 355, screen.scss */
+/* line 362, screen.scss */
 .treatmentIntro img {
   background-color: #fff;
   border: 1px solid #e3abdd;
-  padding: 5.12821%;
+  padding: 5.128%;
   margin-bottom: 10px;
-  width: 87.17949%;
+  width: 87.179%;
 }
-/* line 362, screen.scss */
+/* line 369, screen.scss */
 .treatmentIntro p {
   margin-bottom: 10px;
-  padding: 0 2.5641%;
+  padding: 0 2.564%;
   text-align: center;
 }
-/* line 367, screen.scss */
+/* line 374, screen.scss */
 .treatmentIntro .cta {
   text-decoration: none;
   font-weight: bold;
@@ -457,130 +467,212 @@ section i.small {
   display: block;
   text-align: center;
 }
-/* line 375, screen.scss */
+/* line 382, screen.scss */
 .treatmentIntro:nth-of-type(4n) {
   margin-right: 0;
 }
 
-/* line 380, screen.scss */
+/* line 387, screen.scss */
+.treatmentDetails {
+  clear: both;
+}
+/* line 389, screen.scss */
+.treatmentDetails i {
+  margin-top: 8px;
+}
+/* line 392, screen.scss */
+.treatmentDetails h3 {
+  margin-bottom: 2px;
+}
+/* line 395, screen.scss */
+.treatmentDetails h3 + h4 {
+  margin-bottom: 30px;
+}
+
+/* line 400, screen.scss */
+.treatment {
+  margin-bottom: 26px;
+}
+/* line 403, screen.scss */
+.treatment h4 {
+  text-align: left;
+}
+/* line 406, screen.scss */
+.treatment p {
+  margin-bottom: 14px;
+}
+
+/* line 411, screen.scss */
+.prices {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+/* line 415, screen.scss */
+.prices li {
+  margin-bottom: 3px;
+  line-height: 1.2;
+}
+/* line 419, screen.scss */
+.prices li:after {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+}
+/* line 425, screen.scss */
+.prices span:first-child {
+  padding-right: 0.556%;
+  background: url(../img/treatments-bg.png);
+}
+/* line 429, screen.scss */
+.prices span + span {
+  float: right;
+  padding-left: 0.556%;
+  background: url(../img/treatments-bg.png);
+  position: relative;
+  z-index: 1;
+}
+
+/* line 438, screen.scss */
+.colHalf {
+  float: left;
+  width: 47.778%;
+}
+/* line 441, screen.scss */
+.colHalf + .colHalf {
+  margin-left: 2.222%;
+}
+/* line 443, screen.scss */
+.colHalf + .colHalf .border {
+  border-left: 1px solid #9BADA1;
+  padding-left: 4.651%;
+}
+
+/* line 451, screen.scss */
+p.notes {
+  font-style: italic;
+}
+
+/* line 455, screen.scss */
 .about {
   background: #cfd7d1;
 }
-/* line 382, screen.scss */
+/* line 457, screen.scss */
 .about i {
   color: #9aaca0;
 }
-/* line 384, screen.scss */
+/* line 459, screen.scss */
 .about i.small {
   margin: 0 0 25px 0;
 }
-/* line 388, screen.scss */
+/* line 463, screen.scss */
 .about h4 {
   color: #666666;
   margin-bottom: 8px;
-  padding: 0 1.82482%;
+  padding: 0 1.825%;
 }
-/* line 393, screen.scss */
+/* line 468, screen.scss */
 .about .row {
   overflow: hidden;
 }
 
-/* line 398, screen.scss */
+/* line 473, screen.scss */
 .colThird {
-  width: 33.33333%;
+  width: 33.333%;
   margin-bottom: 20px;
   float: left;
 }
-/* line 402, screen.scss */
+/* line 477, screen.scss */
 .colThird p {
   padding-right: 6%;
 }
-/* line 405, screen.scss */
+/* line 480, screen.scss */
 .colThird + .colThird p {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
 }
-/* line 410, screen.scss */
+/* line 485, screen.scss */
 .colThird:last-child p, .colThird:last-child .tableWrapper {
   padding-right: 0;
 }
-/* line 414, screen.scss */
+/* line 489, screen.scss */
 .colThird.double .border {
   border-left: 1px solid #9bada1;
 }
-/* line 417, screen.scss */
+/* line 492, screen.scss */
 .colThird.double p {
   border: 0;
 }
-/* line 419, screen.scss */
+/* line 494, screen.scss */
 .colThird.double p + h4 {
   margin-top: 20px;
 }
 
-/* line 426, screen.scss */
+/* line 501, screen.scss */
 .tableWrapper {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
 }
 
-/* line 431, screen.scss */
+/* line 506, screen.scss */
 .hours {
   width: 100%;
 }
-/* line 433, screen.scss */
+/* line 508, screen.scss */
 .hours .dash {
   width: 10%;
 }
-/* line 436, screen.scss */
+/* line 511, screen.scss */
 .hours td {
   padding-bottom: 3px;
 }
 
-/* line 441, screen.scss */
+/* line 516, screen.scss */
 a.tel {
   color: #333333;
   text-decoration: none;
 }
-/* line 444, screen.scss */
+/* line 519, screen.scss */
 a.tel:hover {
   text-decoration: underline;
 }
 
-/* line 449, screen.scss */
+/* line 524, screen.scss */
 .contact {
   background: #343434;
   color: #d0d6d4;
 }
-/* line 452, screen.scss */
+/* line 527, screen.scss */
 .contact i {
   color: #9eaea4;
 }
 
-/* line 457, screen.scss */
+/* line 532, screen.scss */
 .floatyLinks {
   text-align: center;
   width: 100%;
 }
-/* line 460, screen.scss */
+/* line 535, screen.scss */
 .floatyLinks li {
   display: inline;
 }
-/* line 462, screen.scss */
+/* line 537, screen.scss */
 .floatyLinks li + li {
   margin-left: 5%;
 }
-/* line 466, screen.scss */
+/* line 541, screen.scss */
 .floatyLinks a {
   color: #ccd7d1;
   text-decoration: none;
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.14em;
 }
-/* line 474, screen.scss */
+/* line 549, screen.scss */
 .floatyLinks a:hover, .floatyLinks a:hover i, .floatyLinks a.active, .floatyLinks a.active i {
   color: #e3abdd;
 }
-/* line 478, screen.scss */
+/* line 553, screen.scss */
 .floatyLinks i {
   font-family: 'social';
   margin: 0;
@@ -588,46 +680,46 @@ a.tel:hover {
   display: inline;
   font-size: 2.625em;
 }
-/* line 485, screen.scss */
+/* line 560, screen.scss */
 .floatyLinks .icon-email {
   font-family: arial, helvetica, sans-serif;
 }
-/* line 488, screen.scss */
+/* line 563, screen.scss */
 .floatyLinks .icon-call:after {
   content: "\e003";
 }
-/* line 491, screen.scss */
+/* line 566, screen.scss */
 .floatyLinks .icon-email:after {
   content: "@";
 }
-/* line 494, screen.scss */
+/* line 569, screen.scss */
 .floatyLinks .icon-find:after {
   content: "\e002";
 }
-/* line 497, screen.scss */
+/* line 572, screen.scss */
 .floatyLinks .icon-like:after {
   content: "\e000";
 }
-/* line 500, screen.scss */
+/* line 575, screen.scss */
 .floatyLinks .icon-follow:after {
   content: "\e001";
 }
 
-/* line 505, screen.scss */
+/* line 580, screen.scss */
 .map iframe {
   display: block;
 }
 
-/* line 509, screen.scss */
+/* line 584, screen.scss */
 .footer-top {
   background-color: black;
   color: #9aaca0;
 }
-/* line 512, screen.scss */
+/* line 587, screen.scss */
 .footer-top i {
   margin: 18px 0 10px;
 }
-/* line 515, screen.scss */
+/* line 590, screen.scss */
 .footer-top h5 {
   border-bottom: 1px dashed #9aaca0;
   margin-bottom: 20px;
@@ -636,12 +728,12 @@ a.tel:hover {
   padding-bottom: 10px;
 }
 
-/* line 524, screen.scss */
+/* line 599, screen.scss */
 .footer-bottom {
   background-color: #343434;
   color: #9aaca0;
 }
-/* line 527, screen.scss */
+/* line 602, screen.scss */
 .footer-bottom h5 {
   text-align: center;
   letter-spacing: 0.16em;
@@ -649,36 +741,42 @@ a.tel:hover {
   line-height: 1.4;
 }
 
-/* line 536, screen.scss */
+/* line 611, screen.scss */
 .brand-links li {
   float: left;
 }
-/* line 538, screen.scss */
+/* line 613, screen.scss */
 .brand-links li + li {
-  margin-left: 8.22222%;
+  margin-left: 8.222%;
 }
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 549, screen.scss */
+  /* line 624, screen.scss */
   .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 552, screen.scss */
+  /* line 627, screen.scss */
   .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 590px) {
-  /* line 559, screen.scss */
+  /* line 634, screen.scss */
   .mobileHide {
     display: none !important;
   }
 
-  /* line 562, screen.scss */
+  /* line 637, screen.scss */
+  header {
+    position: static;
+    width: auto;
+  }
+
+  /* line 641, screen.scss */
   header span {
     text-align: center;
     line-height: 1.2;
@@ -686,100 +784,123 @@ a.tel:hover {
     padding-top: 0;
     margin-bottom: 20px;
   }
-  /* line 568, screen.scss */
+  /* line 647, screen.scss */
   header span h5 {
     float: none;
     font-size: 1.375em;
     font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   }
-  /* line 573, screen.scss */
+  /* line 652, screen.scss */
   header span .tel {
     font-size: 1.375em;
     float: none;
     clear: none;
   }
 
-  /* line 579, screen.scss */
+  /* line 658, screen.scss */
   .logo {
     width: 87.89%;
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
-  /* line 584, screen.scss */
+  /* line 663, screen.scss */
   .hours {
     width: 70%;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 590, screen.scss */
+  /* line 669, screen.scss */
   .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 593, screen.scss */
+  /* line 672, screen.scss */
   .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 596, screen.scss */
+  /* line 675, screen.scss */
   .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 
-  /* line 600, screen.scss */
+  /* line 679, screen.scss */
   .hours {
     width: 50%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  /* line 606, screen.scss */
+@media only screen and (min-width: 320px) and (max-width:  768px) {
+  /* line 685, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 610, screen.scss */
+  /* line 689, screen.scss */
   .hero .caption h2 {
-    font-size: 2.1875em;
+    font-size: 2.188em;
   }
-  /* line 613, screen.scss */
+  /* line 692, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 617, screen.scss */
+  /* line 696, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 621, screen.scss */
+  /* line 700, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 625, screen.scss */
+  /* line 704, screen.scss */
   .colThird + .colThird p, .colThird.double .border {
     border: 0;
     padding: 0;
   }
-  /* line 629, screen.scss */
+  /* line 708, screen.scss */
   .colThird.double p + h4 {
     margin-top: 40px;
   }
 
-  /* line 634, screen.scss */
+  /* line 712, screen.scss */
+  .colHalf {
+    width: 100%;
+  }
+  /* line 714, screen.scss */
+  .colHalf + .colHalf {
+    margin-left: 0;
+  }
+  /* line 716, screen.scss */
+  .colHalf + .colHalf .border {
+    padding-left: 0;
+    border: 0;
+  }
+  /* line 721, screen.scss */
+  .colHalf:last-child .treatment:last-child {
+    margin-bottom: 20px;
+  }
+
+  /* line 725, screen.scss */
+  .treatment {
+    margin-bottom: 40px;
+  }
+
+  /* line 729, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;
     padding: 0;
   }
 }
-@media only screen and (min-width: 481px) and (max-width: 930px) {
-  /* line 641, screen.scss */
+@media only screen and (min-width: 481px) and (max-width:  930px) {
+  /* line 736, screen.scss */
   .logo {
     margin-top: 20px;
   }
 
-  /* line 644, screen.scss */
+  /* line 739, screen.scss */
   nav {
     text-align: center;
     width: 100%;
@@ -787,10 +908,15 @@ a.tel:hover {
     float: none;
     clear: both;
   }
-  /* line 650, screen.scss */
+  /* line 745, screen.scss */
   nav li {
     float: none;
     display: inline;
     margin-bottom: 0;
+  }
+
+  /* line 751, screen.scss */
+  header + section {
+    padding-top: 157px;
   }
 }
