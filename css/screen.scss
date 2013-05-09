@@ -530,12 +530,16 @@ a.tel {
 }
 
 .floatyLinks {
-	text-align: center;
-	width: 100%;
+	float: left;
+	display: block;
+	width: percent(900px);
+	padding-left: percent(240px);
+	box-sizing: border-box;
 	li {
 		display: inline;
+		float: left;
 		& + li {
-			margin-left: percent(45px);
+			margin-left: percent(50px);
 		}
 	}
 	a {
@@ -553,9 +557,9 @@ a.tel {
 	i {
 		font-family: 'social';
 		margin: 0;
-		text-align: left;
-		display: inline;
+		margin-bottom: 10px;
 		font-size: em(42px);
+
 	}
 	.icon-email {
 		font-family: arial, helvetica, sans-serif;
