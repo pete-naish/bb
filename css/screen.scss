@@ -547,6 +547,7 @@ a.tel {
 		text-decoration: none;
 		font-family: $heading-font-family;
 		letter-spacing: 0.14em;
+		display: block;
 		&:hover,
 		&:hover i,
 		&.active,

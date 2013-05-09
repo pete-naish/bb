@@ -1,5 +1,5 @@
 /* @import must be at top of file, otherwise CSS will not work */
-/* line 17, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,50 +16,50 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: inherit;
   font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
+/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
   line-height: 1;
 }
 
-/* line 24, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -104,7 +104,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
 }
@@ -212,7 +212,7 @@ body {
 /* line 169, screen.scss */
 h2 {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-  font-size: 4.0625em;
+  font-size: 4.063em;
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -223,7 +223,7 @@ h3 {
   font-size: 1.875em;
   letter-spacing: 0.1em;
   text-align: center;
-  margin: 0 6.88889% 30px;
+  margin: 0 6.889% 30px;
 }
 
 /* line 185, screen.scss */
@@ -282,7 +282,7 @@ header {
 }
 /* line 229, screen.scss */
 header span {
-  margin: 0 6.05469%;
+  margin: 0 6.055%;
   padding-top: 15px;
   float: right;
   text-align: right;
@@ -305,6 +305,7 @@ header span .tel {
   margin-bottom: 30px;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
+  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
@@ -321,7 +322,7 @@ header + section {
 
 /* line 261, screen.scss */
 .logo {
-  margin: 40px 6.05469% 30px 6.05469%;
+  margin: 40px 6.055% 30px 6.055%;
   display: block;
   float: left;
   width: 290px;
@@ -338,7 +339,7 @@ header + section {
 nav {
   float: right;
   clear: right;
-  margin: 0 6.05469% 10px;
+  margin: 0 6.055% 10px;
 }
 /* line 278, screen.scss */
 nav li {
@@ -352,10 +353,11 @@ nav li a {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.25em;
   letter-spacing: 0.15em;
-  margin-right: -0.1875em;
+  margin-right: -0.188em;
   border-bottom: 2px solid #343434;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
+  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
@@ -390,12 +392,12 @@ nav li i {
 .hero .caption {
   position: absolute;
   bottom: 0;
-  padding: 0 8.30078% 25px 8.30078%;
+  padding: 0 8.301% 25px 8.301%;
 }
 /* line 320, screen.scss */
 .hero .caption p {
   margin-bottom: 10px;
-  margin-right: 31.85012%;
+  margin-right: 31.85%;
 }
 
 /* line 327, screen.scss */
@@ -413,7 +415,7 @@ section i.small {
 /* line 337, screen.scss */
 .container > div {
   overflow: hidden;
-  padding: 0 6.05469% 32px;
+  padding: 0 6.055% 32px;
 }
 
 /* line 342, screen.scss */
@@ -428,9 +430,9 @@ section i.small {
 /* line 349, screen.scss */
 .treatmentIntro {
   float: left;
-  width: 21.66667%;
+  width: 21.667%;
   margin-bottom: 32px;
-  margin-right: 4.44444%;
+  margin-right: 4.444%;
 }
 /* line 354, screen.scss */
 .treatmentIntro a {
@@ -446,14 +448,14 @@ section i.small {
 .treatmentIntro img {
   background-color: #fff;
   border: 1px solid #e3abdd;
-  padding: 5.12821%;
+  padding: 5.128%;
   margin-bottom: 10px;
-  width: 87.17949%;
+  width: 87.179%;
 }
 /* line 369, screen.scss */
 .treatmentIntro p {
   margin-bottom: 10px;
-  padding: 0 2.5641%;
+  padding: 0 2.564%;
   text-align: center;
 }
 /* line 374, screen.scss */
@@ -520,13 +522,13 @@ section i.small {
 }
 /* line 425, screen.scss */
 .prices span:first-child {
-  padding-right: 0.55556%;
+  padding-right: 0.556%;
   background: url(../img/treatments-bg.png);
 }
 /* line 429, screen.scss */
 .prices span + span {
   float: right;
-  padding-left: 0.55556%;
+  padding-left: 0.556%;
   background: url(../img/treatments-bg.png);
   position: relative;
   z-index: 1;
@@ -535,16 +537,16 @@ section i.small {
 /* line 438, screen.scss */
 .colHalf {
   float: left;
-  width: 47.77778%;
+  width: 47.778%;
 }
 /* line 441, screen.scss */
 .colHalf + .colHalf {
-  margin-left: 2.22222%;
+  margin-left: 2.222%;
 }
 /* line 443, screen.scss */
 .colHalf + .colHalf .border {
-  border-left: 1px solid #9bada1;
-  padding-left: 4.65116%;
+  border-left: 1px solid #9BADA1;
+  padding-left: 4.651%;
 }
 
 /* line 451, screen.scss */
@@ -568,7 +570,7 @@ p.notes {
 .about h4 {
   color: #666666;
   margin-bottom: 8px;
-  padding: 0 1.82482%;
+  padding: 0 1.825%;
 }
 /* line 468, screen.scss */
 .about .row {
@@ -577,7 +579,7 @@ p.notes {
 
 /* line 473, screen.scss */
 .colThird {
-  width: 33.33333%;
+  width: 33.333%;
   margin-bottom: 20px;
   float: left;
 }
@@ -651,7 +653,7 @@ a.tel:hover {
   float: left;
   display: block;
   width: 100%;
-  padding-left: 26.66667%;
+  padding-left: 26.667%;
   box-sizing: border-box;
 }
 /* line 538, screen.scss */
@@ -661,7 +663,7 @@ a.tel:hover {
 }
 /* line 541, screen.scss */
 .floatyLinks li + li {
-  margin-left: 5.55556%;
+  margin-left: 5.556%;
 }
 /* line 545, screen.scss */
 .floatyLinks a {
@@ -669,58 +671,59 @@ a.tel:hover {
   text-decoration: none;
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.14em;
+  display: block;
 }
-/* line 553, screen.scss */
+/* line 554, screen.scss */
 .floatyLinks a:hover, .floatyLinks a:hover i, .floatyLinks a.active, .floatyLinks a.active i {
   color: #e3abdd;
 }
-/* line 557, screen.scss */
+/* line 558, screen.scss */
 .floatyLinks i {
   font-family: 'social';
   margin: 0;
   margin-bottom: 10px;
   font-size: 2.625em;
 }
-/* line 564, screen.scss */
+/* line 565, screen.scss */
 .floatyLinks .icon-email {
   font-family: arial, helvetica, sans-serif;
 }
-/* line 567, screen.scss */
+/* line 568, screen.scss */
 .floatyLinks .icon-call:after {
   content: "\e003";
 }
-/* line 570, screen.scss */
+/* line 571, screen.scss */
 .floatyLinks .icon-email:after {
   content: "@";
 }
-/* line 573, screen.scss */
+/* line 574, screen.scss */
 .floatyLinks .icon-find:after {
   content: "\e002";
 }
-/* line 576, screen.scss */
+/* line 577, screen.scss */
 .floatyLinks .icon-like:after {
   content: "\e000";
 }
-/* line 579, screen.scss */
+/* line 580, screen.scss */
 .floatyLinks .icon-follow:after {
   content: "\e001";
 }
 
-/* line 584, screen.scss */
+/* line 585, screen.scss */
 .map iframe {
   display: block;
 }
 
-/* line 588, screen.scss */
+/* line 589, screen.scss */
 .footer-top {
   background-color: black;
   color: #9aaca0;
 }
-/* line 591, screen.scss */
+/* line 592, screen.scss */
 .footer-top i {
   margin: 18px 0 10px;
 }
-/* line 594, screen.scss */
+/* line 595, screen.scss */
 .footer-top h5 {
   border-bottom: 1px dashed #9aaca0;
   margin-bottom: 20px;
@@ -729,12 +732,12 @@ a.tel:hover {
   padding-bottom: 10px;
 }
 
-/* line 603, screen.scss */
+/* line 604, screen.scss */
 .footer-bottom {
   background-color: #343434;
   color: #9aaca0;
 }
-/* line 606, screen.scss */
+/* line 607, screen.scss */
 .footer-bottom h5 {
   text-align: center;
   letter-spacing: 0.16em;
@@ -742,42 +745,42 @@ a.tel:hover {
   line-height: 1.4;
 }
 
-/* line 615, screen.scss */
+/* line 616, screen.scss */
 .brand-links li {
   float: left;
 }
-/* line 617, screen.scss */
+/* line 618, screen.scss */
 .brand-links li + li {
-  margin-left: 8.22222%;
+  margin-left: 8.222%;
 }
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 628, screen.scss */
+  /* line 629, screen.scss */
   .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 631, screen.scss */
+  /* line 632, screen.scss */
   .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 590px) {
-  /* line 638, screen.scss */
+  /* line 639, screen.scss */
   .mobileHide {
     display: none !important;
   }
 
-  /* line 641, screen.scss */
+  /* line 642, screen.scss */
   header {
     position: static;
     width: auto;
   }
 
-  /* line 645, screen.scss */
+  /* line 646, screen.scss */
   header span {
     text-align: center;
     line-height: 1.2;
@@ -785,123 +788,123 @@ a.tel:hover {
     padding-top: 0;
     margin-bottom: 20px;
   }
-  /* line 651, screen.scss */
+  /* line 652, screen.scss */
   header span h5 {
     float: none;
     font-size: 1.375em;
     font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   }
-  /* line 656, screen.scss */
+  /* line 657, screen.scss */
   header span .tel {
     font-size: 1.375em;
     float: none;
     clear: none;
   }
 
-  /* line 662, screen.scss */
+  /* line 663, screen.scss */
   .logo {
     width: 87.89%;
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
-  /* line 667, screen.scss */
+  /* line 668, screen.scss */
   .hours {
     width: 70%;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 673, screen.scss */
+  /* line 674, screen.scss */
   .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 676, screen.scss */
+  /* line 677, screen.scss */
   .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 679, screen.scss */
+  /* line 680, screen.scss */
   .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 
-  /* line 683, screen.scss */
+  /* line 684, screen.scss */
   .hours {
     width: 50%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  /* line 689, screen.scss */
+@media only screen and (min-width: 320px) and (max-width:  768px) {
+  /* line 690, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 693, screen.scss */
+  /* line 694, screen.scss */
   .hero .caption h2 {
-    font-size: 2.1875em;
+    font-size: 2.188em;
   }
-  /* line 696, screen.scss */
+  /* line 697, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 700, screen.scss */
+  /* line 701, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 704, screen.scss */
+  /* line 705, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 708, screen.scss */
+  /* line 709, screen.scss */
   .colThird + .colThird p, .colThird.double .border {
     border: 0;
     padding: 0;
   }
-  /* line 712, screen.scss */
+  /* line 713, screen.scss */
   .colThird.double p + h4 {
     margin-top: 40px;
   }
 
-  /* line 716, screen.scss */
+  /* line 717, screen.scss */
   .colHalf {
     width: 100%;
   }
-  /* line 718, screen.scss */
+  /* line 719, screen.scss */
   .colHalf + .colHalf {
     margin-left: 0;
   }
-  /* line 720, screen.scss */
+  /* line 721, screen.scss */
   .colHalf + .colHalf .border {
     padding-left: 0;
     border: 0;
   }
-  /* line 725, screen.scss */
+  /* line 726, screen.scss */
   .colHalf:last-child .treatment:last-child {
     margin-bottom: 20px;
   }
 
-  /* line 729, screen.scss */
+  /* line 730, screen.scss */
   .treatment {
     margin-bottom: 40px;
   }
 
-  /* line 733, screen.scss */
+  /* line 734, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;
     padding: 0;
   }
 }
-@media only screen and (min-width: 481px) and (max-width: 930px) {
-  /* line 740, screen.scss */
+@media only screen and (min-width: 481px) and (max-width:  930px) {
+  /* line 741, screen.scss */
   .logo {
     margin-top: 20px;
   }
 
-  /* line 743, screen.scss */
+  /* line 744, screen.scss */
   nav {
     text-align: center;
     width: 100%;
@@ -909,14 +912,14 @@ a.tel:hover {
     float: none;
     clear: both;
   }
-  /* line 749, screen.scss */
+  /* line 750, screen.scss */
   nav li {
     float: none;
     display: inline;
     margin-bottom: 0;
   }
 
-  /* line 755, screen.scss */
+  /* line 756, screen.scss */
   header + section {
     padding-top: 157px;
   }
