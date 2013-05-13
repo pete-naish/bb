@@ -650,80 +650,89 @@ a.tel:hover {
 
 /* line 532, screen.scss */
 .floatyLinks {
-  float: left;
-  display: block;
+  text-align: center;
   width: 100%;
-  padding-left: 26.667%;
-  box-sizing: border-box;
+  margin-top: 100px;
 }
-/* line 538, screen.scss */
+/* line 536, screen.scss */
 .floatyLinks li {
   display: inline;
-  float: left;
 }
-/* line 541, screen.scss */
+/* line 538, screen.scss */
 .floatyLinks li + li {
   margin-left: 5.556%;
 }
-/* line 545, screen.scss */
+/* line 543, screen.scss */
 .floatyLinks a {
   color: #ccd7d1;
   text-decoration: none;
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.14em;
-  display: block;
+  position: relative;
 }
-/* line 554, screen.scss */
-.floatyLinks a:hover, .floatyLinks a:hover i, .floatyLinks a.active, .floatyLinks a.active i {
+/* line 550, screen.scss */
+.floatyLinks a:hover, .floatyLinks a.active {
   color: #e3abdd;
 }
-/* line 558, screen.scss */
-.floatyLinks i {
+/* line 553, screen.scss */
+.floatyLinks a:before {
   font-family: 'social';
   margin: 0;
   margin-bottom: 10px;
   font-size: 2.625em;
+  position: absolute;
+  top: -50px;
 }
-/* line 565, screen.scss */
-.floatyLinks .icon-email {
-  font-family: arial, helvetica, sans-serif;
-}
-/* line 568, screen.scss */
-.floatyLinks .icon-call:after {
+/* line 562, screen.scss */
+.floatyLinks .icon-call a:before {
   content: "\e003";
+  left: 12px;
 }
-/* line 571, screen.scss */
-.floatyLinks .icon-email:after {
+/* line 566, screen.scss */
+.floatyLinks .icon-email a:before {
+  font-family: arial, helvetica, sans-serif;
   content: "@";
+  left: 6px;
+  top: -53px;
 }
-/* line 574, screen.scss */
-.floatyLinks .icon-find:after {
+/* line 572, screen.scss */
+.floatyLinks .icon-find a:before {
   content: "\e002";
+  left: 11px;
 }
-/* line 577, screen.scss */
-.floatyLinks .icon-like:after {
+/* line 576, screen.scss */
+.floatyLinks .icon-like a:before {
   content: "\e000";
+  left: 2px;
 }
 /* line 580, screen.scss */
-.floatyLinks .icon-follow:after {
+.floatyLinks .icon-follow a:before {
   content: "\e001";
+  left: 9px;
 }
 
-/* line 585, screen.scss */
+/* line 586, screen.scss */
+#map-canvas {
+  width: 100%;
+  height: 600px;
+  padding: 0;
+}
+
+/* line 592, screen.scss */
 .map iframe {
   display: block;
 }
 
-/* line 589, screen.scss */
+/* line 596, screen.scss */
 .footer-top {
   background-color: black;
   color: #9aaca0;
 }
-/* line 592, screen.scss */
+/* line 599, screen.scss */
 .footer-top i {
   margin: 18px 0 10px;
 }
-/* line 595, screen.scss */
+/* line 602, screen.scss */
 .footer-top h5 {
   border-bottom: 1px dashed #9aaca0;
   margin-bottom: 20px;
@@ -732,12 +741,12 @@ a.tel:hover {
   padding-bottom: 10px;
 }
 
-/* line 604, screen.scss */
+/* line 611, screen.scss */
 .footer-bottom {
   background-color: #343434;
   color: #9aaca0;
 }
-/* line 607, screen.scss */
+/* line 614, screen.scss */
 .footer-bottom h5 {
   text-align: center;
   letter-spacing: 0.16em;
@@ -745,11 +754,11 @@ a.tel:hover {
   line-height: 1.4;
 }
 
-/* line 616, screen.scss */
+/* line 623, screen.scss */
 .brand-links li {
   float: left;
 }
-/* line 618, screen.scss */
+/* line 625, screen.scss */
 .brand-links li + li {
   margin-left: 8.222%;
 }
@@ -758,29 +767,29 @@ a.tel:hover {
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 629, screen.scss */
+  /* line 636, screen.scss */
   .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 632, screen.scss */
+  /* line 639, screen.scss */
   .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 590px) {
-  /* line 639, screen.scss */
+  /* line 646, screen.scss */
   .mobileHide {
     display: none !important;
   }
 
-  /* line 642, screen.scss */
+  /* line 649, screen.scss */
   header {
     position: static;
     width: auto;
   }
 
-  /* line 646, screen.scss */
+  /* line 653, screen.scss */
   header span {
     text-align: center;
     line-height: 1.2;
@@ -788,110 +797,115 @@ a.tel:hover {
     padding-top: 0;
     margin-bottom: 20px;
   }
-  /* line 652, screen.scss */
+  /* line 659, screen.scss */
   header span h5 {
     float: none;
     font-size: 1.375em;
     font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   }
-  /* line 657, screen.scss */
+  /* line 664, screen.scss */
   header span .tel {
     font-size: 1.375em;
     float: none;
     clear: none;
   }
 
-  /* line 663, screen.scss */
+  /* line 670, screen.scss */
   .logo {
     width: 87.89%;
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
-  /* line 668, screen.scss */
+  /* line 675, screen.scss */
   .hours {
     width: 70%;
   }
+
+  /* line 678, screen.scss */
+  #map-canvas {
+    height: 250px;
+  }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 674, screen.scss */
+  /* line 684, screen.scss */
   .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 677, screen.scss */
+  /* line 687, screen.scss */
   .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 680, screen.scss */
+  /* line 690, screen.scss */
   .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 
-  /* line 684, screen.scss */
+  /* line 694, screen.scss */
   .hours {
     width: 50%;
   }
 }
 @media only screen and (min-width: 320px) and (max-width:  768px) {
-  /* line 690, screen.scss */
+  /* line 700, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 694, screen.scss */
+  /* line 704, screen.scss */
   .hero .caption h2 {
     font-size: 2.188em;
   }
-  /* line 697, screen.scss */
+  /* line 707, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 701, screen.scss */
+  /* line 711, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 705, screen.scss */
+  /* line 715, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 709, screen.scss */
+  /* line 719, screen.scss */
   .colThird + .colThird p, .colThird.double .border {
     border: 0;
     padding: 0;
   }
-  /* line 713, screen.scss */
+  /* line 723, screen.scss */
   .colThird.double p + h4 {
     margin-top: 40px;
   }
 
-  /* line 717, screen.scss */
+  /* line 727, screen.scss */
   .colHalf {
     width: 100%;
   }
-  /* line 719, screen.scss */
+  /* line 729, screen.scss */
   .colHalf + .colHalf {
     margin-left: 0;
   }
-  /* line 721, screen.scss */
+  /* line 731, screen.scss */
   .colHalf + .colHalf .border {
     padding-left: 0;
     border: 0;
   }
-  /* line 726, screen.scss */
+  /* line 736, screen.scss */
   .colHalf:last-child .treatment:last-child {
     margin-bottom: 20px;
   }
 
-  /* line 730, screen.scss */
+  /* line 740, screen.scss */
   .treatment {
     margin-bottom: 40px;
   }
 
-  /* line 734, screen.scss */
+  /* line 744, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;
@@ -899,12 +913,12 @@ a.tel:hover {
   }
 }
 @media only screen and (min-width: 481px) and (max-width:  930px) {
-  /* line 741, screen.scss */
+  /* line 751, screen.scss */
   .logo {
     margin-top: 20px;
   }
 
-  /* line 744, screen.scss */
+  /* line 754, screen.scss */
   nav {
     text-align: center;
     width: 100%;
@@ -912,14 +926,14 @@ a.tel:hover {
     float: none;
     clear: both;
   }
-  /* line 750, screen.scss */
+  /* line 760, screen.scss */
   nav li {
     float: none;
     display: inline;
     margin-bottom: 0;
   }
 
-  /* line 756, screen.scss */
+  /* line 766, screen.scss */
   header + section {
     padding-top: 157px;
   }

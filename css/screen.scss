@@ -530,56 +530,63 @@ a.tel {
 }
 
 .floatyLinks {
-	float: left;
-	display: block;
-	width: percent(900px);
-	padding-left: percent(240px);
-	box-sizing: border-box;
+	text-align: center;
+	width: 100%;
+	margin-top: 100px;
 	li {
 		display: inline;
-		float: left;
 		& + li {
 			margin-left: percent(50px);
 		}
+		
 	}
 	a {
 		color: $contact-floaty-link-color;
 		text-decoration: none;
 		font-family: $heading-font-family;
 		letter-spacing: 0.14em;
-		display: block;
+		position: relative;
 		&:hover,
-		&:hover i,
-		&.active,
-		&.active i {
+		&.active {
 			color: $pink;
 		}
+		&:before {
+			font-family: 'social';
+			margin: 0;
+			margin-bottom: 10px;
+			font-size: em(42px);
+			position: absolute;
+			top: -50px;
+		}
 	}
-	i {
-		font-family: 'social';
-		margin: 0;
-		margin-bottom: 10px;
-		font-size: em(42px);
-
-	}
-	.icon-email {
-		font-family: arial, helvetica, sans-serif;
-	}
-	.icon-call:after {
+	.icon-call a:before {
 		content: "\e003";
+		left: 12px;
 	}
-	.icon-email:after {
+	.icon-email a:before {
+		font-family: arial, helvetica, sans-serif;
 		content: "@";
+		left: 6px;
+		top: -53px;
 	}
-	.icon-find:after {
+	.icon-find a:before {
 		content: "\e002";
+		left: 11px;
 	}
-	.icon-like:after {
+	.icon-like a:before {
 		content: "\e000";
+		left: 2px;
 	}
-	.icon-follow:after {
+	.icon-follow a:before {
 		content: "\e001";
+		left: 9px;
 	}
+}
+
+#map-canvas { 
+	width: 100%;
+	height: 600px;
+	padding: 0;
 }
 
 .map iframe {
@@ -667,6 +674,9 @@ a.tel {
 	}
 	.hours {
 		width: 70%;
+	}
+	#map-canvas { 
+		height: 250px;
 	}
 }
 

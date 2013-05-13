@@ -10,44 +10,26 @@
 
 		<?php include('inc/head.php') ?>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxCUv6c3GVhjrwHgqzAzJ7sBO7gIr0ltw&amp;sensor=true"></script>
-		<script type="text/javascript">
-	      function initialize() {
-	        var mapOptions = {
-	          center: new google.maps.LatLng(-34.397, 150.644),
-	          zoom: 8,
-	          mapTypeId: google.maps.MapTypeId.ROADMAP
-	        };
-	        var map = new google.maps.Map(document.getElementById("map-canvas"),
-	            mapOptions);
-	      }
-	      google.maps.event.addDomListener(window, 'load', initialize);
-	    </script>
-	    <style>
-			#map-canvas { width: 100%; height: 600px; padding: 0;}
-
-	    </style>
-
 	</head>
 	<body>
-
 		<header>
 			<div class="container">
 				<h1 class="visuallyhidden">Beauty Box Knebworth</h1>
-				<a href="index.php" class="logo" title="Beauty Box Knebworth home page"></a>
+				<a href="#top" class="logo" title="Beauty Box Knebworth home page"></a>
 				<span>
 					<h5>For appointments call</h5>
 					<a href="tel:+441438812804" class="tel">01438 812 804</a>
 				</span>
 				<nav class="mobileHide">
 					<ul>
-						<li><a href="#">Treatments</a><i></i></li>
-						<li><a href="#">About us</a><i></i></li>
-						<li><a href="#">Contact us</a></li>
+						<li><a href="#treatments">Treatments</a><i></i></li>
+						<li><a href="#about">About us</a><i></i></li>
+						<li><a href="#contact">Contact us</a></li>
 					</ul>
 				</nav>
 			</div>
 		</header>
-		<section class="mobileHide">
+		<section id="top" class="mobileHide">
 			<div class="container">
 				<div class="hero">
 					<div class="heroSlide">
@@ -251,11 +233,11 @@
 					<i></i>
 					<h3>Contact us</h3>
 					<ul class="floatyLinks cf">
-						<li><a href="#"><i class="icon-call"></i>Call us</a></li>
-						<li><a href="#"><i class="icon-email"></i><span>Email us</span></a></li>
-						<li><a href="#"><i class="icon-find"></i><span>Find us</span></a></li>
-						<li class="mobileHide"><a href="#"><i class="icon-follow"></i><span>Follow us</span></a></li>
-						<li class="mobileHide"><a href="#"><i class="icon-like"></i><span>Like us</span></a></li>
+						<li class="icon-call"><a href="#">Call us</a></li>
+						<li class="icon-email"><a href="#">Email us</a></li>
+						<li class="icon-find"><a href="#">Find us</a></li>
+						<li class="icon-follow mobileHide"><a href="#">Follow us</a></li>
+						<li class="icon-like mobileHide"><a href="#">Like us</a></li>
 					</ul>
 				</div>
 				<div id="map-canvas"></div>
@@ -263,7 +245,7 @@
 		</section>
 		<section>
 			<div class="container">
-				<div class="footer-top">
+				<div class="footer-top mobileHide">
 					<i class="small"></i>
 					<h5>Available brands</h5>
 					<ul class="brand-links">
