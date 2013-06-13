@@ -1,3 +1,4 @@
+<?php include('cms/runtime.php');?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -5,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 		<title>Beauty Box Knebworth</title>
-		<meta name="description" content="Beauty Box Knebworth">
-		<meta name="keywords" content="">
+		<?php perch_content('Site Description and Keywords'); ?>
 
 		<?php include('inc/head.php') ?>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxCUv6c3GVhjrwHgqzAzJ7sBO7gIr0ltw&amp;sensor=true"></script>
@@ -18,7 +18,7 @@
 				<a href="#top" class="logo" title="Beauty Box Knebworth home page"></a>
 				<span>
 					<h5>For appointments call</h5>
-					<a href="tel:+441438812804" class="tel">01438 812 804</a>
+					<a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a>
 				</span>
 				<nav class="mobileHide">
 					<ul>
@@ -31,22 +31,7 @@
 		</header>
 		<section id="top" class="mobileHide">
 			<div class="container">
-				<div class="hero">
-					<div class="heroSlide">
-						<img src="img/slide1.jpg" alt="This is the first slide">
-						<div class="caption">
-							<h2>Pamper yourself</h2>
-							<p>The Beauty Box is a small and stunning beauty boutique in the centre of Hertfordshire, specialising in the latest treatments and products at an affordable price.</p>
-						</div>
-					</div>
-					<div class="heroSlide">
-						<img src="img/slide1.jpg" alt="This is the first slide">
-						<div class="caption">
-							<h2>Slide 2</h2>
-							<p>The Beauty Box is a small and stunning beauty boutique in the centre of Hertfordshire, specialising in the latest treatments and products at an affordable price.</p>
-						</div>
-					</div>
-				</div>
+				<?php perch_content('Carousel content'); ?>
 			</div>
 		</section>
 		<section id="treatments">
@@ -149,7 +134,8 @@
 								Knebworh<br/>
 								Hertfordshire<br/>
 								SG3 6AP<br/>
-								<a href="tel:+441438812804" class="tel">01438 812 804</a></p>
+								<a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a>
+							</p>
 						</div>
 						<div class="colThird double">
 							<h4>Reservations</h4>
