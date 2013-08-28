@@ -57,12 +57,17 @@ $(function(){
 		}, 500); // smooth scroll to the top of the linked section
 	});
 
-	$('div.treatmentIntro').hover(
-		function() {
+	// $('div.treatmentIntro').hover(
+	// 	function() {
+	// 		var $this = $(this);
+	// 		$this.siblings('div.treatmentIntro').css('opacity', 0.8);
+	// 	},
+	// 	function() {
+	// 		$('div.treatmentIntro').css('opacity', 1);
+	// 	});
+	
+	$('div.treatmentIntro').hover(function() {
 			var $this = $(this);
-			$this.siblings('div.treatmentIntro').css('opacity', 0.8);
-		},
-		function() {
-			$('div.treatmentIntro').css('opacity', 1);
+			$this.removeClass('translucent').siblings('div.treatmentIntro').addClass('translucent');
 		});
 });

@@ -351,6 +351,10 @@ section i {
 	width: percent(195px);
 	margin-bottom: 32px;
 	margin-right: percent(40px);
+	opacity: 1;
+	&.translucent {
+		opacity: 0.8;
+	}
 	a {
 		display: block;
 		text-decoration: none;
