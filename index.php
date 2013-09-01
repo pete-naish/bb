@@ -9,7 +9,7 @@
 		<?php perch_content('Site Description and Keywords'); ?>
 
 		<?php include('inc/head.php') ?>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxCUv6c3GVhjrwHgqzAzJ7sBO7gIr0ltw&amp;sensor=true"></script>
+		
 	</head>
 	<body>
 		<header>
@@ -129,11 +129,11 @@
 					<div class="row">
 						<div class="colThird">
 							<h4>Address</h4>
-							<p>Beauty Box<br/>
-								10 Station Road<br/>
-								Knebworh<br/>
-								Hertfordshire<br/>
-								SG3 6AP<br/>
+							<p><?php perch_content('Business name'); ?><br/>
+								<?php perch_content('Address line 1'); ?><br/>
+								<?php perch_content('Town'); ?><br/>
+								<?php perch_content('County'); ?><br/>
+								<?php perch_content('Post code'); ?><br/>
 								<a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a>
 							</p>
 						</div>
@@ -243,12 +243,13 @@
 					</ul>
 				</div>
 				<div class="footer-bottom">
-					<h5>Beauty Box, 10 Station Road, Knebworth, Hertfordshire, SG3 6AP</h5>
+					<h5><?php perch_content('Business name'); ?>, <?php perch_content('Address line 1'); ?>, <?php perch_content('Town'); ?>, <?php perch_content('County'); ?>, <?php perch_content('Post code'); ?></h5>
 				</div>
 			</div>
 		</section>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxCUv6c3GVhjrwHgqzAzJ7sBO7gIr0ltw&amp;sensor=true"></script>
 		<script>
 			if (window.innerWidth > 590) {
 
@@ -258,6 +259,39 @@
 
 				document.write('<script src="js/main.js"><\/script>');
 			}
+
+			function initialize(bn, al, t, c, pc, inttel, tel) {
+				var mapOptions = {
+					center: new google.maps.LatLng(51.866594, -0.185008),
+					zoom: 15,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+
+				var map = new google.maps.Map(document.getElementById("map-canvas"),
+				mapOptions);
+
+				var marker = new google.maps.Marker({
+					position: mapOptions.center,
+					map: map,
+					title:"Beauty Box Knebworth"
+				});
+
+				var contentString = '<div class="mapContent">'+
+				'<p>'+ bn +'<br/>'+ al +'<br/>' + t +'<br/>' + c +'<br/>' + pc +'</p>'+
+				"<p><a href='tel:+'" + inttel + "'>" + tel + "</a></p>"+
+				'</div>';
+
+				var infowindow = new google.maps.InfoWindow({
+					content: contentString
+				});
+
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.open(map,marker);
+				});
+			};
+
+			google.maps.event.addDomListener(window, 'load', initialize("<?php perch_content('Business name'); ?>", "<?php perch_content('Address line 1'); ?>", "<?php perch_content('Town'); ?>", "<?php perch_content('County'); ?>", "<?php perch_content('Post code'); ?>", "<?php perch_content('Phone number international'); ?>", "<?php perch_content('Phone number'); ?>"));
+			
 		</script>
 
 	</body>

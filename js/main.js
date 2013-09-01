@@ -15,37 +15,11 @@ $(function(){
 		}
 	});
 
-	function initialize() {
-		var mapOptions = {
-			center: new google.maps.LatLng(51.866594, -0.185008),
-			zoom: 15,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
+	
 
-		var map = new google.maps.Map(document.getElementById("map-canvas"),
-		mapOptions);
+	
 
-		var marker = new google.maps.Marker({
-			position: mapOptions.center,
-			map: map,
-			title:"Beauty Box Knebworth"
-		});
-
-		var contentString = '<div class="mapContent">'+
-		'<p>Beauty Box<br/>10 Station Road<br/>Knebworth<br/>Hertfordshire<br/>SG3 6AP</p>'+
-		"<p><a href='tel:+441438812804'>01438 812 804</a></p>"+
-		'</div>';
-
-		var infowindow = new google.maps.InfoWindow({
-			content: contentString
-		});
-
-		google.maps.event.addListener(marker, 'click', function() {
-			infowindow.open(map,marker);
-		});
-	}
-
-	google.maps.event.addDomListener(window, 'load', initialize);
+	
 
 	$('nav a, .logo').on('click', function(e) {
 		var $this = $(this),
