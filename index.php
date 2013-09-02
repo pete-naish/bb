@@ -38,39 +38,8 @@
 			<div class="container">
 				<div class="treatments">
 					<i></i>
-					<h3>Treatments</h3>
-					<div class="treatmentIntro">
-						<a href="#">
-							<img src="img/nails.jpg" alt="">
-							<h4>Hands &amp; feet</h4>
-							<p>Let us look after your hands and feet, so they're perfect for every occasion</p>
-							<span class="cta">Treatments &amp; prices</span>
-						</a>
-					</div>
-					<div class="treatmentIntro">
-						<a href="#">
-							<img src="img/eyebrows.jpg" alt="">
-							<h4>Eyes</h4>
-							<p>The perfect way to balance your energy and achieve harmony</p>
-							<span class="cta">Treatments &amp; prices</span>
-						</a>
-					</div>
-					<div class="treatmentIntro">
-						<a href="#">
-							<img src="img/facials.jpg" alt="">
-							<h4>Facials</h4>
-							<p>Refine, hydrate and revitalise with our relaxing facials</p>
-							<span class="cta">Treatments &amp; prices</span>
-						</a>
-					</div>
-					<div class="treatmentIntro">
-						<a href="#">
-							<img src="img/massage.jpg" alt="">
-							<h4>Body</h4>
-							<p>Massages designed to relax you or ease those aches and pains</p>
-							<span class="cta">Treatments &amp; prices</span>
-						</a>
-					</div>
+					<h3><?php perch_content('Treatments heading'); ?></h3>
+					<?php perch_content('Treatment intros'); ?>
 					<div class="treatmentDetails cf">
 						<i></i>
 						<h3>Hands &amp; feet</h3>
@@ -125,10 +94,10 @@
 			<div class="container">
 				<div class="about">
 					<i></i>
-					<h3>About us</h3>
+					<h3><?php perch_content('About us heading'); ?></h3>
 					<div class="row">
 						<div class="colThird">
-							<h4>Address</h4>
+							<h4><?php perch_content('Address heading'); ?></h4>
 							<p><?php perch_content('Business name'); ?><br/>
 								<?php perch_content('Address line 1'); ?><br/>
 								<?php perch_content('Town'); ?><br/>
@@ -138,76 +107,24 @@
 							</p>
 						</div>
 						<div class="colThird double">
-							<h4>Reservations</h4>
-							<div class="border">
-								<p>Upon booking we require all contact details and you must make us aware of any allergies or illnessive you may have.</p>
-								<h4>Cancellation policy</h4>
-								<p>If you need to cancel your appointment, please provide us with at least 24 hours notice in order to avoid being charged a minimum fee of 50%. Missed appointments will be charged at the full treatment cost.</p>
+								<?php perch_content('Reservations section'); ?>
+								<?php perch_content('Cancellation policy section'); ?>
 							</div>
 						</div>
 						<div class="colThird">
-							<h4>Opening hours</h4>
-							<div class="tableWrapper">
-								<table class="hours" border="0">
-									<tr>
-										<td>Monday</td>
-										<td>Closed</td>
-										<td class="dash">&ndash;</td>
-										<td>Closed</td>
-									</tr>
-									<tr>
-										<td>Tuesday</td>
-										<td>10:00</td>
-										<td class="dash">&ndash;</td>
-										<td>20:00</td>
-									</tr>
-									<tr>
-										<td>Wednesday</td>
-										<td>10:00</td>
-										<td class="dash">&ndash;</td>
-										<td>20:00</td>
-									</tr>
-									<tr>
-										<td>Thursday</td>
-										<td>10:00</td>
-										<td class="dash">&ndash;</td>
-										<td>20:00</td>
-									</tr>
-									<tr>
-										<td>Friday</td>
-										<td>10:00</td>
-										<td class="dash">&ndash;</td>
-										<td>18:00</td>
-									</tr>
-									<tr>
-										<td>Saturday</td>
-										<td>10:00</td>
-										<td class="dash">&ndash;</td>
-										<td>16:00</td>
-									</tr>
-									<tr>
-										<td>Sunday</td>
-										<td>Closed</td>
-										<td class="dash">&ndash;</td>
-										<td>Closed</td>
-									</tr>
-								</table>
-							</div>
+							<?php perch_content('Opening hours'); ?>
 						</div>
 					</div>
 					<i class="small"></i>
 					<div class="row">
 						<div class="colThird">
-							<h4>Gift vouchers</h4>
-							<p>The perfect gift&mdash;our vouchers are redeemable against any treatments and products at the salon, and are valid for 6 months from the issue date. Gift vouchers are non-transferrable and non-refundable.</p>
+							<?php perch_content('Gift voucher section'); ?>
 						</div>
 						<div class="colThird">
-							<h4>Children</h4>
-							<p>For the benefit of all clients, and to comply with our health and safety regulations, children cannot accompany parents into the treatment room. We do not have the facility to supervise children whilst parents are being treated. Clients must be over the age of 18; however, some treatments can be applied to those between 14 and 18 years, provided a parent or guardian is present to sign a consent form.</p>
+							<?php perch_content('Childrens section'); ?>
 						</div>
 						<div class="colThird">
-							<h4>Men's treatments</h4>
-							<p>Most of our treatments are suitable for men. Please bring suitable shorts or swimwear for body treatments.</p>
+							<?php perch_content('Mens section'); ?>
 						</div>
 					</div>
 				</div>

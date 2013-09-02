@@ -1,0 +1,17 @@
+<perch:before>
+<h4><perch:content id="title" type="text" label="Opening hours title" html="false" required="true" default="Opening hours" /></h4>
+<div class="tableWrapper">
+	<table class="hours" border="0">
+		<tbody>
+</perch:before>
+			<tr>
+				<td><perch:content id="day_name" type="text" label="Day name" html="false" required="true" title="true" /></td>
+				<td><perch:content id="day_open" type="text" label="Day open" html="false" required="true" /></td>
+				<td class="dash">&ndash;</td>
+				<td><perch:content id="day_close" type="text" label="Day close" html="false" required="true" /></td>
+			</tr>
+<perch:after>
+		</tbody>
+	</table>
+</div>
+</perch:after>
