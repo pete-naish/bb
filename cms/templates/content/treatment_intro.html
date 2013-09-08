@@ -1,7 +1,7 @@
 <div class="treatmentIntro">
-	<a href="<perch:content id="treatment_link" type="text" label="Treatment link" order="6" />" data-link="#<perch:content id="treatment_anchor" type="text" label="Treatment anchor" order="7" />">
+	<a href="/treatments/<perch:content id="treatment_link" type="text" label="Treatment link" order="6" />.php" class="js-load" data-link="#<perch:content id="treatment_link"/>">
 		<img src="<perch:content id="treatment_image" type="image" label="Treatment image" required="true" bucket="treatment-intro-images" order="2" />" alt="<perch:content id="treatment_image_alt" type="text" label="Alt text" order="3" />">
-		<h4><perch:content id="treatment_title" type="text" label="Treatment title" html="false" required="true" title="true" order="1" /></h4>
+		<h4><perch:content id="treatment_category" type="text" label="Treatment category" html="false" required="true" title="true" order="1" /></h4>
 		<p><perch:content id="treatment_description" type="textarea" label="Treatment description" html="false" required="true" order="4" /></p>
 		<span class="cta"><perch:content id="treatment_cta" type="text" label="Treatment call to action" html="false" required="true" default="Treatments & prices" order="5" /></span>
 	</a>

@@ -1,0 +1,17 @@
+<perch:before>
+<div class="treatment">
+	<h4><perch:content id="treatment_title" type="text" label="Treatment title" html="false" title="true" /></h4>
+	<p><perch:content id="treatment_description" type="text" label="Treatment description" html="false" /></p>
+	
+		<ul class="prices">
+	</perch:before>
+		<li>
+			<span><perch:content id="sub_treatment_title" type="text" label="Sub-treatment description" html="false"/> (<perch:content id="sub_treatment_time" type="text" label="Sub-treatment time" html="false" />)</span>
+			<span>&pound;<perch:content id="sub_treatment_price" type="text" label="Sub-treatment price" html="false" /></span>
+		</li>
+	<perch:after>
+		</ul>
+	
+	<p class="notes"><perch:content id="treatment_description" type="text" label="Treatment description" html="false" /></p>
+</div>
+</perch:after>

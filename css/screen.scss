@@ -249,6 +249,7 @@ header {
 			&:hover {
 				border-color: $pink;
 				text-decoration: none;
+				@include single-transition(border-color, 0s, ease-in-out);
 			}
 		}
 	}
@@ -289,6 +290,7 @@ nav {
 			@include single-transition(border-color, 0.25s, ease-in-out);
 			&:hover {
 				border-color: $nav-link-color;
+				@include single-transition(border-color, 0s, ease-in-out);
 			}
 		}
 		i {

@@ -1,17 +1,17 @@
-<?php include('cms/runtime.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/cms/runtime.php'); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
-		<title>Beauty Box Knebworth</title>
-		<?php perch_content('Site Description and Keywords'); ?>
+		<title><?php perch_pages_title(); ?></title>
+		<?php perch_content('Treatment Page Description and Keywords'); ?>
 
-		<?php include('inc/head.php') ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/head.php') ?>
 		
 	</head>
-	<body>
+	<body class="treatment-page">
 		<header>
 			<div class="container">
 				<h1 class="visuallyhidden">Beauty Box Knebworth</h1>
@@ -29,45 +29,16 @@
 				</nav>
 			</div>
 		</header>
-		<section id="top" class="mobileHide">
-			<div class="container">
-				<?php perch_content('Carousel content'); ?>
-			</div>
-		</section>
+		
 		<section id="treatments">
 			<div class="container">
 				<div class="treatments">
-					<i></i>
-					<h3><?php perch_content('Treatments heading'); ?></h3>
-					<?php perch_content('Treatment intros'); ?>
 					<div class="treatmentDetails cf">
 						<i></i>
-						<h3>Hands &amp; feet</h3>
+						<h3><?php perch_content('Treatment category'); ?></h3>
 						<h4>Treatments &amp; prices</h4>
 						<div class="colHalf">
-							<div class="treatment">
-								<h4>CND Shellac Power Polish</h4>
-								<p>The power polish that goes on like a polish over natural nails, lasts like a gel that won't chip or smudge, and comes off in minutes.</p>
-								<ul class="prices">
-									<li>
-										<span>Shellac Mini Manicure (45min)</span>
-										<span>&pound;27.00</span>
-									</li>
-									<li>
-										<span>Shellac Mini Pedicure (45min)</span>
-										<span>&pound;29.00</span>
-									</li>
-									<li>
-										<span>Shellac Rockstar Nails (1hr)</span>
-										<span>&pound;32.00</span>
-									</li>
-									<li>
-										<span>French Finish add</span>
-										<span>&pound;3.00</span>
-									</li>
-								</ul>
-								<p class="notes">Shellac removal Free or &pound;10 without new set being re-applied</p>
-							</div>
+							<?php perch_content('Treatment'); ?>
 						</div>
 						<div class="colHalf">
 							<div class="border">
@@ -90,75 +61,9 @@
 				</div>
 			</div>
 		</section>
-		<section id="about">
-			<div class="container">
-				<div class="about">
-					<i></i>
-					<h3><?php perch_content('About us heading'); ?></h3>
-					<div class="row">
-						<div class="colThird">
-							<h4><?php perch_content('Address heading'); ?></h4>
-							<p><?php perch_content('Business name'); ?><br/>
-								<?php perch_content('Address line 1'); ?><br/>
-								<?php perch_content('Town'); ?><br/>
-								<?php perch_content('County'); ?><br/>
-								<?php perch_content('Post code'); ?><br/>
-								<a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a>
-							</p>
-						</div>
-						<div class="colThird double">
-								<?php perch_content('Reservations section'); ?>
-								<?php perch_content('Cancellation policy section'); ?>
-							</div>
-						</div>
-						<div class="colThird">
-							<?php perch_content('Opening hours'); ?>
-						</div>
-					</div>
-					<i class="small"></i>
-					<div class="row">
-						<div class="colThird">
-							<?php perch_content('Gift voucher section'); ?>
-						</div>
-						<div class="colThird">
-							<?php perch_content('Childrens section'); ?>
-						</div>
-						<div class="colThird">
-							<?php perch_content('Mens section'); ?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="contact">
-			<div class="container">
-				<div class="contact">
-					<i></i>
-					<h3>Contact us</h3>
-					<ul class="floatyLinks cf">
-						<li class="icon-call"><a href="#">Call us</a></li>
-						<li class="icon-email"><a href="#">Email us</a></li>
-						<li class="icon-find"><a href="#">Find us</a></li>
-						<li class="icon-follow mobileHide"><a href="#">Follow us</a></li>
-						<li class="icon-like mobileHide"><a href="#">Like us</a></li>
-					</ul>
-				</div>
-				<div id="map-canvas"></div>
-			</div>
-		</section>
+		
 		<section>
 			<div class="container">
-				<div class="footer-top mobileHide">
-					<i class="small"></i>
-					<h5>Available brands</h5>
-					<ul class="brand-links">
-						<li><a href="#"><img src="img/logo-gelish.png" alt=""></a></li>
-						<li><a href="#"><img src="img/logo-caci.png" alt=""></a></li>
-						<li><a href="#"><img src="img/logo-hd-brows.png" alt=""></a></li>
-						<li><a href="#"><img src="img/logo-minx.png" alt=""></a></li>
-						<li><a href="#"><img src="img/logo-sienna-x.png" alt=""></a></li>
-					</ul>
-				</div>
 				<div class="footer-bottom">
 					<h5><?php perch_content('Business name'); ?>, <?php perch_content('Address line 1'); ?>, <?php perch_content('Town'); ?>, <?php perch_content('County'); ?>, <?php perch_content('Post code'); ?></h5>
 				</div>
