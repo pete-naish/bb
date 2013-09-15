@@ -40,53 +40,7 @@
 					<i></i>
 					<h3><?php perch_content('Treatments heading'); ?></h3>
 					<?php perch_content('Treatment intros'); ?>
-					<div class="treatmentDetails cf">
-						<i></i>
-						<h3>Hands &amp; feet</h3>
-						<h4>Treatments &amp; prices</h4>
-						<div class="colHalf">
-							<div class="treatment">
-								<h4>CND Shellac Power Polish</h4>
-								<p>The power polish that goes on like a polish over natural nails, lasts like a gel that won't chip or smudge, and comes off in minutes.</p>
-								<ul class="prices">
-									<li>
-										<span>Shellac Mini Manicure (45min)</span>
-										<span>&pound;27.00</span>
-									</li>
-									<li>
-										<span>Shellac Mini Pedicure (45min)</span>
-										<span>&pound;29.00</span>
-									</li>
-									<li>
-										<span>Shellac Rockstar Nails (1hr)</span>
-										<span>&pound;32.00</span>
-									</li>
-									<li>
-										<span>French Finish add</span>
-										<span>&pound;3.00</span>
-									</li>
-								</ul>
-								<p class="notes">Shellac removal Free or &pound;10 without new set being re-applied</p>
-							</div>
-						</div>
-						<div class="colHalf">
-							<div class="border">
-								<div class="treatment">
-									<h4>NSI Acrylic Nail Extensions</h4>
-									<p class="notes">Nail art and Diamantes available, with price on request.</p>
-								</div>
-								<div class="treatment">
-									<h4>Gelish</h4>
-									<p>Gelish can provide up to 3 weeks worth of wear. There's no drying time, no smudges, and it soaks off in 20 minutes - with no damage to the natural nail!</p>
-									<p class="notes">Gelish removal Free or &pound;10 without new set being re-applied.</p>
-								</div>
-								<div class="treatment">
-									<h4>Minx nails</h4>
-									<p>Extending fashion to the fingers and toes, Minx Nails is the hottest way to decorate your nails.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<div class="treatmentDisplay"></div>
 				</div>
 			</div>
 		</section>

@@ -1,5 +1,5 @@
 /* @import must be at top of file, otherwise CSS will not work */
-/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,50 +16,50 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-body {
+/* line 22, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
   line-height: 1;
 }
 
-/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -212,7 +212,7 @@ body {
 /* line 169, screen.scss */
 h2 {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-  font-size: 4.063em;
+  font-size: 4.0625em;
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -223,7 +223,7 @@ h3 {
   font-size: 1.875em;
   letter-spacing: 0.1em;
   text-align: center;
-  margin: 0 6.889% 30px;
+  margin: 0 6.88889% 30px;
 }
 
 /* line 185, screen.scss */
@@ -282,7 +282,7 @@ header {
 }
 /* line 229, screen.scss */
 header span {
-  margin: 0 6.055%;
+  margin: 0 6.05469%;
   padding-top: 15px;
   float: right;
   text-align: right;
@@ -305,7 +305,6 @@ header span .tel {
   margin-bottom: 30px;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
-  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
@@ -315,19 +314,26 @@ header span .tel:hover {
   text-decoration: none;
   -webkit-transition: border-color 0s ease-in-out;
   -moz-transition: border-color 0s ease-in-out;
-  -ms-transition: border-color 0s ease-in-out;
   -o-transition: border-color 0s ease-in-out;
   transition: border-color 0s ease-in-out;
 }
-
-/* line 258, screen.scss */
+/* line 256, screen.scss */
 header + section {
   padding-top: 132px;
 }
 
-/* line 262, screen.scss */
+/* line 261, screen.scss */
+.no-js header {
+  position: static;
+}
+/* line 263, screen.scss */
+.no-js header + section {
+  padding-top: 0;
+}
+
+/* line 268, screen.scss */
 .logo {
-  margin: 40px 6.055% 30px 6.055%;
+  margin: 40px 6.05469% 30px 6.05469%;
   display: block;
   float: left;
   width: 290px;
@@ -335,145 +341,152 @@ header + section {
   background: url(../img/logo.png) no-repeat center;
   background: none, url(../img/logo.svg) no-repeat center;
 }
-/* line 270, screen.scss */
+/* line 276, screen.scss */
 .logo img {
   width: 290px;
 }
 
-/* line 275, screen.scss */
+/* line 281, screen.scss */
 nav {
   float: right;
   clear: right;
-  margin: 0 6.055% 10px;
+  margin: 0 6.05469% 10px;
 }
-/* line 279, screen.scss */
+/* line 285, screen.scss */
 nav li {
   float: left;
   margin-bottom: 15px;
 }
-/* line 282, screen.scss */
+/* line 288, screen.scss */
 nav li a {
   color: #bfcdcd;
   text-decoration: none;
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.25em;
   letter-spacing: 0.15em;
-  margin-right: -0.188em;
+  margin-right: -0.1875em;
   border-bottom: 2px solid #343434;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
-  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
-/* line 291, screen.scss */
+/* line 297, screen.scss */
 nav li a:hover {
   border-color: #bfcdcd;
   -webkit-transition: border-color 0s ease-in-out;
   -moz-transition: border-color 0s ease-in-out;
-  -ms-transition: border-color 0s ease-in-out;
   -o-transition: border-color 0s ease-in-out;
   transition: border-color 0s ease-in-out;
 }
-/* line 296, screen.scss */
+/* line 302, screen.scss */
 nav li i {
   color: #e3abdd;
   padding: 0 15px;
 }
 
-/* line 305, screen.scss */
+/* line 311, screen.scss */
 .container .caroufredsel_wrapper,
 .container > .hero,
 .container .map {
   padding: 0;
 }
 
-/* line 310, screen.scss */
+/* line 316, screen.scss */
 .hero .heroSlide {
   position: relative;
   overflow: hidden;
   float: left;
 }
-/* line 315, screen.scss */
+/* line 321, screen.scss */
 .hero img {
   max-width: 100%;
 }
-/* line 318, screen.scss */
+/* line 324, screen.scss */
 .hero .caption {
   position: absolute;
   bottom: 0;
-  padding: 0 8.301% 25px 8.301%;
+  padding: 0 8.30078% 25px 8.30078%;
 }
-/* line 322, screen.scss */
+/* line 328, screen.scss */
 .hero .caption p {
   margin-bottom: 10px;
-  margin-right: 31.85%;
+  margin-right: 31.85012%;
 }
 
-/* line 329, screen.scss */
+/* line 335, screen.scss */
 section i {
   text-align: center;
   display: block;
   font-size: 3em;
   margin: 32px 0 20px;
 }
-/* line 334, screen.scss */
+/* line 340, screen.scss */
 section i.small {
   font-size: 2em;
 }
 
-/* line 339, screen.scss */
+/* line 345, screen.scss */
 .container > div {
   overflow: hidden;
-  padding: 0 6.055% 32px;
+  padding: 0 6.05469% 32px;
 }
 
-/* line 344, screen.scss */
+/* line 350, screen.scss */
 .treatments {
   background: url(../img/treatments-bg.png) repeat top left;
 }
-/* line 346, screen.scss */
+/* line 352, screen.scss */
 .treatments i {
   color: #5a4d59;
 }
 
-/* line 351, screen.scss */
+/* line 357, screen.scss */
 .treatmentIntro {
   float: left;
-  width: 21.667%;
+  width: 21.66667%;
   margin-bottom: 32px;
-  margin-right: 4.444%;
+  margin-right: 4.44444%;
   opacity: 1;
+  -webkit-transition: opacity 0s ease-in-out;
+  -moz-transition: opacity 0s ease-in-out;
+  -o-transition: opacity 0s ease-in-out;
+  transition: opacity 0s ease-in-out;
+  position: relative;
 }
-/* line 357, screen.scss */
+/* line 365, screen.scss */
 .treatmentIntro.translucent {
   opacity: 0.6;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
-/* line 360, screen.scss */
+/* line 369, screen.scss */
 .treatmentIntro a {
   display: block;
   text-decoration: none;
   color: #333333;
 }
-/* line 364, screen.scss */
+/* line 373, screen.scss */
 .treatmentIntro a:hover .cta {
   text-decoration: underline;
 }
-/* line 368, screen.scss */
+/* line 377, screen.scss */
 .treatmentIntro img {
   background-color: #fff;
   border: 1px solid #e3abdd;
-  padding: 5.128%;
+  padding: 5.12821%;
   margin-bottom: 10px;
-  width: 87.179%;
+  width: 87.17949%;
 }
-/* line 375, screen.scss */
+/* line 384, screen.scss */
 .treatmentIntro p {
   margin-bottom: 10px;
-  padding: 0 2.564%;
+  padding: 0 2.5641%;
   text-align: center;
 }
-/* line 380, screen.scss */
+/* line 389, screen.scss */
 .treatmentIntro .cta {
   text-decoration: none;
   font-weight: bold;
@@ -482,202 +495,202 @@ section i.small {
   display: block;
   text-align: center;
 }
-/* line 388, screen.scss */
+/* line 397, screen.scss */
 .treatmentIntro:nth-of-type(4n) {
   margin-right: 0;
 }
 
-/* line 393, screen.scss */
+/* line 402, screen.scss */
 .treatmentDetails {
   clear: both;
 }
-/* line 395, screen.scss */
+/* line 404, screen.scss */
 .treatmentDetails i {
   margin-top: 8px;
 }
-/* line 398, screen.scss */
+/* line 407, screen.scss */
 .treatmentDetails h3 {
   margin-bottom: 2px;
 }
-/* line 401, screen.scss */
+/* line 410, screen.scss */
 .treatmentDetails h3 + h4 {
   margin-bottom: 30px;
 }
 
-/* line 406, screen.scss */
+/* line 415, screen.scss */
 .treatment {
   margin-bottom: 26px;
 }
-/* line 409, screen.scss */
+/* line 418, screen.scss */
 .treatment h4 {
   text-align: left;
 }
-/* line 412, screen.scss */
+/* line 421, screen.scss */
 .treatment p {
   margin-bottom: 14px;
 }
 
-/* line 417, screen.scss */
+/* line 426, screen.scss */
 .prices {
   width: 100%;
   overflow: hidden;
   margin-bottom: 14px;
 }
-/* line 421, screen.scss */
+/* line 430, screen.scss */
 .prices li {
   margin-bottom: 3px;
   line-height: 1.2;
 }
-/* line 425, screen.scss */
+/* line 434, screen.scss */
 .prices li:after {
   float: left;
   width: 0;
   white-space: nowrap;
   content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
 }
-/* line 431, screen.scss */
+/* line 440, screen.scss */
 .prices span:first-child {
-  padding-right: 0.556%;
+  padding-right: 0.55556%;
   background: url(../img/treatments-bg.png);
 }
-/* line 435, screen.scss */
+/* line 444, screen.scss */
 .prices span + span {
   float: right;
-  padding-left: 0.556%;
+  padding-left: 0.55556%;
   background: url(../img/treatments-bg.png);
   position: relative;
   z-index: 1;
 }
 
-/* line 444, screen.scss */
+/* line 453, screen.scss */
 .colHalf {
   float: left;
-  width: 47.778%;
+  width: 47.77778%;
 }
-/* line 447, screen.scss */
+/* line 456, screen.scss */
 .colHalf + .colHalf {
-  margin-left: 2.222%;
+  margin-left: 2.22222%;
 }
-/* line 449, screen.scss */
+/* line 458, screen.scss */
 .colHalf + .colHalf .border {
   border-left: 1px solid #9BADA1;
-  padding-left: 4.651%;
+  padding-left: 4.65116%;
 }
 
-/* line 457, screen.scss */
+/* line 466, screen.scss */
 p.notes {
   font-style: italic;
 }
 
-/* line 461, screen.scss */
+/* line 470, screen.scss */
 .about {
   background: #cfd7d1;
 }
-/* line 463, screen.scss */
+/* line 472, screen.scss */
 .about i {
   color: #9aaca0;
 }
-/* line 465, screen.scss */
+/* line 474, screen.scss */
 .about i.small {
   margin: 0 0 25px 0;
 }
-/* line 469, screen.scss */
+/* line 478, screen.scss */
 .about h4 {
   color: #666666;
   margin-bottom: 8px;
-  padding: 0 1.825%;
+  padding: 0 1.82482%;
 }
-/* line 474, screen.scss */
+/* line 483, screen.scss */
 .about .row {
   overflow: hidden;
 }
 
-/* line 479, screen.scss */
+/* line 488, screen.scss */
 .colThird {
-  width: 33.333%;
+  width: 33.33333%;
   margin-bottom: 20px;
   float: left;
 }
-/* line 483, screen.scss */
+/* line 492, screen.scss */
 .colThird p {
   padding-right: 6%;
 }
-/* line 486, screen.scss */
+/* line 495, screen.scss */
 .colThird + .colThird p {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
 }
-/* line 491, screen.scss */
+/* line 500, screen.scss */
 .colThird:last-child p, .colThird:last-child .tableWrapper {
   padding-right: 0;
 }
-/* line 495, screen.scss */
+/* line 504, screen.scss */
 .colThird.double .border {
   border-left: 1px solid #9bada1;
 }
-/* line 498, screen.scss */
+/* line 507, screen.scss */
 .colThird.double p {
   border: 0;
 }
-/* line 500, screen.scss */
+/* line 509, screen.scss */
 .colThird.double p + h4 {
   margin-top: 20px;
 }
 
-/* line 507, screen.scss */
+/* line 516, screen.scss */
 .tableWrapper {
   border-left: 1px solid #9bada1;
   padding: 0 6%;
 }
 
-/* line 512, screen.scss */
+/* line 521, screen.scss */
 .hours {
   width: 100%;
 }
-/* line 514, screen.scss */
+/* line 523, screen.scss */
 .hours .dash {
   width: 10%;
 }
-/* line 517, screen.scss */
+/* line 526, screen.scss */
 .hours td {
   padding-bottom: 3px;
 }
 
-/* line 522, screen.scss */
+/* line 531, screen.scss */
 a.tel {
   color: #333333;
   text-decoration: none;
 }
-/* line 525, screen.scss */
+/* line 534, screen.scss */
 a.tel:hover {
   text-decoration: underline;
 }
 
-/* line 530, screen.scss */
+/* line 539, screen.scss */
 .contact {
   background: #343434;
   color: #d0d6d4;
 }
-/* line 533, screen.scss */
+/* line 542, screen.scss */
 .contact i {
   color: #9eaea4;
 }
 
-/* line 538, screen.scss */
+/* line 547, screen.scss */
 .floatyLinks {
   text-align: center;
   width: 100%;
   margin-top: 100px;
 }
-/* line 542, screen.scss */
+/* line 551, screen.scss */
 .floatyLinks li {
   display: inline;
 }
-/* line 544, screen.scss */
+/* line 553, screen.scss */
 .floatyLinks li + li {
-  margin-left: 5.556%;
+  margin-left: 5.55556%;
 }
-/* line 549, screen.scss */
+/* line 558, screen.scss */
 .floatyLinks a {
   color: #ccd7d1;
   text-decoration: none;
@@ -685,11 +698,11 @@ a.tel:hover {
   letter-spacing: 0.14em;
   position: relative;
 }
-/* line 556, screen.scss */
+/* line 565, screen.scss */
 .floatyLinks a:hover, .floatyLinks a.active {
   color: #e3abdd;
 }
-/* line 559, screen.scss */
+/* line 568, screen.scss */
 .floatyLinks a:before {
   font-family: 'social';
   margin: 0;
@@ -698,56 +711,61 @@ a.tel:hover {
   position: absolute;
   top: -50px;
 }
-/* line 568, screen.scss */
+/* line 577, screen.scss */
 .floatyLinks .icon-call a:before {
   content: "\e003";
   left: 12px;
 }
-/* line 572, screen.scss */
+/* line 581, screen.scss */
 .floatyLinks .icon-email a:before {
   font-family: arial, helvetica, sans-serif;
   content: "@";
   left: 6px;
   top: -53px;
 }
-/* line 578, screen.scss */
+/* line 587, screen.scss */
 .floatyLinks .icon-find a:before {
   content: "\e002";
   left: 11px;
 }
-/* line 582, screen.scss */
+/* line 591, screen.scss */
 .floatyLinks .icon-like a:before {
   content: "\e000";
   left: 2px;
 }
-/* line 586, screen.scss */
+/* line 595, screen.scss */
 .floatyLinks .icon-follow a:before {
   content: "\e001";
   left: 9px;
 }
 
-/* line 592, screen.scss */
+/* line 601, screen.scss */
 #map-canvas {
   width: 100%;
   height: 600px;
   padding: 0;
 }
 
-/* line 598, screen.scss */
+/* line 607, screen.scss */
+.no-js #map-canvas {
+  display: none;
+}
+
+/* line 611, screen.scss */
 .map iframe {
   display: block;
 }
 
-/* line 602, screen.scss */
+/* line 615, screen.scss */
 .footer-top {
   background-color: black;
   color: #9aaca0;
 }
-/* line 605, screen.scss */
+/* line 618, screen.scss */
 .footer-top i {
   margin: 18px 0 10px;
 }
-/* line 608, screen.scss */
+/* line 621, screen.scss */
 .footer-top h5 {
   border-bottom: 1px dashed #9aaca0;
   margin-bottom: 20px;
@@ -756,12 +774,12 @@ a.tel:hover {
   padding-bottom: 10px;
 }
 
-/* line 617, screen.scss */
+/* line 630, screen.scss */
 .footer-bottom {
   background-color: #343434;
   color: #9aaca0;
 }
-/* line 620, screen.scss */
+/* line 633, screen.scss */
 .footer-bottom h5 {
   text-align: center;
   letter-spacing: 0.16em;
@@ -769,42 +787,47 @@ a.tel:hover {
   line-height: 1.4;
 }
 
-/* line 629, screen.scss */
+/* line 642, screen.scss */
 .brand-links li {
   float: left;
 }
-/* line 631, screen.scss */
+/* line 644, screen.scss */
 .brand-links li + li {
-  margin-left: 8.222%;
+  margin-left: 8.22222%;
+}
+
+/* line 651, screen.scss */
+.treatment-page .treatmentDetails i {
+  margin-top: 38px;
 }
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 642, screen.scss */
+  /* line 661, screen.scss */
   .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 645, screen.scss */
+  /* line 664, screen.scss */
   .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 590px) {
-  /* line 652, screen.scss */
+  /* line 671, screen.scss */
   .mobileHide {
     display: none !important;
   }
 
-  /* line 655, screen.scss */
+  /* line 674, screen.scss */
   header {
     position: static;
     width: auto;
   }
 
-  /* line 659, screen.scss */
+  /* line 678, screen.scss */
   header span {
     text-align: center;
     line-height: 1.2;
@@ -812,128 +835,128 @@ a.tel:hover {
     padding-top: 0;
     margin-bottom: 20px;
   }
-  /* line 665, screen.scss */
+  /* line 684, screen.scss */
   header span h5 {
     float: none;
     font-size: 1.375em;
     font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   }
-  /* line 670, screen.scss */
+  /* line 689, screen.scss */
   header span .tel {
     font-size: 1.375em;
     float: none;
     clear: none;
   }
 
-  /* line 676, screen.scss */
+  /* line 695, screen.scss */
   .logo {
     width: 87.89%;
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
-  /* line 681, screen.scss */
+  /* line 700, screen.scss */
   .hours {
     width: 70%;
   }
 
-  /* line 684, screen.scss */
+  /* line 703, screen.scss */
   #map-canvas {
     height: 250px;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 690, screen.scss */
+  /* line 709, screen.scss */
   .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 693, screen.scss */
+  /* line 712, screen.scss */
   .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 696, screen.scss */
+  /* line 715, screen.scss */
   .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 
-  /* line 700, screen.scss */
+  /* line 719, screen.scss */
   .hours {
     width: 50%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width:  768px) {
-  /* line 706, screen.scss */
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  /* line 725, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 710, screen.scss */
+  /* line 729, screen.scss */
   .hero .caption h2 {
-    font-size: 2.188em;
+    font-size: 2.1875em;
   }
-  /* line 713, screen.scss */
+  /* line 732, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 717, screen.scss */
+  /* line 736, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 721, screen.scss */
+  /* line 740, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 725, screen.scss */
+  /* line 744, screen.scss */
   .colThird + .colThird p, .colThird.double .border {
     border: 0;
     padding: 0;
   }
-  /* line 729, screen.scss */
+  /* line 748, screen.scss */
   .colThird.double p + h4 {
     margin-top: 40px;
   }
 
-  /* line 733, screen.scss */
+  /* line 752, screen.scss */
   .colHalf {
     width: 100%;
   }
-  /* line 735, screen.scss */
+  /* line 754, screen.scss */
   .colHalf + .colHalf {
     margin-left: 0;
   }
-  /* line 737, screen.scss */
+  /* line 756, screen.scss */
   .colHalf + .colHalf .border {
     padding-left: 0;
     border: 0;
   }
-  /* line 742, screen.scss */
+  /* line 761, screen.scss */
   .colHalf:last-child .treatment:last-child {
     margin-bottom: 20px;
   }
 
-  /* line 746, screen.scss */
+  /* line 765, screen.scss */
   .treatment {
     margin-bottom: 40px;
   }
 
-  /* line 750, screen.scss */
+  /* line 769, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;
     padding: 0;
   }
 }
-@media only screen and (min-width: 481px) and (max-width:  930px) {
-  /* line 757, screen.scss */
+@media only screen and (min-width: 481px) and (max-width: 930px) {
+  /* line 776, screen.scss */
   .logo {
     margin-top: 20px;
   }
 
-  /* line 760, screen.scss */
+  /* line 779, screen.scss */
   nav {
     text-align: center;
     width: 100%;
@@ -941,14 +964,14 @@ a.tel:hover {
     float: none;
     clear: both;
   }
-  /* line 766, screen.scss */
+  /* line 785, screen.scss */
   nav li {
     float: none;
     display: inline;
     margin-bottom: 0;
   }
 
-  /* line 772, screen.scss */
+  /* line 791, screen.scss */
   header + section {
     padding-top: 157px;
   }

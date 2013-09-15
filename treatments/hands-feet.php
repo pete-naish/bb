@@ -1,1 +1,1 @@
-<?php include('treatment.php'); ?>
+<?php include('../cms/templates/pages/treatment.php'); ?>

@@ -15,7 +15,10 @@ $(function(){
 		}
 	});
 
-	
+
+	// shared
+	$('html').removeClass('no-js');
+
 
 	
 
@@ -40,8 +43,24 @@ $(function(){
 	// 		$('div.treatmentIntro').css('opacity', 1);
 	// 	});
 	
-	$('div.treatmentIntro').hover(function() {
-			var $this = $(this);
-			$this.removeClass('translucent').siblings('div.treatmentIntro').addClass('translucent');
+	// $('div.treatmentIntro').hover(function() {
+	// 		var $this = $(this);
+	// 		$this.removeClass('translucent').siblings('div.treatmentIntro').addClass('translucent');
+	// 	});
+
+	$('.treatments').on('click', '.js-load', function(e) {
+		var $this = $(this),
+			$target = $this.data('link');
+
+		$('.treatmentDisplay').load("/treatments/" + $target + ".php .treatmentDetails", function(response, status, xhr) {
+			if (status == "error") {
+				var msg = "Sorry, but there was an error: ";
+				$('.treatmentDisplay').html(msg + xhr.status + " " + xhr.statusText);
+			}
 		});
+		e.preventDefault();
+		$this.parent().removeClass('translucent').siblings('div.treatmentIntro').addClass('translucent');
+	});
+
+
 });

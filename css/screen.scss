@@ -253,10 +253,16 @@ header {
 			}
 		}
 	}
+	+ section {
+		padding-top: 132px;
+	}
 }
 
-header + section {
-	padding-top: 132px;
+.no-js header {
+	position: static;
+	+ section {
+		padding-top: 0;
+	}
 }
 
 .logo {
@@ -354,8 +360,11 @@ section i {
 	margin-bottom: 32px;
 	margin-right: percent(40px);
 	opacity: 1;
+	@include single-transition(opacity, 0s, ease-in-out);
+	position: relative;
 	&.translucent {
 		opacity: 0.6;
+		@include single-transition(opacity, 0.5s, ease-in-out);
 	}
 	a {
 		display: block;
@@ -595,6 +604,10 @@ a.tel {
 	padding: 0;
 }
 
+.no-js #map-canvas {
+	display: none;
+}
+
 .map iframe {
 	display: block;
 }
@@ -631,6 +644,12 @@ a.tel {
 		& + li {
 			margin-left: percent(74px);
 		}
+	}
+}
+
+.treatment-page {
+	.treatmentDetails i {
+		margin-top: 38px;
 	}
 }
 
