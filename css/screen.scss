@@ -536,12 +536,21 @@ a.tel {
 	}
 }
 
+
 .contact {
 	background: $contact-background-color;
 	color: $contact-text-color;
 	i {
 		color: $contact-flourish-color;
 	}
+}
+
+.tab-content {
+	background: $contact-background-color;
+}
+
+#call .tel {
+	color: $contact-floaty-link-color;
 }
 
 .floatyLinks {
@@ -576,21 +585,21 @@ a.tel {
 	}
 	.icon-call a:before {
 		content: "\e003";
-		left: 12px;
+		left: 15px;
 	}
 	.icon-email a:before {
 		font-family: arial, helvetica, sans-serif;
 		content: "@";
-		left: 6px;
+		left: 10px;
 		top: -53px;
 	}
 	.icon-find a:before {
 		content: "\e002";
-		left: 11px;
+		left: 14px;
 	}
 	.icon-like a:before {
 		content: "\e000";
-		left: 2px;
+		left: 5px;
 	}
 	.icon-follow a:before {
 		content: "\e001";
@@ -603,6 +612,14 @@ a.tel {
 	height: 600px;
 	padding: 0;
 }
+
+.mapContent {
+	width: 100px;
+	height: 100px;
+	line-height:normal;
+}
+
+
 
 .no-js #map-canvas {
 	display: none;
@@ -651,6 +668,16 @@ a.tel {
 	.treatmentDetails i {
 		margin-top: 38px;
 	}
+}
+
+.treatmentDisplay {
+	clear: left;
+}
+
+.error {
+	border: 1px solid #E3ABDD;
+	text-align: center;
+	padding: 20px 0;
 }
 
 /* ==========================================================================

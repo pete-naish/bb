@@ -5,7 +5,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
-		<title>Beauty Box Knebworth</title>
+		<title><?php perch_content('Business name'); ?> <?php perch_content('Town'); ?></title>
 		<?php perch_content('Site Description and Keywords'); ?>
 
 		<?php include('inc/head.php') ?>
@@ -14,7 +14,7 @@
 	<body>
 		<header>
 			<div class="container">
-				<h1 class="visuallyhidden">Beauty Box Knebworth</h1>
+				<h1 class="visuallyhidden"><?php perch_content('Business name'); ?> <?php perch_content('Town'); ?></h1>
 				<a href="#top" class="logo" title="Beauty Box Knebworth home page"></a>
 				<span>
 					<h5>For appointments call</h5>
@@ -88,16 +88,20 @@
 			<div class="container">
 				<div class="contact">
 					<i></i>
-					<h3>Contact us</h3>
-					<ul class="floatyLinks cf">
-						<li class="icon-call"><a href="#">Call us</a></li>
-						<li class="icon-email"><a href="#">Email us</a></li>
-						<li class="icon-find"><a href="#">Find us</a></li>
-						<li class="icon-follow mobileHide"><a href="#">Follow us</a></li>
-						<li class="icon-like mobileHide"><a href="#">Like us</a></li>
+					<h3><?php perch_content('Contact heading'); ?></h3>
+					<ul class="floatyLinks cf tabs">
+						<li class="icon-call"><a href="#call">Call us</a></li>
+						<li class="icon-email"><a href="#email">Email us</a></li>
+						<li class="icon-find"><a href="#map-canvas">Find us</a></li>
+						<li class="icon-follow mobileHide"><a href="#follow">Follow us</a></li>
+						<li class="icon-like mobileHide"><a href="#like">Like us</a></li>
 					</ul>
 				</div>
+				<div id="call" class="tab-content"><h3><a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a></h3></div>
+				<div id="email" class="tab-content"><?php perch_form('contact.html'); ?></div>
 				<div id="map-canvas"></div>
+				<div id="follow" class="tab-content">follow</div>
+				<div id="like" class="tab-content">like</div>
 			</div>
 		</section>
 		<section>
@@ -120,51 +124,14 @@
 		</section>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxCUv6c3GVhjrwHgqzAzJ7sBO7gIr0ltw&amp;sensor=true"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxCUv6c3GVhjrwHgqzAzJ7sBO7gIr0ltw&amp;sensor=true"></script>
 		<script>
-			if (window.innerWidth > 590) {
-
-				window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>');
-
-				document.write('<script src="js/plugins.min.js"><\/script>');
-
-				document.write('<script src="js/main.js"><\/script>');
-			}
-
-			function initialize(bn, al, t, c, pc, inttel, tel) {
-				// use visual refresh!
-				var mapOptions = {
-					center: new google.maps.LatLng(51.866594, -0.185008),
-					zoom: 15,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				};
-
-				var map = new google.maps.Map(document.getElementById("map-canvas"),
-				mapOptions);
-
-				var marker = new google.maps.Marker({
-					position: mapOptions.center,
-					map: map,
-					title:"Beauty Box Knebworth"
-				});
-
-				var contentString = '<div class="mapContent">'+
-				'<p>'+ bn +'<br/>'+ al +'<br/>' + t +'<br/>' + c +'<br/>' + pc +'</p>'+
-				"<p><a href='tel:+'" + inttel + "'>" + tel + "</a></p>"+
-				'</div>';
-
-				var infowindow = new google.maps.InfoWindow({
-					content: contentString
-				});
-
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.open(map,marker);
-				});
-			};
-
-			google.maps.event.addDomListener(window, 'load', initialize("<?php perch_content('Business name'); ?>", "<?php perch_content('Address line 1'); ?>", "<?php perch_content('Town'); ?>", "<?php perch_content('County'); ?>", "<?php perch_content('Post code'); ?>", "<?php perch_content('Phone number international'); ?>", "<?php perch_content('Phone number'); ?>"));
-			
+			window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>');
 		</script>
-
+		<script src="js/plugins.min.js"></script>
+		<script src="js/main.js"></script>
+		<script>
+			google.maps.event.addDomListener(window, 'load', initialize("<?php perch_content('Business name'); ?>", "<?php perch_content('Address line 1'); ?>", "<?php perch_content('Town'); ?>", "<?php perch_content('County'); ?>", "<?php perch_content('Post code'); ?>", "<?php perch_content('Phone number international'); ?>", "<?php perch_content('Phone number'); ?>"));
+		</script>
 	</body>
 </html>
