@@ -680,6 +680,46 @@ a.tel {
 	padding: 20px 0;
 }
 
+form {
+	max-width: 280px;
+	margin: 0 auto;
+}
+
+label {
+	color: $contact-text-color;
+	float: left;
+	clear: left;
+	margin-bottom: 5px;
+}
+
+input,
+textarea {
+	width: 100%;
+	float: left;
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: #cdd6d1;
+	font-size: em(14px);
+	border: 0;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	color: $contact-background-color;
+	background-color: $pink;
+	font-family: $heading-font-family;
+	font-size: em(22px);
+	cursor: pointer;
+	letter-spacing: em(3px, 22px);
+	margin-top: 20px;
+	padding: 5px 10px;
+	@include single-transition(background-color, 0.5s, ease-in-out);
+	&:hover {
+		background-color: darken($pink, 8%);
+		@include single-transition(background-color, 0s, ease-in-out);
+	}
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */

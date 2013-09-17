@@ -11,7 +11,7 @@ function initialize(bn, al, t, c, pc, inttel, tel) {
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 
-	var map = new google.maps.Map(document.getElementById("map-canvas"),
+	map = new google.maps.Map(document.getElementById("map-canvas"),
 	mapOptions);
 
 	var marker = new google.maps.Marker({
@@ -113,6 +113,12 @@ $(function(){
 
 			// Prevent the anchor's default click action
 			e.preventDefault();
+
+			if ($(this).attr('href') === '#map-canvas') {
+				// console.log(map);
+				google.maps.event.trigger( map, 'resize' );
+				map.setCenter(new google.maps.LatLng(51.866594, -0.185008))
+			}
 		});
 	});
 

@@ -1,24 +1,28 @@
 <perch:form id="contact" method="post" app="perch_forms">
 	
-	<perch:content id="intro" type="textarea" label="Intro" textile="true" editor="markitup" size="m" />
 
 	<div>
-		<perch:label for="name">Name</perch:label>
+		<perch:label for="name">Your name (required)</perch:label>
 		<perch:input type="text" id="name" required="true" label="Name" />
-		<perch:error for="name" type="required">Please add your name</perch:error>
+		<perch:error for="name" type="required">Please enter your name</perch:error>
 	</div>
 
 	<div>
-		<perch:label for="email">Email</perch:label>
+		<perch:label for="email">Your email (required)</perch:label>
 		<perch:input type="email" id="email" required="true" label="Email" placeholder="you@company.com" />
-		<perch:error for="email" type="required">Please add your email address</perch:error>
+		<perch:error for="email" type="required">Please enter your email address</perch:error>
 		<perch:error for="email" type="format">Please check your email address</perch:error>
 	</div>
 
 	<div>
-		<perch:label for="message">Message</perch:label>
+		<perch:label for="subject">Your subject</perch:label>
+		<perch:input type="text" id="subject" label="Subject" />
+	</div>
+
+	<div>
+		<perch:label for="message">Your message (required)</perch:label>
 		<perch:input type="textarea" id="message" required="true" label="Message" />
-		<perch:error for="message" type="required">Please add a message</perch:error>
+		<perch:error for="message" type="required">Please enter your message</perch:error>
 	</div>
 
 	<div>
