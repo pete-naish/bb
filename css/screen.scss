@@ -773,8 +773,9 @@ input[type=submit] {
 }
 
 .feed-image {
-	display: block;
 	margin-top: 10px;
+	float: left;
+	clear: left
 }
 
 .tweetprofilelink {
