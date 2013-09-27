@@ -5,7 +5,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
-		<!-- poooooonow	 -->
+		<!-- poooooonowaaa -->
 		<title><?php perch_content('Business name'); ?> <?php perch_content('Town'); ?></title>
 		<?php perch_content('Site Description and Keywords'); ?>
 
