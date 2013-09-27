@@ -537,9 +537,10 @@ a.tel {
 }
 
 
-.contact {
+.container .contact {
 	background: $contact-background-color;
 	color: $contact-text-color;
+	padding-bottom: 48px;
 	i {
 		color: $contact-flourish-color;
 	}
@@ -702,6 +703,8 @@ textarea {
 	font-size: em(14px);
 	border: 0;
 	box-sizing: border-box;
+	-webkit-appearance: none;
+	border-radius: 0;
 }
 
 input[type=submit] {
@@ -720,7 +723,7 @@ input[type=submit] {
 	}
 }
 
-#twitter-feed a {
+.feed a {
 	color: $pink;
 	text-decoration: none;
 	&:hover {
@@ -728,7 +731,7 @@ input[type=submit] {
 	}
 }
 
-#twitter-feed {
+.feed {
 	color: $contact-text-color;
 	max-width: 500px;
 	margin: 0 auto 30px;
@@ -746,17 +749,17 @@ input[type=submit] {
 	text-align: center;
 }
 
-.twitter-article {
+.status-article {
 	clear: both;
 	float: left;
 	width: 100%;
 }
 
-.twitter-article + .twitter-article {
+.status-article + .status-article {
 	margin-top: 30px;
 }
 
-.twitter-pic {
+.feed-pic {
 	float: left;
 	margin-top: 5px;
 	margin-right: 20px;
@@ -786,13 +789,13 @@ input[type=submit] {
 	margin-top: 3px;
 }
 
-#twitter-feed .tweet-time a,
-#twitter-feed .tweet-content a:last-child {
+.feed .tweet-time a,
+.feed .tweet-content a:last-child {
 	color: darken($contact-text-color, 30%);
 	font-size: em(12px);
 }
 
-#twitter-feed .tweet-time a {
+.feed .tweet-time a {
 	margin-left: 10px;
 	display: block;
 }
@@ -842,6 +845,10 @@ input[type=submit] {
     background-position:-5px -54px;
     margin-top:3px;
     float:left;
+}
+
+.fb-feed {
+	color: $contact-text-color;
 }
 
 /* ==========================================================================

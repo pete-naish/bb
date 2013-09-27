@@ -101,10 +101,16 @@
 				<div id="email" class="tab-content"><?php perch_form('contact.html'); ?></div>
 				<div id="map-canvas"></div>
 				<div id="follow" class="tab-content">
-					<div id="twitter-feed"></div>
+					<div class="feed feed-twitter"></div>
 				</div>
 				<div id="like" class="tab-content">
-					<div id="fb-root"></div>
+					<div class="feed feed-facebook">
+						<?php
+echo `whoami`;
+?>
+						<h1><a href="https://www.facebook.com/thebeautyboxknebworth">/TheBeautyBoxKnebworth</a></h1>
+						<?php include('fb-feed.php'); ?>
+					</div>
 				</div>
 			</div>
 		</section>
