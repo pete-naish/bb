@@ -18,7 +18,7 @@ $(function () {
 	headerHTML += '<h1><a href="https://twitter.com/'+twitterprofile+'" target="_blank">@'+twitterprofile+'</a></h1>';
 	loadingHTML += '<div id="loading-container"><img src="../img/ajax-loader.gif" width="32" height="32" alt="tweet loader" /></div>';
 	
-	$('#twitter-feed').html(headerHTML + loadingHTML);
+	$('.feed-twitter').html(headerHTML + loadingHTML);
 	 
     $.getJSON('../BeautyBox120-tweets.txt?' +Math.random(), 
         function(feeds) {   
@@ -63,8 +63,8 @@ $(function () {
 							feedHTML += headerHTML;
 						}
 									 
-						feedHTML += '<div class="twitter-article" id="tw'+displayCounter+'">'; 										                 
-						feedHTML += '<div class="twitter-pic"><a href="https://twitter.com/'+tweetusername+'" target="_blank"><img src="'+profileimage+'" width="42" height="42" alt="twitter icon" /></a></div>';
+						feedHTML += '<div class="status-article" id="tw'+displayCounter+'">'; 										                 
+						feedHTML += '<div class="feed-pic"><a href="https://twitter.com/'+tweetusername+'" target="_blank"><img src="'+profileimage+'" width="42" height="42" alt="twitter icon" /></a></div>';
 						feedHTML += '<div class="twitter-text"><p><span class="tweetprofilelink"><a href="https://twitter.com/'+tweetusername+'" target="_blank">@'+tweetusername+'</a></span><span class="tweet-time"><a href="https://twitter.com/'+tweetusername+'/status/'+tweetid+'" target="_blank">'+relative_time(feeds[i].created_at)+'</a></span><span class="tweet-content">'+status+'</span></p>';
 						
 						if ((isaretweet == true) && (showretweetindicator == true)) {
@@ -81,7 +81,7 @@ $(function () {
 				 }
             }
              
-            $('#twitter-feed').html(feedHTML);
+            $('.feed-twitter').html(feedHTML);
 			
 			//Add twitter action animation and rollovers
 			if (showtweetactions == true) {				
