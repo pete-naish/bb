@@ -52,7 +52,6 @@ $(function(){
 	});
 
 
-	// shared
 	$('html').removeClass('no-js');
 
 	$('nav a, .logo').on('click', function(e) {
@@ -66,19 +65,23 @@ $(function(){
 	});
 
 
-	$('.treatments').on('click', '.js-load', function(e) {
-		var $this = $(this),
-			$target = $this.data('link');
+	if ($(window).width() > 590) {
+		$('.treatments').on('click', '.js-load', function(e) {
+			var $this = $(this),
+				$target = $this.data('link');
 
-		$('.treatmentDisplay').load("/treatments/" + $target + ".php .treatmentDetails", function(response, status, xhr) {
-			if (status == "error") {
-				var msg = "Sorry, but there was an error: ";
-				$('.treatmentDisplay').html("<p class='error'>" + msg + xhr.status + " " + xhr.statusText + "</p>");
-			}
+			$('.treatmentDisplay').load("/treatments/" + $target + ".php .treatmentDetails", function(response, status, xhr) {
+				if (status == "error") {
+					var msg = "Sorry, but there was an error: ";
+					$('.treatmentDisplay').html("<p class='error'>" + msg + xhr.status + " " + xhr.statusText + "</p>");
+				}
+			});
+			e.preventDefault();
+			$this.parent().removeClass('translucent').siblings('div.treatmentIntro').addClass('translucent');
 		});
-		e.preventDefault();
-		$this.parent().removeClass('translucent').siblings('div.treatmentIntro').addClass('translucent');
-	});
+
+	}
+	
 
 
 	$('ul.tabs').each(function(){

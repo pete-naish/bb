@@ -1,5 +1,5 @@
 /* @import must be at top of file, otherwise CSS will not work */
-/* line 17, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,50 +16,50 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: inherit;
   font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
+/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
   line-height: 1;
 }
 
-/* line 24, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -212,7 +212,7 @@ body {
 /* line 169, screen.scss */
 h2 {
   font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-  font-size: 4.0625em;
+  font-size: 4.063em;
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -223,7 +223,7 @@ h3 {
   font-size: 1.875em;
   letter-spacing: 0.1em;
   text-align: center;
-  margin: 0 6.88889% 30px;
+  margin: 0 6.889% 30px;
 }
 
 /* line 185, screen.scss */
@@ -282,7 +282,7 @@ header {
 }
 /* line 229, screen.scss */
 header span {
-  margin: 0 6.05469%;
+  margin: 0 6.055%;
   padding-top: 15px;
   float: right;
   text-align: right;
@@ -305,6 +305,7 @@ header span .tel {
   margin-bottom: 30px;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
+  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
@@ -314,6 +315,7 @@ header span .tel:hover {
   text-decoration: none;
   -webkit-transition: border-color 0s ease-in-out;
   -moz-transition: border-color 0s ease-in-out;
+  -ms-transition: border-color 0s ease-in-out;
   -o-transition: border-color 0s ease-in-out;
   transition: border-color 0s ease-in-out;
 }
@@ -333,7 +335,7 @@ header + section {
 
 /* line 268, screen.scss */
 .logo {
-  margin: 40px 6.05469% 30px 6.05469%;
+  margin: 40px 6.055% 30px 6.055%;
   display: block;
   float: left;
   width: 290px;
@@ -350,7 +352,7 @@ header + section {
 nav {
   float: right;
   clear: right;
-  margin: 0 6.05469% 10px;
+  margin: 0 6.055% 10px;
 }
 /* line 285, screen.scss */
 nav li {
@@ -364,10 +366,11 @@ nav li a {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.25em;
   letter-spacing: 0.15em;
-  margin-right: -0.1875em;
+  margin-right: -0.188em;
   border-bottom: 2px solid #343434;
   -webkit-transition: border-color 0.25s ease-in-out;
   -moz-transition: border-color 0.25s ease-in-out;
+  -ms-transition: border-color 0.25s ease-in-out;
   -o-transition: border-color 0.25s ease-in-out;
   transition: border-color 0.25s ease-in-out;
 }
@@ -376,6 +379,7 @@ nav li a:hover {
   border-color: #bfcdcd;
   -webkit-transition: border-color 0s ease-in-out;
   -moz-transition: border-color 0s ease-in-out;
+  -ms-transition: border-color 0s ease-in-out;
   -o-transition: border-color 0s ease-in-out;
   transition: border-color 0s ease-in-out;
 }
@@ -406,12 +410,12 @@ nav li i {
 .hero .caption {
   position: absolute;
   bottom: 0;
-  padding: 0 8.30078% 25px 8.30078%;
+  padding: 0 8.301% 25px 8.301%;
 }
 /* line 328, screen.scss */
 .hero .caption p {
   margin-bottom: 10px;
-  margin-right: 31.85012%;
+  margin-right: 31.85%;
 }
 
 /* line 335, screen.scss */
@@ -429,7 +433,7 @@ section i.small {
 /* line 345, screen.scss */
 .container > div {
   overflow: hidden;
-  padding: 0 6.05469% 32px;
+  padding: 0 6.055% 32px;
 }
 
 /* line 350, screen.scss */
@@ -444,12 +448,13 @@ section i.small {
 /* line 357, screen.scss */
 .treatmentIntro {
   float: left;
-  width: 21.66667%;
+  width: 21.667%;
   margin-bottom: 32px;
-  margin-right: 4.44444%;
+  margin-right: 4.444%;
   opacity: 1;
   -webkit-transition: opacity 0s ease-in-out;
   -moz-transition: opacity 0s ease-in-out;
+  -ms-transition: opacity 0s ease-in-out;
   -o-transition: opacity 0s ease-in-out;
   transition: opacity 0s ease-in-out;
   position: relative;
@@ -459,6 +464,7 @@ section i.small {
   opacity: 0.6;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
   -o-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
 }
@@ -476,14 +482,14 @@ section i.small {
 .treatmentIntro img {
   background-color: #fff;
   border: 1px solid #e3abdd;
-  padding: 5.12821%;
+  padding: 5.128%;
   margin-bottom: 10px;
-  width: 87.17949%;
+  width: 87.179%;
 }
 /* line 384, screen.scss */
 .treatmentIntro p {
   margin-bottom: 10px;
-  padding: 0 2.5641%;
+  padding: 0 2.564%;
   text-align: center;
 }
 /* line 389, screen.scss */
@@ -550,13 +556,13 @@ section i.small {
 }
 /* line 440, screen.scss */
 .prices span:first-child {
-  padding-right: 0.55556%;
+  padding-right: 0.556%;
   background: url(../img/treatments-bg.png);
 }
 /* line 444, screen.scss */
 .prices span + span {
   float: right;
-  padding-left: 0.55556%;
+  padding-left: 0.556%;
   background: url(../img/treatments-bg.png);
   position: relative;
   z-index: 1;
@@ -565,16 +571,16 @@ section i.small {
 /* line 453, screen.scss */
 .colHalf {
   float: left;
-  width: 47.77778%;
+  width: 47.778%;
 }
 /* line 456, screen.scss */
 .colHalf + .colHalf {
-  margin-left: 2.22222%;
+  margin-left: 2.222%;
 }
 /* line 458, screen.scss */
 .colHalf + .colHalf .border {
   border-left: 1px solid #9BADA1;
-  padding-left: 4.65116%;
+  padding-left: 4.651%;
 }
 
 /* line 466, screen.scss */
@@ -598,7 +604,7 @@ p.notes {
 .about h4 {
   color: #666666;
   margin-bottom: 8px;
-  padding: 0 1.82482%;
+  padding: 0 1.825%;
 }
 /* line 483, screen.scss */
 .about .row {
@@ -607,7 +613,7 @@ p.notes {
 
 /* line 488, screen.scss */
 .colThird {
-  width: 33.33333%;
+  width: 33.333%;
   margin-bottom: 20px;
   float: left;
 }
@@ -698,7 +704,7 @@ a.tel:hover {
 }
 /* line 562, screen.scss */
 .floatyLinks li + li {
-  margin-left: 5.55556%;
+  margin-left: 5.556%;
 }
 /* line 567, screen.scss */
 .floatyLinks a {
@@ -810,7 +816,7 @@ a.tel:hover {
 }
 /* line 661, screen.scss */
 .brand-links li + li {
-  margin-left: 8.22222%;
+  margin-left: 8.222%;
 }
 
 /* line 668, screen.scss */
@@ -864,11 +870,12 @@ input[type=submit] {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.375em;
   cursor: pointer;
-  letter-spacing: 0.13636em;
+  letter-spacing: 0.136em;
   margin-top: 20px;
   padding: 5px 10px;
   -webkit-transition: background-color 0.5s ease-in-out;
   -moz-transition: background-color 0.5s ease-in-out;
+  -ms-transition: background-color 0.5s ease-in-out;
   -o-transition: background-color 0.5s ease-in-out;
   transition: background-color 0.5s ease-in-out;
 }
@@ -877,37 +884,190 @@ input[type=submit]:hover {
   background-color: #d98cd1;
   -webkit-transition: background-color 0s ease-in-out;
   -moz-transition: background-color 0s ease-in-out;
+  -ms-transition: background-color 0s ease-in-out;
   -o-transition: background-color 0s ease-in-out;
   transition: background-color 0s ease-in-out;
+}
+
+/* line 723, screen.scss */
+#twitter-feed a {
+  color: #e3abdd;
+  text-decoration: none;
+}
+/* line 726, screen.scss */
+#twitter-feed a:hover {
+  text-decoration: underline;
+}
+
+/* line 731, screen.scss */
+#twitter-feed {
+  color: #d0d6d4;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+}
+/* line 736, screen.scss */
+#twitter-feed h1 {
+  text-align: center;
+  font-size: 1.25em;
+  font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.15em;
+  margin-bottom: 30px;
+}
+
+/* line 745, screen.scss */
+#loading-container {
+  text-align: center;
+}
+
+/* line 749, screen.scss */
+.twitter-article {
+  clear: both;
+  float: left;
+  width: 100%;
+}
+
+/* line 755, screen.scss */
+.twitter-article + .twitter-article {
+  margin-top: 30px;
+}
+
+/* line 759, screen.scss */
+.twitter-pic {
+  float: left;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+/* line 766, screen.scss */
+.twitter-text,
+.twitter-text p {
+  overflow: hidden;
+}
+
+/* line 770, screen.scss */
+.tweetprofilelink {
+  float: left;
+  font-size: 0.875em;
+}
+
+/* line 775, screen.scss */
+.tweet-time {
+  float: left;
+}
+
+/* line 779, screen.scss */
+.tweet-content {
+  float: left;
+  clear: left;
+}
+
+/* line 784, screen.scss */
+.tweet-content a:last-child {
+  display: block;
+  margin-top: 3px;
+}
+
+/* line 790, screen.scss */
+#twitter-feed .tweet-time a,
+#twitter-feed .tweet-content a:last-child {
+  color: #7e8f89;
+  font-size: 0.75em;
+}
+
+/* line 795, screen.scss */
+#twitter-feed .tweet-time a {
+  margin-left: 10px;
+  display: block;
+}
+
+/* line 801, screen.scss */
+#twitter-actions {
+  width: 75px;
+  float: right;
+  margin-right: 5px;
+  margin-top: 8px;
+}
+
+/* line 808, screen.scss */
+.intent {
+  width: 25px;
+  height: 16px;
+  float: left;
+}
+
+/* line 813, screen.scss */
+.intent a {
+  width: 25px;
+  height: 16px;
+  display: block;
+  background-image: url(../img/tweet-actions.png);
+  float: left;
+}
+
+/* line 820, screen.scss */
+.intent a:hover {
+  background-position: -25px 0px;
+}
+
+/* line 824, screen.scss */
+#intent-retweet a {
+  background-position: 0px -17px;
+}
+
+/* line 827, screen.scss */
+#intent-retweet a:hover {
+  background-position: -25px -17px;
+}
+
+/* line 830, screen.scss */
+#intent-fave a {
+  background-position: 0px -36px;
+}
+
+/* line 833, screen.scss */
+#intent-fave a:hover {
+  background-position: -25px -36px;
+}
+
+/* -------- RETWEET INDICATOR ------*/
+/* line 838, screen.scss */
+#retweet-indicator {
+  width: 14px;
+  height: 10px;
+  background-image: url(../img/tweet-actions.png);
+  background-position: -5px -54px;
+  margin-top: 3px;
+  float: left;
 }
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 728, screen.scss */
+  /* line 852, screen.scss */
   .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 731, screen.scss */
+  /* line 855, screen.scss */
   .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 590px) {
-  /* line 738, screen.scss */
+  /* line 862, screen.scss */
   .mobileHide {
     display: none !important;
   }
 
-  /* line 741, screen.scss */
+  /* line 865, screen.scss */
   header {
     position: static;
     width: auto;
   }
 
-  /* line 745, screen.scss */
+  /* line 869, screen.scss */
   header span {
     text-align: center;
     line-height: 1.2;
@@ -915,128 +1075,128 @@ input[type=submit]:hover {
     padding-top: 0;
     margin-bottom: 20px;
   }
-  /* line 751, screen.scss */
+  /* line 875, screen.scss */
   header span h5 {
     float: none;
     font-size: 1.375em;
     font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   }
-  /* line 756, screen.scss */
+  /* line 880, screen.scss */
   header span .tel {
     font-size: 1.375em;
     float: none;
     clear: none;
   }
 
-  /* line 762, screen.scss */
+  /* line 886, screen.scss */
   .logo {
     width: 87.89%;
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
-  /* line 767, screen.scss */
+  /* line 891, screen.scss */
   .hours {
     width: 70%;
   }
 
-  /* line 770, screen.scss */
+  /* line 894, screen.scss */
   #map-canvas {
     height: 250px;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 776, screen.scss */
+  /* line 900, screen.scss */
   .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 779, screen.scss */
+  /* line 903, screen.scss */
   .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 782, screen.scss */
+  /* line 906, screen.scss */
   .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 
-  /* line 786, screen.scss */
+  /* line 910, screen.scss */
   .hours {
     width: 50%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  /* line 792, screen.scss */
+@media only screen and (min-width: 320px) and (max-width:  768px) {
+  /* line 916, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 796, screen.scss */
+  /* line 920, screen.scss */
   .hero .caption h2 {
-    font-size: 2.1875em;
+    font-size: 2.188em;
   }
-  /* line 799, screen.scss */
+  /* line 923, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 803, screen.scss */
+  /* line 927, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 807, screen.scss */
+  /* line 931, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 811, screen.scss */
+  /* line 935, screen.scss */
   .colThird + .colThird p, .colThird.double .border {
     border: 0;
     padding: 0;
   }
-  /* line 815, screen.scss */
+  /* line 939, screen.scss */
   .colThird.double p + h4 {
     margin-top: 40px;
   }
 
-  /* line 819, screen.scss */
+  /* line 943, screen.scss */
   .colHalf {
     width: 100%;
   }
-  /* line 821, screen.scss */
+  /* line 945, screen.scss */
   .colHalf + .colHalf {
     margin-left: 0;
   }
-  /* line 823, screen.scss */
+  /* line 947, screen.scss */
   .colHalf + .colHalf .border {
     padding-left: 0;
     border: 0;
   }
-  /* line 828, screen.scss */
+  /* line 952, screen.scss */
   .colHalf:last-child .treatment:last-child {
     margin-bottom: 20px;
   }
 
-  /* line 832, screen.scss */
+  /* line 956, screen.scss */
   .treatment {
     margin-bottom: 40px;
   }
 
-  /* line 836, screen.scss */
+  /* line 960, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;
     padding: 0;
   }
 }
-@media only screen and (min-width: 481px) and (max-width: 930px) {
-  /* line 843, screen.scss */
+@media only screen and (min-width: 481px) and (max-width:  930px) {
+  /* line 967, screen.scss */
   .logo {
     margin-top: 20px;
   }
 
-  /* line 846, screen.scss */
+  /* line 970, screen.scss */
   nav {
     text-align: center;
     width: 100%;
@@ -1044,14 +1204,14 @@ input[type=submit]:hover {
     float: none;
     clear: both;
   }
-  /* line 852, screen.scss */
+  /* line 976, screen.scss */
   nav li {
     float: none;
     display: inline;
     margin-bottom: 0;
   }
 
-  /* line 858, screen.scss */
+  /* line 982, screen.scss */
   header + section {
     padding-top: 157px;
   }

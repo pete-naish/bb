@@ -720,6 +720,130 @@ input[type=submit] {
 	}
 }
 
+#twitter-feed a {
+	color: $pink;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+#twitter-feed {
+	color: $contact-text-color;
+	max-width: 500px;
+	margin: 0 auto 30px;
+	overflow: hidden;	
+	h1 {
+		text-align: center;
+		font-size: em(20px);
+		font-family: $heading-font-family;
+		letter-spacing: em(3px, 20px);
+		margin-bottom: 30px;
+	}
+}
+
+#loading-container {
+	text-align: center;
+}
+
+.twitter-article {
+	clear: both;
+	float: left;
+	width: 100%;
+}
+
+.twitter-article + .twitter-article {
+	margin-top: 30px;
+}
+
+.twitter-pic {
+	float: left;
+	margin-top: 5px;
+	margin-right: 20px;
+}
+
+.twitter-text,
+.twitter-text p {
+	overflow: hidden;
+}
+
+.tweetprofilelink {
+	float: left;
+	font-size: em(14px);
+}
+
+.tweet-time {
+	float: left;
+}
+
+.tweet-content {
+	float: left;
+	clear: left;
+}
+
+.tweet-content a:last-child {
+	display: block;
+	margin-top: 3px;
+}
+
+#twitter-feed .tweet-time a,
+#twitter-feed .tweet-content a:last-child {
+	color: darken($contact-text-color, 30%);
+	font-size: em(12px);
+}
+
+#twitter-feed .tweet-time a {
+	margin-left: 10px;
+	display: block;
+}
+
+
+#twitter-actions {
+    width:75px;
+    float:right;
+    margin-right:5px;   
+    margin-top:8px;
+        // display:none;
+}
+.intent {
+    width:25px;
+    height:16px;
+    float:left; 
+}
+.intent a{
+    width:25px;
+    height:16px;
+    display:block;
+    background-image:url(../img/tweet-actions.png);
+    float:left; 
+} 
+.intent a:hover{
+    background-position:-25px 0px;
+} 
+  
+#intent-retweet a{
+    background-position:0px -17px;
+} 
+#intent-retweet a:hover{
+    background-position:-25px -17px;
+} 
+#intent-fave a{
+    background-position:0px -36px;
+} 
+#intent-fave a:hover{
+    background-position:-25px -36px;
+} 
+  
+/* -------- RETWEET INDICATOR ------*/
+#retweet-indicator {
+    width:14px;
+    height:10px;
+    background-image:url(../img/tweet-actions.png);
+    background-position:-5px -54px;
+    margin-top:3px;
+    float:left;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */

@@ -100,8 +100,12 @@
 				<div id="call" class="tab-content"><h3><a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a></h3></div>
 				<div id="email" class="tab-content"><?php perch_form('contact.html'); ?></div>
 				<div id="map-canvas"></div>
-				<div id="follow" class="tab-content">follow</div>
-				<div id="like" class="tab-content">like</div>
+				<div id="follow" class="tab-content">
+					<div id="twitter-feed"></div>
+				</div>
+				<div id="like" class="tab-content">
+					<div id="fb-root"></div>
+				</div>
 			</div>
 		</section>
 		<section>
@@ -130,6 +134,7 @@
 		</script>
 		<script src="js/plugins.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/twitterfeed.js"></script>
 		<script>
 			google.maps.event.addDomListener(window, 'load', initialize("<?php perch_content('Business name'); ?>", "<?php perch_content('Address line 1'); ?>", "<?php perch_content('Town'); ?>", "<?php perch_content('County'); ?>", "<?php perch_content('Post code'); ?>", "<?php perch_content('Phone number international'); ?>", "<?php perch_content('Phone number'); ?>"));
 		</script>
