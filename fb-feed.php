@@ -38,13 +38,14 @@ foreach($pagefeed['data'] as $post) {
         // open up an fb-update div
         echo "<div class=\"status-article\">";
  		echo $feedpic;
+ 		echo "<div class=\"feed-text\"><p>";
             // post the time
  
             // check if post type is a status
             if ($post['type'] == 'status' && $post['story'] == '') {
                 // echo "<h2>Status updated on: " . date("jS M, Y", (strtotime($post['created_time']))) . "</h2>";
                 
-                echo "<p>" . $post['message'] . "</p>";
+                echo "<span class=\"feed-content\">" . $post['message'] . "</span>";
                  $i++; // add 1 to the counter if our condition for $post['type'] is met
             }
  
@@ -58,18 +59,18 @@ foreach($pagefeed['data'] as $post) {
  
             // check if post type is a photo
             if ($post['type'] == 'photo') {
-                // echo "<h2>Photo posted on: " . date("jS M, Y", (strtotime($post['created_time']))) . "</h2>";
+                echo "<span class=\"feed-time\">Photo posted on: " . date("jS M, Y", (strtotime($post['created_time']))) . "</span>";
                 if (empty($post['story']) === false) {
-                    echo "<p>" . $post['story'] . "</p>";
+                    echo "<span class=\"feed-content\">" . $post['story'] . "</span>";
                 } elseif (empty($post['message']) === false) {
-                    echo "<p>" . $post['message'] . "</p>";
+                    echo "<span class=\"feed-content\">" . $post['message'] . "</span>";
                 }
-                echo "<p><a href=\"" . $post['link'] . "\" target=\"_blank\">
-                <img src=\"" . $post['picture'] . "\"></a></p>";
+                echo "<a class=\"feed-image\" href=\"" . $post['link'] . "\" target=\"_blank\">
+                <img src=\"" . $post['picture'] . "\"></a>";
                  $i++; // add 1 to the counter if our condition for $post['type'] is met
             }
  
-        echo "</div>"; // close fb-update div
+        echo "</p></div></div>"; // close fb-update div
  
        
     }

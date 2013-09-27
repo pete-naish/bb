@@ -708,12 +708,20 @@ a.tel:hover {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.14em;
   position: relative;
+  -webkit-transition: color 0.5s ease-in-out;
+  -moz-transition: color 0.5s ease-in-out;
+  -o-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
-/* line 575, screen.scss */
+/* line 576, screen.scss */
 .floatyLinks a:hover, .floatyLinks a.active {
   color: #e3abdd;
+  -webkit-transition: color 0s ease-in-out;
+  -moz-transition: color 0s ease-in-out;
+  -o-transition: color 0s ease-in-out;
+  transition: color 0s ease-in-out;
 }
-/* line 578, screen.scss */
+/* line 580, screen.scss */
 .floatyLinks a:before {
   font-family: 'social';
   margin: 0;
@@ -722,68 +730,68 @@ a.tel:hover {
   position: absolute;
   top: -50px;
 }
-/* line 587, screen.scss */
+/* line 589, screen.scss */
 .floatyLinks .icon-call a:before {
   content: "\e003";
   left: 15px;
 }
-/* line 591, screen.scss */
+/* line 593, screen.scss */
 .floatyLinks .icon-email a:before {
   font-family: arial, helvetica, sans-serif;
   content: "@";
   left: 10px;
   top: -53px;
 }
-/* line 597, screen.scss */
+/* line 599, screen.scss */
 .floatyLinks .icon-find a:before {
   content: "\e002";
   left: 14px;
 }
-/* line 601, screen.scss */
+/* line 603, screen.scss */
 .floatyLinks .icon-like a:before {
   content: "\e000";
   left: 5px;
 }
-/* line 605, screen.scss */
+/* line 607, screen.scss */
 .floatyLinks .icon-follow a:before {
   content: "\e001";
   left: 9px;
 }
 
-/* line 611, screen.scss */
+/* line 613, screen.scss */
 #map-canvas {
   width: 100%;
   height: 600px;
   padding: 0;
 }
 
-/* line 617, screen.scss */
+/* line 619, screen.scss */
 .mapContent {
   width: 100px;
   height: 100px;
   line-height: normal;
 }
 
-/* line 625, screen.scss */
+/* line 627, screen.scss */
 .no-js #map-canvas {
   display: none;
 }
 
-/* line 629, screen.scss */
+/* line 631, screen.scss */
 .map iframe {
   display: block;
 }
 
-/* line 633, screen.scss */
+/* line 635, screen.scss */
 .footer-top {
   background-color: black;
   color: #9aaca0;
 }
-/* line 636, screen.scss */
+/* line 638, screen.scss */
 .footer-top i {
   margin: 18px 0 10px;
 }
-/* line 639, screen.scss */
+/* line 641, screen.scss */
 .footer-top h5 {
   border-bottom: 1px dashed #9aaca0;
   margin-bottom: 20px;
@@ -792,12 +800,12 @@ a.tel:hover {
   padding-bottom: 10px;
 }
 
-/* line 648, screen.scss */
+/* line 650, screen.scss */
 .footer-bottom {
   background-color: #343434;
   color: #9aaca0;
 }
-/* line 651, screen.scss */
+/* line 653, screen.scss */
 .footer-bottom h5 {
   text-align: center;
   letter-spacing: 0.16em;
@@ -805,39 +813,39 @@ a.tel:hover {
   line-height: 1.4;
 }
 
-/* line 660, screen.scss */
+/* line 662, screen.scss */
 .brand-links li {
   float: left;
 }
-/* line 662, screen.scss */
+/* line 664, screen.scss */
 .brand-links li + li {
   margin-left: 8.22222%;
 }
 
-/* line 669, screen.scss */
+/* line 671, screen.scss */
 .treatment-page .treatmentDetails i {
   margin-top: 38px;
 }
 
-/* line 674, screen.scss */
+/* line 676, screen.scss */
 .treatmentDisplay {
   clear: left;
 }
 
-/* line 678, screen.scss */
+/* line 680, screen.scss */
 .error {
   border: 1px solid #E3ABDD;
   text-align: center;
   padding: 20px 0;
 }
 
-/* line 684, screen.scss */
+/* line 686, screen.scss */
 form {
   max-width: 280px;
   margin: 0 auto;
 }
 
-/* line 689, screen.scss */
+/* line 691, screen.scss */
 label {
   color: #d0d6d4;
   float: left;
@@ -845,7 +853,7 @@ label {
   margin-bottom: 5px;
 }
 
-/* line 697, screen.scss */
+/* line 699, screen.scss */
 input,
 textarea {
   width: 100%;
@@ -860,7 +868,7 @@ textarea {
   border-radius: 0;
 }
 
-/* line 710, screen.scss */
+/* line 712, screen.scss */
 input[type=submit] {
   color: #343434;
   background-color: #e3abdd;
@@ -875,7 +883,7 @@ input[type=submit] {
   -o-transition: background-color 0.5s ease-in-out;
   transition: background-color 0.5s ease-in-out;
 }
-/* line 720, screen.scss */
+/* line 722, screen.scss */
 input[type=submit]:hover {
   background-color: #d98cd1;
   -webkit-transition: background-color 0s ease-in-out;
@@ -884,24 +892,24 @@ input[type=submit]:hover {
   transition: background-color 0s ease-in-out;
 }
 
-/* line 726, screen.scss */
+/* line 728, screen.scss */
 .feed a {
   color: #e3abdd;
   text-decoration: none;
 }
-/* line 729, screen.scss */
+/* line 731, screen.scss */
 .feed a:hover {
   text-decoration: underline;
 }
 
-/* line 734, screen.scss */
+/* line 736, screen.scss */
 .feed {
   color: #d0d6d4;
   max-width: 500px;
   margin: 0 auto 30px;
   overflow: hidden;
 }
-/* line 739, screen.scss */
+/* line 741, screen.scss */
 .feed h1 {
   text-align: center;
   font-size: 1.25em;
@@ -910,73 +918,81 @@ input[type=submit]:hover {
   margin-bottom: 30px;
 }
 
-/* line 748, screen.scss */
+/* line 750, screen.scss */
 #loading-container {
   text-align: center;
 }
 
-/* line 752, screen.scss */
+/* line 754, screen.scss */
 .status-article {
   clear: both;
   float: left;
   width: 100%;
 }
 
-/* line 758, screen.scss */
+/* line 760, screen.scss */
 .status-article + .status-article {
   margin-top: 30px;
 }
 
-/* line 762, screen.scss */
+/* line 764, screen.scss */
 .feed-pic {
   float: left;
   margin-top: 5px;
   margin-right: 20px;
 }
 
-/* line 769, screen.scss */
-.twitter-text,
-.twitter-text p {
+/* line 771, screen.scss */
+.feed-text,
+.feed-text p {
   overflow: hidden;
 }
 
-/* line 773, screen.scss */
+/* line 775, screen.scss */
+.feed-image {
+  display: block;
+  margin-top: 10px;
+}
+
+/* line 780, screen.scss */
 .tweetprofilelink {
   float: left;
   font-size: 0.875em;
 }
 
-/* line 778, screen.scss */
-.tweet-time {
+/* line 785, screen.scss */
+.feed-time {
   float: left;
 }
 
-/* line 782, screen.scss */
-.tweet-content {
+/* line 789, screen.scss */
+.feed-content {
   float: left;
   clear: left;
 }
 
-/* line 787, screen.scss */
-.tweet-content a:last-child {
-  display: block;
-  margin-top: 3px;
-}
-
-/* line 793, screen.scss */
-.feed .tweet-time a,
-.feed .tweet-content a:last-child {
+/* line 801, screen.scss */
+.feed .feed-time a {
   color: #7e8f89;
   font-size: 0.75em;
 }
 
-/* line 798, screen.scss */
-.feed .tweet-time a {
+/* line 806, screen.scss */
+.feed .feed-time a {
   margin-left: 10px;
   display: block;
 }
 
-/* line 804, screen.scss */
+/* line 811, screen.scss */
+.tweet-media-pic {
+  margin-top: 10px;
+}
+/* line 814, screen.scss */
+.tweet-media-pic img {
+  max-width: 130px;
+}
+
+/* line 819, screen.scss */
 #twitter-actions {
   width: 75px;
   float: right;
@@ -984,14 +1000,14 @@ input[type=submit]:hover {
   margin-top: 8px;
 }
 
-/* line 811, screen.scss */
+/* line 826, screen.scss */
 .intent {
   width: 25px;
   height: 16px;
   float: left;
 }
 
-/* line 816, screen.scss */
+/* line 831, screen.scss */
 .intent a {
   width: 25px;
   height: 16px;
@@ -1000,33 +1016,33 @@ input[type=submit]:hover {
   float: left;
 }
 
-/* line 823, screen.scss */
+/* line 838, screen.scss */
 .intent a:hover {
   background-position: -25px 0px;
 }
 
-/* line 827, screen.scss */
+/* line 842, screen.scss */
 #intent-retweet a {
   background-position: 0px -17px;
 }
 
-/* line 830, screen.scss */
+/* line 845, screen.scss */
 #intent-retweet a:hover {
   background-position: -25px -17px;
 }
 
-/* line 833, screen.scss */
+/* line 848, screen.scss */
 #intent-fave a {
   background-position: 0px -36px;
 }
 
-/* line 836, screen.scss */
+/* line 851, screen.scss */
 #intent-fave a:hover {
   background-position: -25px -36px;
 }
 
 /* -------- RETWEET INDICATOR ------*/
-/* line 841, screen.scss */
+/* line 856, screen.scss */
 #retweet-indicator {
   width: 14px;
   height: 10px;
@@ -1036,7 +1052,7 @@ input[type=submit]:hover {
   float: left;
 }
 
-/* line 850, screen.scss */
+/* line 865, screen.scss */
 .fb-feed {
   color: #d0d6d4;
 }
@@ -1045,29 +1061,29 @@ input[type=submit]:hover {
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 859, screen.scss */
+  /* line 874, screen.scss */
   .treatmentIntro {
     width: 48%;
     margin-right: 4%;
   }
-  /* line 862, screen.scss */
+  /* line 877, screen.scss */
   .treatmentIntro:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 590px) {
-  /* line 869, screen.scss */
+  /* line 884, screen.scss */
   .mobileHide {
     display: none !important;
   }
 
-  /* line 872, screen.scss */
+  /* line 887, screen.scss */
   header {
     position: static;
     width: auto;
   }
 
-  /* line 876, screen.scss */
+  /* line 891, screen.scss */
   header span {
     text-align: center;
     line-height: 1.2;
@@ -1075,115 +1091,115 @@ input[type=submit]:hover {
     padding-top: 0;
     margin-bottom: 20px;
   }
-  /* line 882, screen.scss */
+  /* line 897, screen.scss */
   header span h5 {
     float: none;
     font-size: 1.375em;
     font-family: "Crimson Roman", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   }
-  /* line 887, screen.scss */
+  /* line 902, screen.scss */
   header span .tel {
     font-size: 1.375em;
     float: none;
     clear: none;
   }
 
-  /* line 893, screen.scss */
+  /* line 908, screen.scss */
   .logo {
     width: 87.89%;
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
-  /* line 898, screen.scss */
+  /* line 913, screen.scss */
   .hours {
     width: 70%;
   }
 
-  /* line 901, screen.scss */
+  /* line 916, screen.scss */
   #map-canvas {
     height: 250px;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 907, screen.scss */
+  /* line 922, screen.scss */
   .treatmentIntro {
     width: 32%;
     margin-right: 2%;
   }
-  /* line 910, screen.scss */
+  /* line 925, screen.scss */
   .treatmentIntro:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 913, screen.scss */
+  /* line 928, screen.scss */
   .treatmentIntro:nth-of-type(4n) {
     clear: left;
   }
 
-  /* line 917, screen.scss */
+  /* line 932, screen.scss */
   .hours {
     width: 50%;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 768px) {
-  /* line 923, screen.scss */
+  /* line 938, screen.scss */
   .container {
     padding: 0;
   }
 
-  /* line 927, screen.scss */
+  /* line 942, screen.scss */
   .hero .caption h2 {
     font-size: 2.1875em;
   }
-  /* line 930, screen.scss */
+  /* line 945, screen.scss */
   .hero .caption p {
     margin-right: 0;
   }
 
-  /* line 934, screen.scss */
+  /* line 949, screen.scss */
   .colThird {
     width: 100%;
     padding: 0;
     margin-bottom: 40px;
   }
-  /* line 938, screen.scss */
+  /* line 953, screen.scss */
   .colThird:last-child {
     margin-bottom: 20px;
   }
-  /* line 942, screen.scss */
+  /* line 957, screen.scss */
   .colThird + .colThird p, .colThird.double .border {
     border: 0;
     padding: 0;
   }
-  /* line 946, screen.scss */
+  /* line 961, screen.scss */
   .colThird.double p + h4 {
     margin-top: 40px;
   }
 
-  /* line 950, screen.scss */
+  /* line 965, screen.scss */
   .colHalf {
     width: 100%;
   }
-  /* line 952, screen.scss */
+  /* line 967, screen.scss */
   .colHalf + .colHalf {
     margin-left: 0;
   }
-  /* line 954, screen.scss */
+  /* line 969, screen.scss */
   .colHalf + .colHalf .border {
     padding-left: 0;
     border: 0;
   }
-  /* line 959, screen.scss */
+  /* line 974, screen.scss */
   .colHalf:last-child .treatment:last-child {
     margin-bottom: 20px;
   }
 
-  /* line 963, screen.scss */
+  /* line 978, screen.scss */
   .treatment {
     margin-bottom: 40px;
   }
 
-  /* line 967, screen.scss */
+  /* line 982, screen.scss */
   .tableWrapper,
   .colThird p {
     border: 0;
@@ -1191,12 +1207,12 @@ input[type=submit]:hover {
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 930px) {
-  /* line 974, screen.scss */
+  /* line 989, screen.scss */
   .logo {
     margin-top: 20px;
   }
 
-  /* line 977, screen.scss */
+  /* line 992, screen.scss */
   nav {
     text-align: center;
     width: 100%;
@@ -1204,34 +1220,14 @@ input[type=submit]:hover {
     float: none;
     clear: both;
   }
-  /* line 983, screen.scss */
+  /* line 998, screen.scss */
   nav li {
     float: none;
     display: inline;
     margin-bottom: 0;
   }
 
-  /* line 989, screen.scss */
-  header + section {
-    padding-top: 157px;
-  }
-}
-77, screen.scss */
-  nav {
-    text-align: center;
-    width: 100%;
-    margin: 0 0 25px 0;
-    float: none;
-    clear: both;
-  }
-  /* line 983, screen.scss */
-  nav li {
-    float: none;
-    display: inline;
-    margin-bottom: 0;
-  }
-
-  /* line 989, screen.scss */
+  /* line 1004, screen.scss */
   header + section {
     padding-top: 157px;
   }

@@ -22,7 +22,7 @@ $(function () {
 	 
     $.getJSON('../BeautyBox120-tweets.txt?' +Math.random(), 
         function(feeds) {   
-		   //alert(feeds);
+		   console.log(feeds);
             var feedHTML = '';
             var displayCounter = 1;         
             for (var i=0; i<feeds.length; i++) {
@@ -32,8 +32,15 @@ $(function () {
                 var status = feeds[i].text; 
 				var isaretweet = false;
 				var isdirect = false;
+				var tweetpictureattached = false;
 				var tweetid = feeds[i].id_str;
+				var tweetpicture;
 				
+				if(typeof feeds[i].entities.media != 'undefined'){
+					tweetpicture = feeds[i].entities.media[0].media_url;
+					tweetpictureattached = true;
+				};
+
 				//If the tweet has been retweeted, get the profile pic of the tweeter
 				if(typeof feeds[i].retweeted_status != 'undefined'){
 				   profileimage = feeds[i].retweeted_status.user.profile_image_url_https;
@@ -65,7 +72,10 @@ $(function () {
 									 
 						feedHTML += '<div class="status-article" id="tw'+displayCounter+'">'; 										                 
 						feedHTML += '<div class="feed-pic"><a href="https://twitter.com/'+tweetusername+'" target="_blank"><img src="'+profileimage+'" width="42" height="42" alt="twitter icon" /></a></div>';
-						feedHTML += '<div class="twitter-text"><p><span class="tweetprofilelink"><a href="https://twitter.com/'+tweetusername+'" target="_blank">@'+tweetusername+'</a></span><span class="tweet-time"><a href="https://twitter.com/'+tweetusername+'/status/'+tweetid+'" target="_blank">'+relative_time(feeds[i].created_at)+'</a></span><span class="tweet-content">'+status+'</span></p>';
+						feedHTML += '<div class="feed-text"><p><span class="tweetprofilelink"><a href="https://twitter.com/'+tweetusername+'" target="_blank">@'+tweetusername+'</a></span><span class="feed-time"><a href="https://twitter.com/'+tweetusername+'/status/'+tweetid+'" target="_blank">'+relative_time(feeds[i].created_at)+'</a></span><span class="feed-content">'+status+'</span></p>';
+						if ((tweetpictureattached == true)) {
+							feedHTML += '<div class="tweet-media-pic"><a href="https://twitter.com/'+tweetusername+'/status/'+tweetid+'" target="_blank"><img src="' + tweetpicture + '"/></a></div>';
+						}
 						
 						if ((isaretweet == true) && (showretweetindicator == true)) {
 							feedHTML += '<div id="retweet-indicator"></div>';

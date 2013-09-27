@@ -571,9 +571,11 @@ a.tel {
 		font-family: $heading-font-family;
 		letter-spacing: 0.14em;
 		position: relative;
+		@include single-transition(color, 0.5s, ease-in-out);
 		&:hover,
 		&.active {
 			color: $pink;
+			@include single-transition(color, 0s, ease-in-out);
 		}
 		&:before {
 			font-family: 'social';
@@ -765,9 +767,14 @@ input[type=submit] {
 	margin-right: 20px;
 }
 
-.twitter-text,
-.twitter-text p {
+.feed-text,
+.feed-text p {
 	overflow: hidden;
+}
+
+.feed-image {
+	display: block;
+	margin-top: 10px;
 }
 
 .tweetprofilelink {
@@ -775,31 +782,39 @@ input[type=submit] {
 	font-size: em(14px);
 }
 
-.tweet-time {
+.feed-time {
 	float: left;
 }
 
-.tweet-content {
+.feed-content {
 	float: left;
 	clear: left;
 }
 
-.tweet-content a:last-child {
-	display: block;
-	margin-top: 3px;
-}
+// .tweet-content a:last-child {
+// 	display: block;
+// 	margin-top: 3px;
+// }
 
-.feed .tweet-time a,
-.feed .tweet-content a:last-child {
+.feed .feed-time a
+// ,.feed .tweet-content a:last-child 
+{
 	color: darken($contact-text-color, 30%);
 	font-size: em(12px);
 }
 
-.feed .tweet-time a {
+.feed .feed-time a {
 	margin-left: 10px;
 	display: block;
 }
 
+.tweet-media-pic {
+	margin-top: 10px;
+	// max-width: 50%;
+	img {
+		max-width: 130px;
+	}
+}
 
 #twitter-actions {
     width:75px;
