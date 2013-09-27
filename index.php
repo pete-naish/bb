@@ -105,9 +105,6 @@
 				</div>
 				<div id="like" class="tab-content">
 					<div class="feed feed-facebook">
-						<?php
-echo `whoami`;
-?>
 						<h1><a href="https://www.facebook.com/thebeautyboxknebworth">/TheBeautyBoxKnebworth</a></h1>
 						<?php include('fb-feed.php'); ?>
 					</div>
