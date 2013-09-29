@@ -22,7 +22,7 @@ $(function () {
 	 
     $.getJSON('../BeautyBox120-tweets.txt?' +Math.random(), 
         function(feeds) {   
-		   console.log(feeds);
+		   // console.log(feeds);
             var feedHTML = '';
             var displayCounter = 1;         
             for (var i=0; i<feeds.length; i++) {

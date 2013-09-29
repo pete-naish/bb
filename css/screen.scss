@@ -804,8 +804,11 @@ input[type=submit] {
 	font-size: em(12px);
 }
 
-.feed .feed-time a {
+.tweetprofilelink + .feed-time a {
 	margin-left: 10px;
+}
+
+.feed .feed-time a {
 	display: block;
 }
 
