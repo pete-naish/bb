@@ -35,22 +35,17 @@ function initialize(bn, al, t, c, pc, inttel, tel) {
 };
 
 $(function(){
-	$('div.hero').carouFredSel({
-		responsive: true,
-		width: '100%',
-		scroll: {
-			fx: "crossfade",
-			pauseOnHover: true
-		},
-		items: {
-			height: '50%'
-		},
-		auto: {
-			timeoutDuration: 4000,
-			play: false
-		}
-	});
 
+	if($('.heroSlide').length > 1){
+		$('div.hero').bxSlider({
+			mode: 'fade',
+			pager: false,
+			controls: false,
+			auto: true,
+			autoHover: true
+		});
+	};
+	
 
 	$('html').removeClass('no-js');
 
@@ -63,7 +58,6 @@ $(function(){
 			scrollTop: $(this.hash).offset().top - 132
 		}, 500); // smooth scroll to the top of the linked section
 	});
-
 
 	if ($(window).width() > 590) {
 		$('.treatments').on('click', '.js-load', function(e) {
@@ -81,8 +75,6 @@ $(function(){
 		});
 
 	}
-	
-
 
 	$('ul.tabs').each(function(){
 		// For each set of tabs, we want to keep track of

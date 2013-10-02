@@ -93,8 +93,8 @@
 						<li class="icon-call"><a href="#call">Call us</a></li>
 						<li class="icon-email"><a href="#email">Email us</a></li>
 						<li class="icon-find"><a href="#find">Find us</a></li>
-						<li class="icon-follow"><a href="#follow">Follow us</a></li>
-						<li class="icon-like"><a href="#like">Like us</a></li>
+						<li class="icon-follow mobileHide"><a href="#follow">Follow us</a></li>
+						<li class="icon-like mobileHide"><a href="#like">Like us</a></li>
 					</ul>
 				</div>
 				<div id="call" class="tab-content"><h3><a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a></h3></div>
@@ -117,11 +117,11 @@
 					<i class="small"></i>
 					<h5>Available brands</h5>
 					<ul class="brand-links">
-						<li><a href="#"><img src="img/logo-gelish.png" alt=""></a></li>
-						<li><a href="#"><img src="img/logo-caci.png" alt=""></a></li>
-						<li><a href="#"><img src="img/logo-hd-brows.png" alt=""></a></li>
-						<li><a href="#"><img src="img/logo-minx.png" alt=""></a></li>
-						<li><a href="#"><img src="img/logo-sienna-x.png" alt=""></a></li>
+						<li><a href="http://gelish.com/"><img src="img/logo-gelish.png" alt="Gelish Nails"></a></li>
+						<li><a href="http://www.caci-international.co.uk/"><img src="img/logo-caci.png" alt="CACI Non-surgical Facelift"></a></li>
+						<li><a href="http://hdbrows.com/"><img src="img/logo-hd-brows.png" alt="HD Brows"></a></li>
+						<li><a href="http://www.minxnails.com/"><img src="img/logo-minx.png" alt="Minx Nails"></a></li>
+						<li><a href="http://sienna-x.co.uk/"><img src="img/logo-sienna-x.png" alt="Sienna X Spray Tanning"></a></li>
 					</ul>
 				</div>
 				<div class="footer-bottom">
@@ -137,7 +137,6 @@
 		</script>
 		<script src="js/plugins.min.js"></script>
 		<script src="js/main.js"></script>
-		<script src="js/twitterfeed.js"></script>
 		<script>
 			google.maps.event.addDomListener(window, 'load', initialize("<?php perch_content('Business name'); ?>", "<?php perch_content('Address line 1'); ?>", "<?php perch_content('Town'); ?>", "<?php perch_content('County'); ?>", "<?php perch_content('Post code'); ?>", "<?php perch_content('Phone number international'); ?>", "<?php perch_content('Phone number'); ?>"));
 		</script>

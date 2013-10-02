@@ -39,7 +39,9 @@
 						<h4>Treatments &amp; prices</h4>
 						<?php perch_content('Treatments and prices'); ?>
 					</div>
+					<a class="back" href="/#treatments">&lt; Back to treatments</a>
 				</div>
+				
 			</div>
 		</section>
 		

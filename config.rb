@@ -8,7 +8,7 @@ images_dir = "img"
 javascripts_dir = "js"
 fonts_dir = "type"
 
-output_style = :expanded
+output_style = :compressed
 environment = :development
 
 relative_assets = true
