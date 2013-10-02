@@ -610,7 +610,7 @@ a.tel {
 	}
 }
 
-#map-canvas { 
+#find { 
 	width: 100%;
 	height: 600px;
 	padding: 0;
@@ -624,7 +624,7 @@ a.tel {
 
 
 
-.no-js #map-canvas {
+.no-js #find {
 	display: none;
 }
 
@@ -917,7 +917,7 @@ input[type=submit] {
 	.hours {
 		width: 70%;
 	}
-	#map-canvas { 
+	#find { 
 		height: 250px;
 	}
 }

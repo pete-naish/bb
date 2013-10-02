@@ -92,14 +92,14 @@
 					<ul class="floatyLinks cf tabs">
 						<li class="icon-call"><a href="#call">Call us</a></li>
 						<li class="icon-email"><a href="#email">Email us</a></li>
-						<li class="icon-find"><a href="#map-canvas">Find us</a></li>
-						<li class="icon-follow mobileHide"><a href="#follow">Follow us</a></li>
-						<li class="icon-like mobileHide"><a href="#like">Like us</a></li>
+						<li class="icon-find"><a href="#find">Find us</a></li>
+						<li class="icon-follow"><a href="#follow">Follow us</a></li>
+						<li class="icon-like"><a href="#like">Like us</a></li>
 					</ul>
 				</div>
 				<div id="call" class="tab-content"><h3><a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a></h3></div>
 				<div id="email" class="tab-content"><?php perch_form('contact.html'); ?></div>
-				<div id="map-canvas"></div>
+				<div id="find"></div>
 				<div id="follow" class="tab-content">
 					<div class="feed feed-twitter"></div>
 				</div>

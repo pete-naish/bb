@@ -11,7 +11,7 @@ function initialize(bn, al, t, c, pc, inttel, tel) {
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 
-	map = new google.maps.Map(document.getElementById("map-canvas"),
+	map = new google.maps.Map(document.getElementById("find"),
 	mapOptions);
 
 	var marker = new google.maps.Marker({
@@ -91,7 +91,8 @@ $(function(){
 
 		// If the location.hash matches one of the links, use that as the active tab.
 		// If no match is found, use the first link as the initial active tab.
-		$active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+		// $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+		$active = $($links.filter('[href="'+location.hash+'"]')[0] || $links.filter('[href="#find"]'));
 		$active.addClass('active');
 		$content = $($active.attr('href'));
 
@@ -117,7 +118,7 @@ $(function(){
 			// Prevent the anchor's default click action
 			e.preventDefault();
 
-			if ($(this).attr('href') === '#map-canvas') {
+			if ($(this).attr('href') === '#find') {
 				// console.log(map);
 				google.maps.event.trigger( map, 'resize' );
 				map.setCenter(new google.maps.LatLng(51.866594, -0.185008))
