@@ -449,12 +449,14 @@ class PerchTemplate
 		    // sort tags using 'order' attribute
 		    $out = PerchUtil::array_sort($out, 'order');
 		    
-		    $final = array();
+		}
+
+		if (PerchUtil::count($out)) {
+			$final = array();
+		    
 		    foreach($out as $tag) {
 		        $final[] = $tag['tag'];
 		    }
-
-		    //PerchUtil::debug($final);
 		    
 		    return $final;
 		}

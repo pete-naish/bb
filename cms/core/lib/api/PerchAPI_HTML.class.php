@@ -227,8 +227,8 @@ class PerchAPI_HTML
     }
 
 	public function subnav($CurrentUser, $opts) 
-	{
-		return PerchUtil::subnav($CurrentUser, $opts);
+	{  
+		return PerchUtil::subnav($CurrentUser, $opts, $this->Lang);
 	}
 }
 

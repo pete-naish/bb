@@ -578,6 +578,7 @@ class PerchUtil
     	$string = trim($string);
 
     	if (function_exists('transliterator_transliterate')) {
+    		$string = str_replace('-', ' ', $string);
     		$s = transliterator_transliterate("Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();", $string);
     	}else{
     		$s  = iconv('UTF-8', 'ASCII//TRANSLIT', $string);	
@@ -700,7 +701,7 @@ class PerchUtil
 	    return ($yiq >= 131.5)?false:true;
 	}
 	
-	public static function subnav($CurrentUser, $pages) 
+	public static function subnav($CurrentUser, $pages, $Lang=false) 
 	{
 		$s = '';
 		if (PerchUtil::count($pages)) {
@@ -730,7 +731,14 @@ class PerchUtil
 						$paths = explode(',', $page['page']);
 					}
 					
-					$s .= '<li'. (in_array($section, $paths) ? ' class="selected"' : '').'><a href="'.PerchUtil::html(PERCH_LOGINPATH.'/'.$prefix.$paths[0].(strpos($paths[0],'?')?'':'/')).'">'.PerchLang::get($page['label']).'</a>';
+					if ($Lang===false) {
+						$label = PerchLang::get($page['label']);
+					}else{
+						$label = $Lang->get($page['label']);
+					}
+					
+
+					$s .= '<li'. (in_array($section, $paths) ? ' class="selected"' : '').'><a href="'.PerchUtil::html(PERCH_LOGINPATH.'/'.$prefix.$paths[0].(strpos($paths[0],'?')?'':'/')).'">'.$label.'</a>';
 
 					if (isset($page['badge']) && $page['badge']!='') {
 						$s .= '<span class="badge">'.PerchUtil::html($page['badge']).'</span>';

@@ -78,7 +78,7 @@
 		}
 
         $tags   = $Template->find_all_tags_and_repeaters('content');
-        
+                
         $template_help_html = $Template->find_help();
         
         $Form = new PerchForm('edit');
@@ -336,8 +336,10 @@
 
             if (!in_array($Tag->id(), $seen_tags)) {
 
+
                 if ($Tag->type()=='PerchRepeater') {
 
+                    //PerchUtil::debug('Reading: '.$Tag->id());
 
                     
                     $new_form_vars = array();
@@ -347,6 +349,10 @@
 
                     $subprefix .= $Tag->id().'_';
                     $new_postitems = $Form->find_items('perch_'.$Item->itemID().'_'.$subprefix.$i.'_');
+
+
+                    //PerchUtil::debug('Looking for: '.'perch_'.$Item->itemID().'_'.$subprefix.$i.'_');
+                    //PerchUtil::debug($new_postitems);
 
                     while (PerchUtil::count($new_postitems)) {
                         list($result, $search_text) = read_items_from_post($Item, $Tag->tags, $subprefix.$i, $new_form_vars, $new_postitems, $Form, $search_text, $options, $Resources, true);
@@ -362,7 +368,8 @@
                             //PerchUtil::debug('Not found: '.'perch_'.$Item->itemID().'_'.$subprefix.$i.'_', 'error');
                         }
                     }
-                                       
+                        
+                    $subprefix = '';             
 
                 }else{
 

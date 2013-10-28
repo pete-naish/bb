@@ -1,6 +1,6 @@
 <?php
-    include(dirname(__FILE__) . '/../../../inc/pre_config.php');
-    include(dirname(__FILE__) . '/../../../../config/config.php');
+    include(realpath(dirname(__FILE__) . '/../../..').'/inc/pre_config.php');
+    include(realpath(dirname(__FILE__) . '/../../../..').'/config/config.php');
     include(PERCH_CORE . '/inc/loader.php');
     $Perch  = PerchAdmin::fetch();
     include(PERCH_CORE . '/inc/auth.php');

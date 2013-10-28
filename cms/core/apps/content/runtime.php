@@ -483,7 +483,7 @@
             $Template->use_noresults();
         }
 
-        if (PerchUtil::is_assoc($vars)) {
+        if (!PerchUtil::is_assoc($vars)) {
             $html = $Template->render_group($vars, true);
         }else{
             $html = $Template->render($vars);

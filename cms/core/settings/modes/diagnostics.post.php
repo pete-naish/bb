@@ -151,6 +151,7 @@
             <li class="section">Session timeout: <?php echo ini_get('session.gc_maxlifetime')/60; ?> minutes</li>
             <li>Native JSON: <?php echo function_exists('json_encode')?'Yes':'No'; ?></li>
             <li>Filter functions: <?php echo function_exists('filter_var')?'Yes':'No (Required for form field type validation)'; ?></li>
+            <li>Transliteration functions: <?php echo function_exists('transliterator_transliterate')?'Yes':'No'; ?></li>
             
             <?php
                 $first = true;
