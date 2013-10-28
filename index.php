@@ -1,4 +1,7 @@
-<?php include('cms/runtime.php');?>
+<?php
+	include('cms/runtime.php'); 
+	include('inc/contact-app/headers.php');
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -98,7 +101,9 @@
 					</ul>
 				</div>
 				<div id="call" class="tab-content"><h3><a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a></h3></div>
-				<div id="email" class="tab-content"><?php perch_form('contact.html'); ?></div>
+				<div id="email" class="tab-content">
+					<?php include('inc/contact-form.php'); ?>
+				</div>
 				<div id="find"></div>
 				<div id="follow" class="tab-content">
 					<div class="feed feed-twitter"></div>
@@ -137,6 +142,8 @@
 		</script>
 		<script src="js/plugins.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/json.js"></script>
+		<script src='inc/contact-app/js/init.php'></script>
 		<script>
 			google.maps.event.addDomListener(window, 'load', initialize("<?php perch_content('Business name'); ?>", "<?php perch_content('Address line 1'); ?>", "<?php perch_content('Town'); ?>", "<?php perch_content('County'); ?>", "<?php perch_content('Post code'); ?>", "<?php perch_content('Phone number international'); ?>", "<?php perch_content('Phone number'); ?>"));
 		</script>

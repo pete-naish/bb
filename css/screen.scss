@@ -685,13 +685,26 @@ a.tel {
 	clear: left;
 }
 
-.error {
-	border: 1px solid #E3ABDD;
-	text-align: center;
-	padding: 20px 0;
+
+div.error,
+.notification_error,
+.notification_ok {
+	color: $pink;
 }
 
-form {
+
+.notification_error {
+	margin-bottom: 20px;
+}
+
+div.error {
+	float: left;
+	margin-top: -10px;
+	margin-bottom: 20px;
+}
+
+form,
+#acf-note {
 	max-width: 280px;
 	margin: 0 auto;
 }
