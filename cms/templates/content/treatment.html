@@ -7,7 +7,7 @@
 			<ul class="prices">
 			</perch:before>
 				<li>
-					<span><perch:content id="sub_treatment_title" type="text" label="Sub-treatment description" html="false"/> (<perch:content id="sub_treatment_time" type="text" label="Sub-treatment time" html="false" />)</span>
+					<span><perch:content id="sub_treatment_title" type="text" label="Sub-treatment description" html="false"/> <perch:if exists="sub_treatment_time">(<perch:content id="sub_treatment_time" type="text" label="Sub-treatment time" html="false" />)</perch:if></span>
 					<span>&pound;<perch:content id="sub_treatment_price" type="text" label="Sub-treatment price" html="false" /></span>
 				</li>
 			<perch:after>

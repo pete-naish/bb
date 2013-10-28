@@ -685,6 +685,12 @@ a.tel {
 	clear: left;
 }
 
+p.error {
+	border: 1px solid $pink;
+	text-align: center;
+	padding: 15px 10px;
+}
+
 
 div.error,
 .notification_error,
@@ -701,6 +707,11 @@ div.error {
 	float: left;
 	margin-top: -10px;
 	margin-bottom: 20px;
+}
+
+input.error,
+textarea.error {
+	border-color: #f00;
 }
 
 form,
@@ -724,7 +735,7 @@ textarea {
 	padding: 10px;
 	background-color: #cdd6d1;
 	font-size: em(14px);
-	border: 0;
+	border: 1px solid #cdd6d1;
 	box-sizing: border-box;
 	-webkit-appearance: none;
 	border-radius: 0;
@@ -739,6 +750,7 @@ input[type=submit] {
 	letter-spacing: em(3px, 22px);
 	margin-top: 20px;
 	padding: 5px 10px;
+	border: 0;
 	@include single-transition(background-color, 0.5s, ease-in-out);
 	&:hover {
 		background-color: darken($pink, 8%);
@@ -957,6 +969,9 @@ input[type=submit] {
 	}
 	.hours {
 		width: 50%;
+	}
+	.treatments .cf {
+		display: none;
 	}
 }
 

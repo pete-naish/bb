@@ -1,1 +1,0 @@
-<?php include('../cms/templates/pages/treatment.php'); ?>
