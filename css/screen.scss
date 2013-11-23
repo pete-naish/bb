@@ -3,13 +3,29 @@
 
 @import "compass/reset", "compass/css3";
 
-@include font-face("Bebas Neue", font-files("BebasNeue-webfont.eot", "BebasNeue-webfont.eot?#iefix", "BebasNeue-webfont.woff", "BebasNeue-webfont.ttf", "BebasNeue-webfont.svg#BebasNeueRegular"));
+@font-face {
+  font-family: "Bebas Neue";
+  src: url('../type/BebasNeue-webfont.eot') format('embedded-opentype');
+  src: url('../type/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'), url('../type/BebasNeue-webfont.woff') format('woff'), url('../type/BebasNeue-webfont.ttf') format('truetype'), url('../type/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+}
 
-@include font-face("Crimson Roman", font-files("Crimson-Roman-webfont.eot", "Crimson-Roman-webfont.eot?#iefix", "Crimson-Roman-webfont.woff", "Crimson-Roman-webfont.ttf", "Crimson-Roman-webfont.svg#CrimsonRoman"));
+@font-face {
+  font-family: "Crimson Roman";
+  src: url('../type/Crimson-Roman-webfont.eot') format('embedded-opentype');
+  src: url('../type/Crimson-Roman-webfont.eot?#iefix') format('embedded-opentype'), url('../type/Crimson-Roman-webfont.woff') format('woff'), url('../type/Crimson-Roman-webfont.ttf') format('truetype'), url('../type/Crimson-Roman-webfont.svg#CrimsonRoman') format('svg');
+}
 
-@include font-face("Bodoni Ornaments", font-files("Bodoni-Ornaments-webfont.eot", "Bodoni-Ornaments-webfont.eot?#iefix", "Bodoni-Ornaments-webfont.woff", "Bodoni-Ornaments-webfont.ttf", "Bodoni-Ornaments-webfont.svg#BodoniOrnaments"));
+@font-face {
+  font-family: "Bodoni Ornaments";
+  src: url('../type/Bodoni-Ornaments-webfont.eot') format('embedded-opentype');
+  src: url('../type/Bodoni-Ornaments-webfont.eot?#iefix') format('embedded-opentype'), url('../type/Bodoni-Ornaments-webfont.woff') format('woff'), url('../type/Bodoni-Ornaments-webfont.ttf') format('truetype'), url('../type/Bodoni-Ornaments-webfont.svg#BodoniOrnaments') format('svg');
+}
 
-@include font-face("social", font-files("social.eot", "social.eot?#iefix", "social.woff", "social.ttf", "social.svg#social"));
+@font-face {
+  font-family: "social";
+  src: url('../type/social.eot') format('embedded-opentype');
+  src: url('../type/social.eot?#iefix') format('embedded-opentype'), url('../type/social.woff') format('woff'), url('../type/social.ttf') format('truetype'), url('../type/social.svg#social') format('svg');
+}
 
 // Ems
 @function em($px, $base: $base-font-size) {
