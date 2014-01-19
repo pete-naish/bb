@@ -376,7 +376,7 @@ section i {
 	margin-bottom: 32px;
 	margin-right: percent(40px);
 	opacity: 1;
-	@include single-transition(opacity, 0s, ease-in-out);
+	@include single-transition(opacity, 0.25s, ease-in-out);
 	position: relative;
 	&.translucent {
 		opacity: 0.6;
