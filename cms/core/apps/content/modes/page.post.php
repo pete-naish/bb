@@ -31,8 +31,13 @@
 	<ul class="smartbar">
         <li class="selected"><a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/page/?id='.PerchUtil::html($Page->id());?>">Regions</a></li>
 		<?php
+            if ($CurrentUser->has_priv('content.pages.attributes')) {
+                echo '<li><a href="'.PERCH_LOGINPATH . '/core/apps/content/page/details/?id='.PerchUtil::html($Page->id()).'">' . PerchLang::get('Page Details') . '</a></li>';
+            }
+        ?>
+		<?php
 			if ($CurrentUser->has_priv('content.pages.edit') && $Page->pagePath()!='*') {
-	            echo '<li><a href="'.PERCH_LOGINPATH . '/core/apps/content/page/edit/?id='.PerchUtil::html($Page->id()).'">' . PerchLang::get('Page Options') . '</a></li>';
+	            echo '<li class="fin"><a href="'.PERCH_LOGINPATH . '/core/apps/content/page/edit/?id='.PerchUtil::html($Page->id()).'" class="icon setting">' . PerchLang::get('Page Options') . '</a></li>';
 	        }
 		?>
     </ul>
@@ -88,7 +93,7 @@
 							
 								// Delete
 								echo '<td>';
-		                        if ($CurrentUser->has_priv('content.regions.delete')) {
+		                        if ($CurrentUser->has_priv('content.regions.delete') || ($CurrentUser->has_priv('content.pages.delete.own') && $Page->pageCreatorID()==$CurrentUser->id())) {
 		                            echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/delete/?id=' . PerchUtil::html($Region->id()) . '" class="delete inline-delete">'.PerchLang::get('Delete').'</a>';
 		                        }
 		                        echo '</td>';

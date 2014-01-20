@@ -29,7 +29,7 @@ class PerchAPI_Form extends PerchForm
         parent::__construct($app_id);
     }
     
-    public function form_start($id=false, $class='sectioned')
+    public function form_start($id=false, $class='magnetic-save-bar')
     {
         $r = '<form method="post" action="'.$this->encode($this->action()).'" ' . $this->enctype();
         
@@ -72,11 +72,11 @@ class PerchAPI_Form extends PerchForm
         return $this->posted() && $this->validate();
     }
     
-    public function text_field($id, $label, $value='', $class='', $limit=false)
+    public function text_field($id, $label, $value='', $class='', $limit=false, $attributes='')
     {
         $out = $this->field_start($id);
         $out .= $this->label($id, $this->Lang->get($label), '', $colon=false, $translate=false);
-        $out .= $this->text($id, $this->get_value($id, $value), $class, $limit);
+        $out .= $this->text($id, $this->get_value($id, $value), $class, $limit, 'text', $attributes);
         $out .= $this->field_end($id);
         
         return $out;
@@ -151,7 +151,7 @@ class PerchAPI_Form extends PerchForm
         $out .= $this->label($id, $this->Lang->get($label), '', $colon=false, $translate=false);
         $out .= $this->image($id, $value, $basePath, $class);
         if ($value!='') {
-            $out .= '<div class="file">'.PerchUtil::html(str_replace(PERCH_RESPATH.'/', '', $value)).'</div>';
+            $out .= '<div class="file icon">'.PerchUtil::html(str_replace(PERCH_RESPATH.'/', '', $value)).'</div>';
             $out .= '<div class="remove">';
             $out .= $this->checkbox($id.'_remove', '1', 0).' '.$this->label($id.'_remove', PerchLang::get('Remove file'), 'inline');
             $out .= '</div>';
@@ -355,6 +355,11 @@ class PerchAPI_Form extends PerchForm
                 $tag->set('post_prefix', 'perch_');
             
                 if (!in_array($tag->id(), $seen_tags) && $tag->type()!='hidden' && $tag->type()!='slug') {
+
+                    if ($tag->divider_before()) {
+                       $out .= '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
+                    }
+
                     $out .= '<div class="field '.$Form->error($item_id, false).'">';
                 
                     $label_text  = PerchUtil::html($tag->label());
@@ -381,6 +386,10 @@ class PerchAPI_Form extends PerchForm
                 
         
                     $out .= '</div>';
+
+                    if ($tag->divider_after()) {
+                       $out .= '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
+                    }
         
                     $seen_tags[] = $tag->id();
                 }
@@ -408,34 +417,34 @@ class PerchAPI_Form extends PerchForm
             if ($perch_only) {
                 $postitems = $Form->find_items('perch_');
 
-                $seen_tags = $_POST;
+                $seen_tags = array_keys($_POST);
                 
-                if (!$postitems) $postitems = array();
-                $postitems = array_merge($_POST, $postitems);
+                //if (!$postitems) $postitems = array();
+                //$postitems = array_merge($_POST, $postitems);
+
+                if (!$postitems) {
+                    $postitems = $_POST;
+                }
 
             }else{
                 $postitems = $_POST;
             }
                         
             foreach($tags as $tag) {
-                $item_id = 'perch_'.$tag->id();
+                $item_id = 'perch_'.$tag->id();   
                 
                 $tag->set('input_id', $item_id);
                 
                 if (!in_array($tag->id(), $seen_tags)) {
                     $var = false;
-                    
-                    
+                  
                     
                     $FieldType = PerchFieldTypes::get($tag->type(), $Form, $tag, $tags, $this->app_id);
                     
                     $var = $FieldType->get_raw($postitems, $previous_values);
-                    
-
             
                     if ($var) {
-
-                        
+                       
                         $form_vars[$tag->id()] = $var;
                         
                         // title

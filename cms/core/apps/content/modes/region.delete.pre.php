@@ -24,7 +24,10 @@
     }
 
     // Check permission to delete
-    if (!$CurrentUser->has_priv('content.regions.delete')) {
+    if ($CurrentUser->has_priv('content.regions.delete') || ($CurrentUser->has_priv('content.pages.delete.own') && $Page->pageCreatorID()==$CurrentUser->id())) {
+        // we're ok.
+        
+    }else{ 
         PerchUtil::redirect(PERCH_LOGINPATH . '/core/apps/content');
     }
 

@@ -36,7 +36,7 @@
                         $pageID = str_replace(array('page[',']'), '', $parts[0]);
                         $parentID = $parts[1];
                         
-                        if ($parentID == 'root') $parentID = '0';
+                        if ($parentID == 'root' || $parentID == 'null') $parentID = '0';
                         
                         if (!isset($sort_orders[$parentID])) {
                             $sort_orders[$parentID] = 1;

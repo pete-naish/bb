@@ -30,4 +30,9 @@
     }
 
     if (!defined('PERCH_ERROR_MODE')) define('PERCH_ERROR_MODE', 'DIE');
+
+    if (!defined('PERCH_DATE_LONG'))  define('PERCH_DATE_LONG', '%d %B %Y');
+    if (!defined('PERCH_DATE_SHORT')) define('PERCH_DATE_SHORT', '%d %b %Y');
+    if (!defined('PERCH_TIME_SHORT'))  define('PERCH_TIME_SHORT', '%H:%M');
+    if (!defined('PERCH_TIME_LONG'))  define('PERCH_TIME_LONG', '%H:%M:%S');
 ?>

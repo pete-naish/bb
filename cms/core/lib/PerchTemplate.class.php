@@ -239,8 +239,18 @@ class PerchTemplate
 				            }
 				        }
 				        
+				        // Strip tags
+				        if ($tag->striptags) {
+				        	$modified_value = strip_tags($modified_value);
+				        }
+
+				        // Append
+				        if (!$tag->words && !$tag->chars && $tag->append) {
+				        	$modified_value .= $tag->append;
+				        }
+
 				        if ($tag->escape) {
-				            $modified_value = PerchUtil::html($modified_value, true);
+				            $modified_value = PerchUtil::html($modified_value, true, false);
 				        }
 					    
 					    if ($tag->urlencode) {
@@ -269,7 +279,7 @@ class PerchTemplate
 	 * Find tag by ID. Optionally also ID with a given output="" attributye
 	 * @return [type]          PerchXMLTag
 	 */
-	public function find_tag($tag, $output=false)
+	public function find_tag($tag, $output=false, $raw=false)
 	{ 
 		$template	= $this->template;
 		$path		= $this->file;
@@ -296,6 +306,7 @@ class PerchTemplate
 			$count	= preg_match($s, $contents, $match);
 
 			if ($count == 1){
+				if ($raw) return $match[0];
 				return new PerchXMLTag($match[0]);
 			}
 		}
@@ -604,6 +615,13 @@ class PerchTemplate
 	    			    $file = PERCH_TEMPLATE_PATH.DIRECTORY_SEPARATOR.$match[1];
 	    			    if (file_exists($file)) {
 	    			        $subtemplate = file_get_contents($file);
+
+	    			        // rescope?
+	    			        if($this->namespace!='content' && strpos($match[0], 'rescope=')) {
+	    			        	PerchUtil::debug('Rescoping to perch:'.$this->namespace);
+	    			        	$subtemplate = str_replace('<perch:content ', '<perch:'.$this->namespace.' ', $subtemplate);
+	    			        }
+
 	        			    $contents = str_replace($match[0], $subtemplate, $contents);
 	        			    PerchUtil::debug('Using sub-template: '.str_replace(PERCH_PATH, '', $file), 'template');
 	    			    }
@@ -657,6 +675,11 @@ class PerchTemplate
 	        	if (array_key_exists($tag->different(), $content_vars)) {
 	        		$new_value = $this->_resolve_to_value($content_vars[$tag->different()]);
 	        		if ($tag->format()) $new_value = $this->_format($tag, $new_value);
+	        	}
+
+	        	if ($tag->case()=='insensitive') {
+	        		$prev_value = strtolower($prev_value);
+	        		$new_value  = strtolower($new_value);
 	        	}
 
 	        	if ($prev_value != $new_value) {
@@ -1081,6 +1104,11 @@ class PerchTemplate
 
             case 'LC':
             	$modified_value = strtolower($modified_value);
+            	break;
+
+            case 'C:':
+            	$count = (int) str_replace('C:', '', $tag->format());
+            	$modified_value = substr($modified_value, 0, $count);
             	break;
                 
             default:

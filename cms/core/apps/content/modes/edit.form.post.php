@@ -21,10 +21,28 @@
 
         echo '<h3>' . PerchLang::get('Page assignment') . '</h3>';
 
+        $view_page_url = false;
+
         if ($Region->regionPage() == '*') {
             echo '<p>' . PerchLang::get('This region is shared across all pages.') . '</p>';
         }else{
-            echo '<p>' . PerchLang::get('This region is only available within') . ':</p><p><code><a href="' . PerchUtil::html($Region->regionPage()) . '">' . PerchUtil::html($Region->regionPage()) . '</a></code></p>';
+
+            if ($Region->get_option('edit_mode')=='listdetail' && $Region->get_option('searchURL')!='') {
+                $search_url = $Region->get_option('searchURL');  
+
+                $Region->tmp_url_vars = $details[0];             
+                $search_url = preg_replace_callback('/{([A-Za-z0-9_\-]+)}/', array($Region, 'substitute_url_vars'), $search_url);
+                $Region->tmp_url_vars = false; 
+
+                $view_page_url = rtrim($Settings->get('siteURL')->val(), '/').$search_url;
+            }else{
+                $view_page_url = rtrim($Settings->get('siteURL')->val(), '/').$Region->regionPage();
+            }
+
+
+
+            
+            echo '<p>' . PerchLang::get('This region is only available within') . ':</p><p><code><a href="' . PerchUtil::html($view_page_url) . '">' . PerchUtil::html($Region->regionPage()) . '</a></code></p>';
         }
 
     }
@@ -105,7 +123,13 @@
 			<?php
                 if ($Region->regionMultiple()) {
                     echo '<li class="fin">';
-                    echo '<a href="'.PERCH_LOGINPATH . '/core/apps/content/reorder/region/?id='.PerchUtil::html($Region->id()).'" class="icon reorder">Reorder</a>';
+                    echo '<a href="'.PERCH_LOGINPATH . '/core/apps/content/reorder/region/?id='.PerchUtil::html($Region->id()).'" class="icon reorder">' . PerchLang::get('Reorder') . '</a>';
+                    echo '</li>';
+                }
+
+                if (isset($view_page_url) && $view_page_url) {
+                    echo '<li class="fin">';
+                    echo '<a href="'.PerchUtil::html($view_page_url).'" class="icon page assist">' . PerchLang::get('View Page') . '</a>';
                     echo '</li>';
                 }
 
@@ -117,6 +141,8 @@
 			        echo '</form>';
 					echo '</li>';
 			    }
+
+
 			
 			?>
         </ul>
@@ -186,7 +212,7 @@
 
 
         function display_item_fields($tags, $id, $item, $Page, $Form)
-        {
+        {          
             $seen_tags = array();
             
             foreach($tags as $tag) {
@@ -199,7 +225,6 @@
                 if (!in_array($tag->id(), $seen_tags) && $tag->type()!='hidden' && $tag->type()!='slug') {
 
                     if ($tag->type()=='PerchRepeater') {
-                        
                         $repeater_id = $id.'_'.$tag->id();
 
                         echo '<h3 class="label repeater-heading">'.$tag->label().'</h3>';
@@ -266,6 +291,11 @@
                             
                         echo '</div>';
                     }else{
+
+                        if ($tag->divider_before()) {
+                            echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
+                        }
+
                         echo '<div class="field '.$Form->error($item_id, false).'">';
                         echo '<div class="fieldtbl">';
                         
@@ -294,7 +324,11 @@
                             echo '</div>';
                 
                         echo '</div>';
-                        echo '</div>';                            
+                        echo '</div>';      
+
+                        if ($tag->divider_after()) {
+                            echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
+                        }                      
                     }
 
             

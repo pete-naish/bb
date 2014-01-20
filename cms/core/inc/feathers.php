@@ -41,6 +41,11 @@
 			}
 		}
 
+		// Inject script when authed
+		if (isset($_COOKIE['cmsa'])) {
+		 	$out .= PerchSystem::get_helper_js();
+		}
+
 		if ($return) return $out;
 		echo $out;
 	}

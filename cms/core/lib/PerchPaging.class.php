@@ -12,6 +12,9 @@ class PerchPaging
     private $current_page   = 1;
     
     private $offset         = 0;
+
+    private $base_url       = '';
+    private $qs_char        = '';
     
     function __construct($qs_param=false)
     {
@@ -158,7 +161,7 @@ class PerchPaging
     
     public function to_array($opts=false)
     {
-        $Perch = PerchAdmin::fetch();
+        $Perch = Perch::fetch();
         $request_uri = PerchUtil::html($Perch->get_page(1));
         
         if (is_array($opts)) {
@@ -230,64 +233,123 @@ class PerchPaging
             }
             $out['not_last_page'] = true;
         }
+
+        // Page links
+        
+        if (isset($opts['page-links']) && $opts['page-links']) {
+            $this->base_url = $request_uri;
+            $this->qs_char = $qs_char;
+
+            if (isset($opts['page-link-style']) && $opts['page-link-style']=='all') {           
+                $page_links = $this->get_page_links();
+            }else{
+                $page_links = $this->get_page_links(true);
+            }
+          
+
+            if (PerchUtil::count($page_links)) {
+
+                $template = 'page-links.html';
+                if (isset($opts['page-link-template'])) {
+                    $template = $opts['page-link-template'];
+                }
+
+                $Template = new PerchTemplate('pagination/'.$template, 'pages');
+                $out['page_links'] = $Template->render_group($page_links, true);
+            }
+        }
+
+        
        
         return $out;
     }
-    
-    public function get_page_links($limit=false)
+
+    public function get_page_links($shortened=false)
     {
-        $number_of_pages = $this->number_of_pages();
-        $lower = 1;
-        $upper = $number_of_pages;
-        
-        if ($limit) {
+        $total_pages  = (int)$this->number_of_pages();
+        $current_page = (int)$this->current_page();
+
+        if ($total_pages<2) return false;
+
+        $links = array();
+
+        // Full link set
+        if (!$shortened) {
+            for($i=1; $i<=$total_pages; $i++) {
+                $links[] = $this->_create_page_link($i);
+            }
+            return $links;
+        }
+
+    
+        // Shorted version
+
+        $links[] = $this->_create_page_link(1);
+
+        if ($current_page > 2) {
+
+            if ($current_page>3 && $total_pages>3) {
+                $links[] = $this->_create_spacer();    
+            }
             
-            $half_limit = ceil($limit/2);
-            
-            $lower = $this->current_page() - $half_limit;
-            $upper = $this->current_page() + $half_limit+1;
-            
-            
-            if ($upper > $number_of_pages) {
-                $upper = $number_of_pages;
-                $lower = $upper-$limit;
+            if ($current_page==$total_pages && $total_pages>3) {
+                $links[] = $this->_create_page_link($current_page-2);
             } 
-            
-            if ($lower < 1) {
-                $lower = 1;
-                $upper = ($limit>$number_of_pages?$number_of_pages:$limit);
-            }    
-            
+            $links[] = $this->_create_page_link($current_page-1);      
         }
-        
-        $Perch = PerchAdmin::fetch();
-        $request_uri = $Perch->get_page(1);
-        
-        $qs_char = '?';
-        if (strpos($request_uri, $qs_char)!==false) $qs_char = '&';
-        
-        $page_links = array();
-        
-        for ($i=$lower; $i<=$upper; $i++) {
-            $tmp = array();
-            $p = $request_uri;
-            if (strpos($p, $this->qs_param.'=')===false) {
-                $p = rtrim($p, '/').$qs_char.$this->qs_param.'=0';
+
+        if ($current_page!=1 && $current_page!=$total_pages) {
+            $links[] = $this->_create_page_link($current_page);
+        }
+
+        if ($current_page<($total_pages-1)) {
+            $links[] = $this->_create_page_link($current_page+1);
+
+            if ($current_page==1 && $total_pages>3) {
+                $links[] = $this->_create_page_link($current_page+2);
             }
-            $p = preg_replace('/'.$this->qs_param.'=[0-9]+/', $this->qs_param.'='.($i), $p);
-            
-            $tmp['url'] = $p;
-            $tmp['page_number'] = $i;
-            
-            if ((int)$this->current_page() == $i){
-                $tmp['selected'] = true;
+
+            if ($total_pages>3 && ($current_page<$total_pages-2)) {
+                $links[] = $this->_create_spacer();    
             }
             
-            $page_links[] = $tmp;
         }
-        
-        return $page_links;
+
+        $links[] = $this->_create_page_link($total_pages);
+
+        return $links;
     }
+
+    private function _create_page_link($page_number) 
+    {
+        $out = array();
+        $request_uri = $this->base_url;
+
+        if (strpos($request_uri, $this->qs_param.'=')===false) {
+            $request_uri = rtrim($request_uri, '/').$this->qs_char.$this->qs_param.'=0';
+        }
+        $request_uri = preg_replace('/'.$this->qs_param.'=[0-9]+/', $this->qs_param.'='.($page_number), $request_uri);
+        
+        $out['url'] = $request_uri;
+        $out['page_number'] = $page_number;
+        
+        if ((int)$this->current_page() == $page_number){
+            $out['selected'] = true;
+        }
+
+        return $out;
+
+    }
+
+    private function _create_spacer()
+    {
+         return array(
+            'spacer' => true,
+            'url' => false,
+            'page_number' => '…',
+            );
+    }
+
 }
 
 ?>

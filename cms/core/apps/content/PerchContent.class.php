@@ -19,6 +19,9 @@ class PerchContent extends PerchApp
     private $new_keys_registered = false;
     
     private $pageID              = false;
+
+    private $Page                = false;
+    private $pages_cache         = array();
     
     public static function fetch()
     {       
@@ -26,7 +29,6 @@ class PerchContent extends PerchApp
             $c = __CLASS__;
             self::$instance = new $c;
         }
-
         return self::$instance;
     }
     
@@ -61,7 +63,6 @@ class PerchContent extends PerchApp
         }
         
         return $r;
-        
     }
     
     public function get_custom($key=false, $opts=false) 
@@ -81,10 +82,13 @@ class PerchContent extends PerchApp
 
         $where = $this->_get_page_finding_where($page);
 
+        $region_key_for_cache = $key;
+        if (is_array($key)) $region_key_for_cache = implode('-', $key);
+
         if (is_array($page)) {
-            $cache_key = implode('|', $page).':'.$key;
+            $cache_key = implode('|', $page).':'.$region_key_for_cache;
         }else{
-            $cache_key = $page.':'.$key;
+            $cache_key = $page.':'.$region_key_for_cache;
         }       
                 
         if (array_key_exists($cache_key, $this->custom_region_cache)) {
@@ -98,8 +102,22 @@ class PerchContent extends PerchApp
                 $sql .= ', regionRev AS rev';
             }
 
-            $sql    .= ' FROM '.$this->table. '
-                        WHERE regionKey='.$db->pdb($key).' AND ('.implode(' OR ', $where).' OR regionPage='.$db->pdb('*') .')';
+            $sql    .= ' FROM '.$this->table. ' WHERE ';
+            
+            if (is_array($key)) {
+                $sql .= '(';
+                    $key_items = array();
+                    foreach($key as $k) {
+                        $key_items[] = 'regionKey='.$db->pdb($k);
+                    }
+                    $sql .= implode(' OR ', $key_items);
+                $sql .= ')';
+            }else{
+                $sql .= 'regionKey='.$db->pdb($key);
+            }            
+                        
+
+            $sql    .= ' AND ('.implode(' OR ', $where).' OR regionPage='.$db->pdb('*') .')';
             $regions    = $db->get_rows($sql);
 
             $this->custom_region_cache[$cache_key] = $regions;
@@ -108,7 +126,6 @@ class PerchContent extends PerchApp
         if (!PerchUtil::count($regions)) {
             PerchUtil::debug('No matching content regions found. Check region name ('.$key.') and page path options.', 'error');
         }
-
 
         $region_path_cache = array();
         if (PerchUtil::count($regions)) {
@@ -126,7 +143,7 @@ class PerchContent extends PerchApp
             $item_id = (int)$opts['_id'];
             $Paging = false;
 
-            $sql = 'SELECT  c.itemID, c.regionID, c.itemJSON FROM '.PERCH_DB_PREFIX.'content_items c WHERE c.itemID='.$this->db->pdb($item_id).' ';
+            $sql = 'SELECT  c.itemID, c.regionID, c.pageID, c.itemJSON FROM '.PERCH_DB_PREFIX.'content_items c WHERE c.itemID='.$this->db->pdb($item_id).' ';
 
             if (PerchUtil::count($regions)) {
                 $where = array();
@@ -142,14 +159,8 @@ class PerchContent extends PerchApp
 
             $rows = $db->get_rows($sql);
 
-
         }else{
-
-            //if (isset($opts['sort-type']) && $opts['sort-type']=='numeric') {
-              //  $sortval = ' LPAD(idx2.indexValue, 256, "0") as sortval ';
-            //}else{
-                $sortval = ' idx2.indexValue as sortval ';
-            //}
+            $sortval = ' idx2.indexValue as sortval ';
 
             if (isset($opts['paginate'])) {
                 if (isset($opts['pagination_var'])) {
@@ -162,8 +173,7 @@ class PerchContent extends PerchApp
                 $sql = 'SELECT';
             }
 
-
-            $sql .= ' * FROM ( SELECT  idx.itemID, c.regionID, c.itemJSON, '.$sortval.' FROM '.PERCH_DB_PREFIX.'content_index idx 
+            $sql .= ' * FROM ( SELECT  idx.itemID, c.regionID, idx.pageID, c.itemJSON, '.$sortval.' FROM '.PERCH_DB_PREFIX.'content_index idx 
                             JOIN '.PERCH_DB_PREFIX.'content_items c ON idx.itemID=c.itemID AND idx.itemRev=c.itemRev AND idx.regionID=c.regionID
                             JOIN '.PERCH_DB_PREFIX.'content_index idx2 ON idx.itemID=idx2.itemID AND idx.itemRev=idx2.itemRev  ';
 
@@ -172,7 +182,6 @@ class PerchContent extends PerchApp
             }else{
                 $sql .= ' AND idx2.indexKey='.$db->pdb('_order').' ';
             }
-
 
             if (PerchUtil::count($regions)) {
                 $where = array();
@@ -183,11 +192,9 @@ class PerchContent extends PerchApp
             }else{
                 $sql .= ' WHERE idx.regionID IS NULL ';
             }
-            
 
             // if not picking an _id, check for a filter
             if (isset($opts['filter']) && (isset($opts['value']) || is_array($opts['filter']))) {
-            
                 $where = array();
 
                 // if it's not a multi-filter, make it look like one to unify what we're working with
@@ -209,9 +216,7 @@ class PerchContent extends PerchApp
                     }
                 }
 
-
                 foreach($filters as $filter) {                       
-
                     $key = $filter['filter'];
                     $val = $filter['value'];
                     $match = isset($filter['match']) ? $filter['match'] : 'eq';
@@ -271,9 +276,7 @@ class PerchContent extends PerchApp
                             break;
                     }
                 }
-
                 $sql .= ' AND ('.implode($where, ' OR ').') ';
-              
             }
 
             $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemRev=idx2.itemRev
@@ -313,7 +316,6 @@ class PerchContent extends PerchApp
                     }else{
                         $sql .= ' ORDER BY sortval '.$direction .' ';
                     }
-                   
                 }
                
             }else{
@@ -322,7 +324,6 @@ class PerchContent extends PerchApp
                 }else{
                     $sql .= ' ORDER BY sortval ASC ';
                 }
-                
             }
 
             // Pagination
@@ -375,7 +376,6 @@ class PerchContent extends PerchApp
             }
         }
 
-
         // transform json
         if (PerchUtil::count($rows)) {
             $content = array();
@@ -384,12 +384,21 @@ class PerchContent extends PerchApp
                     $tmp = PerchUtil::json_safe_decode($item['itemJSON'], true);
                     if (isset($region_path_cache[$item['regionID']])) {
                         $tmp['_page'] = $region_path_cache[$item['regionID']];
+                        $tmp['_pageID'] = $item['pageID'];
+                        //PerchUtil::debug($item);
+                    }
+                    if (isset($item['sortval'])) $tmp['_sortvalue'] = $item['sortval'];
+
+                    // 'each' callback
+                    if (isset($opts['each'])) {
+                        if (is_callable($opts['each'])) {
+                            $tmp = $opts['each']($tmp);
+                        }
                     }
                     $content[] = $tmp;
                 }
             }
         }
-        
 
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
             if (isset($opts['raw']) && $opts['raw']==true) {
@@ -407,7 +416,6 @@ class PerchContent extends PerchApp
                 return $content; 
             }
         }
-    
         
         // template
         if (isset($opts['template'])) {
@@ -423,7 +431,6 @@ class PerchContent extends PerchApp
         }
         
         // post process
-        
         $tags   = $Template->find_all_tags('content');
         $processed_vars = array();
         $used_items = array();
@@ -439,7 +446,6 @@ class PerchContent extends PerchApp
             if ($tmp) $processed_vars[] = $tmp;
         }
         
-        
         // Paging to template
         if (is_object($Paging) && $Paging->enabled()) {
             $paging_array = $Paging->to_array($opts);
@@ -457,7 +463,6 @@ class PerchContent extends PerchApp
             $Template->use_noresults();
             $html = $Template->render(array());
         }
-
         
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
             $out = array();
@@ -487,354 +492,7 @@ class PerchContent extends PerchApp
         }
         
         return $html;
-
-    
-
-
     }
-
-    public function get_custom_compat($key=false, $opts=false)
-    {
-        if ($key === false) return ' ';
-        
-        if ($opts===false) return $this->get($key);
-        
-        if (isset($opts['page'])) {
-            $content_item = $this->get_content_raw($key, $opts['page']);
-        }else{
-            $content_item = $this->get_content_raw($key);
-        }
-
-
-        if (is_array($content_item) && isset($content_item['content'])) {
-            
-            $content = PerchUtil::json_safe_decode($content_item['content'], true);
-            
-            // return blank string if no content
-            if (!is_array($content)) return ' ';
-        }else{
-            return ' ';
-        }
-        
-        // trim empty items
-        $content = array_filter($content, "count");
-        
-
-        // find specific _id
-        if (isset($opts['_id'])) {
-            if (PerchUtil::count($content)) {
-                $out = array();
-                foreach($content as $item) {
-                    if (isset($item['_id']) && $item['_id']==$opts['_id']) {
-                        $out[] = $item;
-                        break;
-                    }
-                }
-                $content = $out;
-            }   
-        }else{
-            
-            // if not picking an _id, check for a filter
-            if (isset($opts['filter']) && (isset($opts['value']) || is_array($opts['filter']))) {
-                if (PerchUtil::count($content)) {
-                    $out = array();
-
-                    // if it's not a multi-filter, make it look like one to unify what we're working with
-                    if (!is_array($opts['filter']) && isset($opts['value'])) {
-                        $filters = array(
-                                        array(
-                                            'filter'=>$opts['filter'],
-                                            'value'=>$opts['value'],
-                                            'match'=>(isset($opts['match']) ? $opts['match'] : 'eq')
-                                        )
-                                    );
-                        $filter_mode = 'AND';
-                    }else{
-                        $filters = $opts['filter'];
-                        $filter_mode = 'AND';
-
-                        if (isset($opts['match']) && strtolower($opts['match'])=='or') {
-                            $filter_mode = 'OR';
-                        }
-                    }
-
-                    //PerchUtil::debug('Filter mode: '.$filter_mode);
-
-                    $filter_content = $content;
-
-
-                    foreach($filters as $filter) {                       
-
-                        $key = $filter['filter'];
-                        $val = $filter['value'];
-                        $match = isset($filter['match']) ? $filter['match'] : 'eq';
-                        foreach($filter_content as $item) {
-
-                            // If 'AND' mode, remove the item, as we only want it if it's added by this filter too.
-                            // ninja code.
-                            if ($filter_mode=='AND' && isset($out[$item['_id']])) {
-                                unset($out[$item['_id']]);
-                            }
-
-                            if (!isset($item[$key])) $item[$key] = false;
-                            if (isset($item[$key])) {
-                                $this_item = $this->_resolve_to_value($item[$key]);
-
-                                switch ($match) {
-                                    case 'eq': 
-                                    case 'is': 
-                                    case 'exact': 
-                                        if ($this_item==$val) $out[$item['_id']] = $item;
-                                        break;
-                                    case 'neq': 
-                                    case 'ne': 
-                                    case 'not': 
-                                        if ($this_item!=$val) $out[$item['_id']] = $item;
-                                        break;
-                                    case 'gt':
-                                        if ($this_item>$val) $out[$item['_id']] = $item;
-                                        break;
-                                    case 'gte':
-                                        if ($this_item>=$val) $out[$item['_id']] = $item;
-                                        break;
-                                    case 'lt':
-                                        if ($this_item<$val) $out[$item['_id']] = $item;
-                                        break;
-                                    case 'lte':
-                                        if ($this_item<=$val) $out[$item['_id']] = $item;
-                                        break;
-                                    case 'contains':
-                                        $value = str_replace('/', '\/', $val);
-                                        if (preg_match('/\b'.$value.'\b/i', $this_item)) $out[$item['_id']] = $item;
-                                        break;
-                                    case 'regex':
-                                    case 'regexp':
-                                        if (preg_match($val, $this_item)) $out[$item['_id']] = $item;
-                                        break;
-                                    case 'between':
-                                    case 'betwixt':
-                                        $vals  = explode(',', $val);
-                                        if (PerchUtil::count($vals)==2) {
-                                            if ($this_item>trim($vals[0]) && $this_item<trim($vals[1])) $out[$item['_id']] = $item;
-                                        }
-                                        break;
-                                    case 'eqbetween':
-                                    case 'eqbetwixt':
-                                        $vals  = explode(',', $val);
-                                        if (PerchUtil::count($vals)==2) {
-                                            if ($this_item>=trim($vals[0]) && $this_item<=trim($vals[1])) $out[$item['_id']] = $item;
-                                        }
-                                        break;
-                                    case 'in':
-                                    case 'within':
-                                        $vals  = explode(',', $val);
-                                        if (PerchUtil::count($vals)) {
-                                            foreach($vals as $value) {
-                                                if ($this_item==trim($value)) {
-                                                    $out[$item['_id']] = $item;
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                        break;
-
-                                }
-                            }
-                        }
-
-                        // if 'AND' mode, run the next filter against the already filtered list
-                        if ($filter_mode == 'AND') {
-                            $filter_content = $out;                        
-                        }else{
-                            $filter_content = $content;
-                        }
-                    }
-
-
-                    $content = $out;
-                }
-            }
-        }
-
-        // reindex array
-        $new_content = array();
-        foreach($content as $c) $new_content[] = $c;
-        $content = $new_content;
-    
-        // sort
-        if (isset($opts['sort'])) {
-            if (isset($opts['sort-order']) && $opts['sort-order']=='DESC') {
-                $desc = true;
-            }else{
-                $desc = false;
-            }
-            $content = PerchUtil::array_sort($content, $opts['sort'], $desc);
-        }
-    
-        if (isset($opts['sort-order']) && $opts['sort-order']=='RAND') {
-            shuffle($content);
-        }
-    
-        // Pagination
-        if (isset($opts['paginate'])) {
-            if (isset($opts['pagination_var'])) {
-                $Paging = new PerchPaging($opts['pagination_var']);
-            }else{
-                $Paging = new PerchPaging();
-            }
-            
-            $Paging->set_per_page(isset($opts['count'])?(int)$opts['count']:10);
-            
-            $opts['count'] = $Paging->per_page();
-            $opts['start'] = $Paging->lower_bound()+1;
-            
-            $Paging->set_total(PerchUtil::count($content));
-        }else{
-            $Paging = false;
-        }
-                
-        // limit
-        if (isset($opts['count']) || isset($opts['start'])) {
-
-            // count
-            if (isset($opts['count'])) {
-                $count = (int) $opts['count'];
-            }else{
-                $count = PerchUtil::count($content);
-            }
-            
-            // start
-            if (isset($opts['start'])) {
-                if ($opts['start'] === 'RAND') {
-                    $start = rand(0, PerchUtil::count($content)-1);
-                }else{
-                    $start = ((int) $opts['start'])-1; 
-                }
-            }else{
-                $start = 0;
-            }
-
-            // loop through
-            $out = array();
-            for($i=$start; $i<($start+$count); $i++) {
-                if (isset($content[$i])) {
-                    $out[] = $content[$i];
-                }else{
-                    break;
-                }
-            }
-            $content = $out;
-        }
-        
-    
-        
-        
-        if (isset($opts['skip-template']) && $opts['skip-template']==true) {
-            if (isset($opts['raw']) && $opts['raw']==true) {
-                if (PerchUtil::count($content)) {
-                    foreach($content as &$item) {
-                        if (PerchUtil::count($item)) {
-                            foreach($item as &$field) {
-                                if (is_array($field) && isset($field['raw'])) {
-                                    $field = $field['raw'];
-                                }
-                            }
-                        }
-                    }
-                }
-                return $content; 
-            }
-        }
-    
-        
-        // template
-        if (isset($opts['template'])) {
-            $template = $opts['template'];
-        }else{
-            $template = $content_item['regionTemplate'];
-        }
-        
-        $Template = new PerchTemplate('content/'.$template, 'content');
-        
-        if (!$Template->file) {
-            return 'The template <code>' . PerchUtil::html($template) . '</code> could not be found.';
-        }
-        
-        // post process
-        
-        $tags   = $Template->find_all_tags('content');
-        $processed_vars = array();
-        $used_items = array();
-        foreach($content as $item) {
-            $tmp = $item;
-            if (PerchUtil::count($tags)) {
-                foreach($tags as $Tag) {
-                    if (isset($item[$Tag->id()])) {    
-                        //$FieldType = PerchFieldTypes::get($Tag->type(), false, $Tag);
-                        //$tmp[$Tag->id()] = $FieldType->get_processed($item[$Tag->id()]);
-                        
-                        $used_items[] = $item;
-                    }
-                }
-            }
-            if ($tmp) $processed_vars[] = $tmp;
-        }
-        
-        
-        // Paging to template
-        if (is_object($Paging) && $Paging->enabled()) {
-            $paging_array = $Paging->to_array($opts);
-            // merge in paging vars
-            foreach($processed_vars as &$item) {
-                foreach($paging_array as $key=>$val) {
-                    $item[$key] = $val;
-                }
-            }
-        }
-        
-        if (PerchUtil::count($processed_vars)) {
-            $html = $Template->render_group($processed_vars, true);
-        }else{
-            $Template->use_noresults();
-            $html = $Template->render(array());
-        }
-
-        
-        if (isset($opts['skip-template']) && $opts['skip-template']==true) {
-            $out = array();
-
-            if (PerchUtil::count($processed_vars)) {
-                foreach($processed_vars as &$item) {
-                    if (PerchUtil::count($item)) {
-                        foreach($item as &$field) {
-                            if (is_array($field) && isset($field['processed'])) {
-                                $field = $field['processed'];
-                            }
-                            if (is_array($field) && isset($field['_default'])) {
-                                $field = $field['_default'];
-                            }
-                        }
-                    }
-                }
-            }
-
-            // reindex array
-            // $new_content = array();
-            // foreach($content as $c) $new_content[] = $c;
-            // $content = $new_content;
-
-            for($i=0; $i<PerchUtil::count($content); $i++) {
-                $out[] = array_merge($content[$i], $processed_vars[$i]);
-            }
-
-            if (isset($opts['return-html'])&& $opts['return-html']==true) $out['html'] = $html;
-
-            return $out;
-        }
-        
-        return $html;
-    }
-    
 
     public function create_region($key=false, $opts=array())
     {
@@ -845,7 +503,6 @@ class PerchContent extends PerchApp
         }
         
         if (!in_array($key, $this->key_requests)) $this->key_requests[] = $key;
-        
             
         if (isset($this->cache[$key])) {
             return false;
@@ -858,18 +515,32 @@ class PerchContent extends PerchApp
             $this->_reorder_keys();
             return true;
         }
-        
         return false;
-        
     }
-
     
     public function search_content($key, $opts)
     {
         PerchUtil::debug('Search term: '.$key);
-        
+        $this->mb_fallback();
         
         $search_handlers = PerchSystem::get_registered_search_handlers();
+
+        $search_content = true;
+
+        if (PerchUtil::count($opts['apps'])) {
+            $search_content = in_array('PerchContent', $opts['apps']);
+            
+            if (PerchUtil::count($search_handlers)) {
+                $new_handlers = array();
+                foreach($search_handlers as $handler) {
+                    $short = str_replace('_SearchHandler', '', $handler);
+                    if (in_array($short, $opts['apps'])) {
+                        $new_handlers[] = $handler;
+                    }
+                }
+                $search_handlers = $new_handlers;
+            }    
+        }
         
         $out = array();
 
@@ -891,19 +562,24 @@ class PerchContent extends PerchApp
                 $Paging->disable();
             }
         
-            // Proper query using FULLTEXT
-            $sql = $Paging->select_sql(); 
-                    
-            $sql .= '   \'content\' AS source, MATCH(ci.itemSearch) AGAINST('.$this->db->pdb($key).') AS score, 
-                    r.regionPage AS col1, r.regionHTML AS col2, ci.itemJSON AS col3, r.regionOptions AS col4, p.pageNavText AS col5, p.pageTitle AS col6, \'\' AS col7, \'\' AS col8
-                    FROM '.$this->table.' r, '.PERCH_DB_PREFIX.'content_items ci, '.PERCH_DB_PREFIX.'pages p
-                    WHERE r.regionID=ci.regionID AND r.regionRev=ci.itemRev AND r.pageID=p.pageID AND r.regionPage!=\'*\' AND r.regionSearchable=1 
-                        AND (MATCH(ci.itemSearch) AGAINST('.$this->db->pdb($key).') OR MATCH(ci.itemSearch) AGAINST('.$this->db->pdb($encoded_key).') )
-                        AND r.regionPage LIKE '.$this->db->pdb($opts['from-path'].'%').' ';
-                        
+            
+                // Proper query using FULLTEXT
+                $sql = $Paging->select_sql(); 
+            
+            if ($search_content) {            
+                $sql .= '   \'content\' AS source, MATCH(ci.itemSearch) AGAINST('.$this->db->pdb($key).') AS score, 
+                        r.regionPage AS col1, ci.itemSearch AS col2, ci.itemJSON AS col3, r.regionOptions AS col4, p.pageNavText AS col5, p.pageTitle AS col6, regionTemplate AS col7, r.regionKey AS col8
+                        FROM '.$this->table.' r, '.PERCH_DB_PREFIX.'content_items ci, '.PERCH_DB_PREFIX.'pages p
+                        WHERE r.regionID=ci.regionID AND r.regionRev=ci.itemRev AND r.pageID=p.pageID AND r.regionPage!=\'*\' AND r.regionSearchable=1 
+                            AND (MATCH(ci.itemSearch) AGAINST('.$this->db->pdb($key).') OR MATCH(ci.itemSearch) AGAINST('.$this->db->pdb($encoded_key).') )
+                            AND r.regionPage LIKE '.$this->db->pdb($opts['from-path'].'%').' ';
+            }else{
+                $sql .= ' \'content\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0 ';
+            }
+
             if (PerchUtil::count($search_handlers)) {
-                foreach($search_handlers as $handler) {             
-                    //$handler_sql = $handler::get_search_sql($key);
+                foreach($search_handlers as $handler) {    
+        
                     $handler_sql = call_user_func(array($handler, 'get_search_sql'), $key);
                     if ($handler_sql) {
                         $sql .= ' 
@@ -924,13 +600,17 @@ class PerchContent extends PerchApp
         
             if (PerchUtil::count($rows)==0) {
             
-                // backup query using REGEXP
-                $sql = $Paging->select_sql() . ' \'content\' AS source, 0-(LENGTH(r.regionPage)-LENGTH(REPLACE(r.regionPage, \'/\', \'\'))) AS score, 
-                        r.regionPage AS col1, r.regionHTML AS col2, ci.itemJSON AS col3, r.regionOptions AS col4, p.pageNavText AS col5, p.pageTitle AS col6, \'\' AS col7, \'\' AS col8
-                        FROM '.$this->table.' r, '.PERCH_DB_PREFIX.'content_items ci, '.PERCH_DB_PREFIX.'pages p
-                        WHERE r.regionID=ci.regionID AND r.regionRev=ci.itemRev AND r.pageID=p.pageID AND r.regionPage!=\'*\' AND r.regionSearchable=1 
-                            AND ci.itemSearch REGEXP '.$this->db->pdb('[[:<:]]'.$key.'[[:>:]]').' 
-                            AND r.regionPage LIKE '.$this->db->pdb($opts['from-path'].'%').' ';
+                if ($search_content) { 
+                    // backup query using REGEXP
+                    $sql = $Paging->select_sql() . ' \'content\' AS source, 0-(LENGTH(r.regionPage)-LENGTH(REPLACE(r.regionPage, \'/\', \'\'))) AS score, 
+                            r.regionPage AS col1, ci.itemSearch AS col2, ci.itemJSON AS col3, r.regionOptions AS col4, p.pageNavText AS col5, p.pageTitle AS col6, regionTemplate AS col7, r.regionKey AS col8
+                            FROM '.$this->table.' r, '.PERCH_DB_PREFIX.'content_items ci, '.PERCH_DB_PREFIX.'pages p
+                            WHERE r.regionID=ci.regionID AND r.regionRev=ci.itemRev AND r.pageID=p.pageID AND r.regionPage!=\'*\' AND r.regionSearchable=1 
+                                AND ci.itemSearch REGEXP '.$this->db->pdb('[[:<:]]'.$key.'[[:>:]]').' 
+                                AND r.regionPage LIKE '.$this->db->pdb($opts['from-path'].'%').' ';
+                }else{
+                    $sql = $Paging->select_sql() . ' \'content\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0 ';
+                }
                             
                 if (PerchUtil::count($search_handlers)) {
                     foreach($search_handlers as $handler) {
@@ -951,9 +631,7 @@ class PerchContent extends PerchApp
                 }        
 
                 $rows = $this->db->get_rows($sql);
-            
             }
-        
         
             if ($Paging->enabled()) {
                 $Paging->set_total($this->db->get_count($Paging->total_count_sql()));
@@ -963,14 +641,36 @@ class PerchContent extends PerchApp
                 foreach($rows as $row) {
                     switch($row['source']) {
                             case 'content':
-                                $out[] = $this->format_search_result($key, $opts, $row);
+                                $r = $this->format_search_result($key, $opts, $row);
+                                if ($r) $out[] = $r;
                                 break;
                             default:
                                 $className = $row['source'];
-                                $out[] =  call_user_func(array($className, 'format_result'), $key, $opts, $row);
+                                $r = call_user_func(array($className, 'format_result'), $key, $opts, $row);
+                                if ($r) {
+                                    $r['source'] = str_replace('_SearchHandler', '', $row['source']);
+
+                                    // duplicate vals
+                                    foreach($r as $k=>$val) {
+                                        $r['result_'.$k] = $val;
+                                        if ($opts['no-conflict']) {
+                                            unset($r[$k]);
+                                        }
+                                    }
+                                      
+                                    $r['search_key'] = $key;
+                                    if (!$opts['no-conflict']) {
+                                        $r['key'] = $key; 
+                                    }
+                                    $out[] = $r; 
+                                } 
+                                break;
                     }
-                    
                 }
+
+
+
+
             }
         }
         
@@ -988,8 +688,6 @@ class PerchContent extends PerchApp
                 if ($opts['hide-default-doc']) {
                     $row['url'] = preg_replace('/'.preg_quote(PERCH_DEFAULT_DOC).'$/', '', $row['url']);
                 }
-                
-
 
                 if ($opts['hide-extensions'] && strpos($row['url'], '.')) {
                     $parts = explode('.', $row['url']);
@@ -1005,15 +703,11 @@ class PerchContent extends PerchApp
                     $row['url'] = implode('.', $parts).$query;
                 }
 
-
                 // trailing slash
                 if ($opts['add-trailing-slash']) {
                     $row['url'] = rtrim($row['url'], '/').'/';
                 }
-
-
             }
-            
 
             if (isset($Paging) && $Paging->enabled()) {
                 $paging_array = $Paging->to_array();
@@ -1031,7 +725,44 @@ class PerchContent extends PerchApp
         }
     }
     
-    
+    public function get_page()
+    {
+        if ($this->Page) return $this->Page;
+
+        $Pages = new PerchContent_Pages;
+        $Perch = Perch::fetch();
+        $Page = $Pages->find_by_path($Perch->get_page());
+
+        if (is_object($Page)) $this->Page = $Page;
+
+        return $this->Page;
+    }
+
+    public function get_page_by_id($id)
+    {
+        if (isset($this->pages_cache[$id])) return $this->pages_cache[$id];
+
+        $Pages = new PerchContent_Pages;
+        $Page = $Pages->find($id);
+
+        if (is_object($Page)) $this->pages_cache[$id] = $Page;
+
+        return $this->pages_cache[$id];
+    }
+
+    public function get_page_by_path($path)
+    {
+        if (isset($this->pages_cache[$path])) return $this->pages_cache[$path];
+
+        $Pages = new PerchContent_Pages;
+        $Page = $Pages->find_by_path($path);
+
+        if (is_object($Page)) $this->pages_cache[$path] = $Page;
+
+        return $this->pages_cache[$path];
+    }
+
+
     /**
      * Load all content for page, and cache it.
      *
@@ -1040,7 +771,6 @@ class PerchContent extends PerchApp
      */
     private function _populate_cache_with_page_content()
     {
-        
         if ($this->preview) {
             if ($this->preview_contentID != 'all') {
                 $this->cache = $this->get_content_latest_revision();
@@ -1050,9 +780,7 @@ class PerchContent extends PerchApp
         }else{
             $this->cache = $this->_get_content();
         }
-        
     }
-    
     
     /**
      * Get all content for the given page, or this page.
@@ -1070,12 +798,10 @@ class PerchContent extends PerchApp
         }
         
         $db     = PerchDB::fetch();
-        
+
         $sql    = 'SELECT regionKey, regionHTML FROM '.PERCH_DB_PREFIX.'content_regions
                     WHERE regionPage='.$db->pdb($page).' OR regionPage='.$db->pdb('*');
         $results    = $db->get_rows($sql);
-
-
         
         if (PerchUtil::count($results) > 0) {
             $out = array();
@@ -1126,12 +852,10 @@ class PerchContent extends PerchApp
             $cache_key = $page.':'.$key;
         }       
         
-        
         if (array_key_exists($cache_key, $this->raw_content_cache)) {
             return $this->raw_content_cache[$cache_key];
         }else{
             $db     = PerchDB::fetch();
-
             $sql    = 'SELECT regionID, regionTemplate';
             
             if ($this->preview){ 
@@ -1168,11 +892,7 @@ class PerchContent extends PerchApp
                     return $region;
                 }
             }
-
-            
-            
         }
-        
         return false;
     }
 
@@ -1204,7 +924,6 @@ class PerchContent extends PerchApp
         }
 
         return $where;
-
     }
     
     /**
@@ -1221,19 +940,16 @@ class PerchContent extends PerchApp
             $Perch  = Perch::fetch();
             $page   = $Perch->get_page();
 
-
-        
-            $data = array();
-            $data['regionKey'] = $key;
-            $data['regionPage'] = $page;
-            $data['regionHTML'] = '<!-- Undefined content: '.PerchUtil::html($key).' -->';
+            $data   = array();
+            $data['regionKey']     = $key;
+            $data['regionPage']    = $page;
+            $data['regionHTML']    = '<!-- Undefined content: '.PerchUtil::html($key).' -->';
             $data['regionOptions'] = '';
             
             if (is_array($opts)) {
 
                 if ($opts['page'])   $data['regionPage'] = $opts['page'];
                 if ($opts['shared']) $data['regionPage'] = '*';
-                
                 
                 if ($opts['template']) {
                     $data['regionTemplate'] = $opts['template']; 
@@ -1266,7 +982,6 @@ class PerchContent extends PerchApp
                 if ($opts['columns'])           $regionOptions['column_ids']    = $opts['columns'];
 
                 $data['regionOptions'] = PerchUtil::json_safe_encode($regionOptions);
-
             }
 
             $data['pageID'] = $this->_find_or_create_page($data['regionPage']);
@@ -1324,11 +1039,13 @@ class PerchContent extends PerchApp
         }
         
         $data = array();
-        $data['pagePath']    = $path;
-        $data['pageTitle']   = PerchUtil::filename($path, false, false);
-        $data['pageNavText'] = $data['pageTitle'];
-        $data['pageNew']     = 1;
-        $data['pageDepth']   = 0;
+        $data['pagePath']       = $path;
+        $data['pageTitle']      = PerchUtil::filename($path, false, false);
+        $data['pageNavText']    = $data['pageTitle'];
+        $data['pageNew']        = 1;
+        $data['pageDepth']      = 0;
+        $data['pageModified']   = date('Y-m-d H:i:s');
+        $data['pageAttributes'] = '';
         
         return $db->insert($table, $data);
     }
@@ -1368,87 +1085,94 @@ class PerchContent extends PerchApp
 
     private function format_search_result($key, $opts, $row)
     {
-        $_contentPage = 'col1';
-        $_contentHTML = 'col2';
-        $_contentJSON = 'col3';
+        $_contentPage    = 'col1';
+        $_contentSearch  = 'col2';
+        $_contentJSON    = 'col3';
         $_contentOptions = 'col4';
-        $_pageNavText     = 'col5';
-        $_pageTitle     = 'col6';
-        
-        $this->mb_fallback();
-        
+        $_pageNavText    = 'col5';
+        $_pageTitle      = 'col6';
+        $_regionTemplate = 'col7';
+        $_regionKey      = 'col8';
+                
         $lowerkey = strtolower($key);
-        $json = PerchUtil::json_safe_decode($row[$_contentJSON], 1);
-        if (PerchUtil::count($json)) {
-            $item = $json;
+        $item = PerchUtil::json_safe_decode($row[$_contentJSON], 1);
 
-            foreach($item as $subitem) {
-                
-                // maps and other complex data types
-                if (is_array($subitem)) {
-                    $subitem = implode(' ', $subitem);
-                }
-                
-                $lowersubitem = strtolower($subitem);
-
-                if (true || mb_stripos($lowersubitem, $lowerkey)!==false) { // doesn't match multi-word queries. I don't think that's a problem
-
-                    $excerpt_chars = (int) $opts['excerpt-chars'];
-                    $first_portion = floor(($excerpt_chars/4));
-
-                    $match = array();
-                    $match['url'] = $row[$_contentPage];
-                
-                    $regionOptions = PerchUtil::json_safe_decode($row[$_contentOptions]);
-                    if ($regionOptions) {
-                        if (isset($regionOptions->searchURL) && $regionOptions->searchURL!='') {
-                            $match['url'] = $regionOptions->searchURL;
-                            $this->tmp_url_vars = $item;
-                            $match['url'] = preg_replace_callback('/{([A-Za-z0-9_\-]+)}/', array($this, "substitute_url_vars"), $match['url']);
-                            $this->tmp_url_vars = false;
-                        }
-                    }
-                
-                    if (isset($item['_title'])) {
-                        $match['title'] = $item['_title'];
-                    }else{
-                        $match['title'] = $row[$_pageNavText];
-                    }
-                    $html = strip_tags($row[$_contentHTML]);
-                    $html = preg_replace('/\s{2,}/', ' ', $html);
-                    $pos = mb_stripos($html, $key);
-                    if ($pos<$first_portion){
-                        $lower_bound = 0;
-                    }else{
-                        $lower_bound = $pos-$first_portion;
-                    }
-                
-                    $html = mb_substr($html, $lower_bound, $excerpt_chars);
-                
-                    // trim broken works
-                    $parts = explode(' ', $html);
-                    array_pop($parts);
-                    array_shift($parts);
-                    $html = implode(' ', $parts);
-                
-                    // keyword highlight
-                    $html = preg_replace('/('.preg_quote($key, '/').')/i', '<span class="keyword">$1</span>', $html);
-                
-                    $match['excerpt'] = $html;
-                
-                    $match['key'] = $key;
-                    
-                    $match['pageTitle'] = $row[$_pageTitle];
-                    $match['pageNavText'] = $row[$_pageNavText];
-                
-                    return $match;
-                
+        if (PerchUtil::count($item)) {
+    
+            $loweritem     = strtolower($row[$_contentSearch]);
+            $excerpt_chars = (int) $opts['excerpt-chars'];
+            $first_portion = floor(($excerpt_chars/4));
+            
+            $out = array();
+            $out['url'] = $row[$_contentPage];
+        
+            $regionOptions = PerchUtil::json_safe_decode($row[$_contentOptions]);
+            if ($regionOptions) {
+                if (isset($regionOptions->searchURL) && $regionOptions->searchURL!='') {
+                    $out['url'] = $regionOptions->searchURL;
+                    $this->tmp_url_vars = $item;
+                    $out['url'] = preg_replace_callback('/{([A-Za-z0-9_\-]+)}/', array($this, "substitute_url_vars"), $out['url']);
+                    $this->tmp_url_vars = false;
                 }
             }
+        
+            if (isset($item['_title'])) {
+                $out['title'] = $item['_title'];
+            }else{
+                $out['title'] = $row[$_pageNavText];
+            }
+
+            $html = strip_tags(html_entity_decode($row[$_contentSearch]));
+
+            $html = preg_replace('/\s{2,}/', ' ', $html);
+            $pos = mb_stripos($html, $key);
+            if ($pos<$first_portion){
+                $lower_bound = 0;
+            }else{
+                $lower_bound = $pos-$first_portion;
+            }
+        
+            $html = mb_substr($html, $lower_bound, $excerpt_chars);
+        
+            // trim broken works
+            $parts = explode(' ', $html);
+            array_pop($parts);
+            array_shift($parts);
+            $html = implode(' ', $parts);
+        
+            // keyword highlight
+            $html = preg_replace('/('.preg_quote($key, '/').')/i', '<em class="keyword">$1</em>', $html);
+            
+            $out['excerpt']     = $html;
+                   
+            $out['pageTitle']   = $row[$_pageTitle];
+            $out['pageNavText'] = $row[$_pageNavText];
+            $out['source']      = $row['source'];
+            $out['region_key']  = $row[$_regionKey];
+
+            // duplicate vals
+            foreach($out as $k=>$val) {
+                $out['result_'.$k] = $val;
+                if ($opts['no-conflict']) {
+                    unset($out[$k]);
+                }
+            }
+              
+            $out['search_key'] = $key;
+
+            if (!$opts['no-conflict']) {
+                $out['key'] = $key; 
+            }
+
+            
+
+            $out = array_merge($out, $item);
+            
+            return $out;         
         }
         return false;
     }
-    
+ 
     private function mb_fallback()
     {
         if (!function_exists('mb_stripos')) {
@@ -1462,7 +1186,6 @@ class PerchContent extends PerchApp
                 return substr($a, $b, $c);
             }
         }
-        
     }
 
     private function _resolve_to_value($val)
@@ -1470,20 +1193,16 @@ class PerchContent extends PerchApp
         if (!is_array($val)) {
             return trim($val);
         }
-
         if (is_array($val)) {
             if (isset($val['_default'])) {
                 return trim($val['_default']);
             }
-
             if (isset($val['processed'])) {
                 return trim($val['processed']);
             }
-
         }
 
         return $val;
     }
-    
 }
 ?>

@@ -37,6 +37,9 @@ class PerchAPI
                 break;
             
             default:
+                if ($this->Lang === false) {
+                    $this->Lang = new PerchAPI_Lang($this->version, $this->app_id);
+                }
                 return new $full_class_name($this->version, $this->app_id, $this->Lang);
                 break;
         }

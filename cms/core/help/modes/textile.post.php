@@ -14,53 +14,85 @@
 
     	<h2>About Textile formatting</h2>
 
-    	 <p>Textile is a simple syntax to mark-up text in your pages. It is enabled on any field that displays the Textile link.</p>
+<p>Textile is a simple syntax to mark-up text in your pages. It is enabled on any field that displays the Textile link. We have listed the most common syntax here, along with some examples. There is a full Textile reference at <a href="http://txstyle.org/">http://txstyle.org/</a> </p>
 
-		<h3>Phrase modifiers:</h3>
-		<p>
-		<em>_emphasis_</em><br />
-		<strong>*bold*</strong><br />
-		<cite>??citation??</cite><br />
-		-<del>deleted text</del>-<br />
+<h3>Phrase modifiers:</h3>
 
-		+<ins>inserted text</ins>+<br />
-		^<sup>superscript</sup>^<br />
-		~<sub>subscript</sub>~<br />
-		<span>%span%</span><br />
-		<code>@code@</code><br />
-		</p>
+<p>These are tags that you wrap around a word or words to change the way it looks. For example to make a word in a sentence bold you wrap it with <code>**</code>.</p>
 
-		<h3>Block modifiers:</h3>
-		<p>
-		<b>h1.</b> Level 1 heading<br />
-		<b>h2.</b> Level 2 heading<br />
-		<b>h3.</b> Level 3 heading<br />
-		<b>h4.</b> Level 4 heading<br />
-		<b>bq.</b> Blockquote<br />
+<div class="sample">
+In this the word <code>*bold*</code> will display as bold text on the webpage.
+</div>
 
-		<b>p.</b> Paragraph<br />
-		<b>bc.</b> Block code<br />
-		<b>pre.</b> Pre-formatted<br />
-		<b>#</b> Numeric list<br />
-		<b>*</b> Bulleted list<br />
+<ul>
+<li><code>_emphasis_</code></li>
+<li><code>*bold*</code></li>
+<li><code>??citation??</code></li>
+<li><code>-deleted text-</code></li>
+<li><code>+inserted text+</code></li>
+<li><code>^superscript^</code></li>
+<li><code>~subscript~</code></li>
+<li><code>%span%</code></li>
+<li><code>@code@</code></li>
+</ul>
 
-		</p>
+<h3>Block modifiers:</h3>
 
-		<h3>Links:</h3>
-		<p>
-		"linktext":http://&#8230;<br />
-		</p>
+<p>Using these tags will change the whole block of text that comes after the tag. Two important things to remember when using block modifiers are that after the period, you need to leave a space and you need to leave a full linespace between the end of the block and the start of the next one. </p>
 
-		<h3>Punctuation:</h3>
-		<p>
-		<b>em -- dash</b> &rarr; em &#8212; dash<br />
-		<b>en - dash</b> &rarr; en &#8211; dash<br />
-		<b>foo(tm)</b> &rarr; foo&#8482;<br />
-		<b>foo(r)</b> &rarr; foo&#174;<br />
-		<b>foo(c)</b> &rarr; foo&#169;<br />
-		</p>
+<h4>Example:</h4>
 
-	    
+<div class="sample">
+<pre><code>h1. This is a level one heading
+
+This is a paragraph. You do not need to use the p. tag before paragraphs unless you are forcing a change from a previous block modifier.
+
+* List item one
+* List item two
+* List item three
+</code></pre>
+</div>
+
+<hr />
+
+<h4>More block modifiers:</h4>
+
+<ul>
+<li><strong>h1.</strong> Level 1 heading</li>
+<li><strong>h2.</strong> Level 2 heading</li>
+<li><strong>h3.</strong> Level 3 heading</li>
+<li><strong>h4.</strong> Level 4 heading</li>
+<li><strong>bq.</strong> Blockquote</li>
+<li><strong>p.</strong> Paragraph</li>
+<li><strong>bc.</strong> Block code</li>
+<li><strong>pre.</strong> Pre-formatted</li>
+<li><strong>#</strong> Numeric list</li>
+<li><strong>*</strong> Bulleted list</li>
+</ul>
+
+<h3>Links:</h3>
+
+<p>To create a link, put the text of the link in quotes, then a <code>:</code> and then the full URL including the <code>http://</code> if it is an external link. You can link to pages on your site by giving the path from root as shown below.</p>
+
+<div class="sample">
+<pre><code>&quot;Visit Google&quot;:http://google.com
+&quot;Internal links on your site&quot;:/about/page.php
+</code></pre>
+</div>
+
+<h3>Punctuation:</h3>
+
+<p>Textile converts dashes and quotes to correct typographical marks, and will also turn trademark and other marks into correct symbols as shown below.</p>
+
+<ul>
+<li>em -- dash → em — dash</li>
+<li>en - dash → en – dash</li>
+<li>foo(tm) → foo™</li>
+<li>foo(r) → foo®</li>
+<li>foo(c) → foo© </li>
+</ul>
+
+
 
 	</div>
 

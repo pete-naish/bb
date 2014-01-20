@@ -11,6 +11,7 @@ class PerchAPI_SubmittedForm
     public $files = array(); 
     public $antispam = false;
     public $form_attributes = array();
+    public $page = false;
     
     public $id;
     
@@ -28,6 +29,9 @@ class PerchAPI_SubmittedForm
         $this->app_id  = $app_id;
         $this->version = $version;
         $this->Lang    = $Lang;
+        
+        $Perch         = Perch::fetch();
+        $this->page    = $Perch->get_page_as_set();
     }
     
     public function populate($formID, $templatePath, $data, $files)
@@ -361,6 +365,26 @@ class PerchAPI_SubmittedForm
         
         return false;
     }
+
+    public function get_attribute_map($attribute, $reverse_output=false)
+    {
+        $template = $this->_get_template_content();
+        $s = '/(<perch:input[^>]* '.$attribute.'="[^>]*>)/s';
+        preg_match_all($s, $template, $matches, PREG_SET_ORDER);
+        $out = array();
+        if ($matches) {
+            $attribute = str_replace('-', '_', $attribute);
+            foreach($matches as $match) {
+                $Tag = new PerchXMLTag($match[0]);
+                if ($reverse_output) {
+                    $out[$Tag->$attribute()] = $Tag->id();
+                }else{
+                    $out[$Tag->id()] = $Tag->$attribute();
+                }
+            }
+        }
+        return $out;
+    }
     
     public function get_form_attributes()
     {
@@ -437,7 +461,7 @@ class PerchAPI_SubmittedForm
         $out = array();
         $contents = file_get_contents($file);
         if ($contents) {
-            $lines = explode(PHP_EOL, $contents);
+            $lines = explode("\n", $contents);
             $key = 'undefined';
             foreach($lines as $line) {
                 if (trim($line)=='') continue;

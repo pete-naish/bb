@@ -142,6 +142,10 @@ class PerchContent_Regions extends PerchFactory
      */
     public function template_display_name($file_name)
     {
+        if (substr($file_name, 0, 1) == '_') {
+            $file_name = '*'.$file_name;
+        }
+
         $file_name = str_replace('.html', '', $file_name);
         $file_name = str_replace('_', ' ', $file_name);
         $file_name = str_replace('-', ' - ', $file_name);
@@ -159,26 +163,27 @@ class PerchContent_Regions extends PerchFactory
      * @return void
      * @author Drew McLellan
      */
-    public function get_templates($path=false)
+    public function get_templates($path=false, $include_hidden=false, $initial_path=false)
     {
         $Perch = Perch::fetch();
         
         if ($path===false) $path = PERCH_TEMPLATE_PATH.'/content';
+        if ($initial_path===false) $initial_path = $path;
         $a = array();
         if (is_dir($path)) {
             if ($dh = opendir($path)) {
                 while (($file = readdir($dh)) !== false) {
-                    if(substr($file, 0, 1) != '.' && substr($file, 0, 1) != '_' && !preg_match($Perch->ignore_pattern, $file)) {
+                    if(substr($file, 0, 1) != '.' && ($include_hidden || substr($file, 0, 1) != '_') && !preg_match($Perch->ignore_pattern, $file)) {
                         $extension = PerchUtil::file_extension($file);
                         if ($extension == 'html' || $extension == 'htm') {
-                            $p = str_replace(PERCH_TEMPLATE_PATH.'/content', '', $path);
+                            $p = str_replace($initial_path, '', $path);
                             if (!$p) {
                                 $a[PerchLang::get('General')][] = array('filename'=>$file, 'path'=>$file, 'label'=>$this->template_display_name($file));
                             }else{
                                 $a[] = array('filename'=>$file, 'path'=>ltrim($p, '/').'/'.$file, 'label'=>$this->template_display_name($file));
                             }
                         }else{
-                            $a[$this->template_display_name($file)] = $this->get_templates($path.'/'.$file);
+                            $a[$this->template_display_name($file)] = $this->get_templates($path.'/'.$file, $include_hidden, $initial_path);
                         }
                     }
                 }

@@ -301,6 +301,7 @@ class PerchContent_Pages extends PerchFactory
         $page['pageNavOnly']      = '0';    
         $page['subpages']         = false;    
         $page['pageAccessTags']   = '';
+        $page['pageCreatorID']    = '0';
         
         return $this->return_instance($page);        
         
@@ -429,6 +430,12 @@ class PerchContent_Pages extends PerchFactory
      */
     public function create_with_file($data)
     {
+        $create_folder = false;
+        if (isset($data['create_folder'])) {
+            $create_folder = $data['create_folder'];
+            unset($data['create_folder']);    
+        }
+        
         
         $this->find_site_path();
                
@@ -477,13 +484,32 @@ class PerchContent_Pages extends PerchFactory
             
                             
             
-            $dir            = PERCH_SITEPATH.str_replace('/', DIRECTORY_SEPARATOR, $pageSection);
+            $dir = PerchUtil::file_path(PERCH_SITEPATH.$pageSection);
+
+            // Are we creating a new folder?
+            if ($create_folder) {
+                $new_folder = $this->get_unique_folder_name($dir, $file_name);
+                PerchUtil::debug('Trying to create: '.$new_folder);
+
+                if (mkdir($new_folder, 0755, true)) {
+                    $new_dir_name = str_replace($dir, '', $new_folder);
+                    $dir          = $new_folder;
+                    $new_file     = PerchUtil::file_path($dir. '/'.PERCH_DEFAULT_DOC);
+                }
+            }
+
 
             // Can we write to this dir?
             if (is_writable($dir)) {
                 
-                // Get a new file name
-                $new_file = $this->get_unique_file_name($dir, $file_name, $file_extension);
+                // Are we creating a new folder?
+                if (!$create_folder) {
+                    // Get a new file name
+                    $new_file = $this->get_unique_file_name($dir, $file_name, $file_extension);
+                }
+
+
+                
                 $template_dir = PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/pages');
 
                 if (file_exists($template_dir)) {
@@ -492,7 +518,8 @@ class PerchContent_Pages extends PerchFactory
                     // Is this referenced or copied?
                     if ($Template->templateReference()) {
                         // Referenced, so write a PHP include
-                        $contents = '<'.'?php include(\''.$this->get_relative_path($template_file, $dir).'\'); ?'.'>';
+                        $include_path = str_replace(DIRECTORY_SEPARATOR, '/', $this->get_relative_path($template_file, $dir));
+                        $contents = '<'.'?php include(str_replace(\'/\', DIRECTORY_SEPARATOR, \''.$include_path.'\')); ?'.'>';
                     }else{
                         // Copied, so grab the template's contents
                         $contents = file_get_contents($template_file);
@@ -504,7 +531,16 @@ class PerchContent_Pages extends PerchFactory
                         if (!file_exists($new_file) && file_put_contents($new_file, $contents)) {
                             
                             // Get the new file path
-                            $new_url = $pageSection.str_replace($dir, '', $new_file);
+                            if ($create_folder) {
+                                $new_url = $pageSection.'/'.$new_dir_name.str_replace($dir, '', $new_file);
+                                $data['pageSubpagePath'] = $pageSection.'/'.$new_dir_name;
+                            }else{
+                                $new_url = $pageSection.str_replace($dir, '', $new_file);    
+                                $data['pageSubpagePath'] = $pageSection;
+                            }
+
+                            $data['pageSubpagePath'] = str_replace('//', '/', $data['pageSubpagePath']);
+                            
                             $r = str_replace(DIRECTORY_SEPARATOR, '/', $new_url);
                             $r = str_replace('//', '/', $r);
                             $data['pagePath'] = $r; 
@@ -733,51 +769,70 @@ class PerchContent_Pages extends PerchFactory
         }
     }
     
+    private function get_unique_folder_name($dir, $folder_name, $count=0)
+    {
+        if ($count==0) {
+            $folder = $dir.DIRECTORY_SEPARATOR.$folder_name;
+        }else{
+            $folder = $dir.DIRECTORY_SEPARATOR.$folder_name.'-'.$count;
+        }
+     
+        $folder = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $folder);
+        
+        if (file_exists($folder)) {
+            $count++;
+            return $this->get_unique_folder_name($dir, $folder_name, $count);
+        }else{
+            return $folder;
+        }
+    }
+
+
     // Thanks, jpic in php.net realpath comments!
     private function get_relative_path($path, $compareTo) 
     {
         // clean arguments by removing trailing and prefixing slashes
-        if ( substr( $path, -1 ) == DIRECTORY_SEPARATOR ) {
-            $path = substr( $path, 0, -1 );
+        if (substr($path, -1 ) == DIRECTORY_SEPARATOR) {
+            $path = substr($path, 0, -1);
         }
-        if ( substr( $path, 0, 1 ) == DIRECTORY_SEPARATOR ) {
-            $path = substr( $path, 1 );
+        if (substr($path, 0, 1) == DIRECTORY_SEPARATOR) {
+            $path = substr($path, 1);
         }
 
-        if ( substr( $compareTo, -1 ) == DIRECTORY_SEPARATOR ) {
-            $compareTo = substr( $compareTo, 0, -1 );
+        if (substr($compareTo, -1) == DIRECTORY_SEPARATOR) {
+            $compareTo = substr($compareTo, 0, -1);
         }
-        if ( substr( $compareTo, 0, 1 ) == DIRECTORY_SEPARATOR ) {
-            $compareTo = substr( $compareTo, 1 );
+        if (substr($compareTo, 0, 1) == DIRECTORY_SEPARATOR) {
+            $compareTo = substr($compareTo, 1);
         }
 
         // simple case: $compareTo is in $path
-        if ( strpos( $path, $compareTo ) === 0 ) {
-            $offset = strlen( $compareTo ) + 1;
-            return substr( $path, $offset );
+        if (strpos($path, $compareTo) === 0) {
+            $offset = strlen($compareTo) + 1;
+            return substr($path, $offset);
         }
 
-        $relative  = array(  );
-        $pathParts = explode( DIRECTORY_SEPARATOR, $path );
-        $compareToParts = explode( DIRECTORY_SEPARATOR, $compareTo );
+        $relative  = array();
+        $pathParts = explode(DIRECTORY_SEPARATOR, $path);
+        $compareToParts = explode(DIRECTORY_SEPARATOR, $compareTo);
 
-        foreach( $compareToParts as $index => $part ) {
-            if ( isset( $pathParts[$index] ) && $pathParts[$index] == $part ) {
+        foreach($compareToParts as $index => $part) {
+            if (isset($pathParts[$index]) && $pathParts[$index] == $part) {
                 continue;
             }
 
             $relative[] = '..';
         }
 
-        foreach( $pathParts as $index => $part ) {
-            if ( isset( $compareToParts[$index] ) && $compareToParts[$index] == $part ) {
+        foreach($pathParts as $index => $part) {
+            if (isset($compareToParts[$index]) && $compareToParts[$index] == $part) {
                 continue;
             }
 
             $relative[] = $part;
         }
 
-        return implode( DIRECTORY_SEPARATOR, $relative );
+        return implode(DIRECTORY_SEPARATOR, $relative);
     }
     
     
@@ -797,6 +852,7 @@ class PerchContent_Pages extends PerchFactory
         $add_trailing_slash = $opts['add-trailing-slash'];
         $navgroup           = $opts['navgroup'];
         $include_hidden     = $opts['include-hidden'];
+        $expand_attributes  = $opts['use-attributes'];
         
         $template = 'navigation/'.$template;
         
@@ -857,6 +913,17 @@ class PerchContent_Pages extends PerchFactory
                     if ($add_trailing_slash) {
                         $page['pagePath'] = rtrim($page['pagePath'], '/').'/';
                     }
+
+                    // expand attributes
+                    if ($expand_attributes && $page['pageAttributes']!='') {
+                        $dynamic_fields = PerchUtil::json_safe_decode($page['pageAttributes'], true);
+                        if (PerchUtil::count($dynamic_fields)) {
+                            foreach($dynamic_fields as $key=>$value) {
+                                $page[$key] = $value;
+                            }
+                        }
+                        $page = array_merge($dynamic_fields, $page);
+                    }
                 
                 }
             }
@@ -883,6 +950,7 @@ class PerchContent_Pages extends PerchFactory
         $add_trailing_slash    = $opts['add-trailing-slash'];
         $navgroup              = $opts['navgroup'];
         $include_hidden        = $opts['include-hidden'];
+        $expand_attributes     = $opts['use-attributes'];
 
         $template = 'navigation/'.$template;
 
@@ -943,6 +1011,17 @@ class PerchContent_Pages extends PerchFactory
                         $page['pagePath'] = rtrim($page['pagePath'], '/').'/';
                     }
 
+                    // expand attributes
+                    if ($expand_attributes && $page['pageAttributes']!='') {
+                        $dynamic_fields = PerchUtil::json_safe_decode($page['pageAttributes'], true);
+                        if (PerchUtil::count($dynamic_fields)) {
+                            foreach($dynamic_fields as $key=>$value) {
+                                $page[$key] = $value;
+                            }
+                        }
+                        $page = array_merge($dynamic_fields, $page);
+                    }
+
 
                     if ($skip_template) return $page;
 
@@ -968,6 +1047,7 @@ class PerchContent_Pages extends PerchFactory
         $skip_template         = $opts['skip-template'];
         $add_trailing_slash    = $opts['add-trailing-slash'];
         $navgroup              = $opts['navgroup'];
+        $expand_attributes     = $opts['use-attributes'];
 
         $template = 'navigation/'.$template;
 
@@ -1015,7 +1095,17 @@ class PerchContent_Pages extends PerchFactory
                     if ($add_trailing_slash) {
                         $page['pagePath'] = rtrim($page['pagePath'], '/').'/';
                     }
-                        
+                    
+                    // expand attributes
+                    if ($expand_attributes && $page['pageAttributes']!='') {
+                        $dynamic_fields = PerchUtil::json_safe_decode($page['pageAttributes'], true);
+                        if (PerchUtil::count($dynamic_fields)) {
+                            foreach($dynamic_fields as $key=>$value) {
+                                $page[$key] = $value;
+                            }
+                        }
+                        $page = array_merge($dynamic_fields, $page);
+                    }
 
                     if ($skip_template) return $page;
 
@@ -1044,6 +1134,7 @@ class PerchContent_Pages extends PerchFactory
         $access_tags           = $opts['access-tags'];
         $include_hidden        = $opts['include-hidden'];
         $from_level            = $opts['from-level'];
+        $expand_attributes     = $opts['use-attributes'];
 
 
         if ($access_tags == false) $access_tags = array();
@@ -1256,7 +1347,7 @@ class PerchContent_Pages extends PerchFactory
                 
                 if ($skip_template) $templates = false;
                 
-                return $this->_template_nav($templates, $selected_ids, $parentID, $level=0, $skip_template, $only_expand_selected);
+                return $this->_template_nav($templates, $selected_ids, $parentID, $level=0, $skip_template, $only_expand_selected, $expand_attributes);
             }
 
             
@@ -1325,7 +1416,7 @@ class PerchContent_Pages extends PerchFactory
     }
 
 
-    private function _template_nav($templates, $selected_ids, $parentID=0, $level=0, $Template=false, $only_expand_selected=false)
+    private function _template_nav($templates, $selected_ids, $parentID=0, $level=0, $Template=false, $only_expand_selected=false, $expand_attributes=false)
     {
         $rows = array();
         foreach($this->nav_page_cache as $page) {
@@ -1360,10 +1451,10 @@ class PerchContent_Pages extends PerchFactory
                             $row['ancestor_page'] = true;
                         }
                         
-                        $row['subitems'] = $this->_template_nav($templates, $selected_ids, $row['pageID'], $level+1, $Template, $only_expand_selected);
+                        $row['subitems'] = $this->_template_nav($templates, $selected_ids, $row['pageID'], $level+1, $Template, $only_expand_selected, $expand_attributes);
                     }
                 }else{
-                    $row['subitems'] = $this->_template_nav($templates, $selected_ids, $row['pageID'], $level+1, $Template, $only_expand_selected);
+                    $row['subitems'] = $this->_template_nav($templates, $selected_ids, $row['pageID'], $level+1, $Template, $only_expand_selected, $expand_attributes);
                     if (is_array($selected_ids) && in_array($row['pageID'], $selected_ids)) {
                         
                         if ($selected_ids[0]==$row['pageID']) {
@@ -1373,6 +1464,17 @@ class PerchContent_Pages extends PerchFactory
                         }
 
                     }
+                }
+
+
+                if ($expand_attributes && $row['pageAttributes']!='') {
+                    $dynamic_fields = PerchUtil::json_safe_decode($row['pageAttributes'], true);
+                    if (PerchUtil::count($dynamic_fields)) {
+                        foreach($dynamic_fields as $key=>$value) {
+                            $row[$key] = $value;
+                        }
+                    }
+                    $row = array_merge($dynamic_fields, $row);
                 }
                 
             }

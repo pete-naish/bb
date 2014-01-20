@@ -99,7 +99,14 @@
 
 		ALTER TABLE `__PREFIX__pages` ADD `pageCreatorID` INT(10)  UNSIGNED  NOT NULL  DEFAULT '0'  AFTER `pageAccessTags`;
 
+		ALTER TABLE `__PREFIX__pages` ADD `pageModified` DATETIME  NOT NULL DEFAULT '2014-01-01 00:00:00' AFTER `pageCreatorID`;
 
+		ALTER TABLE `__PREFIX__pages` ADD `pageAttributes` TEXT  NOT NULL  AFTER `pageModified`;
+
+		ALTER TABLE `__PREFIX__pages` ADD `pageAttributeTemplate` VARCHAR(255)  NOT NULL  DEFAULT 'default.html'  AFTER `pageAttributes`;
+
+		INSERT INTO `__PREFIX__user_privileges` (`privKey`, `privTitle`, `privOrder`)
+		VALUES ('content.pages.attributes','Edit page titles and attributes',6);
 
 	";
 

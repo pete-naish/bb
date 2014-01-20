@@ -190,8 +190,6 @@ class PerchContent_Page extends PerchBase
         }
     }
 
-
-
     /**
      * Delete this page from all navgroups
      * @return [type] [description]
@@ -215,6 +213,90 @@ class PerchContent_Page extends PerchBase
         }
     }
 
+
+    public function to_array($template_ids=false)
+    {
+        $out = parent::to_array();
+
+        if ($out['pageAttributes'] != '') {
+            $dynamic_fields = PerchUtil::json_safe_decode($out['pageAttributes'], true);
+            if (PerchUtil::count($dynamic_fields)) {
+                foreach($dynamic_fields as $key=>$value) {
+                    $out['perch_'.$key] = $value;
+                }
+            }
+            $out = array_merge($dynamic_fields, $out);
+        }
+
+        return $out;
+    }
+
+    public function template_attributes($opts)
+    {
+        $Template = new PerchTemplate('pages/attributes/'.$opts['template'], 'pages');
+        return $Template->render($this);
+    }
+
+    public function template_attribute($id, $opts)
+    {
+
+        if ($id=='pageTitle' || $id=='pageNavText') {
+            return $this->details[$id]; 
+        }
+
+        $Template = new PerchTemplate('pages/attributes/'.$opts['template'], 'pages');
+        $tag = $Template->find_tag($id, false, true);
+        if ($tag) {
+            $Template->load($tag);
+            return $Template->render($this);
+        }
+
+        if (isset($this->details[$id])){
+            return $this->details[$id]; 
+        }
+        
+        return false;
+    }
+
+    public function move_file($new_location)
+    {
+
+        $new_location = PerchUtil::file_path($new_location);
+        $new_location = str_replace(PERCH_LOGINPATH, '/', $new_location);
+        $new_location = str_replace('..', '', $new_location);
+        $new_location = str_replace('//', '/', $new_location);
+
+        $old_path = PERCH_SITEPATH.$this->pagePath();
+        $new_path = PerchUtil::file_path(PERCH_SITEPATH.'/'.ltrim($new_location, '/'));
+
+        if ($old_path!=$new_path) {
+            if (file_exists($old_path)) {
+                if (!file_exists($new_path)) {
+                    $new_dir = PerchUtil::strip_file_name($new_path);
+                    if (!file_exists($new_dir)) {
+                        mkdir($new_dir, 0755, true);
+                    }
+                    if (is_writable($new_dir)) {
+                        if(rename($old_path, $new_path)) {
+                            return array(true, false);
+                        }else{
+                            return array(false, 'The page could not be moved.');
+                        } 
+                    }else{
+                        return array(false, 'The destination folder could not be written to, so the page cannot be moved.');
+                    }
+                }else{
+                    return array(false, 'A page file already exists at the new location.');
+                }
+                
+            }else{
+                return array(false, 'No page file exists at that location to move.');
+            }
+        }else{
+            // It's ok, as the file is already where they want it to be.
+            return array(true, false);
+        }
+    }
 }
 
 ?>

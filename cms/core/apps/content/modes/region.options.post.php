@@ -6,9 +6,9 @@
     
     <p><?php echo PerchLang::get('You can set options for this region, including whether to allow one or multiple items, and the sort order.'); ?></p>
 
-    <h3><?php echo PerchLang::get('Search result URL'); ?></h3>
+    <h3><?php echo PerchLang::get('Single item URL'); ?></h3>
     <p>
-        <?php echo PerchLang::get('It\'s sometimes useful to use a different URL in search results.'); ?>
+        <?php echo PerchLang::get('It\'s sometimes useful to use a different URL in search results, or for previewing drafts for a list/detail region.'); ?>
     </p>
     <p>
         <?php printf(PerchLang::get('If you need this, enter the root-relative URL using %sbraces%s around any dynamic fields. e.g.'), '{', '}'); ?>
@@ -206,8 +206,10 @@
         </div>
 
         <div class="field last">
-            <?php echo $Form->label('searchURL', 'URL for search results'); ?>
+            <?php echo $Form->label('searchURL', 'URL for single items'); ?>
             <?php echo $Form->text('searchURL', $Form->get($options, 'searchURL', '')); ?>
+            <?php echo $Form->hint(PerchLang::get('Used for search results and draft previews. See sidebar notes.')); ?>
+
         </div>
 
         
@@ -250,7 +252,7 @@
             <?php echo $Form->label('regionTemplate', 'Template'); ?>
             <?php         
                 $opts = array();
-                $templates = $Regions->get_templates();
+                $templates = $Regions->get_templates(false, true);
 
                 if (PerchUtil::count($templates)) {
                     $opts = array();

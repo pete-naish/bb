@@ -265,6 +265,13 @@ form .repeater .map {
 	margin: 10px 0 10px 0;
 }
 
+form .repeater div.field .preview iframe {
+	height: 100%;
+	width: 100%;
+}
+
+
+
 @media screen and (max-width: 1060px) {
 	.sidebar-open form .repeater-heading {
 		float: none;

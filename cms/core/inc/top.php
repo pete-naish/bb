@@ -10,6 +10,8 @@
     $Perch->help_html = '';
     $help_html = '';
 
+    header('Content-Type: text/html; charset=utf-8');
+
 ?><!DOCTYPE html>
 <html lang="<?php echo $Settings->get('lang')->settingValue(); ?>">
 <head>
@@ -35,7 +37,7 @@
 	<!--[if lt IE 9]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/720.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->
 	<!--[if IE 7]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/ie7.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->
 	<!--[if IE 6]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/ie6.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->	
-	<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
 	<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-ui.js" type="text/javascript"></script>
 	<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/perch.js?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/javascript"></script>
 <?php }else{ ?>

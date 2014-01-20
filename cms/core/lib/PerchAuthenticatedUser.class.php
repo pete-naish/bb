@@ -89,6 +89,9 @@ class PerchAuthenticatedUser extends PerchBase
                         return false;
                     }
                     
+                    // Set cookie for front-end might-be-authed checked
+                    PerchUtil::setcookie('cmsa', 1, strtotime('+30 days'), '/');
+
                     return true;
                 }
             }
@@ -214,6 +217,7 @@ class PerchAuthenticatedUser extends PerchBase
                 // update latest version setting
                 $Settings = new PerchSettings;
                 $Settings->set('latest_version', $json->latest_version);
+                $Settings->set('on_sale_version', $json->on_sale_version);
                 
                 PerchUtil::debug($json);
                 PerchUtil::debug('Activation: success');

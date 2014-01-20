@@ -5,6 +5,8 @@ class PerchContent_Region extends PerchBase
     protected $table  = 'content_regions';
     protected $pk     = 'regionID';
 
+    public $tmp_url_vars = '';
+
     private $options  = false;
     private $current_userID = false;
 
@@ -666,7 +668,14 @@ class PerchContent_Region extends PerchBase
         return $Template->find_all_tag_ids();
     }
 
-
+    // Used for custom searchURLs e.g. /example.php?id={_id}
+    public function substitute_url_vars($matches)
+    {
+        $url_vars = $this->tmp_url_vars;
+        if (isset($url_vars[$matches[1]])){
+            return $url_vars[$matches[1]];
+        }
+    }
     
     private function _get_next_item_id()
     {

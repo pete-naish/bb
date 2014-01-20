@@ -1,9 +1,14 @@
 <?php 
 	include('PerchContent_Pages.class.php');
 	include('PerchContent_Page.class.php');
+	include('PerchContent_Regions.class.php');
+	include('PerchContent_Region.class.php');
 
 	$Pages = new PerchContent_Pages;
 	$pages = $Pages->get_by_parent(0);
+
+	$Regions = new PerchContent_Regions;
+	$shared = $Regions->get_shared();
 
 ?>
 <div class="widget">
@@ -19,6 +24,14 @@
 		<?php
 			if (PerchUtil::count($pages)) {
 				echo '<ul>';
+				if (PerchUtil::count($shared)) {
+					echo '<li>';
+						echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/page/?id=-1">';
+							echo PerchUtil::html(PerchLang::get('Shared'));
+						echo '</a>';
+					echo '</li>';
+				}
+
 				foreach($pages as $Page) {
 					echo '<li>';
 						echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/page/?id='.$Page->id()).'">';

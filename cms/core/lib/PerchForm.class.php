@@ -487,7 +487,7 @@ class PerchForm
 	
 	
 	
-	public function datepicker($id, $value=false, $field_order='ymd', $allowempty=false)
+	public function datepicker($id, $value=false, $field_order='dmy', $allowempty=false)
 	{
 		$this->fields[] = $id;
 		
@@ -541,7 +541,7 @@ class PerchForm
 		
 	}
 	
-    public function datetimepicker($id, $value=false, $field_order='ymd', $allowempty=false)
+    public function datetimepicker($id, $value=false, $field_order='dmy', $allowempty=false)
     {
         $this->fields[] = $id;
         

@@ -180,9 +180,9 @@ class PerchLang
         }
         
         $out = array_merge($this->translations, $items);
-        $json = PerchUtil::json_safe_encode($out);
         
-        $json = PerchUtil::tidy_json($json);
+        $tidy_json = true;
+        $json = PerchUtil::json_safe_encode($out, $tidy_json);
         
         if (is_writable($this->lang_file)) {
             file_put_contents($this->lang_file, $json);

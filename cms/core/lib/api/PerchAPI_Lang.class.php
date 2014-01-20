@@ -105,17 +105,17 @@ class PerchAPI_Lang
     
     private function write_to_lang_file($items)
     {
-        PerchUtil::debug('Writing to lang file: '.$this->lang_file);
-        PerchUtil::debug($items);
-
+        $this->load_translations();
+        
         if (!is_array($this->translations)) {
             $this->translations = array('lang'=>$this->lang);
         }
         
         $out = array_merge($this->translations, $items);
-        $json = PerchUtil::json_safe_encode($out);
         
-        $json = PerchUtil::tidy_json($json);
+        $tidy_json = true;
+
+        $json = PerchUtil::json_safe_encode($out, $tidy_json);
         
         if (is_writable($this->lang_file)) {
             file_put_contents($this->lang_file, $json);

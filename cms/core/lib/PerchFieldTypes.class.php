@@ -214,8 +214,22 @@ class PerchFieldType_slug extends PerchFieldType
     
     public function get_raw($post=false, $Item=false)
     {
-        if (isset($post[$this->Tag->for()])) {
-            return PerchUtil::urlify(trim(stripslashes($post[$this->Tag->for()])));
+        if ($this->Tag->for()) {
+
+            $parts = explode(' ', $this->Tag->for());
+            if (PerchUtil::count($parts)) {
+                $str = array();
+                foreach($parts as $part) {
+                    if (isset($post[$part])) {
+                        $str[] = trim(stripslashes($post[$part]));
+                    }
+                }
+                return PerchUtil::urlify(implode(' ', $str));
+            }
+
+            if (isset($post[$this->Tag->for()])) {
+                return PerchUtil::urlify(trim(stripslashes($post[$this->Tag->for()])));
+            }
         }
         
         return '';
@@ -248,7 +262,12 @@ class PerchFieldType_textarea extends PerchFieldType
                     $dir = PerchUtil::file_path(PERCH_PATH.'/addons/plugins/editors/'.$tag->editor());
                     $file = PerchUtil::file_path($dir.'/_config.inc');
                     if (is_dir($dir) && is_file($file)) {
-                        $Perch->add_head_content(str_replace('PERCH_LOGINPATH', PERCH_LOGINPATH, file_get_contents($file)));
+                        $contents = file_get_contents($file);
+                        $contents = str_replace('PERCH_LOGINPATH', PERCH_LOGINPATH, $contents);
+                        $config = 'default';
+                        if ($tag->editor_config()) $config = $tag->editor_config();
+                        $contents = str_replace('PERCH_EDITOR_CONFIG', $config, $contents);
+                        $Perch->add_head_content($contents);
                         $seen_editors[] = $tag->editor();
                     }else{
                         PerchUtil::debug('Editor requested, but not installed: '.$this->Tag->editor(), 'error');
@@ -270,11 +289,6 @@ class PerchFieldType_textarea extends PerchFieldType
 
             } 
         }
-
-
-
-
-          
     }
 
 
@@ -297,6 +311,7 @@ class PerchFieldType_textarea extends PerchFieldType
         if ($this->Tag->imagedensity())   $data_atrs['density'] = $this->Tag->imagedensity();
         if ($this->Tag->bucket())         $data_atrs['bucket']  = $this->Tag->bucket();
 
+        if ($this->Tag->editor_config())  $data_atrs['editor-config'] = $this->Tag->editor_config();        
 
         //print_r($details);
         
@@ -362,8 +377,19 @@ class PerchFieldType_textarea extends PerchFieldType
             if (!$formatting_language_used && PerchUtil::bool_val($this->Tag->markdown()) == true) {
                 // Fix markdown blockquote syntax - > gets encoded.
                 $value = preg_replace('/[\n\r]&gt;\s/', "\n> ", $value);
+                
+                // Fix autolink syntax
+                $value = preg_replace('#&lt;(http[a-zA-Z0-9-\.\/:]*)&gt;#', "<$1>", $value);
+                
                 $Markdown = new Markdown_Parser;
                 $value = $Markdown->transform($value);
+
+                $SmartyPants = new SmartyPants_Parser;
+                $value = $SmartyPants->transform($value);
+                if (PERCH_HTML_ENTITIES==false) {
+                    $value = html_entity_decode($value, ENT_NOQUOTES, 'UTF-8');    
+                }
+                
                 $formatting_language_used = true;
             }
             
@@ -1270,6 +1296,107 @@ class PerchFieldType_repeater extends PerchFieldType
         }
 
         return '';
+    }
+}
+
+/* ------------ SMARTTEXT ------------ */
+
+class PerchFieldType_smarttext extends PerchFieldType
+{
+
+    public function render_inputs($details=array())
+    {
+        if (isset($details[$this->Tag->input_id()]) && $details[$this->Tag->input_id()]!='') {
+            $data = $details[$this->Tag->input_id()];        
+            if (is_array($data)) {
+                $details = array($this->Tag->id()=>$data['raw']);
+            }   
+        }
+
+
+        $s = '';
+        $id = $this->Tag->id();
+        $s = $this->Form->text($this->Tag->input_id(), $this->Form->get($details, $id, $this->Tag->default(), $this->Tag->post_prefix()), $this->Tag->size(), $this->Tag->maxlength());
+                
+        return $s;
+    }
+
+    public function get_raw($post=false, $Item=false)
+    {
+        if ($post===false) {
+            $post = $_POST;
+        }
+        
+        $id = $this->Tag->id();
+        if (isset($post[$id])) {
+            $raw = trim($post[$id]);
+            
+            $value = stripslashes($raw);
+
+            // Strip HTML by default
+            if (!is_array($value) && PerchUtil::bool_val($this->Tag->html()) == false) {
+                $value = PerchUtil::html($value);
+                $value = strip_tags($value);
+            }
+
+            $SmartyPants = new SmartyPants_Parser;
+            $value = $SmartyPants->transform($value);
+            if (PERCH_HTML_ENTITIES==false) {
+                $value = html_entity_decode($value, ENT_NOQUOTES, 'UTF-8');    
+            }
+            
+            $store = array(
+                'raw' => $raw,
+                'processed' => $value
+            );
+            
+            $this->raw_item = $store;
+        
+            return $this->raw_item;
+        }
+        
+        return null;
+    }
+  
+
+    public function get_processed($raw=false)
+    {
+        if ($raw===false) $raw = $this->get_raw();
+        
+        $value = $raw;
+        
+        if (is_array($value)) {
+            if (isset($value['processed'])) {
+                $this->processed_output_is_markup = true;
+                return $value['processed'];
+            }
+            
+            if (isset($value['raw'])) {
+                return $value['raw'];
+            }
+        }
+
+        return $value;
+    }
+    
+    
+    public function get_search_text($raw=false)
+    {
+        if ($raw===false) $raw = $this->get_raw();
+        
+        if (is_array($raw)) {
+            
+            if (isset($raw['processed'])) {
+                return strip_tags($raw['processed']);
+            }
+                    
+            if (isset($raw['raw'])) {
+                return $raw['raw'];
+            }
+            
+        }
+        
+        return $raw;
     }
 }
 

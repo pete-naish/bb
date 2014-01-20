@@ -85,6 +85,22 @@ class PerchSystem
         self::$template_vars['perch_page_path'] = self::get_page();
         return self::$template_vars;
     }
+
+    public static function get_helper_js()
+    {
+        $Settings = PerchSettings::fetch();
+        if ($Settings->get('content_frontend_edit')->val()) {
+            $Content = PerchContent::fetch();
+            $Page = $Content->get_page();
+            $r = '';
+            if (is_object($Page)) {
+                $r = '<script src="'.PERCH_LOGINPATH.'/core/assets/js/public_helper.js" async></script>';
+                $r .= '<script async>var cms_path=\''.PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/page/?id='.$Page->id()).'\';</script>';    
+            }
+            return $r;
+        }
+        return false;
+    }
 }
 
 

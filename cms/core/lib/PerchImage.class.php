@@ -17,15 +17,25 @@ class PerchImage
     
     function __construct()
     {
-        
         if (extension_loaded('imagick') && class_exists('Imagick')) {
             $this->mode = 'imagick';
         }
 
         if (extension_loaded('gd')) {
             $this->mode = 'gd';
-        }
-        
+        }   
+    }
+
+    public function reset_defaults()
+    {
+        // Compression quality for JPEGs
+        $this->jpeg_quality = 85;
+
+        // Pixel density
+        $this->density = 1;
+
+        // Sharpening
+        $this->sharpening = 4;
     }
     
     public function resize_image($image_path, $target_w=false, $target_h=false, $crop=false, $suffix=false)
@@ -55,13 +65,13 @@ class PerchImage
         $image_ratio = $image_w/$image_h;
         
         // Constrain by width
-        if ($target_w && $image_w>$target_w) {
+        if ($target_w && $image_w>=$target_w) {
             $new_w = $target_w;
             $new_h = $target_w/$image_ratio;
         }
         
         // Constrain by height
-        if ($target_h && $image_h>$target_h) {
+        if ($target_h && $image_h>=$target_h) {
             $new_h = $target_h;
             $new_w = $target_h*$image_ratio;
         }
@@ -100,6 +110,8 @@ class PerchImage
                 
                 $crop    = false;
             }
+
+            //PerchUtil::debug("Crop info: $crop_x, $crop_y, $crop_w, $crop_h");
         }
                 
         if ($target_w && $target_h && !$crop) {
@@ -151,16 +163,32 @@ class PerchImage
             if ($crop_h) $out['h'] = (int) $crop_h;
         }
 
+        $bail = false;
         
         // Check we're not upsizing
-        if ($new_w > $image_w || $new_h > $image_h) {
-            copy($image_path, $save_as);
-            PerchUtil::set_file_permissions($save_as);
-            return $out;
+        if ($crop) {
+            if ($crop_w > $image_w || $crop_h > $image_h) {
+                $bail = true;
+            }
+        }else{
+            if ($new_w > $image_w || $new_h > $image_h) {
+                $bail = true;
+            }
         }
         
         // Check we're not resizing to the same exact size, as this just kills quality
-        if ($new_w == $image_w && $new_h == $image_h) {
+        if ($crop) {
+            if ($crop_w == $image_w && $crop_h == $image_h) {
+                $bail = true;
+            }
+        }else{
+            if ($new_w == $image_w && $new_h == $image_h) {
+                $bail = true;
+            }
+        }
+        
+        // Bail?
+        if ($bail) {
             copy($image_path, $save_as);
             PerchUtil::set_file_permissions($save_as);
             return $out;
@@ -168,12 +196,12 @@ class PerchImage
         
         
         // Density 
-        $new_w  = $new_w * $this->density;
-        $new_h  = $new_h * $this->density;
-        $crop_w = $crop_w * $this->density;
-        $crop_h = $crop_h * $this->density;
-        $crop_x = $crop_x * $this->density;
-        $crop_y = $crop_y * $this->density;
+        $new_w  = floor($new_w * $this->density);
+        $new_h  = floor($new_h * $this->density);
+        $crop_w = floor($crop_w * $this->density);
+        $crop_h = floor($crop_h * $this->density);
+        $crop_x = floor($crop_x * $this->density);
+        $crop_y = floor($crop_y * $this->density);
 
         //PerchUtil::debug('Density: '.$this->density);
 
@@ -191,7 +219,7 @@ class PerchImage
         if ($r) $out['mime'] = $r;
         
         PerchUtil::set_file_permissions($save_as);
-        
+
         if ($r) return $out;
         
         return false;
@@ -208,7 +236,7 @@ class PerchImage
             if ($h) $suffix .= 'h'.$h;
         }
 
-        if ((int)$density!=1) {
+        if ((float)$density!=1) {
             $suffix .= '@'.$density.'x';
         }
         
@@ -274,13 +302,9 @@ class PerchImage
                 }else{
                     imagejpeg($new_image, $save_as, $this->jpeg_quality);
                 }
-                
-                
+                                
                 break;
-                
-                
-                
-                
+                               
             case 'image/gif':
                 $orig_image = imagecreatefromgif($image_path);
                 $this->gd_set_transparency($new_image, $orig_image);
@@ -308,11 +332,7 @@ class PerchImage
                     imagegif($new_image, $save_as);
                 }
 
-                
-                
                 break;
-                
-                
                 
             case 'image/png':
                 $orig_image = imagecreatefrompng($image_path);
@@ -340,8 +360,6 @@ class PerchImage
                 }else{
                     imagepng($new_image, $save_as);
                 }
-                
-
                 
                 break;
             
@@ -427,7 +445,7 @@ class PerchImage
 
         // sharpen
         if ($this->sharpening) {
-            PerchUtil::debug($Image->unsharpMaskImage(0 , $this->sharpening/10 , $this->sharpening/2 , 0.05));
+            $Image->unsharpMaskImage(0, $this->sharpening/10, $this->sharpening/2, 0.05);
         }
         
         $mime = 'image/'.$Image->getImageFormat();

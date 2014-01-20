@@ -26,10 +26,8 @@
 		        
         if ($return) return $out;
         echo $out;
-
     }
-    
-    
+        
     function perch_content_custom($key=false, $opts=false, $return=false)
     {
         if ($key === false) return ' ';
@@ -41,14 +39,8 @@
             $postpro = true;
         }
 
-        $Content = PerchContent::fetch();
-
-        if (isset($opts['compat']) && $opts['compat']) {
-            $out = $Content->get_custom_compat($key, $opts);
-        }else{
-            $out = $Content->get_custom($key, $opts);
-        }
-        
+        $Content = PerchContent::fetch();    
+        $out = $Content->get_custom($key, $opts);
 
         // Post processing - if there are still <perch:x /> tags
         if ($postpro && !is_array($out) && strpos($out, '<perch:')!==false) {
@@ -59,7 +51,6 @@
         if ($return) return $out;
         echo $out;
     }
-    
     
     function perch_content_check_preview()
     {
@@ -73,10 +64,9 @@
                 $contentID  = (int)$_GET[PERCH_PREVIEW_ARG];
             }
             
-            $rev        = false;
-
-            $Users          = new PerchUsers;
-            $CurrentUser    = $Users->get_current_user();
+            $rev         = false;
+            $Users       = new PerchUsers;
+            $CurrentUser = $Users->get_current_user();
             
             if (is_object($CurrentUser) && $CurrentUser->logged_in()) {
                 $Content = PerchContent::fetch();
@@ -84,7 +74,6 @@
             }
         }
     }
-    
     
     function perch_content_search($key=false, $opts=false, $return=false)
     {   
@@ -100,6 +89,8 @@
         $defaults['hide-extensions']    = false;
         $defaults['add-trailing-slash'] = false;
         $defaults['hide-default-doc']   = false;
+        $defaults['no-conflict']        = false;
+        $defaults['apps']               = array();
         
         if (is_array($opts)) {
             $opts = array_merge($defaults, $opts);
@@ -111,9 +102,7 @@
 	    if (isset($opts['from_path']))          $opts['from-path'] = $opts['from_path'];
 	    if (isset($opts['excerpt_chars']))      $opts['excerpt-chars'] = $opts['excerpt_chars'];
         
-        
         $out = $Content->search_content($key, $opts);
-        
         
         // Post processing - if there are still <perch:x /> tags
         if (strpos($out, '<perch:')!==false) {
@@ -145,7 +134,6 @@
         if ($return) return $html;
         echo $html;
     }
-    
 
     function perch_page_title($return=false) 
     {
@@ -203,6 +191,7 @@
             'add-trailing-slash' =>false,
             'navgroup'           =>false,
             'include-hidden'     =>false,
+            'use-attributes'     => true,
         );
         
         if (is_array($opts)) {
@@ -235,6 +224,7 @@
             'add-trailing-slash' =>false,
             'navgroup'           =>false,
             'include-hidden'     =>false,
+            'use-attributes'     => true,
         );
         
         if (is_array($opts)) {
@@ -254,7 +244,6 @@
         echo $r;
     }
 
-
     function perch_pages_parent_page($opts=array(), $return=false)
     {
         $Pages = new PerchContent_Pages;
@@ -268,6 +257,7 @@
             'add-trailing-slash' =>false,
             'navgroup'           =>false,
             'include-hidden'     =>false,
+            'use-attributes'     => true,
         );
         
         if (is_array($opts)) {
@@ -283,7 +273,6 @@
         $r = $Pages->get_parent_navigation($opts, $current_page);
         
         if ($return) return $r;
-        
         echo $r;
     }
 
@@ -295,7 +284,6 @@
         // translate renamed options from Perch v1
         if (isset($opts['from_path']))       $opts['from-path'] = $opts['from_path'];
         if (isset($opts['hide_extensions'])) $opts['hide-extensions'] = $opts['hide_extensions'];
-        
         
         $default_opts = array(
             'from-path'            => '/',
@@ -313,8 +301,8 @@
             'access-tags'          => false,
             'include-hidden'       => false,
             'from-level'           => false,
+            'use-attributes'       => true,
         );
-
 
         if (class_exists('PerchMembers_Session')) {
             $Session = PerchMembers_Session::fetch();
@@ -359,6 +347,7 @@
             'add-trailing-slash' => false,
             'navgroup'           => false,
             'include-hidden'     => false,
+            'use-attributes'     => true,
         );
         
         if (is_array($opts)) {
@@ -412,7 +401,6 @@
         $Content = PerchContent::fetch();
 
         return $Content->create_region($key, $opts);
-
     }
 
     /**
@@ -428,7 +416,6 @@
         if (isset($_GET[$var]) && $_GET[$var]!='') {
             return $_GET[$var];
         }
-        
         return $default;
     }
 
@@ -452,8 +439,6 @@
             echo '<!-- Missing layout file: "'.PerchUtil::html('templates/layouts/'.$file.'.php').'" -->';
             PerchUtil::debug('Missing layout file: '.$path, 'error');
         }
-
-        
 
         if ($return) {
             return ob_get_clean();
@@ -493,6 +478,105 @@
         
         if ($return) return $html;
         echo $html;
+    }
+
+    function perch_page_attributes($opts=array(), $return=false)
+    {
+        $Content = PerchContent::fetch();
+        
+        if (isset($opts['_id']) && $opts['_id']!='') {
+            $Page = $Content->get_page_by_id($opts['_id']);
+        }else{
+            $Page = $Content->get_page();    
+        }
+        
+
+        if (is_object($Page)) {   
+
+            $default_opts = array(
+                'template'      => $Page->pageAttributeTemplate(),
+                'skip-template' => false,
+            );
+           
+            if (is_array($opts)) {
+                $opts = array_merge($default_opts, $opts);
+            }else{
+                $opts = $default_opts;
+            }
+
+            if ($opts['skip-template']) {
+                return $Page->to_array();
+            }
+
+            $r = $Page->template_attributes($opts);
+            
+            if ($return) return $r;
+            
+            echo $r;
+        }
+        return false;
+    }
+
+    function perch_page_attribute($key=false, $opts=array(), $return=false)
+    {
+        if ($key==false) return;
+
+        $Content = PerchContent::fetch();
+
+        if (isset($opts['_id']) && $opts['_id']!='') {
+            $Page = $Content->get_page_by_id($opts['_id']);
+        }else{
+            $Page = $Content->get_page();    
+        }
+        
+
+        if (is_object($Page)) {    
+
+            $default_opts = array(
+                'template'      => $Page->pageAttributeTemplate(),
+                'skip-template' => false,
+            );
+           
+            if (is_array($opts)) {
+                $opts = array_merge($default_opts, $opts);
+            }else{
+                $opts = $default_opts;
+            }
+            
+            if ($opts['skip-template']) {
+                $out = $Page->to_array();
+                return $out['perch_'.$key];
+            }
+
+            $r = $Page->template_attribute($key, $opts);
+            
+            if ($return) return $r;
+            
+            echo $r;
+        }
+        return false;
+    }
+
+    function perch_page_modified($opts=array(), $return=false)
+    {
+        $Content = PerchContent::fetch();
+        $Page = $Content->get_page();
+
+        $default_opts = array(
+            'format' => '%d %B %Y, %H:%M',
+        );
+       
+        if (is_array($opts)) {
+            $opts = array_merge($default_opts, $opts);
+        }else{
+            $opts = $default_opts;
+        }
+
+        $r = strftime($opts['format'], strtotime($Page->pageModified()));
+
+        if ($return) return $r;
+
+        echo $r;
     }
 
 ?>

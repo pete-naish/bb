@@ -16,6 +16,8 @@
     
     <p><?php echo PerchLang::get('These settings give you control over the editing environment. By default, regions will be displayed in a single page editing mode, this can then be changed in the region setting per region if list/detail is more effective for that region. You can also choose whether the content list should be collapsed or not.'); ?></p>
 
+    <p><?php echo PerchLang::get('The %sCtrl-E to edit%s option enables the Ctrl-E keyboard shortcut on your site pages to jump directly into editing. This requires the use of the %sperch_get_javascript()%s call on your pages.','<strong>', '</strong>', '<code>', '</code>'); ?></p>
+
 <?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
 <?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
 

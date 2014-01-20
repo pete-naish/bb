@@ -101,11 +101,9 @@
     <table class="<?php echo ($do_list_collapse?' collapse':''); ?>" id="content-list">
         <thead>
             <tr>
-                <th><?php echo PerchLang::get('Title'); ?></th>
-                <th class="alsoran"><?php echo PerchLang::get('Regions'); ?></th>
-                <th class="nohoper"><?php echo PerchLang::get('Type'); ?></th>
+                <th class="kindofabigdeal"><?php echo PerchLang::get('Title'); ?></th>
+                <th class="region"><?php echo PerchLang::get('Regions'); ?></th>
                 <th class="action"></th>
-            
             </tr>
         </thead>
         <tbody>
@@ -189,10 +187,18 @@
 
                                         $count++;
                                         
-                                        // only show 3 items
-                                        if ($count < 4) {
+                                        // only show 7 items
+                                        if ($count < 8) {
 
                                             if ($Region->role_may_edit($CurrentUser)) {
+
+                                                // New?
+                                                if ($Region->regionNew()) {
+                                                    $new = true;
+                                                    $region_html .= ' <span class="new">'.PerchLang::get('New').'</span> ';
+                                                }
+
+
                                                 $region_html .= '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/edit/?id=' . PerchUtil::html($Region->id()) . '" class="edit">' . PerchUtil::html($Region->regionKey()) . '</a>';
                                             }else{
                                                 $region_html .= '<span class="denied">'.PerchUtil::html($Region->regionKey()).'</span>';
@@ -202,14 +208,13 @@
                                         
                                         }
                                         
-                                        if ($count===3) {
+                                        if ($count===7) {
                                             $region_html .= '&hellip;';
                                         }
 
                                         
                                         
-                                        // New?
-                                        if ($Region->regionNew()) $new = true;
+
                                         
                                         if ($region_html!='') $arr_region_html[] = $region_html;
                                     }
@@ -217,10 +222,9 @@
 
 								echo implode(', ', $arr_region_html);
 
-                            echo '</td>';    
+                                //echo ($new ? '<span class="new">'.PerchLang::get('New').'</span>' : '');
 
-                            // Region type   
-                            echo '<td class="type">' . ($new ? '<span class="new">'.PerchLang::get('New').'</span>' : 'Mixed') . '</td>';
+                            echo '</td>';    
 
                             // Preview
                             echo '<td>';
@@ -282,8 +286,11 @@
                             // Region name / Edit link                        
                             echo '<td class="region">';
 
+
+
                                 if ($Region->role_may_view($CurrentUser, $Settings)) {
                                     if ($Region->role_may_edit($CurrentUser)) {
+                                        echo ($Region->regionNew() ? ' <span class="new">'.PerchLang::get('New').'</span> ' : '');
                                         echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/edit/?id=' . PerchUtil::html($Region->id()) . '" class="edit">' . PerchUtil::html($Region->regionKey()) . '</a>';
                                     }else{
                                         echo '<span class="denied">'.PerchUtil::html($Region->regionKey()).'</span>';
@@ -291,12 +298,13 @@
 
                                     // Draft
                                     if ($Region->has_draft()) echo '<span class="draft" title="'.PerchLang::get('This item is a draft.').'"></span>';
+
+                                    
                                 }
                                 
-                            echo '</td>';    
+                                
 
-                            // Region type   
-                            echo '<td class="type">' . ($Region->regionNew() ? '<span class="new">'.PerchLang::get('New').'</span>' : PerchUtil::html($Regions->template_display_name($Region->regionTemplate()))) . '</td>';
+                            echo '</td>';    
 
                             // Preview
                             echo '<td>';
@@ -354,7 +362,6 @@
 
 
                         echo'</td>';
-                        echo '<td></td>';
                         echo '<td></td>';
                         
                         // Delete

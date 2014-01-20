@@ -1,11 +1,12 @@
 <?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
 
     <p>
-        <?php echo PerchLang::get('These are the options for this page. Each page has a title, and navigation text which can be different from the title. The navigation text is used in menus and is often shorter than the main page title. '); ?>
+        <?php echo PerchLang::get('These are the options for this page.'); ?>
     </p>
 
     <p>
         <?php echo PerchLang::get('If the link for the page is incorrect, it can be fixed using the Path option. You shouldn\'t change that unless you are sure what you\'re doing. An incorrect value could break links in your navigation. Changing this value doesn\'t move the page itself.'); ?>
+        <?php echo PerchLang::get('Do do that, you need to check the box to move the page to the newly entered location.'); ?>
     </p>
 
     <p>
@@ -28,9 +29,14 @@
 
 	<ul class="smartbar">
         <li><a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/page/?id='.PerchUtil::html($Page->id());?>">Regions</a></li>
+        <?php
+            if ($CurrentUser->has_priv('content.pages.attributes')) {
+                echo '<li><a href="'.PERCH_LOGINPATH . '/core/apps/content/page/details/?id='.PerchUtil::html($Page->id()).'">' . PerchLang::get('Page Details') . '</a></li>';
+            }
+        ?>
 		<?php
 			if ($CurrentUser->has_priv('content.pages.edit')) {
-	            echo '<li class="selected"><a href="'.PERCH_LOGINPATH . '/core/apps/content/page/edit/?id='.PerchUtil::html($Page->id()).'">' . PerchLang::get('Page Options') . '</a></li>';
+	            echo '<li class="fin selected"><a href="'.PERCH_LOGINPATH . '/core/apps/content/page/edit/?id='.PerchUtil::html($Page->id()).'" class="icon setting">' . PerchLang::get('Page Options') . '</a></li>';
 	        }
 		?>
     </ul>
@@ -48,24 +54,21 @@
         }
     ?>
 
-    <h2><?php echo PerchLang::get('Details'); ?></h2>
+    
     <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="magnetic-save-bar">
 
-        <div class="field">
-        	<?php echo $Form->label('pageTitle', 'Page title'); ?>
-        	<?php echo $Form->text('pageTitle', $Form->get($details, 'pageTitle')); ?>
-        </div>
+        <h2><?php echo PerchLang::get('Location'); ?></h2>
 
-        <div class="field">
-            <?php echo $Form->label('pageNavText', 'Navigation text'); ?>
-            <?php echo $Form->text('pageNavText', $Form->get($details, 'pageNavText')); ?>
-        </div>
-
-        <div class="field">
+        <div class="field checkboxes labelless">
             <?php echo $Form->label('pagePath', 'Path'); ?>
             <?php echo $Form->text('pagePath', $Form->get($details, 'pagePath')); ?>
+
+            <div class="checkbox supplemental">
+                <?php echo $Form->checkbox('move', '1', 0); ?>
+                <?php echo $Form->label('move', 'Move the page to this location'); ?>
+            </div>
         </div>
-        
+
         <div class="field">
             <?php echo $Form->label('pageParentID', 'Parent page'); ?>
             <?php 
@@ -96,6 +99,31 @@
             ?>
         </div>
         
+        <h2><?php echo PerchLang::get('Details'); ?></h2>
+
+        <div class="field">
+            <?php echo $Form->label('pageAttributeTemplate', 'Attribute template'); ?>
+            <?php 
+                $templates = $Regions->get_templates(PERCH_TEMPLATE_PATH.'/pages/attributes');
+                $opts = array();
+
+                if (PerchUtil::count($templates)) {
+                    foreach($templates as $group_name=>$group) {
+                        $tmp = array();
+                        $group = PerchUtil::array_sort($group, 'label');
+                        foreach($group as $file) {
+                            $tmp[] = array('label'=>$file['label'], 'value'=>$file['path']);
+                        }
+                        $opts[$group_name] = $tmp;
+                    }
+                }
+                        
+                echo $Form->grouped_select('pageAttributeTemplate', $opts, $Form->get($details, 'pageAttributeTemplate')); 
+            ?>
+
+        </div>
+
+
         <?php
             $members = $Perch->get_app('perch_members');
         ?>

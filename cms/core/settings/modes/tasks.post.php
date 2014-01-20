@@ -41,7 +41,7 @@
                     
                     
                     echo '<td>' . PerchUtil::html($Task->taskMessage()) . '</td>';
-					echo '<td>' . date('d M Y H:i:s', strtotime($Task->taskStartTime())) . '</td>';
+					echo '<td>' . strftime(PERCH_DATE_SHORT.' '.PERCH_TIME_LONG, strtotime($Task->taskStartTime())) . '</td>';
                     $duration = strtotime($Task->taskEndTime()) - strtotime($Task->taskStartTime());
 
                     if ($duration>=0) {

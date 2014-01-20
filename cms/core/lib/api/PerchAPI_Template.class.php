@@ -38,7 +38,7 @@ class PerchAPI_Template
         $this->Template->enable_encoding();
         $this->Template->apply_post_processing = true;
 
-
+        return $this->Template->status;
     }
     
     public function render($data)

@@ -2,7 +2,6 @@
 
 class PerchUtil
 {
-		
 	static function count($a)
 	{
 		if (is_array($a)){
@@ -12,13 +11,15 @@ class PerchUtil
 		}
 	}
 	
-	static function debug($msg, $type='log')
+	static function debug($msg, $type='log', $encode=false)
 	{
 		$Perch  = Perch::fetch();
 
 		if (!$Perch->debug){
 			return false;
 		}
+
+		if ($encode) $msg = PerchUtil::html($msg);
 
 	    $message_styles	= array();
 		$message_styles['error']	= 'color: red; font-weight: bold;';
@@ -31,7 +32,6 @@ class PerchUtil
 		$message_styles['template'] = 'color: black; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid silver; display: block;';
 		$message_styles['auth'] 	= 'color: olivedrab; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid silver; display: block;';
 
-
 		$debug_messages	= '';
 		$style			= 'color: #787878;';
 
@@ -43,13 +43,9 @@ class PerchUtil
 		}
 
 		$debug_messages .= ((isset($msg)) ? $msg : 'Something errored (no message sent).') . "\n";
-
 		$debug_messages .= '</span>';
 		
-
-		
 		$Perch->debug_output	.= $debug_messages;
-
 	}
 	
 	public static function output_debug($return_value=false)
@@ -61,7 +57,6 @@ class PerchUtil
 		}
 
 		if ($Perch->debug == true){
-		    
 		    $err = error_get_last();
 		    if ($err) PerchUtil::debug($err, 'error');
 
@@ -70,12 +65,10 @@ class PerchUtil
 	        }else{
 	            echo "\n<div class=\"debug\" style=\"clear:both;\">\nDIAGNOSTICS:<br />\n".nl2br($Perch->debug_output)."\n</div>";
 	        }
-			    
 		}
 	}
-
 	
-	public static function html($s=false, $quotes=false)
+	public static function html($s=false, $quotes=false, $double_encode=true)
 	{
 	    if ($quotes) {
 	        $q = ENT_QUOTES;
@@ -83,17 +76,15 @@ class PerchUtil
 	        $q = ENT_NOQUOTES;
 	    }
 	    
-		if ($s || (is_string($s) && strlen($s))) return htmlspecialchars($s, $q, 'UTF-8');
+		if ($s || (is_string($s) && strlen($s))) return htmlspecialchars($s, $q, 'UTF-8', $double_encode);
 	    return '';
 	}
-	
 	
 	public static function microtime_float() 
 	{ 
 		list($usec, $sec) = explode(" ", microtime()); 
 		return ((float)$usec + (float)$sec); 
 	}
-	
 	
 	public static function redirect($url)
 	{	
@@ -111,7 +102,6 @@ class PerchUtil
 	                         . (!$secure        ? '' : '; secure')
 	                         . (!$http_only    ? '' : '; HttpOnly'), false);
 	}
-	
 	
 	public static function pad($n)
 	{
@@ -142,7 +132,6 @@ class PerchUtil
 			}
 		}
 	}
-	
 	
 	public static function is_valid_email($email) 
 	{
@@ -180,14 +169,13 @@ class PerchUtil
 
 	public static function send_email($to, $from_address, $from_name, $subject, $body, $misc_headers=false)
 	{
+		PerchUtil::debug('Deprecated: PerchUtil::send_email', 'error');
 		$Perch  = Perch::fetch();
 		
 		$headers    = "From: ".$from_name." <".$from_address.">\r\n";
 		
 		if (!$misc_headers) $headers .= "Content-Type: text/plain; charset=utf-8\r\n";    
-	    //$subject    = '=?utf-8?B?'.base64_encode($subject).'?=';
-		$subject    = PerchUtil::mail_escape_header($subject);
-		
+
 		if (defined('PERCH_MAIL_PARAMS')) {
 		    $params = PERCH_MAIL_PARAMS;
 		}else{
@@ -206,18 +194,10 @@ class PerchUtil
 		    PerchUtil::debug("Sending mail '$subject' to '$to' from '$from_name' ($from_address)");
     		return @mail($to, $subject, $body, $headers, $params);
 		}
-		
-		
 	}
 	
-    public static function mail_escape_header($subject){ // thanks, Cal
-        $subject = preg_replace('/([^a-z ])/ie', 'sprintf("=%02x",ord(StripSlashes("\\1")))', $subject);
-        $subject = str_replace(' ', '_', $subject);
-        return "=?utf-8?Q?$subject?=";
-    }
-	
-	
-	public static function excerpt($str, $words, $strip_tags=true, $balance_tags=false, $append=false) {
+	public static function excerpt($str, $words, $strip_tags=true, $balance_tags=false, $append=false) 
+	{
 	    $limit  = $words;
 		$str 	= trim($str);
 	    if ($strip_tags) $str = strip_tags($str);
@@ -307,7 +287,6 @@ class PerchUtil
 	    return $str;
 	}
 
-	
 	public static function text_to_html($string, $strip_tags=true)
 	{
 		if ($strip_tags) $string = strip_tags($string);
@@ -324,21 +303,18 @@ class PerchUtil
 	
 	public static function array_sort($arr_data, $str_column, $bln_desc=false)
     {
-        $arr_data                 = (array) $arr_data;
+        $arr_data  = (array) $arr_data;
         
         if (PerchUtil::count($arr_data)) {
         
-            $str_column               = (string) trim($str_column);
-            $bln_desc                 = (bool) $bln_desc;
-            $str_sort_type            = ($bln_desc) ? SORT_DESC : SORT_ASC;
+            $str_column     = (string) trim($str_column);
+            $bln_desc       = (bool) $bln_desc;
+            $str_sort_type  = ($bln_desc) ? SORT_DESC : SORT_ASC;
 
-            foreach ($arr_data as $key => $row)
-            {
-                ${$str_column}[$key]    = isset($row[$str_column]) ? $row[$str_column] : '';
+            foreach ($arr_data as $key => $row) {
+                ${$str_column}[$key] = isset($row[$str_column]) ? $row[$str_column] : '';
             }
-
-            array_multisort($$str_column, $str_sort_type, $arr_data);
-            
+            array_multisort($$str_column, $str_sort_type, $arr_data);            
         }
 
         return $arr_data;
@@ -357,13 +333,10 @@ class PerchUtil
         }
         
         if (!$perch_flip) return $odd_value;
-        
-        
     }
     
     public static function bool_val($str)
     {
-              
         $str = strtolower($str);
     
         if ($str === 'false') return false;
@@ -417,8 +390,7 @@ class PerchUtil
         
         return $filename;
     }
-	
-	
+		
 	public static function in_section($section_path, $page_path)
 	{
 	    $parts = explode('/', $section_path);
@@ -451,9 +423,7 @@ class PerchUtil
 	    $segments = explode('/', $filename);
 	    return PerchUtil::count($segments)-1;
 	}
-	
-	
-    
+	    
     public static function json_safe_decode($json, $assoc=false)
     {        
         if (function_exists('json_decode')) {
@@ -472,9 +442,12 @@ class PerchUtil
         }
     }   
     
-    public static function json_safe_encode($arr)
+    public static function json_safe_encode($arr, $tidy=false)
     {    
         if (function_exists('json_encode')) {
+        	if ($tidy && defined('JSON_PRETTY_PRINT')){
+        		return json_encode($arr, JSON_PRETTY_PRINT);
+        	}
             return json_encode($arr);
         }else{
             PerchUtil::debug('Encoding wth Services_JSON (slow)');
@@ -556,7 +529,6 @@ class PerchUtil
         return PerchUtil::file_path(implode('/', $parts));
     }
     
-
     public static function get_current_app()
     {
         $Perch = PerchAdmin::fetch();
@@ -593,7 +565,6 @@ class PerchUtil
         }else{
             return PerchUtil::urlify_non_translit($string);
         }
-        
     }
     
     public static function urlify_non_translit($string)
@@ -610,7 +581,6 @@ class PerchUtil
             $s      = strtolower($md5);
             return 'ra-'.substr($s, 0, 4).'-'.substr($s, 5, 4);
         }
-        
     }
 	
 	public static function http_get_request($protocol, $host, $path)
@@ -654,12 +624,9 @@ class PerchUtil
             }
         }
         
-        if ($result) {
-            return $result;
-        }
+        if ($result) return $result;
         
         return false;
-        
 	}
 	
     public static function move_uploaded_file($filename, $destination)
@@ -691,16 +658,6 @@ class PerchUtil
         return $path;
     }
 
-	public static function is_dark_colour($hexcolor){ 
-	    $r = hexdec(substr($hexcolor,0,2)); 
-	    $g = hexdec(substr($hexcolor,2,2)); 
-	    $b = hexdec(substr($hexcolor,4,2));
-
-	    $yiq = (($r*299)+($g*587)+($b*144))/1000; 
-
-	    return ($yiq >= 131.5)?false:true;
-	}
-	
 	public static function subnav($CurrentUser, $pages, $Lang=false) 
 	{
 		$s = '';

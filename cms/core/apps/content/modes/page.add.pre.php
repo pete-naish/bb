@@ -28,11 +28,13 @@
     $Form->set_required($req);
     
     if ($Form->posted() && $Form->validate()) {
-    	$postvars = array('pageTitle', 'pageNavText', 'file_name', 'pageParentID', 'templateID');
+    	$postvars = array('pageTitle', 'pageNavText', 'file_name', 'pageParentID', 'templateID', 'create_folder');
     	$data = $Form->receive($postvars);
     	    	
-    	$data['pageNew'] = 1;
-        $data['pageCreatorID'] = $CurrentUser->id();
+        $data['pageNew']        = 1;
+        $data['pageCreatorID']  = $CurrentUser->id();
+        $data['pageModified']   = date('Y-m-d H:i:s');
+        $data['pageAttributes'] = '';
     	
     	if (!isset($data['templateID']) ||$data['templateID'] == '') {
             $Page = $Pages->create_without_file($data);

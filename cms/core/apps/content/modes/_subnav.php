@@ -7,6 +7,7 @@
 						'core/apps/content/page/add',
 						'core/apps/content/page/edit',
 						'core/apps/content/page/delete',
+						'core/apps/content/page/details',
 						'core/apps/content/edit',
 						'core/apps/content/options',
 						'core/apps/content/delete',

@@ -175,6 +175,11 @@
             $Region->index();
 
 
+            // Update the page modified date
+            if (!$Region->has_draft()){
+                $Page->update(array('pageModified'=>date('Y-m-d H:i:s')));
+            }
+
 
             // Add a new item if Save & Add Another
             if ($Region->regionMultiple()=='1' && isset($_POST['add_another'])) {    
@@ -220,7 +225,26 @@
             $Alert->set('draft', PerchLang::get('You are editing a draft.'));
         }else{
             $path = rtrim($Settings->get('siteURL')->val(), '/');
-            $Alert->set('draft', PerchLang::get('You are editing a draft.') . ' <a href="'.PerchUtil::html($path.$Region->regionPage()).'?'.PERCH_PREVIEW_ARG.'=all" class="action draft-preview">'.PerchLang::get('Preview').'</a>');
+
+            if ($Region->get_option('edit_mode')=='listdetail' && $Region->get_option('searchURL')!='') {
+                $search_url = $Region->get_option('searchURL');  
+
+                $Region->tmp_url_vars = $details[0];             
+                $search_url = preg_replace_callback('/{([A-Za-z0-9_\-]+)}/', array($Region, 'substitute_url_vars'), $search_url);
+                $Region->tmp_url_vars = false; 
+
+                if (strpos($search_url, '?')!==false) {
+                    $preview_url = $search_url . '&' . PERCH_PREVIEW_ARG.'=all';
+                }else{
+                    $preview_url = $search_url . '?' . PERCH_PREVIEW_ARG.'=all';
+                }
+
+            }else{
+                $preview_url = $path.$Region->regionPage().'?'.PERCH_PREVIEW_ARG.'=all';
+            }
+
+
+            $Alert->set('draft', PerchLang::get('You are editing a draft.') . ' <a href="'.PerchUtil::html($preview_url).'" class="action draft-preview">'.PerchLang::get('Preview').'</a>');
         }
         
         

@@ -188,9 +188,18 @@ class PerchTemplatedForm
 	    }else{
 	        // no errors!
 	        if (strpos($template, '<perch:success')!=false) {
-	            $s = '/(?:<perch:success[^>]*>)((?!perch:success).*?)(?:<\/perch:success>)/s';
+	            $s = '/(<perch:success[^>]*>)((?!perch:success).*?)(?:<\/perch:success>)/s';
         	    $count	= preg_match($s, $template, $match);
-        	    if ($count) return $match[1];
+        	    
+        	    if ($count) {
+        	    	$Tag = new PerchXMLTag($match[1]);
+        	    	if ($Tag->show_form()) {
+        	    		$template = str_replace($match[0], $match[2], $template);
+        	    		return $this->_strip_all_errors($template);
+        	    	}
+        	    	
+        	    	return $match[2];       	    		
+        	    } 
 	        }
 	    }
 	    

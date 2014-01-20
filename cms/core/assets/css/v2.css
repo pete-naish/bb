@@ -348,13 +348,36 @@ a.logout:active {
 	font-size: 1.077em;
 }
 
+.main .helptext h4 {
+	font-weight: normal;
+	color: #777777;
+	margin-bottom: 1em;
+	font-size: 1.077em;
+}
+
+.main .helptext .sample {
+	margin-bottom: 1em;
+	margin-left: 1em;
+	padding: 10px 30px;
+	border-left: 2px solid #aaa;
+	background-color: #eaeaea;
+
+}
+
+.main .helptext hr {
+	border: 0;
+	border-top: 1px solid #eaeaea;
+	margin: 2em 0 2em 1em;
+}
+
 .helptext p {
 	margin-bottom: 1em;
 	line-height: 1.4;
 }
 
 .main .helptext p,
-.main .helptext h3 {
+.main .helptext h3,
+.main .helptext h4 {
 	padding: 0 10px;
 }
 
@@ -897,6 +920,11 @@ th.action {
 	width: 40px;
 }
 
+th.kindofabigdeal {
+	min-width: 220px;
+}
+
+
 th.alsoran {
 	width: 220px;
 }
@@ -932,7 +960,7 @@ table.itemlist td {
 .primary a:visited {
 	color: #486660;
 }
-
+/*
 a.create-subpage:link,
 a.create-subpage:visited {
 	color: rgba(41,85,78,0.5);
@@ -947,6 +975,20 @@ tr:hover .create-subpage,
 	position: relative;
 	left: auto;
 }
+*/
+a.create-subpage:link,
+a.create-subpage:visited {
+	color: rgba(41,85,78,0.5);
+	font-size: 0.846em;
+	padding: 2px 0 0 10px;
+	visibility: hidden;
+}
+
+tr:hover .create-subpage,
+.create-subpage:focus {
+	visibility: visible;
+}
+
 
 .toggle span {
 	position: relative;
@@ -1162,6 +1204,7 @@ form .field {
 	clear: left;
 }
 
+form .predivider,
 form .field:last-of-type {
 	border-bottom: 0;
 }
@@ -1223,6 +1266,20 @@ form .checkboxes div.checkbox {
 	margin-top: -15px;
 	margin-bottom: 15px;
 }
+
+form .checkboxes.labelless {
+	margin-bottom: 0;
+}
+
+form .checkboxes.labelless div.checkbox {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+form .checkboxes.labelless div.supplemental {
+	margin-top: 6px;
+}
+
 
 form fieldset.checkboxes.multi-col {
    -moz-column-count: auto;
@@ -2227,6 +2284,45 @@ span.draft {
 	background-position: 10px -1408px;
 }
 
+.smartbar .selected a.download:link,
+.smartbar .selected a.download:visited {
+	background-position: 12px -1405px;
+}
+
+.smartbar a.import:link,
+.smartbar a.import:visited {
+	background-position: 10px -2336px;
+	padding-left: 35px;
+}
+
+.smartbar a.import:hover,
+.smartbar a.import:active {
+	background-position: 10px -2376px;
+}
+
+.smartbar .selected a.import:link,
+.smartbar .selected a.import:visited {
+	background-position: 12px -2372px;
+}
+
+.smartbar a.setting:link,
+.smartbar a.setting:visited {
+	background-position: 10px -458px;
+	padding-left: 35px;
+}
+
+.smartbar a.setting:hover,
+.smartbar a.setting:active {
+	background-position: 10px -1674px;
+}
+
+.smartbar .selected a.setting:link,
+.smartbar .selected a.setting:visited {
+	background-position: 12px -1670px;
+	
+}
+
+
 /* reordering */
 
 .placeholder {
@@ -2411,7 +2507,7 @@ ol.sortable li.ui-sortable-helper {
 .paging .paging-prev {
 	padding-left: 10px;
 	text-align: right;
-		position: relative;
+	position: relative;
 	top: -1px
 }
 
@@ -2426,7 +2522,7 @@ ol.sortable li.ui-sortable-helper {
 }
 
 .button.paging-prev:before {
-		content: "";
+	content: "";
 	width: 14px;
 	height: 14px;
 	margin-left: -2px;
@@ -2491,7 +2587,7 @@ ul.importables li {
 
 ul.importables li .action {
 	float: right;
-	margin-top: -3px;
+	margin-top: -2px;
 	margin-right: 5px;
 }
 
@@ -2501,7 +2597,12 @@ ul.importables li.success {
 }
 
 ul.importables li.failure {
-	background-position: 10px -702px;
+	background-position: 10px -700px;
+	padding-left: 30px;
+}
+
+ul.importables li.warning {
+	background-position: 10px -540px;
 	padding-left: 30px;
 }
 
@@ -2526,4 +2627,65 @@ ul.importables li.failure {
 .footer .version {
 	float: right;
 	padding-top: 1px;
+}
+
+
+
+/* Small screen fixes */
+
+@media screen and (max-width: 400px) {
+	#logo {
+		display: none;
+	}
+
+	.sidebar {
+		height: 35px;
+		background-color: rgb(248, 248, 248);
+	}
+
+	.sidebar .metanav {
+		padding-top: 10px;
+	}
+
+	.dashnav {
+		display: none;
+	}
+
+	.mainnav {
+		font-size: 2.1em;
+	}
+
+	.mainnav li {
+		padding-left: 0;
+		padding-right: 5px;
+	}
+
+	.body {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.subnav {
+		padding-left: 0;
+		font-size: 1.3em;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.subnav li {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	th.kindofabigdeal,
+	th.alsoran,
+	th.action {
+		min-width: 0;
+		width: auto;
+	}
+
+	th.region,
+	td.region {
+		display: none;
+	}
 }

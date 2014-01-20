@@ -3,14 +3,19 @@
     <p>
         <?php echo PerchLang::get('These are the options for this page. Each page has a title, and navigation text which can be different from the title. The navigation text is used in menus and is often shorter than the main page title. '); ?>
     </p>
-
     <p>
         <?php echo PerchLang::get('If creating a page from a Master Page, the file extension (e.g. .php) will be added automatically based on the Master Page.'); ?>
     </p>
-
     <p>
         <?php echo PerchLang::get('If adding a link or an existing page, enter the full path.'); ?>
     </p>
+
+    <h3><?php echo PerchLang::get('Creating pages in a folder'); ?></h3>
+
+    <p>
+        <?php echo PerchLang::get('If you check the box to indicate that the page will have more pages below it, a new folder will be created rather than just a single file.'); ?>
+    </p>
+
 
 <?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
 <?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
@@ -71,7 +76,7 @@
                 echo $Form->select('pageParentID', $opts, $Form->get($details, 'pageParentID', $parentID)); 
             ?>
         </div>
-        
+
         <div class="field">
             <?php echo $Form->label('templateID', 'Master page'); ?>
             <?php
@@ -85,12 +90,17 @@
                     echo $Form->select('templateID', $opts, $Form->get($details, 'templateID')); 
                 }else{
                     echo '<a href="'.PERCH_LOGINPATH.'/core/apps/content/page/templates/">'.PerchLang::get('Manage templates').'</a>';
-                }
-                
-            
+                }             
             ?>
-            
         </div>
+
+        <div class="field checkboxes labelless">
+            <div class="checkbox">
+                <?php echo $Form->checkbox('create_folder', '1', $Form->get($details, 'create_folder')); ?>
+                <?php echo $Form->label('create_folder', 'This page will have more pages below it'); ?>
+            </div>
+        </div>
+        
 
         <p class="submit">
             <?php echo $Form->submit('btnsubmit', 'Submit', 'button'); ?>

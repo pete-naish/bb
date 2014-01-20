@@ -4,7 +4,7 @@ class Perch
 {
     static protected $instance;
 	
-    public $version = '2.3.2';
+    public $version = '2.4.2';
     
     private $page        = false;
     public $debug        = false;
@@ -33,6 +33,7 @@ class Perch
         if (!defined('PERCH_PRODUCTION_MODE'))  define('PERCH_PRODUCTION_MODE', 100);
         if (!defined('PERCH_HTML5'))            define('PERCH_HTML5', false);
         if (!defined('PERCH_RWD'))              define('PERCH_RWD', false);
+        if (!defined('PERCH_HTML_ENTITIES'))    define('PERCH_HTML_ENTITIES', false);
         
         if (PERCH_DEBUG) $this->debug = true;
     }
@@ -73,6 +74,12 @@ class Perch
         return $this->page;
     }
     
+    public function get_page_as_set()
+    {
+        if (!$this->page) $this->get_page(false, true);
+        return $this->page;
+    }
+
     public function set_page($page)
     {
         $this->page = $page;
@@ -88,17 +95,24 @@ class Perch
         $key      = base64_decode($key);
         $parts    = explode(':', $key);
         $formID   = $parts[0];
-        $appID    = $parts[1];
+        $appIDs   = $parts[1];
         $template = $parts[2];
 
-        if (function_exists($appID.'_form_handler')) {
-            $API = new PerchAPI(1.0, $appID);
-            $SubmittedForm = $API->get('SubmittedForm');
-            $SubmittedForm->populate($formID, $template, $post, $files);
-            call_user_func($appID.'_form_handler', $SubmittedForm);
-        }else{
-            PerchUtil::debug($appID.' form handler not found.', 'error');
-        }
+        if ($appIDs) {
+            $appIDs = explode(' ', $appIDs);
+            if (is_array($appIDs)) {
+                foreach($appIDs as $appID) {
+                    if (function_exists($appID.'_form_handler')) {
+                        $API = new PerchAPI(1.0, $appID);
+                        $SubmittedForm = $API->get('SubmittedForm');
+                        $SubmittedForm->populate($formID, $template, $post, $files);
+                        call_user_func($appID.'_form_handler', $SubmittedForm);
+                    }else{
+                        PerchUtil::debug($appID.' form handler not found.', 'error');
+                    }
+                }
+            }
+        }       
     }
     
     public function log_form_error($formID, $fieldID, $type="required")

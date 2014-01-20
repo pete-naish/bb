@@ -23,7 +23,7 @@
     if ($CurrentUser->logged_in()) {
 
         if (isset($_POST['r']) && $_POST['r']!='') {
-            $redirect_url = base64_decode($_POST['r']);
+            $redirect_url = urldecode(base64_decode($_POST['r']));
             $r = parse_url($redirect_url);
             if (isset($r['path'])) {
                 PerchUtil::redirect($redirect_url);

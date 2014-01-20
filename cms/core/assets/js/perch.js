@@ -44,7 +44,6 @@ Perch.UI.Global	= function()
 	};
 	
 	var initEditForm = function() {
-		
 		$(window).on('load', function(){
 			stickButtons();
 			autowidthForms();
@@ -59,7 +58,21 @@ Perch.UI.Global	= function()
 			}, 1000);
 			autowidthForms();
 		});
-		 
+		
+		fixCSS();
+		saveOnCmdS();
+	};
+
+	var saveOnCmdS = function() {
+		var f = $('form.magnetic-save-bar');
+		if (f.length) {
+			document.addEventListener("keydown", function(e) {
+			  if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+			    e.preventDefault();
+			    f.submit();
+			  }
+			}, false);
+		}
 	};
 	
 	var stickButtons = function() {
@@ -124,12 +137,16 @@ Perch.UI.Global	= function()
 		}
 	}
 
+	var fixCSS = function() {
+		$('.divider').prev('div.field').addClass('predivider');
+	}
+
 	var initTopbar = function() {
 		var body = $('body');
 		var hasClass = false;
 		
 		$(window).on('scroll', function(e){
-			if (body.scrollTop()>0) {
+			if (document.documentElement.scrollTop>0) {
 				body.addClass('scrolled');
 			}else{
 				body.removeClass('scrolled');
