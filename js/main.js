@@ -8,6 +8,9 @@ function initialize(bn, al, t, c, pc, inttel, tel) {
 		center: new google.maps.LatLng(51.866594, -0.185008),
 		zoom: 15,
 		minZoom: 8,
+		scrollwheel: false,
+		mapTypeControl: false,
+		panControl: false,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 
@@ -32,9 +35,9 @@ function initialize(bn, al, t, c, pc, inttel, tel) {
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.open(map,marker);
 	});
-};
+}
 
-$(function(){
+$(function (){
 
 	if($('.heroSlide').length > 1){
 		$('div.hero').bxSlider({
@@ -44,35 +47,34 @@ $(function(){
 			auto: true,
 			autoHover: true
 		});
-	};
+	}
 	
 
 	$('html').removeClass('no-js');
 
-	$('nav a, .logo').on('click', function(e) {
-		var $this = $(this);
+	$('nav a, .logo').on('click', function (e) {
 		// $hash = $this.attr('href'); // grab the href of the clicked link
 		e.preventDefault();
 
 		$('html,body').stop().animate({
-			scrollTop: $(this.hash).offset().top - 132
+			scrollTop: $(this.hash).offset().top - 75
 		}, 500); // smooth scroll to the top of the linked section
 	});
 
 	
-	$('.treatments').on('click', '.js-load', function(e) {
+	$('.treatments').on('click', '.js-load', function (e) {
 		if ($(window).width() > 590) {
 			var $this = $(this),
 				$target = $this.data('link');
 
-			$('.treatmentDisplay').load("/treatments/" + $target + ".php .treatmentDetails", function(response, status, xhr) {
-				if (status == "error") {
+			$('.treatmentDisplay').load("/treatments/" + $target + ".php .treatmentDetails", function (response, status, xhr) {
+				if (status === "error") {
 					var msg = "Sorry, but there was an error: ";
 					$('.treatmentDisplay').html("<p class='error'>" + msg + xhr.status + " " + xhr.statusText + "</p>");
 				}
-				setTimeout(function() {
+				setTimeout(function () {
 					$('html,body').stop().animate({
-						scrollTop: $('.treatmentDisplay').offset().top - 132
+						scrollTop: $('.treatmentDisplay').offset().top - 75
 					}, 500);
 				}, 500);
 			});
@@ -82,7 +84,7 @@ $(function(){
 		}
 	});
 
-	$('ul.tabs').each(function(){
+	$('ul.tabs').each(function (){
 		var $active, $content, $links = $(this).find('a');
 
 		$active = $($links.filter('[href="'+location.hash+'"]')[0] || $links.filter('[href="#find"]'));
@@ -93,7 +95,7 @@ $(function(){
 			$($(this).attr('href')).hide();
 		});
 
-		$(this).on('click', 'a', function(e){
+		$(this).on('click', 'a', function (e){
 			$active.removeClass('active');
 			$content.hide();
 
@@ -107,10 +109,15 @@ $(function(){
 
 			if ($(this).attr('href') === '#find') {
 				google.maps.event.trigger( map, 'resize' );
-				map.setCenter(new google.maps.LatLng(51.866594, -0.185008))
+				map.setCenter(new google.maps.LatLng(51.866594, -0.185008));
 			}
 		});
 	});
+
+	$('body').waypoint(function (direction) {
+		$('header').toggleClass('scrolling', direction === 'down');
+	}, {offset: -50});
+	
 
 
 });
