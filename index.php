@@ -92,19 +92,30 @@
 				<div class="contact">
 					<i></i>
 					<h3><?php perch_content('Contact heading'); ?></h3>
-					<ul class="floatyLinks cf tabs">
-						<li class="icon-call"><a href="#call">Call us</a></li>
-						<li class="icon-email"><a href="#email">Email us</a></li>
-						<li class="icon-find"><a href="#find">Find us</a></li>
-						<li class="icon-follow mobileHide"><a href="#follow">Follow us</a></li>
-						<li class="icon-like mobileHide"><a href="#like">Like us</a></li>
-					</ul>
+					<div class="tabs">
+						<ul class="floatyLinks cf">
+							<li class="icon-call"><a href="#call">Call us</a></li>
+							<li class="icon-email"><a href="#email">Email us</a></li>
+							<li class="icon-find"><a href="#find">Find us</a></li>
+							<li class="icon-newsletter"><a href="#newsletter">Newsletter</a></li>
+							<li class="icon-like"><a href="#like">Facebook</a></li>
+						</ul>
+						<ul class="floatyLinks cf mobileHide">
+							<li class="icon-follow"><a href="#follow">Twitter</a></li>
+							
+							<li class="icon-instagram"><a href="#instagram">Instagram</a></li>
+							<li class="icon-plus"><a href="#google">Google Plus</a></li>
+						</ul>
+					</div>
 				</div>
 				<div id="call" class="tab-content"><h3><a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a></h3></div>
 				<div id="email" class="tab-content">
 					<?php include('inc/contact-form.php'); ?>
 				</div>
 				<div id="find"></div>
+				<div id="newsletter" class="tab-content">
+					<div class="feed feed-twitter"></div>
+				</div>
 				<div id="follow" class="tab-content">
 					<div class="feed feed-twitter"></div>
 				</div>
@@ -113,6 +124,12 @@
 						<h1><a href="https://www.facebook.com/thebeautyboxknebworth">/TheBeautyBoxKnebworth</a></h1>
 						<?php include('fb-feed.php'); ?>
 					</div>
+				</div>
+				<div id="instagram" class="tab-content">
+					<div class="feed feed-twitter"></div>
+				</div>
+				<div id="google" class="tab-content">
+					<div class="feed feed-twitter"></div>
 				</div>
 			</div>
 		</section>

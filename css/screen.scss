@@ -579,6 +579,9 @@ a.tel {
 	text-align: center;
 	width: 100%;
 	margin-top: 100px;
+	&.mobileHide {
+		margin-top: 80px;
+	}
 	li {
 		display: inline;
 		& + li {
@@ -609,25 +612,41 @@ a.tel {
 	}
 	.icon-call a:before {
 		content: "\e003";
-		left: 15px;
+		left: 12px;
 	}
 	.icon-email a:before {
 		font-family: arial, helvetica, sans-serif;
 		content: "@";
-		left: 10px;
-		top: -53px;
+		left: 6px;
+		top: -57px;
+		font-size: em(47px);
 	}
 	.icon-find a:before {
 		content: "\e002";
-		left: 14px;
-	}
-	.icon-like a:before {
-		content: "\e000";
-		left: 5px;
+		left: 12px;
 	}
 	.icon-follow a:before {
 		content: "\e001";
-		left: 9px;
+		left: 2px;
+	}
+	.icon-like a:before {
+		content: "\e000";
+		left: 11px;
+	}
+	.icon-instagram a:before {
+		content: "\e600";
+		left: 18px;
+	}
+	.icon-plus a:before {
+		content: "\e601";
+		left: 17px;
+		font-size: em(46px);
+	}
+	.icon-newsletter a:before {
+		content: "\e602";
+		left: 12px;
+		font-size: em(59px);
+		top: -57px;
 	}
 }
 

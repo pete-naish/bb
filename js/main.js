@@ -84,7 +84,7 @@ $(function (){
 		}
 	});
 
-	$('ul.tabs').each(function (){
+	$('div.tabs').each(function (){
 		var $active, $content, $links = $(this).find('a');
 
 		$active = $($links.filter('[href="'+location.hash+'"]')[0] || $links.filter('[href="#find"]'));
