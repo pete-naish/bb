@@ -469,6 +469,12 @@ section i {
 		position: relative;
 		z-index: 1;
 	}
+	a {
+		color: $body-text-color;
+		&:hover {
+			color: $body-text-color + 70;
+		}
+	}
 }
 
 .colHalf {

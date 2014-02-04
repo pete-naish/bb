@@ -23,6 +23,6 @@
 					</ul>
 				</perch:after>
 			</perch:repeater>		
-		<p class="notes"><perch:content id="treatment_notes" type="textarea" label="Treatment notes" html="false" /></p>
+		<perch:if exists="treatment_notes"><p class="notes"><perch:content id="treatment_notes" type="textarea" label="Treatment notes" html="false" /></p></perch:if>
 	</div>
 </div>
