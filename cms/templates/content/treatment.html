@@ -1,7 +1,7 @@
 <div class="colHalf">
 	<div class="treatment">
 		<h4><perch:content id="treatment_title" type="text" label="Treatment title" html="false" title="true" /></h4>
-		<p><perch:content id="treatment_description" type="textarea" label="Treatment description" html="false" /></p>
+		<perch:content id="treatment_description" type="textarea" label="Treatment description" markdown="true" />
 			<perch:repeater id="price_list" label="Treatment prices">
 			<perch:before>
 			<ul class="prices">
