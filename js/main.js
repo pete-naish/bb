@@ -57,7 +57,7 @@ $(function (){
 		e.preventDefault();
 
 		$('html,body').stop().animate({
-			scrollTop: $(this.hash).offset().top - 75
+			scrollTop: $(this.hash).offset().top - 88
 		}, 500); // smooth scroll to the top of the linked section
 	});
 
@@ -74,7 +74,7 @@ $(function (){
 				}
 				setTimeout(function () {
 					$('html,body').stop().animate({
-						scrollTop: $('.treatmentDisplay').offset().top - 75
+						scrollTop: $('.treatmentDisplay').offset().top - 112
 					}, 500);
 				}, 500);
 			});
@@ -117,7 +117,5 @@ $(function (){
 	$('body').waypoint(function (direction) {
 		$('header').toggleClass('scrolling', direction === 'down');
 	}, {offset: -50});
-	
-
 
 });

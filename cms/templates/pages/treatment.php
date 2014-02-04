@@ -36,7 +36,7 @@
 					<div class="treatmentDetails cf">
 						<i></i>
 						<h3><?php perch_content('Treatment category'); ?></h3>
-						<h4>Treatments &amp; prices</h4>
+						<h4><?php perch_content('Treatment general heading'); ?></h4>
 						<?php perch_content('Treatments and prices'); ?>
 					</div>
 					<a class="back" href="/#treatments">&lt; Back to treatments</a>
