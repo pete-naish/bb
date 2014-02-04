@@ -114,9 +114,6 @@
 					<?php include('inc/contact-form.php'); ?>
 				</div>
 				<div id="find"></div>
-				<div id="newsletter" class="tab-content">
-					<div class="feed feed-twitter"></div>
-				</div>
 				<div id="follow" class="tab-content">
 					<div class="feed feed-twitter"></div>
 				</div>
@@ -126,12 +123,15 @@
 						<?php include('fb-feed.php'); ?>
 					</div>
 				</div>
+				<!-- <div id="newsletter" class="tab-content">
+					<div class="feed feed-twitter"></div>
+				</div>
 				<div id="instagram" class="tab-content">
 					<div class="feed feed-twitter"></div>
 				</div>
 				<div id="google" class="tab-content">
 					<div class="feed feed-twitter"></div>
-				</div>
+				</div> -->
 			</div>
 		</section>
 		<section>
