@@ -218,7 +218,7 @@ class PerchContent_Page extends PerchBase
     {
         $out = parent::to_array();
 
-        if ($out['pageAttributes'] != '') {
+        if (isset($out['pageAttributes']) && $out['pageAttributes'] != '') {
             $dynamic_fields = PerchUtil::json_safe_decode($out['pageAttributes'], true);
             if (PerchUtil::count($dynamic_fields)) {
                 foreach($dynamic_fields as $key=>$value) {

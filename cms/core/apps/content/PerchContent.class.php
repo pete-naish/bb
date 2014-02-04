@@ -203,7 +203,8 @@ class PerchContent extends PerchApp
                                     array(
                                         'filter'=>$opts['filter'],
                                         'value'=>$opts['value'],
-                                        'match'=>(isset($opts['match']) ? $opts['match'] : 'eq')
+                                        'match'=>(isset($opts['match']) ? $opts['match'] : 'eq'),
+                                        'match-type'=>(isset($opts['match-type']) ? $opts['match-type'] : 'alpha')
                                     )
                                 );
                     $filter_mode = 'AND';
@@ -220,6 +221,8 @@ class PerchContent extends PerchApp
                     $key = $filter['filter'];
                     $val = $filter['value'];
                     $match = isset($filter['match']) ? $filter['match'] : 'eq';
+
+                    if (is_numeric($val)) $val = (float) $val;
 
                     switch ($match) {
                         case 'eq': 
@@ -257,14 +260,32 @@ class PerchContent extends PerchApp
                         case 'betwixt':
                             $vals  = explode(',', $val);
                             if (PerchUtil::count($vals)==2) {
-                                $where[] = '(idx.indexKey='.$db->pdb($key).' AND (idx.indexValue > '.$db->pdb(trim($vals[0])).' AND idx.indexValue < '.$db->pdb(trim($vals[1])).'))';
+
+                                $vals[0] = trim($vals[0]);
+                                $vals[1] = trim($vals[1]);
+
+                                if (is_numeric($vals[0]) && is_numeric($vals[1])) {
+                                    $vals[0] = (float)$vals[0];
+                                    $vals[1] = (float)$vals[1];
+                                }
+
+                                $where[] = '(idx.indexKey='.$db->pdb($key).' AND (idx.indexValue > '.$db->pdb($vals[0]).' AND idx.indexValue < '.$db->pdb($vals[1]).'))';
                             }
                             break;
                         case 'eqbetween':
                         case 'eqbetwixt':
                             $vals  = explode(',', $val);
                             if (PerchUtil::count($vals)==2) {
-                                $where[] = '(idx.indexKey='.$db->pdb($key).' AND (idx.indexValue >= '.$db->pdb(trim($vals[0])).' AND idx.indexValue <= '.$db->pdb(trim($vals[1])).'))';
+                                $vals[0] = trim($vals[0]);
+                                $vals[1] = trim($vals[1]);
+
+                                if (is_numeric($vals[0]) && is_numeric($vals[1])) {
+                                    $vals[0] = (float)$vals[0];
+                                    $vals[1] = (float)$vals[1];
+                                }
+
+                                $where[] = '(idx.indexKey='.$db->pdb($key).' AND (idx.indexValue >= '.$db->pdb($vals[0]).' AND idx.indexValue <= '.$db->pdb($vals[1]).'))';
+                                
                             }
                             break;
                         case 'in':
@@ -710,7 +731,7 @@ class PerchContent extends PerchApp
             }
 
             if (isset($Paging) && $Paging->enabled()) {
-                $paging_array = $Paging->to_array();
+                $paging_array = $Paging->to_array($opts);
                 // merge in paging vars
                 foreach($out as &$item) {
                     foreach($paging_array as $key=>$val) {

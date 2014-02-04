@@ -100,6 +100,7 @@ class PerchAPI_Form extends PerchForm
             if ($tag->imageheight()) $data_atrs['height'] = $tag->imageheight();
             if ($tag->imagecrop()) $data_atrs['crop'] = $tag->imagecrop();
             if ($tag->imageclasses()) $data_atrs['classes'] = $tag->imageclasses();
+            if ($tag->bucket()) $data_atrs['bucket'] = $tag->bucket();
         }
 
         if ($use_editor_or_template_tag && !is_object($use_editor_or_template_tag)) {

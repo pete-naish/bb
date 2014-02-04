@@ -915,7 +915,7 @@ class PerchContent_Pages extends PerchFactory
                     }
 
                     // expand attributes
-                    if ($expand_attributes && $page['pageAttributes']!='') {
+                    if ($expand_attributes && isset($page['pageAttributes']) && $page['pageAttributes']!='') {
                         $dynamic_fields = PerchUtil::json_safe_decode($page['pageAttributes'], true);
                         if (PerchUtil::count($dynamic_fields)) {
                             foreach($dynamic_fields as $key=>$value) {
@@ -1012,7 +1012,7 @@ class PerchContent_Pages extends PerchFactory
                     }
 
                     // expand attributes
-                    if ($expand_attributes && $page['pageAttributes']!='') {
+                    if ($expand_attributes && isset($page['pageAttributes']) && $page['pageAttributes']!='') {
                         $dynamic_fields = PerchUtil::json_safe_decode($page['pageAttributes'], true);
                         if (PerchUtil::count($dynamic_fields)) {
                             foreach($dynamic_fields as $key=>$value) {
@@ -1097,7 +1097,7 @@ class PerchContent_Pages extends PerchFactory
                     }
                     
                     // expand attributes
-                    if ($expand_attributes && $page['pageAttributes']!='') {
+                    if ($expand_attributes && isset($page['pageAttributes']) && $page['pageAttributes']!='') {
                         $dynamic_fields = PerchUtil::json_safe_decode($page['pageAttributes'], true);
                         if (PerchUtil::count($dynamic_fields)) {
                             foreach($dynamic_fields as $key=>$value) {
@@ -1467,7 +1467,7 @@ class PerchContent_Pages extends PerchFactory
                 }
 
 
-                if ($expand_attributes && $row['pageAttributes']!='') {
+                if ($expand_attributes && isset($row['pageAttributes']) && $row['pageAttributes']!='') {
                     $dynamic_fields = PerchUtil::json_safe_decode($row['pageAttributes'], true);
                     if (PerchUtil::count($dynamic_fields)) {
                         foreach($dynamic_fields as $key=>$value) {

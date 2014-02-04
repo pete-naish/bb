@@ -221,6 +221,9 @@ form .repeater div.field .preview:hover {
 	height: auto;
 	position: absolute;
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	background-image: url(data:image/gif;base64,R0lGODlhEAAQAIAAAN/f3////yH5BAAHAP8ALAAAAAAQABAAAAIfhG+hq4jM3IFLJhoswNly/XkcBpIiVaInlLJr9FZWAQA7); 
+	background-repeat: repeat;
+	z-index: 10;
 }
 
 form .repeater div.field .remove {
