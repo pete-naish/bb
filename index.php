@@ -97,15 +97,16 @@
 							<li class="icon-call"><a href="#call">Call us</a></li>
 							<li class="icon-email"><a href="#email">Email us</a></li>
 							<li class="icon-find"><a href="#find">Find us</a></li>
-							<li class="icon-newsletter"><a href="#newsletter">Newsletter</a></li>
+							
+							<li class="icon-follow"><a href="#follow">Twitter</a></li>
 							<li class="icon-like"><a href="#like">Facebook</a></li>
 						</ul>
-						<ul class="floatyLinks cf mobileHide">
-							<li class="icon-follow"><a href="#follow">Twitter</a></li>
+						<!-- <ul class="floatyLinks cf mobileHide">
+							<li class="icon-newsletter"><a href="#newsletter">Newsletter</a></li>
 							
 							<li class="icon-instagram"><a href="#instagram">Instagram</a></li>
 							<li class="icon-plus"><a href="#google">Google Plus</a></li>
-						</ul>
+						</ul> -->
 					</div>
 				</div>
 				<div id="call" class="tab-content"><h3><a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a></h3></div>
@@ -144,6 +145,7 @@
 						<li><a href="http://hdbrows.com/"><img src="img/logo-hd-brows.png" alt="HD Brows"></a></li>
 						<li><a href="http://www.minxnails.com/"><img src="img/logo-minx.png" alt="Minx Nails"></a></li>
 						<li><a href="http://sienna-x.co.uk/"><img src="img/logo-sienna-x.png" alt="Sienna X Spray Tanning"></a></li>
+						<li><a href="http://www.cnd.com/"><img src="img/logo-shellac.png" alt="CND Shellac Nails"></a></li>
 					</ul>
 				</div>
 				<div class="footer-bottom">
