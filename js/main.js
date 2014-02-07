@@ -108,8 +108,8 @@ $(function (){
 
 			e.preventDefault();
 
-			if ($(this).attr('href') === '#find') {
-				google.maps.event.trigger( map, 'resize' );
+			if ($active.attr('href') === '#find') {
+				google.maps.event.trigger(map, 'resize');
 				map.setCenter(new google.maps.LatLng(51.866594, -0.185008));
 			}
 		});
