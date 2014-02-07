@@ -76,10 +76,12 @@ $(function (){
 					$('html,body').stop().animate({
 						scrollTop: $('.treatmentDisplay').offset().top - 112
 					}, 500);
+					$('.colHalf').masonry();
 				}, 500);
 			});
 			e.preventDefault();
 			$this.parent().removeClass('translucent').siblings('div.treatmentIntro').addClass('translucent');
+			
 			
 		}
 	});
