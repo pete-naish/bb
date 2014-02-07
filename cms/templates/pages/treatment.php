@@ -31,11 +31,11 @@
 		<section id="treatments">
 			<div class="container">
 				<div class="treatments">
-					<div class="treatmentDetails cf">
+					<div class="treatmentDetails">
 						<i></i>
 						<h3><?php perch_content('Treatment category'); ?></h3>
 						<h4><?php perch_content('Treatment general heading'); ?></h4>
-						<?php perch_content('Treatments and prices'); ?>
+						<div class="treatment-grid"><?php perch_content('Treatments and prices'); ?></div>
 					</div>
 					<a class="back" href="/#treatments">&lt; Back to treatments</a>
 				</div>

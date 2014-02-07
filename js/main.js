@@ -61,6 +61,7 @@ $(function (){
 		}, 500); // smooth scroll to the top of the linked section
 	});
 
+	var msnry;
 	
 	$('.treatments').on('click', '.js-load', function (e) {
 		if ($(window).width() > 590) {
@@ -76,13 +77,13 @@ $(function (){
 					$('html,body').stop().animate({
 						scrollTop: $('.treatmentDisplay').offset().top - 112
 					}, 500);
-					$('.colHalf').masonry();
+					msnry = $('.treatment-grid').masonry({
+						gutter: 20
+					});
 				}, 500);
 			});
 			e.preventDefault();
 			$this.parent().removeClass('translucent').siblings('div.treatmentIntro').addClass('translucent');
-			
-			
 		}
 	});
 
