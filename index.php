@@ -15,7 +15,7 @@
 		
 	</head>
 	<body>
-		<header>
+		<header class="scrolling">
 			<div class="container">
 				<h1 class="visuallyhidden"><?php perch_content('Business name'); ?> <?php perch_content('Town'); ?></h1>
 				<a href="#top" class="logo" title="Beauty Box Knebworth home page"></a>

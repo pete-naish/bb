@@ -48,17 +48,19 @@ $(function (){
 			autoHover: true
 		});
 	}
-	
 
 	$('html').removeClass('no-js');
 
+	var headerHeight = $('.scrolling').outerHeight();
+
+	$('header').removeClass('scrolling');
+
 	$('nav a, .logo').on('click', function (e) {
-		// $hash = $this.attr('href'); // grab the href of the clicked link
 		e.preventDefault();
 
 		$('html,body').stop().animate({
-			scrollTop: $(this.hash).offset().top - 88
-		}, 500); // smooth scroll to the top of the linked section
+			scrollTop: $(this.hash).offset().top - headerHeight
+		}, 500);
 	});
 
 	function msnry() {
@@ -81,7 +83,7 @@ $(function (){
 				}
 				setTimeout(function () {
 					$('html,body').stop().animate({
-						scrollTop: $('.treatmentDisplay').offset().top - 112
+						scrollTop: $('.treatmentDisplay').offset().top - (headerHeight + 24)
 					}, 500);
 					msnry();
 				}, 500);
@@ -90,8 +92,6 @@ $(function (){
 			$this.parent().removeClass('translucent').siblings('div.treatmentIntro').addClass('translucent');
 		}
 	});
-
-
 
 	$('div.tabs').each(function (){
 		var $active, $content, $links = $(this).find('a');
