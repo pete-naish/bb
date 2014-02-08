@@ -710,9 +710,16 @@ a.tel {
 	}
 }
 
-.treatment-page {
+.treatment-page,
+.error-page-layout {
+	header {
+		position: static;
+	}
 	.treatmentDetails i {
 		margin-top: 38px;
+	}
+	header + section {
+		padding-top: 0;
 	}
 }
 
@@ -974,6 +981,9 @@ input[type=submit] {
 		&:nth-of-type(5n){
 			clear: none;
 		}
+	}
+	header + section {
+		padding-top: 0;
 	}
 }
 

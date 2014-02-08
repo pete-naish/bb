@@ -9,6 +9,11 @@
 			<link rel="stylesheet" href="css/ie.css">
 		<![endif]-->
 
+		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+		<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+		<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon-precomposed.png" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
 		<script>
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-23419434-1']);

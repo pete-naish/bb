@@ -62,3 +62,12 @@ h2,
 h3 {
 	page-break-after: avoid;
 }
+
+#top,
+nav,
+header span,
+#contact,
+.footer-top,
+.treatmentIntroWrapper {
+	display: none;
+}

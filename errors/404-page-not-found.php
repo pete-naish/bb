@@ -5,7 +5,7 @@
 		<title>404 Error &#124; Beauty Box Knebworth</title>
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/head.php') ?>
 	</head>
-	<body>
+	<body class="error-page-layout">
 		<header>
 			<div class="container">
 				<h1 class="visuallyhidden">Beauty Box Knebworth</h1>
