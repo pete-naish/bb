@@ -178,10 +178,6 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 
-h1 {
-	// font-family: $heading-font-family;
-}
-
 h2 {
 	font-family: $serif-heading-font-family;
 	font-size: em(65px);
@@ -195,7 +191,6 @@ h3 {
 	letter-spacing: em(3px, 30px);
 	text-align: center;
 	margin: 0 percent(62px) 30px;
-
 }
 
 h4 {
@@ -416,6 +411,9 @@ section i {
 	&:nth-of-type(4n){
 		margin-right: 0;
 	}
+	&:nth-of-type(5n){
+		clear: left;
+	}
 }
 
 .treatmentDetails {
@@ -478,7 +476,6 @@ section i {
 	float: left;
 	width: percent(430px);
 }
-
 
 p.notes {
 	font-style: italic;
@@ -553,7 +550,6 @@ a.tel {
 		text-decoration: underline;
 	}
 }
-
 
 .container .contact {
 	background: $contact-background-color;
@@ -659,8 +655,6 @@ a.tel {
 	line-height:normal;
 }
 
-
-
 .no-js #find {
 	display: none;
 }
@@ -672,7 +666,6 @@ a.tel {
 .footer-top {
 	background-color: $footer-top-background-color;
 	color: $footer-text-color;
-
 	i {
 		margin: 18px 0 10px;
 	}
@@ -729,13 +722,11 @@ p.error {
 	padding: 15px 10px;
 }
 
-
 div.error,
 .notification_error,
 .notification_ok {
 	color: $pink;
 }
-
 
 .notification_error {
 	margin-bottom: 20px;
@@ -969,6 +960,9 @@ input[type=submit] {
 		&:nth-of-type(2n){
 			margin-right: 0;
 		}
+		&:nth-of-type(5n){
+			clear: none;
+		}
 	}
 }
 
@@ -1019,6 +1013,10 @@ input[type=submit] {
 		}
 		&:nth-of-type(4n){
 			clear: left;
+			margin-right: 2%;
+		}
+		&:nth-of-type(5n){
+			clear: none;
 		}
 	}
 	.hours {
@@ -1059,13 +1057,6 @@ input[type=submit] {
 	}
 	.colHalf {
 		width: 100%;
-		// & + .colHalf {
-		// 	margin-left: 0;
-		// 	.border {
-		// 		padding-left: 0;
-		// 		border: 0;
-		// 	}
-		// }
 		&:last-child .treatment:last-child {
 			margin-bottom: 20px;
 		}
@@ -1101,7 +1092,6 @@ input[type=submit] {
 	}
 }
 
-// @media only screen and (min-width:  930px) {
 @media only screen and (min-width:  590px) {
 	.scrolling {
 		.logo {

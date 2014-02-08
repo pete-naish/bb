@@ -42,7 +42,9 @@
 				<div class="treatments">
 					<i></i>
 					<h3><?php perch_content('Treatments heading'); ?></h3>
-					<?php perch_content('Treatment intros'); ?>
+					<div class="treatmentIntroWrapper">
+						<?php perch_content('Treatment intros'); ?>
+					</div>
 					<div class="treatmentDisplay"></div>
 				</div>
 			</div>
