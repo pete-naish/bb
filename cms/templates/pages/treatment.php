@@ -60,7 +60,7 @@
 			window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>');
 		</script>
 		<script src="/js/plugins.min.js"></script>
-		<script src="/js/main.js"></script>
+		<script src="/js/treatments.min.js"></script>
 
 	</body>
 </html>
