@@ -1,42 +1,3 @@
-var map;
-
-function initialize(bn, al, t, c, pc, inttel, tel) {
-
-	google.maps.visualRefresh = true;
-
-	var mapOptions = {
-		center: new google.maps.LatLng(51.866594, -0.185008),
-		zoom: 15,
-		minZoom: 8,
-		scrollwheel: false,
-		mapTypeControl: false,
-		panControl: false,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-
-	map = new google.maps.Map(document.getElementById("find"),
-	mapOptions);
-
-	var marker = new google.maps.Marker({
-		position: mapOptions.center,
-		map: map,
-		title:"Beauty Box Knebworth"
-	});
-
-	var contentString = '<div class="mapContent">'+
-	'<p>'+ bn +'<br/>'+ al +'<br/>' + t +'<br/>' + c +'<br/>' + pc +'</p>'+
-	"<p><a href='tel:+'" + inttel + "'>" + tel + "</a></p>"+
-	'</div>';
-
-	var infowindow = new google.maps.InfoWindow({
-		content: contentString
-	});
-
-	google.maps.event.addListener(marker, 'click', function() {
-		infowindow.open(map,marker);
-	});
-}
-
 $(function (){
 
 	if($('.heroSlide').length > 1){
@@ -128,3 +89,42 @@ $(function (){
 	}, {offset: -50});
 
 });
+
+var map;
+
+function initialize(bn, al, t, c, pc, inttel, tel) {
+
+	google.maps.visualRefresh = true;
+
+	var mapOptions = {
+		center: new google.maps.LatLng(51.866594, -0.185008),
+		zoom: 15,
+		minZoom: 8,
+		scrollwheel: false,
+		mapTypeControl: false,
+		panControl: false,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+
+	map = new google.maps.Map(document.getElementById("find"),
+	mapOptions);
+
+	var marker = new google.maps.Marker({
+		position: mapOptions.center,
+		map: map,
+		title:"Beauty Box Knebworth"
+	});
+
+	var contentString = '<div class="mapContent">'+
+	'<p>'+ bn +'<br/>'+ al +'<br/>' + t +'<br/>' + c +'<br/>' + pc +'</p>'+
+	"<p><a href='tel:+'" + inttel + "'>" + tel + "</a></p>"+
+	'</div>';
+
+	var infowindow = new google.maps.InfoWindow({
+		content: contentString
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map,marker);
+	});
+}
