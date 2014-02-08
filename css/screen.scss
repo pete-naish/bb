@@ -798,6 +798,8 @@ input[type=submit] {
 
 .back {
 	color: $body-text-color;
+	float: left;
+	clear: left;
 }
 
 .feed a {
@@ -1043,13 +1045,13 @@ input[type=submit] {
 	}
 	.colHalf {
 		width: 100%;
-		& + .colHalf {
-			margin-left: 0;
-			.border {
-				padding-left: 0;
-				border: 0;
-			}
-		}
+		// & + .colHalf {
+		// 	margin-left: 0;
+		// 	.border {
+		// 		padding-left: 0;
+		// 		border: 0;
+		// 	}
+		// }
 		&:last-child .treatment:last-child {
 			margin-bottom: 20px;
 		}

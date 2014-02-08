@@ -1,0 +1,27 @@
+<div class="colHalf">
+	<div class="treatment">
+		<h4><perch:content id="product_group_title" type="text" label="Product group title" html="false" title="true" /></h4>
+		<perch:content id="product_group_description" type="textarea" label="Product group description" textile="true" />
+			<perch:repeater id="price_list" label="Product prices">
+				<perch:before>
+					<ul class="prices">
+				</perch:before>
+					<li>
+						<span>
+							<perch:if exists="product_link">
+								<a href="<perch:content id="product_link" type="text" label="Product link" html="false"/>">
+							</perch:if>
+							<perch:content id="product_title" type="text" label="Product description" html="false"/>
+							<perch:if exists="product_link">
+								</a>
+							</perch:if>
+						</span>
+						<span>&pound;<perch:content id="product_price" type="text" label="Product price" html="false" /></span>
+					</li>
+				<perch:after>
+					</ul>
+				</perch:after>
+			</perch:repeater>		
+		<perch:if exists="product_notes"><p class="notes"><perch:content id="product_notes" type="textarea" label="Product notes" html="false" /></p></perch:if>
+	</div>
+</div>

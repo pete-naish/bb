@@ -157,11 +157,11 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxCUv6c3GVhjrwHgqzAzJ7sBO7gIr0ltw&amp;sensor=true"></script>
 		<script>
-			window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>');
+			window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>');
 		</script>
-		<script src="js/plugins.min.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/json.js"></script>
+		<script src="/js/plugins.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script src="/js/json.js"></script>
 		<script src='inc/contact-app/js/init.php'></script>
 		<script>
 			google.maps.event.addDomListener(window, 'load', initialize("<?php perch_content('Business name'); ?>", "<?php perch_content('Address line 1'); ?>", "<?php perch_content('Town'); ?>", "<?php perch_content('County'); ?>", "<?php perch_content('Post code'); ?>", "<?php perch_content('Phone number international'); ?>", "<?php perch_content('Phone number'); ?>"));

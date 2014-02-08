@@ -35,7 +35,12 @@
 						<i></i>
 						<h3><?php perch_content('Treatment category'); ?></h3>
 						<h4><?php perch_content('Treatment general heading'); ?></h4>
-						<div class="treatment-grid"><?php perch_content('Treatments and prices'); ?></div>
+						<div class="treatment-grid">
+							<?php perch_content('Treatments and prices'); ?>
+							<?php perch_content('Products'); ?>
+							<?php perch_content('Video'); ?>
+						</div>
+
 					</div>
 					<a class="back" href="/#treatments">&lt; Back to treatments</a>
 				</div>
@@ -50,6 +55,12 @@
 				</div>
 			</div>
 		</section>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>
+			window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>');
+		</script>
+		<script src="/js/plugins.min.js"></script>
+		<script src="/js/main.js"></script>
 
 	</body>
 </html>

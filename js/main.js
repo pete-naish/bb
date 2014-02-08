@@ -61,6 +61,14 @@ $(function (){
 		}, 500); // smooth scroll to the top of the linked section
 	});
 
+	function msnry() {
+		$('.treatment-grid').masonry({
+			gutter: 20
+		});
+	}
+
+	msnry();
+
 	$('.treatments').on('click', '.js-load', function (e) {
 		if ($(window).width() > 590) {
 			var $this = $(this),
@@ -75,15 +83,15 @@ $(function (){
 					$('html,body').stop().animate({
 						scrollTop: $('.treatmentDisplay').offset().top - 112
 					}, 500);
-					$('.treatment-grid').masonry({
-						gutter: 20
-					});
+					msnry();
 				}, 500);
 			});
 			e.preventDefault();
 			$this.parent().removeClass('translucent').siblings('div.treatmentIntro').addClass('translucent');
 		}
 	});
+
+
 
 	$('div.tabs').each(function (){
 		var $active, $content, $links = $(this).find('a');
