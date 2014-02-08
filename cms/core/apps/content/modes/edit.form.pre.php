@@ -14,6 +14,10 @@
 	$Pages = new PerchContent_Pages;
 	$Page = $Pages->find($Region->pageID());
 
+    if (!is_object($Page)) {
+        $Page = $Pages->get_mock_shared_page();
+    }
+
     // get details
     
     if (isset($item_id) && $item_id) {

@@ -4,8 +4,11 @@ class PerchImage
 {
     private $mode = false;
     
-    // Compression quality for JPEGs
+    // Image quality for JPEGs (0-99)
     private $jpeg_quality = 85;
+
+    // Compression rate for PNGs (0-9)
+    private $png_compression = 9;
 
     // Pixel density
     private $density = 1;
@@ -30,6 +33,7 @@ class PerchImage
     {
         // Compression quality for JPEGs
         $this->jpeg_quality = 85;
+        $this->png_compression  = 9;
 
         // Pixel density
         $this->density = 1;
@@ -356,9 +360,9 @@ class PerchImage
                     imagesavealpha($crop_image, true);
                     
                     imagecopy($crop_image, $new_image, 0, 0, $crop_x, $crop_y, $new_w, $new_h);
-                    imagepng($crop_image, $save_as);
+                    imagepng($crop_image, $save_as, $this->png_compression);
                 }else{
-                    imagepng($new_image, $save_as);
+                    imagepng($new_image, $save_as, $this->png_compression);
                 }
                 
                 break;

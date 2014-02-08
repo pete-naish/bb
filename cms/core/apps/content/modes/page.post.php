@@ -29,9 +29,9 @@
 
 
 	<ul class="smartbar">
-        <li class="selected"><a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/page/?id='.PerchUtil::html($Page->id());?>">Regions</a></li>
+        <li class="selected"><a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/page/?id='.PerchUtil::html($Page->id());?>"><?php echo PerchLang::get('Regions'); ?></a></li>
 		<?php
-            if ($CurrentUser->has_priv('content.pages.attributes')) {
+            if ($CurrentUser->has_priv('content.pages.attributes') && $Page->pagePath()!='*') {
                 echo '<li><a href="'.PERCH_LOGINPATH . '/core/apps/content/page/details/?id='.PerchUtil::html($Page->id()).'">' . PerchLang::get('Page Details') . '</a></li>';
             }
         ?>

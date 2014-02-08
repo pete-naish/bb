@@ -403,14 +403,6 @@
         return $Content->create_region($key, $opts);
     }
 
-    /**
-     * Get an item from the querystring, or return the default if not found. Defaults to false.
-     *
-     * @param string $var 
-     * @param string $default 
-     * @return void
-     * @author Drew McLellan
-     */
     function perch_get($var, $default=false)
     {
         if (isset($_GET[$var]) && $_GET[$var]!='') {

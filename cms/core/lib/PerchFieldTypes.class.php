@@ -391,7 +391,22 @@ class PerchFieldType_textarea extends PerchFieldType
                 }
                 
                 $formatting_language_used = true;
+            }else{
+
+
+                // Smartypants without Markdown (MD gets it by default)
+
+                if (PerchUtil::bool_val($this->Tag->smartypants()) == true) {
+                    $SmartyPants = new SmartyPants_Parser;
+                    $value = $SmartyPants->transform($value);
+                    if (PERCH_HTML_ENTITIES==false) {
+                        $value = html_entity_decode($value, ENT_NOQUOTES, 'UTF-8');    
+                    }
+                }
+
             }
+
+
             
             
             

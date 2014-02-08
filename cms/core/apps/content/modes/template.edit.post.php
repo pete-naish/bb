@@ -28,7 +28,7 @@
             <?php echo $Form->label('optionsPageID', 'Copy region options from'); ?>
             <?php 
                 $opts = array();
-                $opts[] = array('label'=>'Do not copy', 'value'=>'');
+                $opts[] = array('label'=>'Do not copy', 'value'=>'0');
   
                 $pages = $Pages->get_page_tree();
                 if (PerchUtil::count($pages)) {

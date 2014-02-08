@@ -534,6 +534,11 @@ class PerchContent extends PerchApp
         if ($this->new_keys_registered) {
             // re-order keys in light of the new key
             $this->_reorder_keys();
+
+            // for shared regions, repopulate cache so that it gets picked up.
+            if (isset($opts['shared']) && $opts['shared']==true) {
+                $this->_populate_cache_with_page_content();
+            }
             return true;
         }
         return false;
@@ -742,7 +747,7 @@ class PerchContent extends PerchApp
             return $Template->render_group($out, 1);
         }else{
             $Template->use_noresults();
-            return $Template->render(array('key'=>$key));
+            return $Template->render(array('search_key'=>$key, 'key'=>$key));
         }
     }
     

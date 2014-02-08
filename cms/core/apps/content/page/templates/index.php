@@ -6,7 +6,7 @@
     include(PERCH_CORE . '/inc/auth.php');
     
     
-    $Perch->page_title = PerchLang::get('Page Templates');
+    $Perch->page_title = PerchLang::get('Master Pages');
 
     $app_path = PERCH_CORE.'/apps/content';
     

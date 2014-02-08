@@ -131,6 +131,7 @@ class PerchTemplatedForm
 	    $attrs['class']  = $OpeningTag->class();
 	    $attrs['action'] = $OpeningTag->action();
 	    $attrs['method'] = $OpeningTag->method();
+	    $attrs['role']   = $OpeningTag->role();
 
 	    $aria = $OpeningTag->search_attributes_for('aria-');
         if (PerchUtil::count($aria)) {
@@ -141,7 +142,6 @@ class PerchTemplatedForm
         if (PerchUtil::count($html5data)) {
         	$attrs = array_merge($attrs, $html5data);
         }
-
 	    	    
 	    $this->form_id       = $OpeningTag->id();
 	    $this->handling_app  = $OpeningTag->app();
@@ -152,7 +152,7 @@ class PerchTemplatedForm
 	    
         if (PERCH_HTML5 && $OpeningTag->novalidate()) $attrs['novalidate'] = 'novalidate';
         
-	    if (!$attrs['action']) $attrs['action'] = $Perch->get_page(true);
+	    if (!$attrs['action']) $attrs['action'] = $Perch->get_page_as_set(true);
 	    if (!$attrs['method']) $attrs['method'] = 'post';
 
         $this->form_key = base64_encode($this->form_id.':'.$this->handling_app.':'.$this->template_path);

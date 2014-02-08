@@ -4,7 +4,7 @@ class Perch
 {
     static protected $instance;
 	
-    public $version = '2.4.3';
+    public $version = '2.4.4';
     
     private $page        = false;
     public $debug        = false;
@@ -68,15 +68,15 @@ class Perch
         }
 
         if ($hide_default_doc) {
-            $this->page = str_replace(PERCH_DEFAULT_DOC, '', $this->page);
-        }               
-                
+            return str_replace(PERCH_DEFAULT_DOC, '', $this->page);
+        }      
+      
         return $this->page;
     }
     
-    public function get_page_as_set()
+    public function get_page_as_set($request_uri=false)
     {
-        if (!$this->page) $this->get_page(false, true);
+        if (!$this->page) $this->get_page($request_uri, true);
         return $this->page;
     }
 

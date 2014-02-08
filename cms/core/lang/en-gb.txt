@@ -522,5 +522,6 @@
     "View Page": "View Page",
     "Enable Ctrl-E to edit": "Enable Ctrl-E to edit",
     "The %sCtrl-E to edit%s option enables the Ctrl-E keyboard shortcut on your site pages to jump directly into editing. This requires the use of the %sperch_get_javascript()%s call on your pages.": "The %sCtrl-E to edit%s option enables the Ctrl-E keyboard shortcut on your site pages to jump directly into editing. This requires the use of the %sperch_get_javascript()%s call on your pages.",
-    "The page attribute template (%s) could not be found.": "The page attribute template (%s) could not be found."
+    "The page attribute template (%s) could not be found.": "The page attribute template (%s) could not be found.",
+    "Master Pages": "Master Pages"
 }
