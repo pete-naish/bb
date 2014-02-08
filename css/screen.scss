@@ -220,7 +220,7 @@ i {
 }
 
 p {
-	line-height: 1.2;
+	line-height: 1.4;
 	a {
 		color: $body-text-color;
 		&:hover {
@@ -446,8 +446,8 @@ section i {
 	overflow: hidden;
 	margin-bottom: 14px;
 	li {
-		margin-bottom: 3px;
-		line-height: 1.2;
+		margin-bottom: 10px;
+		line-height: 1.4;
 	}
 	li:after {
 		float: left;
