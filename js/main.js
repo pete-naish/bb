@@ -53,7 +53,7 @@ $(function (){
 
 	var headerHeight = $('.scrolling').outerHeight();
 
-	$('header').removeClass('scrolling');
+	$('header').removeClass('scrolling hidden-visually');
 
 	$('nav a, .logo').on('click', function (e) {
 		e.preventDefault();

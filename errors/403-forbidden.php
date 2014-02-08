@@ -1,13 +1,11 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/cms/runtime.php'); ?>
 <!DOCTYPE html>
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
 	<head>
-		<title><?php perch_pages_title(); ?> &#124; Beauty Box Knebworth</title>
-		<?php perch_content('Treatment Page Description and Keywords'); ?>
+		<title>403 Forbidden &#124; Beauty Box Knebworth</title>
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/head.php') ?>
 	</head>
-	<body class="treatment-page">
+	<body>
 		<header>
 			<div class="container">
 				<h1 class="visuallyhidden">Beauty Box Knebworth</h1>
@@ -25,21 +23,14 @@
 				</nav>
 			</div>
 		</header>
-		<section id="treatments">
+		<section id="error">
 			<div class="container">
-				<div class="treatments">
-					<div class="treatmentDetails">
-						<i></i>
-						<h3><?php perch_content('Treatment category'); ?></h3>
-						<h4><?php perch_content('Treatment general heading'); ?></h4>
-						<div class="treatment-grid">
-							<?php perch_content('Treatments and prices'); ?>
-							<?php perch_content('Products'); ?>
-							<?php perch_content('Video'); ?>
-						</div>
+				<div class="error-page">
+					<i></i>
+					<h3>403 Forbidden - You can't access this</h3>
+					<h4 class="mobileHide">Why not try the menu above?</h4>
+					<h4 class="desktopHide"><a href="/">Go to the home page</a></h4>
 
-					</div>
-					<a class="back" href="/#treatments">&lt; Back to treatments</a>
 				</div>
 			</div>
 		</section>
@@ -50,11 +41,5 @@
 				</div>
 			</div>
 		</section>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>');
-		</script>
-		<script src="/js/plugins.min.js"></script>
-		<script src="/js/treatments.min.js"></script>
 	</body>
 </html>

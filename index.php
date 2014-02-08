@@ -1,5 +1,5 @@
 <?php
-	include('cms/runtime.php'); 
+	include($_SERVER['DOCUMENT_ROOT'].'/cms/runtime.php');
 	include('inc/contact-app/headers.php');
 ?>
 <!DOCTYPE html>
@@ -10,9 +10,7 @@
 	<head>
 		<title><?php perch_content('Business name'); ?> <?php perch_content('Town'); ?></title>
 		<?php perch_content('Site Description and Keywords'); ?>
-
 		<?php include('inc/head.php') ?>
-		
 	</head>
 	<body>
 		<header class="scrolling">
@@ -155,7 +153,6 @@
 				</div>
 			</div>
 		</section>
-
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxCUv6c3GVhjrwHgqzAzJ7sBO7gIr0ltw&amp;sensor=true"></script>
 		<script>
