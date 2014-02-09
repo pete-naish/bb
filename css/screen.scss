@@ -350,6 +350,10 @@ nav {
 	}
 }
 
+.no-js .heroSlide + .heroSlide {
+	display: none;
+}
+
 section i {
 	text-align: center;
 	display: block;

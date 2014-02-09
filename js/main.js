@@ -38,17 +38,19 @@ function initialize(bn, al, t, c, pc, inttel, tel) {
 
 $(function (){
 
+	$('html').removeClass('no-js');
+
 	if ($('.heroSlide').length > 1) {
 		$('div.hero').bxSlider({
 			mode: 'fade',
 			pager: false,
 			controls: false,
 			auto: true,
-			autoHover: true
+			autoHover: true,
+			adaptiveHeight: true,
+			pause: 10000
 		});
 	}
-
-	$('html').removeClass('no-js');
 
 	var headerHeight = $('.scrolling').outerHeight();
 
