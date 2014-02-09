@@ -14,8 +14,7 @@ function initialize(bn, al, t, c, pc, inttel, tel) {
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 
-	map = new google.maps.Map(document.getElementById("find"),
-	mapOptions);
+	map = new google.maps.Map(document.getElementById("find"),	mapOptions);
 
 	var marker = new google.maps.Marker({
 		position: mapOptions.center,
@@ -33,13 +32,13 @@ function initialize(bn, al, t, c, pc, inttel, tel) {
 	});
 
 	google.maps.event.addListener(marker, 'click', function() {
-		infowindow.open(map,marker);
+		infowindow.open(map, marker);
 	});
 }
 
 $(function (){
 
-	if($('.heroSlide').length > 1){
+	if ($('.heroSlide').length > 1) {
 		$('div.hero').bxSlider({
 			mode: 'fade',
 			pager: false,
@@ -93,7 +92,7 @@ $(function (){
 		}
 	});
 
-	$('div.tabs').each(function (){
+	$('div.tabs').each(function () {
 		var $active, $content, $links = $(this).find('a');
 
 		$active = $($links.filter('[href="'+location.hash+'"]')[0] || $links.filter('[href="#find"]'));
@@ -104,7 +103,7 @@ $(function (){
 			$($(this).attr('href')).hide();
 		});
 
-		$(this).on('click', 'a', function (e){
+		$(this).on('click', 'a', function (e) {
 			$active.removeClass('active');
 			$content.hide();
 
