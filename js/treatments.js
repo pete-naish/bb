@@ -1,4 +1,4 @@
-$(function (){
+$(function () {
 
 	$('html').removeClass('no-js');
 
