@@ -19,24 +19,24 @@ function initialize(bn, al, t, c, pc, inttel, tel) {
 	var marker = new google.maps.Marker({
 		position: mapOptions.center,
 		map: map,
-		title:"Beauty Box Knebworth"
+		title: "Beauty Box Knebworth"
 	});
 
-	var contentString = '<div class="mapContent">'+
-	'<p>'+ bn +'<br/>'+ al +'<br/>' + t +'<br/>' + c +'<br/>' + pc +'</p>'+
-	"<p><a href='tel:+'" + inttel + "'>" + tel + "</a></p>"+
+	var contentString = '<div class="mapContent">' +
+	'<p>' + bn + '<br/>' + al + '<br/>' + t + '<br/>' + c + '<br/>' + pc + '</p>' +
+	"<p><a href='tel:+'" + inttel + "'>" + tel + "</a></p>" +
 	'</div>';
 
 	var infowindow = new google.maps.InfoWindow({
 		content: contentString
 	});
 
-	google.maps.event.addListener(marker, 'click', function() {
+	google.maps.event.addListener(marker, 'click', function () {
 		infowindow.open(map, marker);
 	});
 }
 
-$(function (){
+$(function () {
 
 	$('html').removeClass('no-js');
 
@@ -97,7 +97,7 @@ $(function (){
 	$('div.tabs').each(function () {
 		var $active, $content, $links = $(this).find('a');
 
-		$active = $($links.filter('[href="'+location.hash+'"]')[0] || $links.filter('[href="#find"]'));
+		$active = $($links.filter('[href="' + location.hash + '"]')[0] || $links.filter('[href="#find"]'));
 		$active.addClass('active');
 		$content = $($active.attr('href'));
 
