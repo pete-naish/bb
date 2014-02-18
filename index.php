@@ -13,7 +13,7 @@
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/head.php') ?>
 	</head>
 	<body>
-		<header class="scrolling">
+		<header>
 			<div class="container">
 				<h1 class="visuallyhidden"><?php perch_content('Business name'); ?> <?php perch_content('Town'); ?></h1>
 				<a href="#top" class="logo" title="Beauty Box Knebworth home page"></a>
