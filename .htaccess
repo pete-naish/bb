@@ -548,3 +548,11 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
 <IfModule php5_module>
   php_value session.cookie_httponly true
 </IfModule>
+
+Redirect 301 /nails.php http://beautyboxknebworth.co.uk/hands-feet.php
+Redirect 301 /laser-lipo.php http://beautyboxknebworth.co.uk/body.php
+Redirect 301 /hair-removal.php http://beautyboxknebworth.co.uk/body.php
+Redirect 301 /decleor.php http://beautyboxknebworth.co.uk/body.php
+Redirect 301 /treatments/index.php http://beautyboxknebworth.co.uk/#treatments
+Redirect 301 /treatments/ http://beautyboxknebworth.co.uk/#treatments
+Redirect 301 /brows.php http://beautyboxknebworth.co.uk/hd-brows.php

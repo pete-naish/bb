@@ -4,7 +4,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 		<title><?php perch_pages_title(); ?> &#124; Beauty Box Knebworth</title>
-		<?php perch_content('Treatment Page Description and Keywords'); ?>
+		<?php perch_content('Treatment Page Description'); ?>
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/head.php') ?>
 	</head>
 	<body class="treatment-page">
