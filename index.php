@@ -9,7 +9,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 		<title><?php perch_content('Business name'); ?> <?php perch_content('Town'); ?></title>
-		<?php perch_content('Site Descriptions'); ?>
+		<?php perch_content('Site Description'); ?>
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/head.php') ?>
 	</head>
 	<body>
