@@ -552,10 +552,17 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
 Redirect 301 /nails.php http://beautyboxknebworth.co.uk/hands-feet.php
 Redirect 301 /nails http://beautyboxknebworth.co.uk/hands-feet.php
 Redirect 301 /laser-lipo.php http://beautyboxknebworth.co.uk/body.php
+Redirect 301 /laser-lipo http://beautyboxknebworth.co.uk/body.php
 Redirect 301 /hair-removal.php http://beautyboxknebworth.co.uk/body.php
+Redirect 301 /hair-removal http://beautyboxknebworth.co.uk/body.php
 Redirect 301 /decleor.php http://beautyboxknebworth.co.uk/body.php
+Redirect 301 /decleor http://beautyboxknebworth.co.uk/body.php
 Redirect 301 /treatments/index.php http://beautyboxknebworth.co.uk/#treatments
+Redirect 301 /treatments/index http://beautyboxknebworth.co.uk/#treatments
 Redirect 301 /treatments/ http://beautyboxknebworth.co.uk/#treatments
 Redirect 301 /brows.php http://beautyboxknebworth.co.uk/hd-brows.php
+Redirect 301 /brows http://beautyboxknebworth.co.uk/hd-brows.php
 Redirect 301 /about.php http://beautyboxknebworth.co.uk/#about
+Redirect 301 /about http://beautyboxknebworth.co.uk/#about
 Redirect 301 /contact.php http://beautyboxknebworth.co.uk/#contact
+Redirect 301 /contact http://beautyboxknebworth.co.uk/#contact
