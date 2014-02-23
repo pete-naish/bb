@@ -550,6 +550,7 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
 </IfModule>
 
 Redirect 301 /nails.php http://beautyboxknebworth.co.uk/hands-feet.php
+Redirect 301 /nails http://beautyboxknebworth.co.uk/hands-feet.php
 Redirect 301 /laser-lipo.php http://beautyboxknebworth.co.uk/body.php
 Redirect 301 /hair-removal.php http://beautyboxknebworth.co.uk/body.php
 Redirect 301 /decleor.php http://beautyboxknebworth.co.uk/body.php
