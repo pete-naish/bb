@@ -283,7 +283,8 @@ header {
 }
 
 .logo {
-	margin: 40px percent(62px, 1024px) 30px percent(62px, 1024px);
+	// margin: 40px percent(62px, 1024px) 30px percent(62px, 1024px);
+	margin: 40px 0 30px percent(62px, 1024px);
 	display: block;
 	float: left;
 	width: 290px;
