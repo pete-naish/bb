@@ -557,8 +557,8 @@ Redirect 301 /treatments/laser-lipo.php http://beautyboxknebworth.co.uk/treatmen
 Redirect 301 /treatments/laser-lipo http://beautyboxknebworth.co.uk/treatments/body.php
 Redirect 301 /treatments/hair-removal.php http://beautyboxknebworth.co.uk/treatments/body.php
 Redirect 301 /treatments/hair-removal http://beautyboxknebworth.co.uk/treatments/body.php
-Redirect 301 /treatments/decleor.php http://beautyboxknebworth.co.uk/treatments/body.php
-Redirect 301 /treatments/decleor http://beautyboxknebworth.co.uk/treatments/body.php
+Redirect 301 /treatments/decleor.php http://beautyboxknebworth.co.uk/treatments/caci.php
+Redirect 301 /treatments/decleor http://beautyboxknebworth.co.uk/treatments/caci.php
 Redirect 301 /treatments/index.php http://beautyboxknebworth.co.uk/#treatments
 Redirect 301 /treatments/index http://beautyboxknebworth.co.uk/#treatments
 Redirect 301 /treatments/brows.php http://beautyboxknebworth.co.uk/treatments/hd-brows.php
@@ -567,3 +567,6 @@ Redirect 301 /about.php http://beautyboxknebworth.co.uk/#about
 Redirect 301 /about http://beautyboxknebworth.co.uk/#about
 Redirect 301 /contact.php http://beautyboxknebworth.co.uk/#contact
 Redirect 301 /contact http://beautyboxknebworth.co.uk/#contact
+Redirect 301 /BB_Pricelist.pdf http://beautyboxknebworth.co.uk/#treatments
+Redirect 301 /cms/resources/beautyboxknebworthpricelist.pdf http://beautyboxknebworth.co.uk/#treatments
+Redirect 301 /gift-vouchers http://beautyboxknebworth.co.uk/#about
