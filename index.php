@@ -98,8 +98,8 @@
 							<li class="icon-email"><a href="#email">Email us</a></li>
 							<li class="icon-find"><a href="#find">Find us</a></li>
 							
-							<li class="icon-follow"><a href="#follow">Twitter</a></li>
-							<li class="icon-like"><a href="#like">Facebook</a></li>
+							<li class="icon-follow mobileHide"><a href="#follow">Twitter</a></li>
+							<li class="icon-like mobileHide"><a href="#like">Facebook</a></li>
 						</ul>
 						<!-- <ul class="floatyLinks cf mobileHide">
 							<li class="icon-newsletter"><a href="#newsletter">Newsletter</a></li>
