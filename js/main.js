@@ -63,7 +63,7 @@ $(function () {
 
 	grabHeaderHeight();
 
-	$('nav a, .logo').on('click', function (e) {
+	$('nav a:not(.external), .logo').on('click', function (e) {
 		e.preventDefault();
 
 		$('html,body').stop().animate({
