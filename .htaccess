@@ -570,3 +570,5 @@ Redirect 301 /contact http://beautyboxknebworth.co.uk/#contact
 Redirect 301 /BB_Pricelist.pdf http://beautyboxknebworth.co.uk/#treatments
 Redirect 301 /cms/resources/beautyboxknebworthpricelist.pdf http://beautyboxknebworth.co.uk/#treatments
 Redirect 301 /gift-vouchers http://beautyboxknebworth.co.uk/#about
+Redirect 301 /treatments/prom-packages http://beautyboxknebworth.co.uk/treatments/packages
+Redirect 301 /offers http://beautyboxknebworth.co.uk/
