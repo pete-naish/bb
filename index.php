@@ -96,7 +96,7 @@
 					<div class="tabs">
 						<ul class="floatyLinks cf">
 							<li class="icon-call"><a href="#call">Call us</a></li>
-							<li class="icon-email"><a href="#email">Email us</a></li>
+							<!-- <li class="icon-email"><a href="#email">Email us</a></li> -->
 							<li class="icon-find"><a href="#find">Find us</a></li>
 							
 							<li class="icon-follow mobileHide"><a href="#follow">Twitter</a></li>
@@ -111,9 +111,9 @@
 					</div>
 				</div>
 				<div id="call" class="tab-content"><h3><a href="tel:+<?php perch_content('Phone number international'); ?>" class="tel"><?php perch_content('Phone number'); ?></a></h3></div>
-				<div id="email" class="tab-content">
-					<?php include('inc/contact-form.php'); ?>
-				</div>
+				<!-- <div id="email" class="tab-content"> -->
+					<?php //include('inc/contact-form.php'); ?>
+				<!-- </div> -->
 				<div id="find"></div>
 				<div id="follow" class="tab-content">
 					<div class="feed feed-twitter"></div>
