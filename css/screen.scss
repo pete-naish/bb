@@ -802,9 +802,21 @@ input[type=submit] {
 }
 
 .back {
-	color: $body-text-color;
-	float: left;
+	color: $contact-background-color;
+	background-color: $pink;
+	font-family: $heading-font-family;
 	clear: left;
+	display: inline-block;
+	padding: 10px;
+	line-height: 1;
+	letter-spacing: em(3px, 22px);
+	text-decoration: none;
+	text-transform: uppercase;
+	@include single-transition(background-color, 0.5s, ease-in-out);
+	&:hover {
+		background-color: darken($pink, 8%);
+		@include single-transition(background-color, 0s, ease-in-out);
+	}
 }
 
 .feed a {
