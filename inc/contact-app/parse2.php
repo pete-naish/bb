@@ -103,7 +103,6 @@ $mail->SMTPAuth = true; // authentication enabled
 $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
 $mail->Host = "smtp.gmail.com";
 $mail->Port = 465; // or 587
-$mail->IsHTML(true);
 $mail->Username = "info@beautyboxknebworth.co.uk";
 $mail->Password = "bbemailpw2014";
 

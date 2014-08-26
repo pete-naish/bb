@@ -27,7 +27,8 @@ while(list($n, $v) = each($_POST)) { $$n = stripslashes(trim($v)); }
 
 $error = array();
 
-foreach($_POST as $key => $value) {
+foreach($_POST as $key =>
+$value) {
 
 $_POST[$key] = stripslashes(trim($value));
 
@@ -53,7 +54,8 @@ $error[$key.'_invalid'] = 1;
 
 if($formFields[$key]['validation']['min_chars'] > 0) { // Minimum Chars
 
-if(strlen($value) < $formFields[$key]['validation']['min_chars']) { 
+if(strlen($value)
+< $formFields[$key]['validation']['min_chars']) { 
 $error[$key.'_min_chars'] = 1;
 }
 
@@ -96,7 +98,17 @@ if(empty($error)) {
 
 $mail             = new PHPMailer(); // defaults to using php "mail()"
 
-$mail->From       = $sender_email;
+$mail->IsSMTP(); // enable SMTP
+$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+$mail->SMTPAuth = true; // authentication enabled
+$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+$mail->Host = "smtp.gmail.com";
+$mail->Port = 465; // or 587
+$mail->Username = "info@beautyboxknebworth.co.uk";
+$mail->Password = "bbemailpw2014";
+
+$mail->
+  From       = $sender_email;
 $mail->FromName   = $sender_name; 
 
 $mail->AddAddress(WEBMASTER_EMAIL, WEBMASTER_NAME);
@@ -156,7 +168,7 @@ if($escts == 1 && defined('ESCTS_TEXT')) {
 
   if($sender_email) {
       
-	  $mail->ClearAddresses();
+    $mail->ClearAddresses();
 
       $mail->From    = $sender_email;
       $mail->FromName = $sender_name;
@@ -175,18 +187,18 @@ if($escts == 1 && defined('ESCTS_TEXT')) {
 
 if(AUTO_RESPONDER == 1) {
 
-	  $mail->ClearAddresses();
+    $mail->ClearAddresses();
 
-	  $mail->From    = AUTO_RESPONDER_FROM_EMAIL;
-	  $mail->FromName = AUTO_RESPONDER_FROM_NAME;
+    $mail->From    = AUTO_RESPONDER_FROM_EMAIL;
+    $mail->FromName = AUTO_RESPONDER_FROM_NAME;
 
-	  $mail->AddAddress($sender_email, $sender_name);
+    $mail->AddAddress($sender_email, $sender_name);
 
-	  $mail->Subject = $ar_subject;
-	  $mail->MsgHTML($ar_message);
-	  $mail->AltBody = $ar_message_text;
+    $mail->Subject = $ar_subject;
+    $mail->MsgHTML($ar_message);
+    $mail->AltBody = $ar_message_text;
 
-	  $mail->CharSet = MAIL_CHARSET;
+    $mail->CharSet = MAIL_CHARSET;
 
 // Send auto responder only if the message was sent
 $mail->Send();
