@@ -99,11 +99,11 @@ if(empty($error)) {
 $mail             = new PHPMailer(); // defaults to using php "mail()"
 
 $mail->IsSMTP(); // enable SMTP
-$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
 $mail->SMTPAuth = true; // authentication enabled
 $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
 $mail->Host = "smtp.gmail.com";
 $mail->Port = 465; // or 587
+$mail->IsHTML(true);
 $mail->Username = "info@beautyboxknebworth.co.uk";
 $mail->Password = "bbemailpw2014";
 
@@ -162,53 +162,54 @@ $mail->CharSet = MAIL_CHARSET;
 
 if($mail->Send()) {
 
-$error['status'] = 0; // Mail sent
+  $error['status'] = 0; // Mail sent
 
-if($escts == 1 && defined('ESCTS_TEXT')) {
+    if($escts == 1 && defined('ESCTS_TEXT')) {
 
-  if($sender_email) {
+      if($sender_email) {
       
-    $mail->ClearAddresses();
+        $mail->ClearAddresses();
 
-      $mail->From    = $sender_email;
-      $mail->FromName = $sender_name;
+          $mail->From    = $sender_email;
+          $mail->FromName = $sender_name;
+
+          $mail->AddAddress($sender_email, $sender_name);
+
+          $mail->Subject = $sender_subject;
+          $mail->MsgHTML($final_message);
+          $mail->AltBody = $final_message_text;
+
+          $mail->CharSet = MAIL_CHARSET;
+
+          $mail->Send();
+        }
+    }
+
+    if(AUTO_RESPONDER == 1) {
+
+      $mail->ClearAddresses();
+
+      $mail->From    = AUTO_RESPONDER_FROM_EMAIL;
+      $mail->FromName = AUTO_RESPONDER_FROM_NAME;
 
       $mail->AddAddress($sender_email, $sender_name);
 
-      $mail->Subject = $sender_subject;
-      $mail->MsgHTML($final_message);
-      $mail->AltBody = $final_message_text;
+      $mail->Subject = $ar_subject;
+      $mail->MsgHTML($ar_message);
+      $mail->AltBody = $ar_message_text;
 
       $mail->CharSet = MAIL_CHARSET;
 
+      // Send auto responder only if the message was sent
       $mail->Send();
+    }
+
+  } else {
+    $error['status'] = 2; // Mail cannot be sent (internal error)
+    echo "Mailer Error: " . $mail->ErrorInfo;
   }
-}
 
-if(AUTO_RESPONDER == 1) {
-
-    $mail->ClearAddresses();
-
-    $mail->From    = AUTO_RESPONDER_FROM_EMAIL;
-    $mail->FromName = AUTO_RESPONDER_FROM_NAME;
-
-    $mail->AddAddress($sender_email, $sender_name);
-
-    $mail->Subject = $ar_subject;
-    $mail->MsgHTML($ar_message);
-    $mail->AltBody = $ar_message_text;
-
-    $mail->CharSet = MAIL_CHARSET;
-
-// Send auto responder only if the message was sent
-$mail->Send();
-}
-
-} else {
-$error['status'] = 2; // Mail cannot be sent (internal error)
-}
-
-} else {
+  } else {
 $error['status'] = 1; // Errors found
 }
 
