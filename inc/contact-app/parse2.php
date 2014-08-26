@@ -96,6 +96,19 @@ if($error == '') {
 
 $mail             = new PHPMailer(); // defaults to using php "mail()"
 
+
+$mail->IsSMTP(); // enable SMTP
+$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+$mail->SMTPAuth = true; // authentication enabled
+$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+$mail->Host = "smtp.gmail.com";
+$mail->Port = 465; // or 587
+$mail->IsHTML(true);
+$mail->Username = "info@beautyboxknebworth.co.uk";
+$mail->Password = "bbemailpw2014";
+
+
+
 $mail->From       = $sender_email;
 $mail->FromName   = $sender_name; 
 
