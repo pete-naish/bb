@@ -72,6 +72,8 @@ miu.ImageUpload = function()
 			
 			form.attr('action', markItUp.root+'image_upload/image_upload.php');
 			
+
+
 			
 			form.ajaxForm({
 				beforeSubmit: function(){
@@ -120,7 +122,7 @@ miu.ImageUpload = function()
 									var s_alt = '[]';
 									var s_class = '';
 									if (alt) s_alt = '['+alt+']';
-									if (classname) s_class = '.'+classname;
+									if (classname) s_class = '{.'+classname+'}';
 									output = '!'+s_alt+'('+r+')'+s_class;
 									break;
 

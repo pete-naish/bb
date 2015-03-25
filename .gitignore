@@ -42,6 +42,4 @@ Thumbs.db
 
 BeautyBox120-tweets.txt
 robots.txt
-cms/resources
-cms/config
-cms/core
+cms/config/config.php
