@@ -1,7 +1,7 @@
 /* @import must be at top of file, otherwise CSS will not work */
 // @import url("//hello.myfonts.net/count/266f98");
 
-@import "compass/reset", "compass/css3";
+// @import "compass/reset", "compass/css3";
 
 @font-face {
   font-family: "Bebas Neue";
@@ -180,6 +180,8 @@ body {
 	font-family: $body-font-family;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 h2 {
@@ -241,7 +243,7 @@ header {
 	position: fixed;
 	z-index: 999;
 	width: 100%;
-	@include single-transition(all, 0.25s, ease-in-out);
+	transition: all, .25s, ease-in-out;
 	span {
 		margin: 0 percent(62px, 1024px);
 		padding-top: 15px;
@@ -261,12 +263,12 @@ header {
 			text-decoration: none;
 			border-bottom: 2px solid transparent;
 			margin-bottom: 30px;
-			@include single-transition(border-color, 0.25s, ease-in-out);
-			@include single-transition(font-size, 0.25s, ease-in-out);
+			transition: border-color, .25s, ease-in-out;
+			transition: font-size, 0.25s, ease-in-out;
 			&:hover {
 				border-color: $pink;
 				text-decoration: none;
-				@include single-transition(border-color, 0s, ease-in-out);
+				transition: border-color, 0s, ease-in-out;
 			}
 		}
 	}
@@ -291,7 +293,7 @@ header {
 	height: 62px;
 	background: url(../img/logo.png) no-repeat center;
 	background: none, url(../img/logo.svg) no-repeat center;
-	@include single-transition(all, 0.25s, ease-in-out);
+	transition: all, .25s, ease-in-out;
 	img {
 		width: 290px;
 	}
@@ -312,10 +314,10 @@ nav {
 			letter-spacing: em(3px, 20px);
 			margin-right: em(-3px);
 			border-bottom: 2px solid $header-background-color;
-			@include single-transition(border-color, 0.25s, ease-in-out);
+			transition: border-color, 0.25s, ease-in-out;
 			&:hover {
 				border-color: $nav-link-color;
-				@include single-transition(border-color, 0s, ease-in-out);
+				transition: border-color, 0s, ease-in-out;
 			}
 		}
 		i {
@@ -383,11 +385,11 @@ section i {
 	margin-bottom: 32px;
 	margin-right: percent(40px);
 	opacity: 1;
-	@include single-transition(opacity, 0.25s, ease-in-out);
+	transition: opacity, 0.25s, ease-in-out;
 	position: relative;
 	&.translucent {
 		opacity: 0.6;
-		@include single-transition(opacity, 0.5s, ease-in-out);
+		transition: opacity, 0.5s, ease-in-out;
 	}
 	a {
 		display: block;
@@ -597,11 +599,11 @@ a.tel {
 		font-family: $heading-font-family;
 		letter-spacing: 0.14em;
 		position: relative;
-		@include single-transition(color, 0.5s, ease-in-out);
+		transition: color, 0.5s, ease-in-out;
 		&:hover,
 		&.active {
 			color: $pink;
-			@include single-transition(color, 0s, ease-in-out);
+			transition: color, 0s, ease-in-out;
 		}
 		&:before {
 			font-family: 'social';
@@ -794,10 +796,10 @@ input[type=submit] {
 	margin-top: 20px;
 	padding: 5px 10px;
 	border: 0;
-	@include single-transition(background-color, 0.5s, ease-in-out);
+	transition: background-color, 0.5s, ease-in-out;
 	&:hover {
 		background-color: darken($pink, 8%);
-		@include single-transition(background-color, 0s, ease-in-out);
+		transition: background-color, 0s, ease-in-out;
 	}
 }
 
@@ -812,10 +814,10 @@ input[type=submit] {
 	letter-spacing: em(3px, 22px);
 	text-decoration: none;
 	text-transform: uppercase;
-	@include single-transition(background-color, 0.5s, ease-in-out);
+	transition: background-color, 0.5s, ease-in-out;
 	&:hover {
 		background-color: darken($pink, 8%);
-		@include single-transition(background-color, 0s, ease-in-out);
+		transition: background-color, 0s, ease-in-out;
 	}
 }
 

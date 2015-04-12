@@ -44,3 +44,4 @@ BeautyBox120-tweets.txt
 robots.txt
 cms/config/config.php
 webmail/
+node_modules/
