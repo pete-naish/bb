@@ -372,6 +372,11 @@ FileETag None
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}\.php -f
   RewriteRule ^(.*)$ $1.php
+
+
+
+
+  # RewriteRule ^blog/([a-zA-Z0-9-/]+)$ /blog/post.php?s=$1 [L]
 </IfModule>
 
 # ----------------------------------------------------------------------
