@@ -19,7 +19,6 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css/'))
         .pipe(livereload());
-
 });
 
 gulp.task('watch', function() {
