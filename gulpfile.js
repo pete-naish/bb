@@ -6,16 +6,22 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     sourcemaps = require('gulp-sourcemaps');
 
+function swallowError (error) {
+    console.log(error.toString());
+    this.emit('end');
+}
+
 gulp.task('sass', function() {
     return gulp.src('./css/*.scss')
         .pipe(sourcemaps.init())  
-            .pipe(sass({
-                outputStyle: 'compressed',
-            }))
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions', 'ie 8'],
-                cascade: false
-            }))
+        .pipe(sass({
+            outputStyle: 'compressed',
+        }))
+        .on('error', swallowError)
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'ie 8'],
+            cascade: false
+        }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css/'))
         .pipe(livereload());

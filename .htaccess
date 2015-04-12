@@ -376,7 +376,7 @@ FileETag None
 
 
 
-  # RewriteRule ^blog/([a-zA-Z0-9-/]+)$ /blog/post.php?s=$1 [L]
+  RewriteRule ^blog/([a-zA-Z0-9-/]+)$ /blog/post.php?s=$1 [L]
 </IfModule>
 
 # ----------------------------------------------------------------------

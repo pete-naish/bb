@@ -1,8 +1,8 @@
 <perch:if id="postAllowComments" value="1">
 
+   <h4 class="comment-title">Leave a comment</h4>
 	<perch:form id="comment" method="post" app="perch_blog" class="comment-form" action="<perch:blog id="postURL" />">
 		<fieldset>
-		   <legend>Leave a comment</legend>
 			<div>
 				<perch:label for="commentName">Name</perch:label>
 				<perch:input type="text" id="commentName" required="true" label="Name" antispam="name" />

@@ -1,0 +1,6 @@
+
+<h3>Tags</h3>
+<ul>
+
+    <li><a href="archive.php?tag=test-tag" rel="tag">test tag</a></li>
+</ul>

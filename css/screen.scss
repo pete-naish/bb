@@ -530,11 +530,23 @@ p.notes {
 	width: percent(300px);
 	margin-bottom: 20px;
 	float: left;
+	box-sizing: border-box;
 	p {
 		padding-right: percent(18px, 300px);
 	}
-	& + .colThird p {
+	&:nth-child(1) {
+		border-right: 1px solid $about-border;
+	}
+	&:nth-child(2) {
 		border-left: 1px solid $about-border;
+		border-right: 1px solid $about-border;
+		margin-left: -1px;
+	}
+	&:nth-child(3) {
+		border-left: 1px solid $about-border;
+		margin-left: -1px;
+	}
+	& + .colThird p {
 		padding: 0 percent(18px, 300px);
 	}
 	&:last-child p,
@@ -542,9 +554,6 @@ p.notes {
 		padding-right: 0;
 	}
 	&.double {
-		.border {
-			border-left: 1px solid $about-border;
-		}
 		p {
 			border: 0;
 			& + h4 {
@@ -555,7 +564,6 @@ p.notes {
 }
 
 .tableWrapper{
-	border-left: 1px solid $about-border;
 	padding: 0 percent(18px, 300px);
 }
 
@@ -1000,6 +1008,115 @@ input[type=submit] {
 	}
 }
 
+
+.listing-blog-posts__entry {
+	list-style: none;
+	margin-bottom: 40px;
+	overflow: hidden;
+	float: left;
+	width: 100%;
+}
+
+.listing-blog-posts__title {
+	text-align: left;
+	float: left;
+}
+
+.listing-blog-posts__link {
+	color: inherit;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.listing-blog-posts__date,
+.listing-blog-posts__comment-count {
+	float: right;
+	clear: right;
+}
+
+.listing-blog-posts__comment-count {
+	color: lighten($body-text-color, 30%);
+}
+
+.listing-blog-posts__content {
+	float: left;
+	clear: left;
+	width: 100%;
+	img {
+		max-width: 200px;
+		float: left;
+		margin-right: 20px;
+	}
+}
+
+.paging {
+	text-align: center;
+}
+
+#blog label {
+	color: inherit;
+}
+
+#blog .meta {
+	text-align: center;
+	margin-bottom: 30px;
+	margin-top: -20px;
+	color: lighten($body-text-color, 30%);
+}
+
+#blog .description {
+	margin-bottom: 120px;
+	overflow: hidden;
+	img {
+		float: left;
+		margin-right: 20px;
+	}
+}
+
+.comments {
+	margin: 30px 0 60px;
+	li {
+		overflow: hidden;
+		list-style: none;
+		+ li {
+			margin-top: 30px;
+		}
+	}
+	img {
+		float: left;
+		margin-right: 20px;
+	}
+	.date {
+		float: right;
+		color: lighten($body-text-color, 30%);
+	}
+	.comment {
+		overflow: hidden;
+	}
+	.commenter {
+		color: inherit;
+		margin-bottom: 10px;
+		font-size: em(20px);
+		a {
+			text-decoration: none;
+			color: inherit;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.comment-title {
+	margin-bottom: 30px;
+}
+
+.comment-form {
+	// margin-top: 60px;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -1100,12 +1217,12 @@ input[type=submit] {
 		width: 100%;
 		padding: 0;
 		margin-bottom: 40px;
+		border: 0 !important;
 		&:last-child {
 			margin-bottom: 20px;
 		}
 		& + .colThird p,
 		&.double .border {
-			border: 0;
 			padding: 0;
 		}
 		&.double p + h4  {
@@ -1123,7 +1240,6 @@ input[type=submit] {
 	}
 	.tableWrapper,
 	.colThird p {
-		border: 0;
 		padding: 0;
 	}
 }
