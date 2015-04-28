@@ -25,7 +25,7 @@
 					<ul>
 						<li><a href="#treatments">Treatments</a><i></i></li>
 						<li><a href="#about">About us</a><i></i></li>
-						<li><a href="/blog" class="external">The blog</a><i></i></li>
+						<li style="display: none;"><a href="/blog" class="external">The blog</a><i></i></li>
 						<li><a href="#contact">Contact us</a></li>
 						<!-- <li><a href="http://www.lovebeautybox.co.uk/" class="external">Shop online</a></li> -->
 					</ul>
