@@ -1,5 +1,16 @@
 <?php
 	$sql = "
+      CREATE TABLE IF NOT EXISTS `__PREFIX__resource_log` (
+        `logID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+        `appID` char(32) NOT NULL DEFAULT 'content',
+        `itemFK` char(32) NOT NULL DEFAULT 'itemRowID',
+        `itemRowID` int(10) unsigned NOT NULL DEFAULT '0',
+        `resourceID` int(10) unsigned NOT NULL DEFAULT '0',
+        PRIMARY KEY (`logID`),
+        KEY `idx_resource` (`resourceID`),
+        KEY `idx_fk` (`itemFK`,`itemRowID`),
+        UNIQUE KEY `idx_uni` (`appID`,`itemFK`,`itemRowID`,`resourceID`)
+      ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
       ALTER TABLE `__PREFIX__content_regions` ADD `regionUpdated` TIMESTAMP  NOT NULL  DEFAULT CURRENT_TIMESTAMP  ON UPDATE CURRENT_TIMESTAMP  AFTER `regionEditRoles`;
 
@@ -30,6 +41,12 @@
       DROP INDEX `idx_uni` ON `__PREFIX__resource_log`;
       
       ALTER IGNORE TABLE `__PREFIX__resource_log` ADD UNIQUE INDEX `idx_uni` (`appID`, `itemFK`, `itemRowID`, `resourceID`);
+
+      ALTER TABLE `__PREFIX__users` ADD `userPasswordToken` CHAR(255)  NOT NULL  DEFAULT 'expired'  AFTER `userMasterAdmin`;
+
+      ALTER TABLE `__PREFIX__users` ADD `userPasswordTokenExpires` DATETIME  NOT NULL  DEFAULT '2015-01-01 00:00:00'  AFTER `userPasswordToken`;
+
+
 
     ";
 
@@ -232,8 +249,8 @@
               `logID` int(10) unsigned NOT NULL AUTO_INCREMENT,
               `appID` char(32) NOT NULL DEFAULT 'content',
               `itemFK` char(32) NOT NULL DEFAULT 'itemRowID',
-              `itemRowID` int(10) unsigned NOT NULL,
-              `resourceID` int(10) unsigned NOT NULL,
+              `itemRowID` int(10) unsigned NOT NULL DEFAULT '0',
+              `resourceID` int(10) unsigned NOT NULL DEFAULT '0',
               PRIMARY KEY (`logID`),
               KEY `idx_resource` (`resourceID`),
               KEY `idx_fk` (`itemFK`,`itemRowID`),

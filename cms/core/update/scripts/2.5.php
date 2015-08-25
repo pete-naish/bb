@@ -82,8 +82,8 @@
       `logID` int(10) unsigned NOT NULL AUTO_INCREMENT,
       `appID` char(32) NOT NULL DEFAULT 'content',
       `itemFK` char(32) NOT NULL DEFAULT 'itemRowID',
-      `itemRowID` int(10) unsigned NOT NULL,
-      `resourceID` int(10) unsigned NOT NULL,
+      `itemRowID` int(10) unsigned NOT NULL DEFAULT '0',
+      `resourceID` int(10) unsigned NOT NULL DEFAULT '0',
       PRIMARY KEY (`logID`),
       KEY `idx_resource` (`resourceID`),
       KEY `idx_fk` (`itemFK`,`itemRowID`),
@@ -93,6 +93,9 @@
 
     INSERT INTO `__PREFIX__user_privileges` (`privKey`, `privTitle`, `privOrder`)
     VALUES ('assets.create','Upload assets',1);
+
+    INSERT INTO `__PREFIX__user_privileges` (`privKey`, `privTitle`, `privOrder`)
+    VALUES ('assets.manage','Manage assets',2);
 
 
     CREATE TABLE IF NOT EXISTS `__PREFIX__categories` (
@@ -156,10 +159,10 @@
         }
     }
 
-    include(PERCH_CORE.'/apps/assets/PerchAssets_Assets.class.php');
-    include(PERCH_CORE.'/apps/assets/PerchAssets_Asset.class.php');
-    $Assets = new PerchAssets_Assets();
+#  include(PERCH_CORE.'/apps/assets/PerchAssets_Assets.class.php');
+#   include(PERCH_CORE.'/apps/assets/PerchAssets_Asset.class.php');
+#   $Assets = new PerchAssets_Assets();
 
-    $Assets->import_from_perch_gallery();
+#   $Assets->import_from_perch_gallery();
 
-    $Assets->reindex();
+#    $Assets->reindex();
