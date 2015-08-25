@@ -1,6 +1,8 @@
 <?php
 	include($_SERVER['DOCUMENT_ROOT'].'/cms/runtime.php');
 	include('inc/contact-app/headers.php');
+	ini_set('display_errors', 1);
+error_reporting(E_ALL ^ E_NOTICE);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->

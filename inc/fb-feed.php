@@ -6,7 +6,7 @@ $config = array();
 $config['appId'] = '160229230730533';
 $config['secret'] = '0979d9bef7d21930d50efef444bdc084';
 $config['fileUpload'] = false; // optional
- 
+
 
  //187845997900472
 //https://graph.facebook.com/oauth/access_token?client_id=160229230730533&client_secret=0979d9bef7d21930d50efef444bdc084&grant_type=client_credentials
