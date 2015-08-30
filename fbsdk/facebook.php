@@ -158,3 +158,4 @@ class Facebook extends BaseFacebook
     return implode('_', $parts);
   }
 }
+?>

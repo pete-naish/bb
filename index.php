@@ -122,7 +122,8 @@
 				<div id="like" class="tab-content">
 					<div class="feed feed-facebook">
 						<h1><a href="https://www.facebook.com/thebeautyboxknebworth">/TheBeautyBoxKnebworth</a></h1>
-						<?php include('fb-feed.php'); ?>
+						<?php include('inc/fb-feed.php'); ?>
+						<?php //include($_SERVER['DOCUMENT_ROOT'].'/inc/fb-feed.php') ?>
 					</div>
 				</div>
 				<!-- <div id="newsletter" class="tab-content">
