@@ -43,7 +43,6 @@ Thumbs.db
 BeautyBox120-tweets.txt
 robots.txt
 cms/config/config.php
-webmail/
 node_modules/
 inc/fb-feed.php
 get-tweets.php
