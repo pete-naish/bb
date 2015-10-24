@@ -145,6 +145,8 @@
 					<ul class="brand-links">
 						<li><a href="http://gelish.com/"><img src="img/logo-gelish.png" alt="Gelish Nails"></a></li>
 						<li><a href="http://hdbrows.com/"><img src="img/logo-hd-brows.png" alt="HD Brows"></a></li>
+						<li><a href="http://www.nouveaubeautygroup.com/permanent-cosmetics/nouveau-contour/"><img src="img/logo-contour.png" alt="Nouveau Contour Permanent Makeup"></a></li>
+						<li><a href="http://www.crazy-angel.co.uk/"><img src="img/logo-crazy-angel.png" alt="Crazy Angel Fauxy Tan"></a></li>
 						<li><a href="http://www.cnd.com/"><img src="img/logo-shellac.png" alt="CND Shellac Nails"></a></li>
 					</ul>
 				</div>
