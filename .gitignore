@@ -46,3 +46,4 @@ cms/config/config.php
 node_modules/
 inc/fb-feed.php
 get-tweets.php
+cms/resources/
