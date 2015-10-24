@@ -144,10 +144,7 @@
 					<h5>Available brands</h5>
 					<ul class="brand-links">
 						<li><a href="http://gelish.com/"><img src="img/logo-gelish.png" alt="Gelish Nails"></a></li>
-						<li><a href="http://www.caci-international.co.uk/"><img src="img/logo-caci.png" alt="CACI Non-surgical Facelift"></a></li>
 						<li><a href="http://hdbrows.com/"><img src="img/logo-hd-brows.png" alt="HD Brows"></a></li>
-						<li><a href="http://www.minxnails.com/"><img src="img/logo-minx.png" alt="Minx Nails"></a></li>
-						<li><a href="http://sienna-x.co.uk/"><img src="img/logo-sienna-x.png" alt="Sienna X Spray Tanning"></a></li>
 						<li><a href="http://www.cnd.com/"><img src="img/logo-shellac.png" alt="CND Shellac Nails"></a></li>
 					</ul>
 				</div>
